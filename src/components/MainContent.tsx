@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 
 const MainContent_v2 = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
-  const currentShape = 'star'; // Fixed to star shape
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -14,89 +12,51 @@ const MainContent_v2 = () => {
       });
     };
 
-    const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight
-      });
-    };
-
-    // Initialize window size
-    handleResize();
-
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  // Create dynamic mask using shape from public/assets/masks/mask.svg (excluding header area)
-  const createShapeMask = () => {
+  // Create dynamic clip-path that reveals layer_reveal only in blob shape around mouse cursor
+  const createClipPath = () => {
     const headerHeight = 120; // Approximate header height
 
     if (mousePosition.y <= headerHeight) {
-      // No mask in header area
-      return `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(`
-        <svg width="${windowSize.width}" height="${windowSize.height}" viewBox="0 0 ${windowSize.width} ${windowSize.height}" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <mask id="shapeMask">
-              <rect width="100%" height="100%" fill="black"/>
-            </mask>
-          </defs>
-          <rect width="100%" height="100%" fill="white" mask="url(#shapeMask)"/>
-        </svg>
-      `)}")`;
+      // No reveal in header area - completely hide layer_reveal
+      return 'circle(0px at 50% 50%)';
     }
 
-    // Use the organic blob shape from public/shape/mask.svg positioned at mouse location
-    // Scale and center the shape around the mouse cursor
-    const scale = 0.36; // Scale down the original large shape (1.2x bigger than 0.3)
-    const centerX = 386; // Center X of the original shape viewBox
-    const centerY = 258; // Center Y of the original shape viewBox
-    const offsetX = mousePosition.x - (centerX * scale);
-    const offsetY = mousePosition.y - (centerY * scale);
-
-    return `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(`
-      <svg width="${windowSize.width}" height="${windowSize.height}" viewBox="0 0 ${windowSize.width} ${windowSize.height}" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <mask id="shapeMask">
-            <rect width="100%" height="100%" fill="black"/>
-            <g transform="translate(${offsetX}, ${offsetY}) scale(${scale})">
-              <path d="M 386.132812 0.34375 C 393.585938 0.34375 401.082031 0.34375 408.519531 0.34375 C 467.816406 8.957031 504.875 37.632812 521.753906 84.558594 C 620.613281 78.300781 692.492188 167.023438 648.6875 254.105469 C 663.253906 272.402344 675.40625 292.871094 679.792969 320.34375 C 679.792969 328.210938 679.792969 336.0625 679.792969 343.933594 C 666.714844 413.851562 610.4375 461.097656 518.042969 448.378906 C 494.269531 484.277344 451.972656 519.671875 386.148438 515.75 C 352.125 513.394531 328.457031 499.742188 307.730469 483.160156 C 285.90625 496.945312 262.265625 507.765625 228.109375 507.882812 C 149.089844 508.085938 96.226562 454.972656 94.945312 382.121094 C 44.148438 365.078125 9.742188 333.265625 0.375 278.828125 C 0.375 270.960938 0.375 263.074219 0.375 255.242188 C 10.714844 201.296875 43.25 167.414062 97.421875 153.050781 C 94.167969 62.054688 202.527344 5.195312 291.546875 45.28125 C 312.742188 25.457031 342.726562 3.835938 386.132812 0.34375 Z" fill="white"/>
-            </g>
-          </mask>
-        </defs>
-        <rect width="100%" height="100%" fill="white" mask="url(#shapeMask)"/>
-      </svg>
-    `)}")`;
+    // Create a clip-path that reveals layer_reveal in blob shape centered on mouse position
+    const revealSize = 200; // Size of the reveal area in pixels
+    return `circle(${revealSize}px at ${mousePosition.x}px ${mousePosition.y}px)`;
   };
 
   return (
     <div className="main-content-v2">
-      {/* Black image background layer (bottom - default) */}
+      {/* Base layer - shows 3D geometric shapes on black background */}
       <div
         className="background-layer"
         style={{
-          backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjMDAwMDAwIi8+Cjwvc3ZnPgo=")',
+          backgroundImage: 'url("/main_background/layer_base.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
       />
 
-      {/* White image background layer (top) with custom shape reveal effect */}
+      {/* Reveal layer - shows colorful design strategy content with mouse-following circular reveal */}
       <div
         className="background-layer"
         style={{
-          backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRkZGRkZGIi8+Cjwvc3ZnPgo=")',
+          backgroundImage: 'url("/main_background/layer_reveal.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          mask: createShapeMask(),
-          WebkitMask: createShapeMask()
+          clipPath: createClipPath(),
+          WebkitClipPath: createClipPath(),
+          transition: 'clip-path 0.1s ease-out'
         }}
       />
 
