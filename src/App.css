@@ -43,7 +43,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 4rem;
+  padding: 1rem 4rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -288,14 +288,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 4rem;
+  padding: 1rem 4rem;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
   backdrop-filter: blur(10px);
-  background: rgba(27, 27, 27, 0.8);
+  background: rgba(50, 50, 50, 0.8);
 }
 
 .logo-v2 {
