@@ -46,7 +46,7 @@ const MainContent = () => {
         transition={{ duration: 0.8, delay: 0.6 }}
       >
         <div className="social-links">
-          <a href="https://linkedin.com/in/lucillewang" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/lucille-wang-7b057b240/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </motion.footer>
     </div>
