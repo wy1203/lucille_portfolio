@@ -32,7 +32,7 @@ const createClipPath = () => {
     // Calculate size to be approximately 10% of the page
     const pageWidth = window.innerWidth;
     const pageHeight = window.innerHeight;
-    const targetSize = Math.min(pageWidth, pageHeight) * 1;
+    const targetSize = Math.min(pageWidth, pageHeight) * 0.7;
     
     // The original path has a bounding box of approximately 680x520
     const originalWidth = 680;
