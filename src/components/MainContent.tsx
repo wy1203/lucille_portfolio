@@ -1,8 +1,30 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import { worksData } from '../data/worksData';
 
-const MainContent_v2 = () => {
+interface Work {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+}
+
+const works: Work[] = worksData.map(work => ({
+  id: work.id,
+  title: work.title,
+  category: work.category,
+  description: work.description,
+  image: work.image
+}));
+
+const MainContent = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [scrollY, setScrollY] = useState(0);
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const workSectionRef = useRef<HTMLElement>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -12,52 +34,87 @@ const MainContent_v2 = () => {
       });
     };
 
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('scroll', handleScroll);
+
+    audioRef.current = new Audio('/assets/sound/Main.mp3');
+    audioRef.current.loop = true;
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
     };
   }, []);
 
+  const toggleMusic = () => {
+    if (audioRef.current) {
+      if (isMusicPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsMusicPlaying(!isMusicPlaying);
+    }
+  };
+
 const createClipPath = () => {
-    const headerHeight = 120; // Approximate header height
+    const headerHeight = 120;
 
     if (mousePosition.y <= headerHeight) {
-        // No reveal in header area - completely hide layer_reveal
         return 'circle(0px at 50% 50%)';
     }
 
-    const pathData = "M 386.132812 0.34375 C 393.585938 0.34375 401.082031 0.34375 408.519531 0.34375 C 467.816406 8.957031 504.875 37.632812 521.753906 84.558594 C 620.613281 78.300781 692.492188 167.023438 648.6875 254.105469 C 663.253906 272.402344 675.40625 292.871094 679.792969 320.34375 C 679.792969 328.210938 679.792969 336.0625 679.792969 343.933594 C 666.714844 413.851562 610.4375 461.097656 518.042969 448.378906 C 494.269531 484.277344 451.972656 519.671875 386.148438 515.75 C 352.125 513.394531 328.457031 499.742188 307.730469 483.160156 C 285.90625 496.945312 262.265625 507.765625 228.109375 507.882812 C 149.089844 508.085938 96.226562 454.972656 94.945312 382.121094 C 44.148438 365.078125 9.742188 333.265625 0.375 278.828125 C 0.375 270.960938 0.375 263.074219 0.375 255.242188 C 10.714844 201.296875 43.25 167.414062 97.421875 153.050781 C 94.167969 62.054688 202.527344 5.195312 291.546875 45.28125 C 312.742188 25.457031 342.726562 3.835938 386.132812 0.34375 Z";
+    const pathData = "M 767.996094 0.203125 L 767.996094 484.464844 C 703.996094 484.464844 703.996094 645.796875 640 645.796875 C 575.976562 645.796875 575.976562 484.464844 511.980469 484.464844 C 447.980469 484.464844 447.980469 645.796875 383.980469 645.796875 C 319.980469 645.796875 319.980469 484.464844 255.980469 484.464844 C 191.980469 484.464844 191.980469 645.796875 128.003906 645.796875 C 64.003906 645.796875 64.003906 484.464844 0.00390625 484.464844 L 0.00390625 0.203125 C 64.003906 0.203125 64.003906 161.539062 128.003906 161.539062 C 191.980469 161.539062 191.980469 0.203125 255.980469 0.203125 C 319.980469 0.203125 319.980469 161.539062 383.980469 161.539062 C 447.980469 161.539062 447.980469 0.203125 511.980469 0.203125 C 575.976562 0.203125 575.976562 161.539062 640 161.539062 C 703.996094 161.539062 703.996094 0.203125 767.996094 0.203125 Z M 767.996094 0.203125";
 
-    // Calculate size to be approximately 10% of the page
     const pageWidth = window.innerWidth;
     const pageHeight = window.innerHeight;
-    const targetSize = Math.min(pageWidth, pageHeight) * 0.7;
-    
-    // The original path has a bounding box of approximately 680x520
-    const originalWidth = 680;
-    const originalHeight = 520;
-    
-    // Calculate scale factor to make the shape approximately 10% of page
+    const targetSize = Math.min(pageWidth, pageHeight) * 0.6;
+
+    const originalWidth = 768;
+    const originalHeight = 646;
+
     const scale = targetSize / Math.max(originalWidth, originalHeight);
-    
-    // Calculate offset to center the shape on mouse position
+
     const offsetX = mousePosition.x - (originalWidth * scale / 2);
     const offsetY = mousePosition.y - (originalHeight * scale / 2);
 
     return `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(`
         <svg width="${pageWidth}" height="${pageHeight}" xmlns="http://www.w3.org/2000/svg">
             <defs>
-                <clipPath id="blobClip" clipPathUnits="userSpaceOnUse">
+                <clipPath id="waveClip" clipPathUnits="userSpaceOnUse">
                     <path d="${pathData}" transform="translate(${offsetX}, ${offsetY}) scale(${scale})"/>
                 </clipPath>
             </defs>
         </svg>
-    `)}#blobClip")`;
+    `)}#waveClip")`;
 };
 
+  const scrollToWork = () => {
+    workSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const backgroundOpacity = scrollY > 0 ? Math.max(0, 1 - scrollY / 300) : 1;
+
   return (
-    <div className="main-content-v2">
+    <div className="main-content">
+      {/* Gradient background - fades in when scrolling */}
+      <div
+        className="background-layer gradient-background"
+        style={{
+          opacity: scrollY > 0 ? Math.min(1, scrollY / 300) : 0,
+          background: 'linear-gradient(to right, #0054F3 0%, #FF743A 100%)',
+          display: scrollY >= window.innerHeight ? 'none' : 'block'
+        }}
+      />
+
       {/* Base layer - shows 3D geometric shapes on black background */}
       <div
         className="background-layer"
@@ -65,7 +122,9 @@ const createClipPath = () => {
           backgroundImage: 'url("/main_background/layer_base.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          opacity: backgroundOpacity,
+          transition: 'opacity 0.3s ease-out'
         }}
       />
 
@@ -79,59 +138,139 @@ const createClipPath = () => {
           backgroundRepeat: 'no-repeat',
           clipPath: createClipPath(),
           WebkitClipPath: createClipPath(),
-          transition: 'clip-path 0.1s ease-out'
+          transition: 'clip-path 0.1s ease-out, opacity 0.3s ease-out',
+          opacity: backgroundOpacity
         }}
       />
 
-
       <motion.header
-        className="header-v2"
+        className="header"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <div className="logo-v2">LW</div>
-        <nav className="nav-v2">
+        <div className="logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <img src="/icons/LUC_blackwhite.png" alt="LW" />
+        </div>
+        <nav className="nav">
           <a href="#work">Work</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
+          <button className="music-toggle" onClick={toggleMusic}>
+            <img
+              src={isMusicPlaying ? '/icons/sound.png' : '/icons/mute.png'}
+              alt={isMusicPlaying ? 'Sound on' : 'Sound off'}
+            />
+          </button>
         </nav>
       </motion.header>
 
       <motion.main
-        className="hero-v2"
+        className="hero"
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        <h1 className="hero-title-v2">
-          <span className="name-v2">Lucille Wang</span>
-          <span className="title-v2">Design Strategist</span>
+        <h1 className="hero-title">
+          <span className="name">Hi, I'm Lucille Wang!</span>
+          <span className="title">
+            Design strategist studying <strong>Design and Environmental Analysis</strong> at Cornell University. I mix <strong>human-centered design, business insight, and technology</strong> to build impactful, future-ready environments.
+          </span>
         </h1>
 
-        <p className="hero-description-v2">
-          Bridging the gap between user needs and business goals through strategic design thinking.
-          Specializing in UX strategy, product design, and design systems.
-        </p>
+        <div className="hero-experiences">
+          <span className="experiences-text">Previous Experiences @</span>
+          <div className="experiences-logos">
+            <img src="/assets/company_logos/HDR.png" alt="HDR" className="experience-logo" />
+            <img src="/assets/company_logos/haworth.png" alt="Haworth" className="experience-logo" />
+            <img src="/assets/company_logos/JSL.png" alt="JSL" className="experience-logo" />
+          </div>
+        </div>
 
-        <div className="hero-actions-v2">
-          <button className="cta-button-v2 primary">View My Work</button>
-          <button className="cta-button-v2 secondary">Get In Touch</button>
+        <div className="hero-actions">
+          <button className="cta-button primary" onClick={scrollToWork}>View My Work ⭣</button>
         </div>
       </motion.main>
 
+      <div className="scrolling-text-container">
+        <div className="scrolling-text">
+          <span>— human-centered design nerd — IKEA effect debater— bubble tea enthusiast — recipe hoarder & weekend baker — fusion-food foodie — Spotify playlist curator — night-owl brainstormer — city-walk daydreamer — street-style chaser — dorm room decorator — Pinterest.com addict — matcha master — Three-Body Problem superfan — "Windows over Apple" defender — doodler, painter and artist </span>
+          <span>— human-centered design nerd — IKEA effect debater— bubble tea enthusiast — recipe hoarder & weekend baker — fusion-food foodie — Spotify playlist curator — night-owl brainstormer — city-walk daydreamer — street-style chaser — dorm room decorator — Pinterest.com addict — matcha master — Three-Body Problem superfan — "Windows over Apple" defender — doodler, painter and artist </span>
+        </div>
+      </div>
+
+      <section id="work" className="work-section" ref={workSectionRef}>
+        <motion.h2
+          className="work-section-title"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          My Works
+        </motion.h2>
+
+        <div className="work-grid">
+          {works.map((work, index) => (
+            <WorkCard key={work.id} work={work} index={index} />
+          ))}
+        </div>
+      </section>
+
       <motion.footer
-        className="footer-v2"
+        className="footer"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
       >
-        <div className="social-links-v2">
-          <a href="https://www.linkedin.com/in/lucille-wang-7b057b240/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div className="footer-content">
+          <div className="footer-left">
+            <a href="mailto:lw686@cornell.edu" className="footer-email-link">Contact Me at: lw686@cornell.edu</a>
+            <a href="https://www.linkedin.com/in/lucille-wang-7b057b240/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="footer-linkedin-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+          </div>
+
+          <div className="footer-right">
+            <p className="footer-copyright">Created by Lucille Wang © 2025</p>
+          </div>
         </div>
       </motion.footer>
     </div>
   );
 };
 
-export default MainContent_v2;
+const WorkCard = ({ work, index }: { work: Work; index: number }) => {
+  const ref = useRef(null);
+  const navigate = useNavigate();
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const handleClick = () => {
+    navigate(`/work/${work.id}`);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      className="work-card"
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      onClick={handleClick}
+    >
+      <div className="work-card-image">
+        <img src={work.image} alt={work.title} />
+      </div>
+      <div className="work-card-content">
+        <span className="work-category">{work.category}</span>
+        <h3 className="work-title">{work.title}</h3>
+        <p className="work-description">{work.description}</p>
+      </div>
+    </motion.div>
+  );
+};
+
+export default MainContent;
