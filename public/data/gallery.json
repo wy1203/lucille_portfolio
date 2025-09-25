@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "title": "Architectural Photography",
+    "description": "Capturing space and light in built environments",
+    "image": "/gallery/photo1.jpg",
+    "category": "Photography",
+    "fullDescription": "A series of architectural photographs exploring the relationship between natural light and spatial design. These images capture moments where light transforms space, creating atmospheric conditions that enhance the built environment.",
+    "details": {
+      "medium": "Digital Photography",
+      "year": "2024",
+      "location": "Various",
+      "equipment": "Canon EOS R5, 24-70mm f/2.8"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Urban Sketches",
+    "description": "City life captured through observational drawing",
+    "image": "/gallery/sketch1.jpg",
+    "category": "Drawing",
+    "fullDescription": "Quick observational sketches of urban environments, capturing the dynamic energy of city life. These drawings serve as visual notes, documenting moments and spaces that inspire design thinking.",
+    "details": {
+      "medium": "Pen and Ink on Paper",
+      "year": "2023-2024",
+      "location": "New York, Ithaca",
+      "tools": "Fine liner pens, sketchbook"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Material Studies",
+    "description": "Exploring texture, form, and material properties",
+    "image": "/gallery/material1.jpg",
+    "category": "Research",
+    "fullDescription": "Hands-on exploration of materials and their properties, understanding how different textures, weights, and compositions can inform design decisions. This research informs sustainable design practices.",
+    "details": {
+      "medium": "Mixed Materials",
+      "year": "2024",
+      "focus": "Sustainability",
+      "materials": "Bamboo, Cork, Recycled Plastics"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Conceptual Models",
+    "description": "Physical models exploring design concepts",
+    "image": "/gallery/model1.jpg",
+    "category": "Models",
+    "fullDescription": "Three-dimensional explorations of spatial concepts through physical model making. These models help test ideas about form, proportion, and spatial relationships in tangible ways.",
+    "details": {
+      "medium": "Physical Models",
+      "year": "2023-2024",
+      "scale": "Various",
+      "materials": "Cardboard, Wood, Foam Core"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Digital Experiments",
+    "description": "Parametric design and computational explorations",
+    "image": "/gallery/digital1.jpg",
+    "category": "Digital",
+    "fullDescription": "Experiments in parametric design using computational tools to generate form and explore design possibilities. These digital explorations push the boundaries of traditional design processes.",
+    "details": {
+      "medium": "Digital",
+      "year": "2024",
+      "software": "Grasshopper, Rhino",
+      "focus": "Parametric Design"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Travel Documentation",
+    "description": "Design inspirations from around the world",
+    "image": "/gallery/travel1.jpg",
+    "category": "Travel",
+    "fullDescription": "Visual documentation of design inspiration gathered during travels. These images capture architectural details, urban planning solutions, and cultural approaches to space that inform my design thinking.",
+    "details": {
+      "medium": "Photography, Sketching",
+      "year": "2022-2024",
+      "locations": "Europe, Asia",
+      "focus": "Cultural Design Approaches"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Sustainability Research",
+    "description": "Investigating green design strategies",
+    "image": "/gallery/sustain1.jpg",
+    "category": "Research",
+    "fullDescription": "Research into sustainable design practices, exploring how environmental considerations can be integrated into design processes from concept to execution.",
+    "details": {
+      "medium": "Research Documentation",
+      "year": "2023-2024",
+      "focus": "Environmental Impact",
+      "methods": "Life Cycle Analysis, Material Research"
+    }
+  },
+  {
+    "id": 8,
+    "title": "Workshop Creations",
+    "description": "Hands-on making and fabrication process",
+    "image": "/gallery/workshop1.jpg",
+    "category": "Making",
+    "fullDescription": "Objects and prototypes created through hands-on workshop processes. These pieces explore the relationship between digital design tools and traditional making techniques.",
+    "details": {
+      "medium": "Mixed Media",
+      "year": "2023-2024",
+      "tools": "Laser Cutter, 3D Printer, Hand Tools",
+      "focus": "Digital Fabrication"
+    }
+  },
+  {
+    "id": 9,
+    "title": "Design Iterations",
+    "description": "Process documentation and evolution of ideas",
+    "image": "/gallery/iteration1.jpg",
+    "category": "Process",
+    "fullDescription": "Documentation of the design process, showing how ideas evolve through iteration, feedback, and refinement. This work demonstrates the value of process over final outcomes.",
+    "details": {
+      "medium": "Mixed Documentation",
+      "year": "2023-2024",
+      "methods": "Sketching, Modeling, Prototyping",
+      "focus": "Design Process"
+    }
+  }
+]

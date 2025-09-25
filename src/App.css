@@ -1,6 +1,9 @@
+/* Import centralized navigation styles */
+@import './styles/Navigation.css';
+
 @font-face {
-  font-family: 'Boston';
-  src: url('../public/fonts/BostonRegular-3M1X.otf') format('opentype');
+  font-family: 'Creative';
+  src: url('../public/fonts/Runtti-Regular.otf') format('opentype');
 }
 
 @font-face {
@@ -9,16 +12,12 @@
   font-weight: 400;
 }
 
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../public/fonts/MontserratMedium-nRxlJ.ttf') format('truetype');
-  font-weight: 500;
-}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -90,50 +89,7 @@ body {
   filter: brightness(0) invert(1);
 }
 
-.nav {
-  padding-right: 4rem;
-}
-
-.nav {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  position: relative;
-}
-
-.nav a:hover {
-  color: #F5E6FF;
-}
-
-.music-toggle {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  line-height: 1;
-  transform: translateY(-2px);
-}
-
-.music-toggle img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-}
-
-.music-toggle:hover {
-  transform: translateY(-2px) scale(1.1);
-}
+/* Navigation styles are now in Navigation.css */
 
 .hero {
   display: flex;
@@ -143,7 +99,7 @@ body {
   text-align: center;
   padding: 0 2rem;
   min-height: 100vh;
-  padding-top: 8rem;
+  padding-top: 5rem;
 }
 
 .hero-title {
@@ -159,8 +115,9 @@ body {
   margin-bottom: 0.5rem;
   margin-top: 2rem;
   color: #ffffff;
-  font-family: 'Boston', sans-serif;
+  font-family: 'Creative';
   white-space: nowrap;
+  margin-bottom: 5rem;
 }
 
 .title {
@@ -302,7 +259,7 @@ body {
   font-size: 1.65rem;
   font-weight: 500;
   padding-right: 2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat';
 }
 
 @keyframes scroll {
@@ -323,13 +280,14 @@ body {
 }
 
 .work-section-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(3.5rem, 7vw, 6rem);
   font-weight: 900;
   color: #000000;
   text-align: center;
   margin-bottom: 4rem;
   margin-top: 4rem;
   letter-spacing: -0.02em;
+  font-family: 'Creative';
 }
 
 .work-grid {
@@ -397,6 +355,7 @@ body {
   color: #000000;
   margin-bottom: 0.75rem;
   letter-spacing: -0.01em;
+  font-family: 'Montserrat';
 }
 
 .work-description {

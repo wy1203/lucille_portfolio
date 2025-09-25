@@ -1,0 +1,82 @@
+/* Centralized Navigation Styles */
+/* This file contains all navigation-related styles for consistency and maintainability */
+
+/* Base navigation container */
+.nav {
+  display: flex;
+  gap: 2rem;
+  padding-right: 4rem;
+}
+
+/* All navigation links - prevents ANY blue coloring */
+.nav a,
+.nav a:link,
+.nav a:visited,
+.nav a:focus,
+.nav a:active {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+  outline: none;
+}
+
+/* Hover state */
+.nav a:hover {
+  color: #F5E6FF;
+}
+
+/* Active page indicator */
+.nav a.active,
+.nav a.active:link,
+.nav a.active:visited,
+.nav a.active:focus,
+.nav a.active:active,
+.nav a.active:hover {
+  color: #ffffff;
+}
+
+/* Music toggle button */
+.nav .music-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  transform: translateY(-2px);
+}
+
+.nav .music-toggle img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.nav .music-toggle:hover {
+  transform: translateY(-2px) scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav {
+    gap: 1.5rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    gap: 1rem;
+    padding-right: 1rem;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+  }
+}

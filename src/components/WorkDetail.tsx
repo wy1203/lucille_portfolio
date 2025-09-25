@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useMusic } from './BackgroundMusic';
 import '../styles/WorkDetail.css';
 
 interface ContentItem {
@@ -31,6 +32,7 @@ interface WorkData {
 const WorkDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { isMusicPlaying, toggleMusic } = useMusic();
   const [work, setWork] = useState<WorkData | null>(null);
   const [activeSection, setActiveSection] = useState('overview');
   const [showFooter, setShowFooter] = useState(false);
@@ -102,9 +104,16 @@ const WorkDetail = () => {
           <img src="/icons/LUC_blackwhite.png" alt="LW" />
         </div>
         <nav className="nav">
-          <a href="/#work" onClick={(e) => { e.preventDefault(); navigate('/'); setTimeout(() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' }), 100); }}>Work</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }}>Home</a>
+          <a href="/about" onClick={(e) => { e.preventDefault(); window.scrollTo(0, 0); navigate('/about'); }}>About</a>
+          <a href="/gallery" onClick={(e) => { e.preventDefault(); window.scrollTo(0, 0); navigate('/gallery'); }}>Gallery</a>
+          <a href="/data/Lucille Wang_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <button className="music-toggle" onClick={toggleMusic}>
+            <img
+              src={isMusicPlaying ? '/icons/sound.png' : '/icons/mute.png'}
+              alt={isMusicPlaying ? 'Sound on' : 'Sound off'}
+            />
+          </button>
         </nav>
       </motion.header>
 

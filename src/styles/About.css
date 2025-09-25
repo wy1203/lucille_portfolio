@@ -1,0 +1,457 @@
+/* Import centralized navigation styles */
+@import './Navigation.css';
+
+/* About Page Styles */
+.about-page {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.about-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.about-main {
+  margin-top: 120px;
+  padding-bottom: 80px;
+}
+
+.about-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Intro Section */
+.about-intro {
+  margin-bottom: 80px;
+}
+
+.about-profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.profile-content {
+  flex: 1;
+}
+
+.profile-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+  line-height: 1.1;
+  font-family: 'Creative';
+}
+
+.about-description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #666666;
+  margin-bottom: 0;
+}
+
+/* Experience Section */
+.about-experience {
+  margin-bottom: 80px;
+}
+
+.about-experience,
+.about-education,
+.about-skills {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-experience h2,
+.about-education h2,
+.about-skills h2,
+.about-personality h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0;
+  position: relative;
+  grid-column: 1;
+  font-family: 'Creative';
+}
+
+.about-experience h2::after,
+.about-education h2::after,
+.about-skills h2::after,
+.about-personality h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  width: 60px;
+  height: 3px;
+  background-color: #0054F3;
+}
+
+.experience-content {
+  grid-column: 2;
+}
+
+.education-content {
+  grid-column: 2;
+}
+
+.skills-content {
+  grid-column: 2;
+}
+
+.experience-item {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.experience-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.experience-company {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.company-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 12px;
+  background-color: #f8f9fa;
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+.experience-details h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  font-family: 'Montserrat';
+}
+
+.company-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #0054F3;
+  margin-bottom: 5px;
+}
+
+.experience-period {
+  font-size: 1rem;
+  color: #999999;
+  margin-bottom: 15px;
+}
+
+.experience-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666666;
+  margin-bottom: 0;
+}
+
+/* Education Section */
+.about-education {
+  margin-bottom: 80px;
+}
+
+.education-item {
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e0e6ed;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.education-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.education-details h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  font-family: 'Montserrat';
+}
+
+.school-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #0054F3;
+  margin-bottom: 5px;
+}
+
+.education-period {
+  font-size: 1rem;
+  color: #999999;
+  margin-bottom: 15px;
+}
+
+.education-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666666;
+  margin-bottom: 0;
+}
+
+/* Skills Section */
+.about-skills {
+  margin-bottom: 80px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.skill-category {
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+}
+
+.skill-category h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  position: relative;
+  font-family: 'Montserrat';
+}
+
+.skill-category h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 30px;
+  height: 2px;
+  background-color: #FF743A;
+}
+
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-category li {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 8px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.skill-category li::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  color: #0054F3;
+  font-size: 0.8rem;
+}
+
+.skill-category li:last-child {
+  margin-bottom: 0;
+}
+
+/* Personality Section */
+.about-personality {
+  margin-bottom: 80px;
+}
+
+.about-personality h2 {
+  margin-bottom: 60px;
+}
+
+.personality-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.personality-item {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 16px;
+  padding: 10px;
+}
+
+.personality-item:hover {
+  transform: translateY(-5px);
+}
+
+.personality-item img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.personality-item:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.personality-item p {
+  font-size: 0.8rem;
+  color: #666666;
+  margin: 0;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  line-height: 1.2;
+}
+
+.personality-item:hover p {
+  color: #0054F3;
+}
+
+/* Navigation styles are handled in Navigation.css */
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-experience,
+  .about-education,
+  .about-skills {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .experience-content,
+  .education-content,
+  .skills-content {
+    grid-column: 1;
+  }
+
+  .about-experience h2,
+  .about-education h2,
+  .about-skills h2 {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    width: 90%;
+    padding: 0 20px;
+  }
+
+  .about-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .profile-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-description {
+    font-size: 1.1rem;
+  }
+
+  .experience-company {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .company-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .personality-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .personality-item img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .personality-item p {
+    font-size: 0.8rem;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-main {
+    margin-top: 100px;
+  }
+
+  .profile-content h1 {
+    font-size: 2rem;
+  }
+
+  .about-container {
+    width: 95%;
+    padding: 0 15px;
+  }
+
+  .personality-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .personality-item img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .personality-item p {
+    font-size: 0.65rem;
+  }
+}

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useMusic } from './BackgroundMusic';
 import { worksData } from '../data/worksData';
 
 interface Work {
@@ -20,11 +21,11 @@ const works: Work[] = worksData.map(work => ({
 }));
 
 const MainContent = () => {
+  const navigate = useNavigate();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
-  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const { isMusicPlaying, toggleMusic } = useMusic();
   const workSectionRef = useRef<HTMLElement>(null);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -41,29 +42,12 @@ const MainContent = () => {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('scroll', handleScroll);
 
-    audioRef.current = new Audio('/assets/sound/Main.mp3');
-    audioRef.current.loop = true;
-
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('scroll', handleScroll);
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
     };
   }, []);
 
-  const toggleMusic = () => {
-    if (audioRef.current) {
-      if (isMusicPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsMusicPlaying(!isMusicPlaying);
-    }
-  };
 
 const createClipPath = () => {
     const headerHeight = 120;
@@ -153,9 +137,10 @@ const createClipPath = () => {
           <img src="/icons/LUC_blackwhite.png" alt="LW" />
         </div>
         <nav className="nav">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="/" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Home</a>
+          <a href="/about" onClick={(e) => { e.preventDefault(); window.scrollTo(0, 0); navigate('/about'); }}>About</a>
+          <a href="/gallery" onClick={(e) => { e.preventDefault(); window.scrollTo(0, 0); navigate('/gallery'); }}>Gallery</a>
+          <a href="/data/Lucille Wang_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           <button className="music-toggle" onClick={toggleMusic}>
             <img
               src={isMusicPlaying ? '/icons/sound.png' : '/icons/mute.png'}
