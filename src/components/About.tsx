@@ -133,7 +133,7 @@ const About = () => {
 
               <div className="experience-item">
                 <div className="experience-company">
-                  <img src="/assets/company_logos/Cornell.png" alt="Cornell Digital Design Studio" className="company-logo" />
+                  <img src="/assets/company_logos/cornell.png" alt="Cornell Digital Design Studio" className="company-logo" />
                   <div className="experience-details">
                     <h3>Design Assistant</h3>
                     <p className="company-name"><a href="https://human.cornell.edu/d2fs" target="_blank" rel="noopener noreferrer" style={{color: '#0054F3', textDecoration: 'none'}}>Digital Design and Fabrication Studio</a></p>
@@ -165,7 +165,7 @@ const About = () => {
 
               <div className="experience-item">
                 <div className="experience-company">
-                  <img src="/assets/company_logos/Cornell.png" alt="Cornell University Healthy Futures" className="company-logo" />
+                  <img src="/assets/company_logos/cornell.png" alt="Cornell University Healthy Futures" className="company-logo" />
                   <div className="experience-details">
                     <h3>Design Associate</h3>
                     <p className="company-name"><a href="https://ihf.cornell.edu/education-research/healthy-futures-graduate-chapter/" target="_blank" rel="noopener noreferrer" style={{color: '#0054F3', textDecoration: 'none'}}>Cornell University Healthy Futures (CUHF)</a></p>
@@ -181,7 +181,7 @@ const About = () => {
 
               <div className="experience-item">
                 <div className="experience-company">
-                  <img src="/assets/company_logos/Cornell.png" alt="Residential Sustainability Leader" className="company-logo" />
+                  <img src="/assets/company_logos/cornell.png" alt="Residential Sustainability Leader" className="company-logo" />
                   <div className="experience-details">
                     <h3>Dining Sustainability Designer</h3>
                     <p className="company-name"><a href="https://experience.cornell.edu/opportunities/residential-sustainability-leaders-rsls" target="_blank" rel="noopener noreferrer" style={{color: '#0054F3', textDecoration: 'none'}}>Residential Sustainability Leader (RSL)</a></p>
