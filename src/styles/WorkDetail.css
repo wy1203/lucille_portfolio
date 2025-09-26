@@ -708,11 +708,11 @@ figcaption {
 }
 
 .skill-tag {
-  background: #f0f0f0;
+  background: #d5d7dbe4;
   padding: 0.25rem 0.75rem;
   border-radius: 16px;
   font-size: 0.9rem;
-  color: #555;
+  color: #000000;
 }
 
 /* Responsive Design */
