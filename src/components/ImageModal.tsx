@@ -2,18 +2,18 @@ import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../styles/ImageModal.css';
 
-interface PersonalityItem {
-  image: string;
-  description: string;
+interface ImageItem {
+  src: string;
+  alt?: string;
+  caption?: string;
 }
 
 interface ImageModalProps {
   isOpen: boolean;
   onClose: () => void;
-  images: PersonalityItem[];
+  images: ImageItem[];
   currentIndex: number;
-  onPrevious: () => void;
-  onNext: () => void;
+  onNavigate: (index: number) => void;
 }
 
 const ImageModal: React.FC<ImageModalProps> = ({
@@ -21,8 +21,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
   onClose,
   images,
   currentIndex,
-  onPrevious,
-  onNext,
+  onNavigate,
 }) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -33,10 +32,12 @@ const ImageModal: React.FC<ImageModalProps> = ({
           onClose();
           break;
         case 'ArrowLeft':
-          onPrevious();
+          event.preventDefault();
+          onNavigate(currentIndex > 0 ? currentIndex - 1 : images.length - 1);
           break;
         case 'ArrowRight':
-          onNext();
+          event.preventDefault();
+          onNavigate(currentIndex < images.length - 1 ? currentIndex + 1 : 0);
           break;
       }
     };
@@ -54,7 +55,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
       document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen, onClose, onPrevious, onNext]);
+  }, [isOpen, onClose, onNavigate, currentIndex, images.length]);
 
   if (!isOpen || !images.length) return null;
 
@@ -90,7 +91,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
             <>
               <button
                 className="modal-nav-btn modal-prev-btn"
-                onClick={onPrevious}
+                onClick={() => onNavigate(currentIndex > 0 ? currentIndex - 1 : images.length - 1)}
                 aria-label="Previous image"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +101,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
 
               <button
                 className="modal-nav-btn modal-next-btn"
-                onClick={onNext}
+                onClick={() => onNavigate(currentIndex < images.length - 1 ? currentIndex + 1 : 0)}
                 aria-label="Next image"
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,15 +114,15 @@ const ImageModal: React.FC<ImageModalProps> = ({
           {/* Image */}
           <div className="modal-image-container">
             <img
-              src={currentImage.image}
-              alt={currentImage.description}
+              src={currentImage.src}
+              alt={currentImage.alt || ''}
               className="modal-image"
             />
           </div>
 
-          {/* Image description */}
+          {/* Image caption and counter */}
           <div className="modal-description">
-            <p>{currentImage.description}</p>
+            {currentImage.caption && <p>{currentImage.caption}</p>}
             {images.length > 1 && (
               <span className="modal-counter">
                 {currentIndex + 1} / {images.length}

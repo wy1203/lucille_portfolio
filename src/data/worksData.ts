@@ -1,115 +1,334 @@
+export type ContentBlockType =
+  | "text"
+  | "list"
+  | "image"
+  | "image-pair"
+  | "image-trio"
+  | "image-grid"
+  | "image-full"
+  | "spacer";
+
+export interface BaseContentBlock {
+  id?: string;
+  type: ContentBlockType;
+  marginTop?: string;
+  marginBottom?: string;
+}
+
+export interface TextBlock extends BaseContentBlock {
+  type: "text";
+  content: string;
+  size?: "normal" | "large" | "small";
+  emphasis?: boolean;
+}
+
+export interface ListBlock extends BaseContentBlock {
+  type: "list";
+  listType: "ordered" | "unordered";
+  items: Array<string | { content: string; subItems?: string[] }>;
+  size?: "normal" | "large" | "small";
+}
+
+export interface ImageBlock extends BaseContentBlock {
+  type: "image";
+  src: string;
+  alt?: string;
+  caption?: string;
+  size?: "small" | "medium" | "large" | "full";
+  aspectRatio?: "square" | "landscape" | "portrait" | "auto";
+}
+
+export interface ImagePairBlock extends BaseContentBlock {
+  type: "image-pair";
+  images: Array<{
+    src: string;
+    alt?: string;
+    caption?: string;
+    size?: number; // 1-100, represents percentage of available space
+  }>;
+  layout?: "equal" | "left-heavy" | "right-heavy" | "custom";
+  gap?: "small" | "medium" | "large";
+}
+
+export interface ImageTrioBlock extends BaseContentBlock {
+  type: "image-trio";
+  layout?: "left-right" | "top-bottom"; // "left-right" is default (1 left, 2 right), "top-bottom" is required to add(1 top, 2 bottom)
+  leftImage?: {
+    src: string;
+    alt?: string;
+    caption?: string;
+    size?: number; // 1-100, percentage of total width for left image
+  };
+  rightImages?: Array<{
+    src: string;
+    alt?: string;
+    caption?: string;
+    size?: number; // 1-100, percentage of right column height for each image
+  }>;
+  topImage?: {
+    src: string;
+    alt?: string;
+    caption?: string;
+    height?: string; // Custom height for top image
+    position?: string; // CSS object-position value (e.g., "center", "top", "50% 30%")
+  };
+  bottomImages?: Array<{
+    src: string;
+    alt?: string;
+    caption?: string;
+    size?: number; // 1-100, percentage of bottom row width for each image
+  }>;
+  gap?: "small" | "medium" | "large";
+}
+
+export interface ImageGridBlock extends BaseContentBlock {
+  type: "image-grid";
+  images: Array<{
+    src: string;
+    alt?: string;
+    caption?: string;
+    span?: number;
+  }>;
+  columns?: 2 | 3 | 4;
+  gap?: "small" | "medium" | "large";
+}
+
+export interface ImageFullBlock extends BaseContentBlock {
+  type: "image-full";
+  src: string;
+  alt?: string;
+  caption?: string;
+  height?: "small" | "medium" | "large" | "viewport" | string; // Support custom percentage/pixel values
+  width?: "small" | "medium" | "large" | "full" | string; // Support custom percentage/pixel values
+}
+
+export interface SpacerBlock extends BaseContentBlock {
+  type: "spacer";
+  size?: "small" | "medium" | "large";
+}
+
+export type ContentBlock =
+  | TextBlock
+  | ListBlock
+  | ImageBlock
+  | ImagePairBlock
+  | ImageTrioBlock
+  | ImageGridBlock
+  | ImageFullBlock
+  | SpacerBlock;
+
+export interface Section {
+  title: string;
+  blocks: ContentBlock[];
+}
+
 export interface WorkDetail {
   id: number;
   title: string;
   category: string;
   description: string;
-  image: string;
+  thumbnail: string;
+  thumbnailImagePos?: string;
+  thumbnailImageFit?: "cover" | "contain" | "fill" | "scale-down" | "none";
   heroImage: string;
-  client: string;
+  heroImagePosition?: string; // CSS object-position value or "50% 50%"
+  heroImageFit?: "cover" | "contain" | "fill" | "scale-down" | "none";
+  client?: string;
   role: string;
-  duration: string;
-  overview: string;
-  challenge: string;
-  solution: string;
-  impact: string;
-  detailImages: string[];
+  timeline: string;
+  team?: string;
+  skills?: string[];
+  sections: {
+    overview: Section;
+    challenge?: Section;
+    solution?: Section;
+    impact?: Section;
+    reflection?: Section;
+    [key: string]: Section | undefined;
+  };
 }
 
 export const worksData: WorkDetail[] = [
   {
     id: 1,
-    title: 'Brand Strategy',
-    category: 'UX Strategy',
-    description: 'Strategic brand development for tech startup',
-    image: '/work_images/work1.jpg',
-    heroImage: '/work_details/1/hero.jpg',
-    client: 'TechStart Inc.',
-    role: 'Lead UX Strategist',
-    duration: '3 months',
-    overview: 'Developed a comprehensive brand strategy for a technology startup looking to establish their presence in the competitive SaaS market. The project involved market research, competitor analysis, and creating a unique brand identity that resonated with their target audience.',
-    challenge: 'The client faced challenges in differentiating themselves in a saturated market. They needed a brand that communicated innovation while maintaining approachability for non-technical users.',
-    solution: 'Created a brand strategy framework that balanced technical excellence with human-centered design principles. Developed brand guidelines, visual identity, and messaging strategy that highlighted their unique value proposition.',
-    impact: 'The new brand strategy led to a 45% increase in user engagement and a 30% improvement in conversion rates within the first quarter of implementation.',
-    detailImages: ['/work_details/1/detail1.jpg', '/work_details/1/detail2.jpg']
+    title: "The SCOBY Spot",
+    category: "Retail Store Design",
+    description: "Kombucha tea store promoting wellness and community",
+    thumbnail: "/work_details/scoby/hero.png",
+    thumbnailImagePos: "50% 90%",
+    thumbnailImageFit: "cover",
+    heroImage: "/work_details/scoby/hero.png",
+    heroImagePosition: "50% 90%",
+    heroImageFit: "cover",
+    client: "Academic design project (Cornell DEA, 2024)",
+    role: "Lead Designer",
+    timeline: "2024",
+    skills: [
+      "Retail Design",
+      "Spatial Planning",
+      "Biophilic Design",
+      "Human-Centered Design",
+      "Revit",
+      "D5 Rendering",
+    ],
+    sections: {
+      overview: {
+        title: "Overview",
+        blocks: [
+          {
+            type: "text",
+            content:
+              "**Offerings**: The SCOBY Spot is a kombucha tea + pastry store that doubles as a relax and study space in the heart of Ithaca Commons. This tea store serves various kombucha flavored tea, pastry and brewing services. The space offers kombucha flights, flavored pastries, and interactive brewing experiences. Its programming and layout promote both individual retreat and social engagement, positioning the store as a cultural and wellness anchor within Ithaca Commons.",
+            size: "large",
+          },
+          {
+            type: "image-trio",
+            layout: "top-bottom",
+            topImage: {
+              src: "/work_details/scoby/1.5.png",
+              height: "70px",
+              position: "50% 40%",
+            },
+            bottomImages: [
+              {
+                src: "/work_details/scoby/2left.png",
+                alt: "Interior perspective showing hexagonal framework",
+                caption: "Main interior view with hexagonal ceiling",
+                size: 60,
+              },
+              {
+                src: "/work_details/scoby/2right.png",
+                alt: "Seating area with organic design elements",
+                caption: "Pod seating area with biophilic elements",
+                size: 39,
+              },
+            ],
+            gap: "small",
+          },
+          {
+            type: "image-pair",
+            images: [
+              {
+                src: "/work_details/scoby/3left.png",
+                alt: "Interior perspective showing hexagonal framework",
+                caption: "Main interior view with hexagonal ceiling",
+              },
+              {
+                src: "/work_details/scoby/3right.png",
+                alt: "Seating area with organic design elements",
+                caption: "Pod seating area with biophilic elements",
+              },
+            ],
+            layout: "right-heavy",
+            gap: "medium",
+          },
+          {
+            type: "text",
+            content:
+              "**Design inspiration**: Inspiration was drawn from the organic branching patterns of trees. The structure integrates a hexagonal wooden framework, elevated pod seating, and soft natural lighting to create a restorative, biophilic environment. Every design decision—from large glass windows to warm wooden textures—was made to connect people with nature and foster mindful relaxation.",
+            size: "large",
+          },
+          {
+            type: "image-trio",
+            leftImage: {
+              src: "/work_details/scoby/4left.png",
+              alt: "Main design concept with detailed interior view",
+              caption: "Primary design concept showing spatial organization",
+              size: 75,
+            },
+            rightImages: [
+              {
+                src: "/work_details/scoby/4topright.png",
+                alt: "Top detail view of hexagonal framework",
+                caption: "Ceiling detail with hexagonal pattern",
+                size: 50,
+              },
+              {
+                src: "/work_details/scoby/4buttonright.png",
+                alt: "Bottom detail view of seating area",
+                caption: "Pod seating arrangement detail",
+                size: 50,
+              },
+            ],
+            gap: "medium",
+          },
+          {
+            type: "image-full",
+            src: "/work_details/scoby/5.png",
+            alt: "Full interior view showing the complete space design",
+            height: "large",
+          },
+          {
+            type: "image-full",
+            src: "/work_details/scoby/6.png",
+            alt: "Full interior view showing the complete space design",
+            height: "large",
+          },
+          {
+            type: "text",
+            content:
+              "**Human-Centered Experience**: The environment facilitates a restorative connection between people and nature as people relax in this spot in a cozy, daydreaming afternoon. Conceived as both a retail destination and a wellness hub, the store introduces a new fermented tea culture to the city while providing cozy spaces for rest, reflection, and community gathering. ",
+            size: "large",
+          },
+          {
+            type: "image-full",
+            src: "/work_details/scoby/7.png",
+            alt: "Full interior view showing the complete space design",
+            height: "large",
+          },
+        ],
+      },
+      impact: {
+        title: "Impact and Results",
+        blocks: [
+          {
+            type: "text",
+            content:
+              "**Impact:** The SCOBY Spot delivers more than a retail experience—it functions as a healing and restoration hub for Ithaca residents and university students. Its unique integration of tea culture, nature-inspired architecture, and community wellness provides an innovative model for retail spaces.",
+            size: "large",
+          },
+          {
+            type: "text",
+            content: "**Key Outcomes:**",
+            marginBottom: "0rem",
+            size: "large",
+          },
+          {
+            type: "list",
+            listType: "unordered",
+            items: [
+              "Established the first kombucha-focused tea house in Ithaca Commons",
+              "Created a restorative environment that attracts both residents and visitors seeking alternative café experiences",
+              "Offered a flexible space for study, social gatherings, and cultural engagement",
+            ],
+            size: "large",
+            marginTop: "-0.25rem",
+          },
+          {
+            type: "text",
+            content:
+              "By blending wellness rituals with immersive design, the SCOBY Spot bridges commerce and community, showcasing how retail can be a catalyst for well-being.",
+            size: "large",
+          },
+        ],
+      },
+      reflection: {
+        title: "Reflection",
+        blocks: [
+          {
+            type: "text",
+            content:
+              " Designing the SCOBY Spot taught me how spatial storytelling can directly influence emotional well-being. I deepened my understanding of biophilic design and its capacity to create restorative environments within urban retail settings.",
+            size: "large",
+          },
+          {
+            type: "text",
+            content:
+              "Developed a layout that supports both individual retreat and social engagement. The hexagonal framework, pod seating, and wellness-driven design narrative created a unique, restorative retail destination. Balancing functional requirements (kitchen, circulation, retail display) with immersive, organic forms was a central design challenge. In future iterations, I would explore more modular construction methods to enhance scalability and sustainability for rollout in other urban contexts.",
+            size: "large",
+          },
+        ],
+      },
+    },
   },
-  {
-    id: 2,
-    title: 'Mobile App Design',
-    category: 'Product Design',
-    description: 'iOS app for fitness tracking and community',
-    image: '/work_images/work2.jpg',
-    heroImage: '/work_details/2/hero.jpg',
-    client: 'FitConnect',
-    role: 'Senior Product Designer',
-    duration: '4 months',
-    overview: 'Designed a comprehensive mobile application that combines fitness tracking with social community features, creating an engaging platform for users to achieve their health goals together.',
-    challenge: 'Users struggled to maintain consistency in their fitness routines and felt isolated in their journey. The challenge was to create an experience that was both motivating and socially engaging without being overwhelming.',
-    solution: 'Implemented gamification elements, social challenges, and personalized goal tracking. Created an intuitive interface that made it easy for users to log activities and connect with friends.',
-    impact: 'App achieved 4.8-star rating on App Store with 50K+ downloads in the first 3 months. User retention rate of 68% after 30 days.',
-    detailImages: ['/work_details/2/detail1.jpg', '/work_details/2/detail2.jpg']
-  },
-  {
-    id: 3,
-    title: 'Design System',
-    category: 'Systems',
-    description: 'Component library for enterprise software',
-    image: '/work_images/work3.jpg',
-    heroImage: '/work_details/3/hero.jpg',
-    client: 'Enterprise Solutions Corp',
-    role: 'Design Systems Lead',
-    duration: '6 months',
-    overview: 'Built a comprehensive design system from the ground up for an enterprise software company, including component library, design tokens, and documentation to ensure consistency across multiple products.',
-    challenge: 'The organization had multiple products with inconsistent UI patterns, leading to poor user experience and increased development time. Teams were working in silos without shared design resources.',
-    solution: 'Created a scalable design system with reusable components, clear documentation, and implementation guidelines. Established governance processes and conducted training sessions for designers and developers.',
-    impact: 'Reduced design-to-development time by 40%. Improved cross-product consistency and decreased bug reports related to UI by 55%.',
-    detailImages: ['/work_details/3/detail1.jpg', '/work_details/3/detail2.jpg']
-  },
-  {
-    id: 4,
-    title: 'E-commerce Platform',
-    category: 'Product Design',
-    description: 'End-to-end shopping experience redesign',
-    image: '/work_images/work4.jpg',
-    heroImage: '/work_details/4/hero.jpg',
-    client: 'ShopFlow',
-    role: 'Lead Product Designer',
-    duration: '5 months',
-    overview: 'Redesigned the entire e-commerce experience from product discovery to checkout, focusing on reducing friction and increasing conversion rates through thoughtful UX improvements.',
-    challenge: 'The existing platform had a high cart abandonment rate of 72% and users complained about confusing navigation and complicated checkout process.',
-    solution: 'Streamlined the checkout process to 3 steps, improved product filtering and search, added wishlist functionality, and implemented smart recommendations based on user behavior.',
-    impact: 'Cart abandonment reduced to 48%, average order value increased by 25%, and customer satisfaction scores improved from 3.2 to 4.5 out of 5.',
-    detailImages: ['/work_details/4/detail1.jpg', '/work_details/4/detail2.jpg']
-  },
-  {
-    id: 5,
-    title: 'Dashboard Analytics',
-    category: 'UX Strategy',
-    description: 'Data visualization for business intelligence',
-    image: '/work_images/work5.jpg',
-    heroImage: '/work_details/5/hero.jpg',
-    client: 'DataViz Pro',
-    role: 'UX Strategist & Information Architect',
-    duration: '4 months',
-    overview: 'Designed an analytics dashboard that transforms complex business data into actionable insights through intuitive visualizations and customizable reporting features.',
-    challenge: 'Business users were overwhelmed by data and struggled to extract meaningful insights. The existing dashboard was cluttered and required extensive training to use effectively.',
-    solution: 'Created a hierarchical information architecture with progressive disclosure. Designed custom visualizations tailored to specific business metrics and implemented smart filtering and drill-down capabilities.',
-    impact: 'Time to insight reduced by 60%. User adoption increased from 35% to 82% across the organization. Training time decreased from 2 weeks to 2 days.',
-    detailImages: ['/work_details/5/detail1.jpg', '/work_details/5/detail2.jpg']
-  },
-  {
-    id: 6,
-    title: 'Web Platform',
-    category: 'Product Design',
-    description: 'SaaS platform for team collaboration',
-    image: '/work_images/work6.jpg',
-    heroImage: '/work_details/6/hero.jpg',
-    client: 'TeamSync',
-    role: 'Lead Product Designer',
-    duration: '7 months',
-    overview: 'Designed a comprehensive collaboration platform that brings together project management, communication, and file sharing in a unified, intuitive interface.',
-    challenge: 'Teams were using multiple tools for collaboration, leading to fragmented workflows and decreased productivity. Need for a unified solution that could replace 5+ different tools.',
-    solution: 'Created an integrated platform with real-time collaboration features, smart notifications, and seamless integrations with existing tools. Focused on reducing context switching and improving team visibility.',
-    impact: 'Teams reported 35% increase in productivity. Platform replaced average of 4.2 tools per team. NPS score of 67, placing it in the "excellent" category.',
-    detailImages: ['/work_details/6/detail1.jpg', '/work_details/6/detail2.jpg']
-  }
 ];

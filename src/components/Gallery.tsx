@@ -39,7 +39,7 @@ const Gallery = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="logo" onClick={() => navigate('/')}>
-          <img src="/icons/LUC_blackwhite.png" alt="LW" />
+          <img src="/icons/luc.png" alt="LW" />
         </div>
         <nav className="nav">
           <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }}>Home</a>

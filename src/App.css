@@ -2,11 +2,6 @@
 @import './styles/Navigation.css';
 
 @font-face {
-  font-family: 'Creative';
-  src: url('../public/fonts/Runtti-Regular.otf') format('opentype');
-}
-
-@font-face {
   font-family: 'Montserrat';
   src: url('../public/fonts/MontserratRegular-RpK6l.otf') format('opentype');
   font-weight: 400;
@@ -115,7 +110,7 @@ body {
   margin-bottom: 0.5rem;
   margin-top: 2rem;
   color: #ffffff;
-  font-family: 'Creative';
+  font-family: 'Montserrat';
   white-space: nowrap;
   margin-bottom: 5rem;
 }
@@ -272,7 +267,7 @@ body {
 }
 
 .work-section {
-  min-height: 100vh;
+  min-height: 10vh;
   padding: 4rem 4rem;
   position: relative;
   z-index: 10;
@@ -287,7 +282,7 @@ body {
   margin-bottom: 4rem;
   margin-top: 4rem;
   letter-spacing: -0.02em;
-  font-family: 'Creative';
+  font-family: 'Montserrat';
 }
 
 .work-grid {
