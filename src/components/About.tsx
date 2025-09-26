@@ -10,7 +10,7 @@ interface PersonalityItem {
   image?: string;
   video?: string;
   description: string;
-  type: 'image' | 'video';
+  type: "image" | "video";
 }
 
 interface VideoItem {
@@ -32,22 +32,22 @@ const About = () => {
     {
       image: "/assets/personality/pictures/music1.jpg",
       description: "Concert vibes",
-      type: 'image',
+      type: "image",
     },
     {
       image: "/assets/personality/pictures/music2.jpg",
       description: "Studio sessions",
-      type: 'image',
+      type: "image",
     },
     {
       image: "/assets/personality/pictures/music3.jpg",
       description: "Festival moments",
-      type: 'image',
+      type: "image",
     },
     {
       video: "/assets/personality/videos/night_espresso.mp4",
       description: "Night espresso vibes",
-      type: 'video',
+      type: "video",
     },
   ];
 
@@ -55,12 +55,12 @@ const About = () => {
     {
       image: "/assets/personality/pictures/dance1.jpg",
       description: "Dance performances",
-      type: 'image',
+      type: "image",
     },
     {
       image: "/assets/personality/pictures/dance2.jpg",
       description: "Movement expression",
-      type: 'image',
+      type: "image",
     },
   ];
 
@@ -68,22 +68,22 @@ const About = () => {
     {
       image: "/assets/personality/pictures/travel1.jpg",
       description: "Adventure awaits",
-      type: 'image',
+      type: "image",
     },
     {
       image: "/assets/personality/pictures/travel2.jpg",
       description: "Exploring new places",
-      type: 'image',
+      type: "image",
     },
     {
       image: "/assets/personality/pictures/travel3.jpg",
       description: "Journey discoveries",
-      type: 'image',
+      type: "image",
     },
     {
       image: "/assets/personality/pictures/travel4.jpg",
       description: "Travel memories",
-      type: 'image',
+      type: "image",
     },
   ];
 
@@ -107,12 +107,13 @@ const About = () => {
 
   const openModal = (items: PersonalityItem[], index: number) => {
     // Only open modal for images, not videos
-    if (items[index].type === 'video') return;
+    if (items[index].type === "video") return;
 
-    const allImageItems = [...musicItems, ...travelItems, ...danceItems]
-      .filter(item => item.type === 'image');
-    const globalIndex = allImageItems.findIndex(item =>
-      items[index] && item.image === items[index].image
+    const allImageItems = [...musicItems, ...travelItems, ...danceItems].filter(
+      (item) => item.type === "image"
+    );
+    const globalIndex = allImageItems.findIndex(
+      (item) => items[index] && item.image === items[index].image
     );
     setCurrentImageIndex(globalIndex >= 0 ? globalIndex : index);
     setIsModalOpen(true);
@@ -137,7 +138,7 @@ const About = () => {
   return (
     <div className="about-page">
       <motion.header
-        className="header about-header"
+        className="header"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -512,7 +513,11 @@ const About = () => {
 
             {/* Music Section */}
             <div className="personality-section music-section">
-              <img src="/icons/record_left.png" alt="Record" className="record-icon section-record left-record" />
+              <img
+                src="/icons/record_left.png"
+                alt="Record"
+                className="record-icon section-record left-record"
+              />
               <div className="section-header left-aligned">
                 <h3>MUSIC</h3>
               </div>
@@ -523,7 +528,7 @@ const About = () => {
                     className="personality-item"
                     onClick={() => openModal(musicItems, index)}
                   >
-                    {item.type === 'video' ? (
+                    {item.type === "video" ? (
                       <div className="video-frame ipad-frame">
                         <video
                           autoPlay
@@ -547,7 +552,11 @@ const About = () => {
 
             {/* Travel Section */}
             <div className="personality-section travel-section">
-              <img src="/icons/record_right.png" alt="Record" className="record-icon section-record right-record" />
+              <img
+                src="/icons/record_right.png"
+                alt="Record"
+                className="record-icon section-record right-record"
+              />
               <div className="section-header right-aligned">
                 <h3>TRAVEL</h3>
               </div>
@@ -568,7 +577,11 @@ const About = () => {
 
             {/* Dance Section */}
             <div className="personality-section dance-section">
-              <img src="/icons/record_left.png" alt="Record" className="record-icon section-record left-record" />
+              <img
+                src="/icons/record_left.png"
+                alt="Record"
+                className="record-icon section-record left-record"
+              />
               <div className="section-header left-aligned">
                 <h3>DANCE</h3>
               </div>
@@ -659,7 +672,7 @@ const About = () => {
         isOpen={isModalOpen}
         onClose={closeModal}
         images={[...musicItems, ...travelItems, ...danceItems]
-          .filter(item => item.type === 'image')
+          .filter((item) => item.type === "image")
           .map((item) => ({
             src: item.image!,
             alt: item.description,

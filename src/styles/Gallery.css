@@ -1,5 +1,5 @@
 /* Import centralized navigation styles */
-@import './Navigation.css';
+@import "./Navigation.css";
 
 /* Gallery Page Styles */
 .gallery-page {
@@ -7,15 +7,9 @@
   background-color: #ffffff;
 }
 
-.gallery-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e0e0e0;
+/* Header override for Gallery page - solid black instead of transparent */
+.gallery-page .header {
+  background: #000000 !important;
 }
 
 .gallery-main {
@@ -41,7 +35,7 @@
   color: #1a1a1a;
   margin-bottom: 30px;
   line-height: 1.1;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .gallery-description {
@@ -125,7 +119,7 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #FF743A;
+  color: #ff743a;
   margin-bottom: 8px;
   display: block;
 }
@@ -136,7 +130,7 @@
   color: #ffffff;
   margin-bottom: 8px;
   line-height: 1.2;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .gallery-item-description {
