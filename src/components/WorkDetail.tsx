@@ -1,21 +1,90 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { motion } from "framer-motion";
 import { useMusic } from "./BackgroundMusic";
 import {
   worksData,
   WorkDetail as WorkData,
   ContentBlock,
+  VideoBlock,
 } from "../data/worksData";
 import ImageModal from "./ImageModal";
+import VideoModal from "./VideoModal";
 import "../styles/WorkDetail.css";
+
+const VideoBlockComponent = ({
+  block,
+  marginStyle,
+  onVideoClick,
+}: {
+  block: VideoBlock;
+  marginStyle: React.CSSProperties;
+  onVideoClick: (videoSrc: string, title: string) => void;
+}) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const togglePlayPause = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (isPlaying) {
+      video.pause();
+    } else {
+      video.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  const handleVideoClick = () => {
+    onVideoClick(block.src, block.title || "Video");
+  };
+
+  return (
+    <div
+      className={`video-block ${block.size || "medium"}`}
+      style={marginStyle}
+    >
+      <div className="video-inline-container">
+        <video
+          ref={videoRef}
+          className="video-inline"
+          src={block.src}
+          onClick={handleVideoClick}
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+        />
+        <div className="video-inline-controls">
+          <button
+            className="video-play-pause-btn"
+            onClick={togglePlayPause}
+            aria-label={isPlaying ? "Pause" : "Play"}
+          >
+            {isPlaying ? "⏸" : "▶"}
+          </button>
+          <button
+            className="video-fullscreen-btn"
+            onClick={handleVideoClick}
+            aria-label="Open fullscreen"
+          >
+            ⛶
+          </button>
+        </div>
+      </div>
+      {block.caption && <figcaption>{block.caption}</figcaption>}
+    </div>
+  );
+};
 
 const ContentRenderer = ({
   blocks,
-  onImageClick
+  onImageClick,
+  onVideoClick
 }: {
   blocks: ContentBlock[];
   onImageClick: (imageSrc: string) => void;
+  onVideoClick: (videoSrc: string, title: string) => void;
 }) => {
   const getMarginStyle = (block: ContentBlock) => {
     const style: React.CSSProperties = {};
@@ -272,13 +341,21 @@ const ContentRenderer = ({
                     className={`image-item ${
                       img.span ? `span-${img.span}` : ""
                     }`}
+                    style={{
+                      ...(img.height && { height: img.height })
+                    }}
                   >
                     <img
                       src={img.src}
                       alt={img.alt || ""}
                       className="clickable-image"
                       onClick={() => onImageClick(img.src)}
-                      style={{ cursor: 'pointer' }}
+                      style={{
+                        cursor: 'pointer',
+                        ...(img.height && { height: '100%', width: 'auto' }),
+                        ...(img.position && { objectPosition: img.position }),
+                        ...(img.objectFit && { objectFit: img.objectFit })
+                      }}
                     />
                     {img.caption && <figcaption>{img.caption}</figcaption>}
                   </div>
@@ -324,6 +401,16 @@ const ContentRenderer = ({
               </div>
             );
 
+          case "video":
+            return (
+              <VideoBlockComponent
+                key={index}
+                block={block}
+                marginStyle={marginStyle}
+                onVideoClick={onVideoClick}
+              />
+            );
+
           case "spacer":
             return (
               <div
@@ -350,6 +437,9 @@ const WorkDetail = () => {
   const [showFooter, setShowFooter] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImageIndex, setModalImageIndex] = useState(0);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [currentVideoSrc, setCurrentVideoSrc] = useState("");
+  const [currentVideoTitle, setCurrentVideoTitle] = useState("");
 
   // Extract all images from work data in order
   const allImages = useMemo(() => {
@@ -464,6 +554,16 @@ const WorkDetail = () => {
 
   const navigateModal = (index: number) => {
     setModalImageIndex(index);
+  };
+
+  const openVideoModal = (videoSrc: string, title: string) => {
+    setCurrentVideoSrc(videoSrc);
+    setCurrentVideoTitle(title);
+    setIsVideoModalOpen(true);
+  };
+
+  const closeVideoModal = () => {
+    setIsVideoModalOpen(false);
   };
 
   useEffect(() => {
@@ -682,7 +782,7 @@ const WorkDetail = () => {
                     className="work-section"
                   >
                     <h2>{section.title}</h2>
-                    <ContentRenderer blocks={section.blocks} onImageClick={openModal} />
+                    <ContentRenderer blocks={section.blocks} onImageClick={openModal} onVideoClick={openVideoModal} />
                   </section>
                 );
               }
@@ -735,6 +835,13 @@ const WorkDetail = () => {
         isOpen={isModalOpen}
         onClose={closeModal}
         onNavigate={navigateModal}
+      />
+
+      <VideoModal
+        isOpen={isVideoModalOpen}
+        onClose={closeVideoModal}
+        videoSrc={currentVideoSrc}
+        title={currentVideoTitle}
       />
     </div>
   );
