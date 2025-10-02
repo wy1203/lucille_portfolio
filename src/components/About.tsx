@@ -21,10 +21,14 @@ interface VideoItem {
 
 // Instagram-style action icon SVG paths
 const ICON_PATHS = {
-  heart: "M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z",
-  comment: "M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z",
-  share: "M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3 3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6 1 1.2 1.1h.2c.5 0 1-.3 1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2 6.1h35.5L18 18.7 5.2 6.1zm18.7 33.6l-4.4-18.4L42.4 8.6 23.9 39.7z",
-  bookmark: "M43.5 48c-.4 0-.8-.2-1.1-.4L24 29 5.6 47.6c-.4.4-1.1.6-1.6.3-.6-.2-1-.8-1-1.4v-45C3 .7 3.7 0 4.5 0h39c.8 0 1.5.7 1.5 1.5v45c0 .6-.4 1.2-.9 1.4-.2.1-.4.1-.6.1zM24 26c.8 0 1.6.3 2.2.9l15.8 16V3H6v39.9l15.8-16c.6-.6 1.4-.9 2.2-.9z"
+  heart:
+    "M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z",
+  comment:
+    "M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z",
+  share:
+    "M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3 3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6 1 1.2 1.1h.2c.5 0 1-.3 1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2 6.1h35.5L18 18.7 5.2 6.1zm18.7 33.6l-4.4-18.4L42.4 8.6 23.9 39.7z",
+  bookmark:
+    "M43.5 48c-.4 0-.8-.2-1.1-.4L24 29 5.6 47.6c-.4.4-1.1.6-1.6.3-.6-.2-1-.8-1-1.4v-45C3 .7 3.7 0 4.5 0h39c.8 0 1.5.7 1.5 1.5v45c0 .6-.4 1.2-.9 1.4-.2.1-.4.1-.6.1zM24 26c.8 0 1.6.3 2.2.9l15.8 16V3H6v39.9l15.8-16c.6-.6 1.4-.9 2.2-.9z",
 } as const;
 
 const About = () => {
@@ -80,7 +84,7 @@ const About = () => {
     },
     {
       image: "/assets/personality/pictures/travel2.jpg",
-      description: "Exploring new places",
+      description: "Ithaca, NY",
       type: "image",
     },
     {
@@ -91,6 +95,16 @@ const About = () => {
     {
       image: "/assets/personality/pictures/travel4.jpg",
       description: "Travel memories",
+      type: "image",
+    },
+    {
+      image: "/assets/personality/pictures/travel5.jpg",
+      description: "Jinan, China",
+      type: "image",
+    },
+    {
+      image: "/assets/personality/pictures/travel6.jpg",
+      description: "New York",
       type: "image",
     },
   ];
@@ -202,22 +216,171 @@ const About = () => {
         <div className="about-container">
           <section className="about-intro">
             <div className="about-profile">
-              <img
-                src="/icons/luc.png"
-                alt="Lucille Wang"
-                className="profile-image"
-              />
               <div className="profile-content">
-                <h1>Lucille Wang</h1>
-                <p className="about-description">
-                  I'm a Design Strategy student at Cornell University,
-                  passionate about creating human-centered solutions that bridge
-                  design, business, and technology. My work focuses on
-                  understanding user needs and translating them into meaningful,
-                  impactful experiences.
-                </p>
+                <div className="intro-header">
+                  <h1>
+                    Hi, I'm Lucille -- I use creativity and design to improve
+                    people's experiences :)
+                  </h1>
+                </div>
+
+                <ul className="intro-list">
+                  <li className="intro-item">
+                    <p>
+                      I was born in Shandong, China, a region known for its
+                      warmth and hospitality, and later moved to the Bay Area,
+                      California, where new opportunities exposed me to diverse
+                      perspectives. Growing up between these cultures shaped my
+                      belief that{" "}
+                      <strong>design is ultimately about connection</strong> —
+                      between people, ideas, and environments. My design journey
+                      began in middle school with engineering, experimenting
+                      with Rhino 3D, laser cutters, and 3D printers. Over time,
+                      my curiosity expanded into art, where printmaking,
+                      installations, and visual storytelling became ways to
+                      transform thoughts into tangible experiences.
+                    </p>
+                  </li>
+                  <li className="intro-item">
+                    <p>
+                      Now a senior at <strong>Cornell University</strong> in
+                      Human Centered Design, graduating in May 2026 with a{" "}
+                      <strong>B.S. in Design and Environmental Analysis</strong>
+                      , I’ve learned to approach design with both empathy and
+                      evidence. Whether through sketches, 3D models, or
+                      prototypes, I create design stories that combine research,
+                      imagination, and personal style to solve{" "}
+                      <strong>real-world problems</strong>.
+                    </p>
+                  </li>
+                  <li className="intro-item">
+                    <p>
+                      My work centers on{" "}
+                      <strong>
+                        design strategy, spatial design, and interior
+                        architecture
+                      </strong>
+                      , guided by a systemic and holistic perspective. I believe{" "}
+                      <strong>
+                        spaces can profoundly shape our health, behavior, and
+                        well-being
+                      </strong>{" "}
+                      — and that design, at its best, is a{" "}
+                      <strong>humane tool to make life meaningful</strong>. .
+                    </p>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="profile-images">
+                <div className="image-frame">
+                  <img
+                    src="/assets/personality/pictures/travel5.jpg"
+                    alt="Lucille Wang"
+                  />
+                  <div className="instagram-actions">
+                    <div className="action-left">
+                      <svg
+                        className="action-icon heart"
+                        viewBox="0 0 48 48"
+                        width="28"
+                        height="28"
+                      >
+                        <path d={ICON_PATHS.heart} fill="#ed4956" />
+                      </svg>
+                      <svg
+                        className="action-icon comment"
+                        viewBox="0 0 48 48"
+                        width="28"
+                        height="28"
+                      >
+                        <path d={ICON_PATHS.comment} fill="#262626" />
+                      </svg>
+                      <svg
+                        className="action-icon share"
+                        viewBox="0 0 48 48"
+                        width="28"
+                        height="28"
+                      >
+                        <path d={ICON_PATHS.share} fill="#262626" />
+                      </svg>
+                    </div>
+                    <div className="action-right">
+                      <svg
+                        className="action-icon bookmark"
+                        viewBox="0 0 48 48"
+                        width="28"
+                        height="28"
+                      >
+                        <path d={ICON_PATHS.bookmark} fill="#262626" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div className="image-frame">
+                  <img
+                    src="/assets/personality/pictures/travel1.jpg"
+                    alt="Lucille Wang"
+                  />
+                  <div className="instagram-actions">
+                    <div className="action-left">
+                      <svg
+                        className="action-icon heart"
+                        viewBox="0 0 48 48"
+                        width="28"
+                        height="28"
+                      >
+                        <path d={ICON_PATHS.heart} fill="#ed4956" />
+                      </svg>
+                      <svg
+                        className="action-icon comment"
+                        viewBox="0 0 48 48"
+                        width="28"
+                        height="28"
+                      >
+                        <path d={ICON_PATHS.comment} fill="#262626" />
+                      </svg>
+                      <svg
+                        className="action-icon share"
+                        viewBox="0 0 48 48"
+                        width="28"
+                        height="28"
+                      >
+                        <path d={ICON_PATHS.share} fill="#262626" />
+                      </svg>
+                    </div>
+                    <div className="action-right">
+                      <svg
+                        className="action-icon bookmark"
+                        viewBox="0 0 48 48"
+                        width="28"
+                        height="28"
+                      >
+                        <path d={ICON_PATHS.bookmark} fill="#262626" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+          </section>
+
+          <section className="about-values">
+            <h2>My Core Values :)</h2>
+            <ul className="values-list">
+              <li className="value-item">
+                <span>Be curious and always learn</span>
+                <span className="value-emoji">🤯</span>
+              </li>
+              <li className="value-item">
+                <span>Listen with empathy and care</span>
+                <span className="value-emoji">😎</span>
+              </li>
+              <li className="value-item">
+                <span>Build genuine friendships</span>
+                <span className="value-emoji">🥰</span>
+              </li>
+            </ul>
           </section>
 
           <section className="about-experience">
@@ -519,36 +682,19 @@ const About = () => {
           <section className="about-personality">
             <h2>When I'm Not Designing</h2>
 
-            {/* Music Section */}
-            <div className="personality-section music-section">
-              <img
-                src="/icons/record_left.png"
-                alt="Record"
-                className="record-icon section-record left-record"
-              />
-              <div className="section-header left-aligned">
-                <h3>MUSIC</h3>
-              </div>
-              <div className="personality-grid two-per-row">
-                {musicItems.map((item, index) => (
-                  <div
-                    key={index}
-                    className="personality-item"
-                    onClick={() => openModal(musicItems, index)}
-                  >
-                    {item.type === "video" ? (
-                      <div className="video-frame ipad-frame">
-                        <video
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="personality-video"
-                        >
-                          <source src={item.video} type="video/mp4" />
-                        </video>
-                      </div>
-                    ) : (
+            <section className="about-personality dance-personality">
+              {/* Dance Section */}
+              <div className="personality-section dance-section">
+                <div className="section-header left-aligned">
+                  <h3>DANCE</h3>
+                </div>
+                <div className="personality-grid two-per-row">
+                  {danceItems.map((item, index) => (
+                    <div
+                      key={index}
+                      className="personality-item"
+                      onClick={() => openModal(danceItems, index)}
+                    >
                       <div className="image-frame">
                         <img src={item.image} alt={item.description} />
                         <div className="instagram-actions">
@@ -590,19 +736,43 @@ const About = () => {
                           </div>
                         </div>
                       </div>
-                    )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Dance Videos */}
+            <section className="about-phone-videos">
+              <div className="phone-videos-container">
+                {videoItems.map((video, index) => (
+                  <div
+                    key={index}
+                    className="phone-mockup"
+                    onClick={() => openVideoModal(video.src, video.title)}
+                  >
+                    <div className="volume-up"></div>
+                    <div className="volume-down"></div>
+                    <div className="power-button"></div>
+                    <div className="phone-screen">
+                      <video
+                        className="phone-video"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      >
+                        <source src={video.src} type="video/mp4" />
+                      </video>
+                    </div>
+                    <div className="phone-caption">{video.caption}</div>
                   </div>
                 ))}
               </div>
-            </div>
+            </section>
 
             {/* Travel Section */}
             <div className="personality-section travel-section">
-              <img
-                src="/icons/record_right.png"
-                alt="Record"
-                className="record-icon section-record right-record"
-              />
               <div className="section-header right-aligned">
                 <h3>TRAVEL</h3>
               </div>
@@ -658,24 +828,37 @@ const About = () => {
                 ))}
               </div>
             </div>
+          </section>
 
-            {/* Dance Section */}
-            <div className="personality-section dance-section">
-              <img
-                src="/icons/record_left.png"
-                alt="Record"
-                className="record-icon section-record left-record"
-              />
-              <div className="section-header left-aligned">
-                <h3>DANCE</h3>
-              </div>
-              <div className="personality-grid two-per-row">
-                {danceItems.map((item, index) => (
-                  <div
-                    key={index}
-                    className="personality-item"
-                    onClick={() => openModal(danceItems, index)}
-                  >
+          {/* Music Section */}
+          <div className="personality-section music-section">
+            <div className="section-header left-aligned">
+              <h3>MUSIC</h3>
+            </div>
+            <div className="personality-grid">
+              {musicItems.map((item, index) => (
+                <div
+                  key={index}
+                  className="personality-item"
+                  onClick={() =>
+                    item.type === "video"
+                      ? openVideoModal(item.video!, item.description)
+                      : openModal(musicItems, index)
+                  }
+                >
+                  {item.type === "video" ? (
+                    <div className="video-frame ipad-frame">
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="personality-video"
+                      >
+                        <source src={item.video} type="video/mp4" />
+                      </video>
+                    </div>
+                  ) : (
                     <div className="image-frame">
                       <img src={item.image} alt={item.description} />
                       <div className="instagram-actions">
@@ -717,39 +900,11 @@ const About = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <section className="about-phone-videos">
-            <div className="phone-videos-container">
-              {videoItems.map((video, index) => (
-                <div
-                  key={index}
-                  className="phone-mockup"
-                  onClick={() => openVideoModal(video.src, video.title)}
-                >
-                  <div className="volume-up"></div>
-                  <div className="volume-down"></div>
-                  <div className="power-button"></div>
-                  <div className="phone-screen">
-                    <video
-                      className="phone-video"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                    >
-                      <source src={video.src} type="video/mp4" />
-                    </video>
-                  </div>
-                  <div className="phone-caption">{video.caption}</div>
+                  )}
                 </div>
               ))}
             </div>
-          </section>
+          </div>
         </div>
       </motion.main>
 
