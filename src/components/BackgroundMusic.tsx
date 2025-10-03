@@ -15,7 +15,7 @@ interface MusicProviderProps {
 
 export const MusicProvider: React.FC<MusicProviderProps> = ({ children }) => {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
-  const [volume, setVolumeState] = useState(50);
+  const [volume, setVolumeState] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
