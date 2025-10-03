@@ -2,7 +2,9 @@ import React, { createContext, useContext, useState, useEffect, useRef, ReactNod
 
 interface MusicContextType {
   isMusicPlaying: boolean;
+  volume: number;
   toggleMusic: () => void;
+  setVolume: (volume: number) => void;
 }
 
 const MusicContext = createContext<MusicContextType | undefined>(undefined);
@@ -13,15 +15,16 @@ interface MusicProviderProps {
 
 export const MusicProvider: React.FC<MusicProviderProps> = ({ children }) => {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const [volume, setVolumeState] = useState(50);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    audioRef.current = new Audio('/assets/sound/Main.mp3');
-    audioRef.current.loop = true;
+    const audio = new Audio('/assets/sound/Main.mp3');
+    audio.loop = true;
+    audio.volume = 0.5; // Set initial volume to 50%
+    audioRef.current = audio;
 
     // Add event listeners to sync state with actual playback
-    const audio = audioRef.current;
-
     const handlePlay = () => setIsMusicPlaying(true);
     const handlePause = () => setIsMusicPlaying(false);
 
@@ -31,24 +34,23 @@ export const MusicProvider: React.FC<MusicProviderProps> = ({ children }) => {
     // Auto-play music when component mounts
     const playMusic = async () => {
       try {
-        await audioRef.current?.play();
-        // State will be updated by the 'play' event listener
+        await audio.play();
+        console.log('Music started playing');
       } catch (error) {
-        // If auto-play is blocked by browser, state remains false
-        console.log('Auto-play blocked by browser');
+        console.log('Auto-play blocked by browser. Click anywhere to start music.');
         setIsMusicPlaying(false);
       }
     };
 
+    // Try to play immediately
     playMusic();
 
+    // Cleanup
     return () => {
-      if (audioRef.current) {
-        audioRef.current.removeEventListener('play', handlePlay);
-        audioRef.current.removeEventListener('pause', handlePause);
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
+      audio.removeEventListener('play', handlePlay);
+      audio.removeEventListener('pause', handlePause);
+      audio.pause();
+      audio.src = '';
     };
   }, []);
 
@@ -57,14 +59,31 @@ export const MusicProvider: React.FC<MusicProviderProps> = ({ children }) => {
       if (isMusicPlaying) {
         audioRef.current.pause();
       } else {
-        audioRef.current.play();
+        audioRef.current.play().catch(err => {
+          console.error('Playback failed:', err);
+        });
       }
-      setIsMusicPlaying(!isMusicPlaying);
+    }
+  };
+
+  const setVolume = (newVolume: number) => {
+    const volumeValue = newVolume / 100;
+    setVolumeState(newVolume);
+    if (audioRef.current) {
+      audioRef.current.volume = volumeValue;
+      console.log('Volume changed to:', volumeValue, '(', newVolume, '%)');
+
+      // If volume is being set and music isn't playing, try to start it
+      if (!isMusicPlaying && volumeValue > 0) {
+        audioRef.current.play().catch(err => {
+          console.log('Could not auto-play when volume changed:', err);
+        });
+      }
     }
   };
 
   return (
-    <MusicContext.Provider value={{ isMusicPlaying, toggleMusic }}>
+    <MusicContext.Provider value={{ isMusicPlaying, volume, toggleMusic, setVolume }}>
       {children}
     </MusicContext.Provider>
   );

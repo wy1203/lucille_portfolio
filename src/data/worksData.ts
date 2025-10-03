@@ -1,5 +1,6 @@
 export type ContentBlockType =
   | "text"
+  | "title"
   | "list"
   | "image"
   | "image-pair"
@@ -21,6 +22,18 @@ export interface TextBlock extends BaseContentBlock {
   content: string;
   size?: "normal" | "large" | "small";
   emphasis?: boolean;
+}
+
+export interface TitleBlock extends BaseContentBlock {
+  type: "title";
+  content: string;
+  size?: "small" | "medium" | "large" | "xlarge" | string; // Preset sizes or custom CSS value (e.g., "3rem", "48px")
+  color?: string; // CSS color value (e.g., "#000", "rgb(0,0,0)", "var(--primary)")
+  align?: "left" | "center" | "right";
+  weight?: "normal" | "medium" | "semibold" | "bold" | number; // CSS font-weight
+  lineHeight?: string; // CSS line-height value
+  letterSpacing?: string; // CSS letter-spacing value
+  textTransform?: "none" | "uppercase" | "lowercase" | "capitalize";
 }
 
 export interface ListBlock extends BaseContentBlock {
@@ -122,6 +135,7 @@ export interface SpacerBlock extends BaseContentBlock {
 
 export type ContentBlock =
   | TextBlock
+  | TitleBlock
   | ListBlock
   | ImageBlock
   | ImagePairBlock

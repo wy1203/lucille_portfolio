@@ -3,6 +3,8 @@ import { motion, useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useMusic } from "./BackgroundMusic";
 import { worksData } from "../data/worksData";
+import SplitText from "../react_bits_effects/SplitText";
+import ElasticSlider from "../react_bits_effects/ElasticSlider";
 
 interface Work {
   id: number;
@@ -28,7 +30,7 @@ const MainContent = () => {
   const navigate = useNavigate();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
-  const { isMusicPlaying, toggleMusic } = useMusic();
+  const { volume, setVolume } = useMusic();
   const workSectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -180,12 +182,9 @@ const MainContent = () => {
           >
             Resume
           </a>
-          <button className="music-toggle" onClick={toggleMusic}>
-            <img
-              src={isMusicPlaying ? "/icons/sound.png" : "/icons/mute.png"}
-              alt={isMusicPlaying ? "Sound on" : "Sound off"}
-            />
-          </button>
+          <div className="music-toggle">
+            <ElasticSlider value={volume} onValueChange={setVolume} />
+          </div>
         </nav>
       </motion.header>
 
@@ -196,15 +195,19 @@ const MainContent = () => {
         transition={{ duration: 0.8, delay: 0.4 }}
       >
         <h1 className="hero-title">
-          <span className="name">Hi, I'm Lucille Wang!</span>
+          <span className="name">
+            <SplitText text="Hi, I'm Lucille Wang!" delay={1.0} />
+          </span>
           <span className="title">
-            Design strategist studying{" "}
-            <strong>Design and Environmental Analysis</strong> at Cornell
-            University. I mix{" "}
-            <strong>
-              human-centered design, business insight, and technology
-            </strong>{" "}
-            to build impactful, future-ready environments.
+            <SplitText delay={1.5} type="words">
+              Design strategist studying{" "}
+              <strong>Design and Environmental Analysis</strong> at Cornell
+              University. I mix{" "}
+              <strong>
+                human-centered design, business insight, and technology
+              </strong>{" "}
+              to build impactful, future-ready environments.
+            </SplitText>
           </span>
         </h1>
 

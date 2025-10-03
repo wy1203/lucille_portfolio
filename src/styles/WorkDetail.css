@@ -301,15 +301,26 @@
   color: #000000;
 }
 
+/* Title Blocks */
+.title-block {
+  margin: 1.5rem 0 1rem 0;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.3;
+}
+
 /* Inline Formatting */
 .text-block strong,
-.list-block strong {
+.list-block strong,
+.title-block strong {
   font-weight: 600;
   color: #000000;
 }
 
 .text-block em,
-.list-block em {
+.list-block em,
+.title-block em {
   font-style: italic;
   color: #000000;
 }

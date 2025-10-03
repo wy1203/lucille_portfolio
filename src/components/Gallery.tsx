@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useMusic } from './BackgroundMusic';
+import ElasticSlider from '../react_bits_effects/ElasticSlider';
 import '../styles/Gallery.css';
 
 interface GalleryItem {
@@ -14,7 +15,7 @@ interface GalleryItem {
 
 const Gallery = () => {
   const navigate = useNavigate();
-  const { isMusicPlaying, toggleMusic } = useMusic();
+  const { volume, setVolume } = useMusic();
   const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([]);
 
   useEffect(() => {
@@ -46,12 +47,9 @@ const Gallery = () => {
           <a href="/about" onClick={(e) => { e.preventDefault(); window.scrollTo(0, 0); navigate('/about'); }}>About</a>
           <a href="/gallery" className="active">Gallery</a>
           <a href="/data/Lucille Wang_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-          <button className="music-toggle" onClick={toggleMusic}>
-            <img
-              src={isMusicPlaying ? '/icons/sound.png' : '/icons/mute.png'}
-              alt={isMusicPlaying ? 'Sound on' : 'Sound off'}
-            />
-          </button>
+          <div className="music-toggle">
+            <ElasticSlider value={volume} onValueChange={setVolume} />
+          </div>
         </nav>
       </motion.header>
 

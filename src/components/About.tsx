@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useMusic } from "./BackgroundMusic";
 import ImageModal from "./ImageModal";
 import VideoModal from "./VideoModal";
+import ElasticSlider from "../react_bits_effects/ElasticSlider";
 import "../styles/About.css";
 
 interface PersonalityItem {
@@ -33,7 +34,7 @@ const ICON_PATHS = {
 
 const About = () => {
   const navigate = useNavigate();
-  const { isMusicPlaying, toggleMusic } = useMusic();
+  const { volume, setVolume } = useMusic();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -127,11 +128,25 @@ const About = () => {
     },
   ];
 
+  // Profile photos that appear at the top
+  const profilePhotos: PersonalityItem[] = [
+    {
+      image: "/assets/personality/pictures/travel5.jpg",
+      description: "Jinan, China",
+      type: "image",
+    },
+    {
+      image: "/assets/personality/pictures/travel1.jpg",
+      description: "Adventure awaits",
+      type: "image",
+    },
+  ];
+
   const openModal = (items: PersonalityItem[], index: number) => {
     // Only open modal for images, not videos
     if (items[index].type === "video") return;
 
-    const allImageItems = [...musicItems, ...travelItems, ...danceItems].filter(
+    const allImageItems = [...profilePhotos, ...danceItems, ...travelItems, ...musicItems].filter(
       (item) => item.type === "image"
     );
     const globalIndex = allImageItems.findIndex(
@@ -198,12 +213,9 @@ const About = () => {
           >
             Resume
           </a>
-          <button className="music-toggle" onClick={toggleMusic}>
-            <img
-              src={isMusicPlaying ? "/icons/sound.png" : "/icons/mute.png"}
-              alt={isMusicPlaying ? "Sound on" : "Sound off"}
-            />
-          </button>
+          <div className="music-toggle">
+            <ElasticSlider value={volume} onValueChange={setVolume} />
+          </div>
         </nav>
       </motion.header>
 
@@ -273,94 +285,57 @@ const About = () => {
               </div>
 
               <div className="profile-images">
-                <div className="image-frame">
-                  <img
-                    src="/assets/personality/pictures/travel5.jpg"
-                    alt="Lucille Wang"
-                  />
-                  <div className="instagram-actions">
-                    <div className="action-left">
-                      <svg
-                        className="action-icon heart"
-                        viewBox="0 0 48 48"
-                        width="28"
-                        height="28"
-                      >
-                        <path d={ICON_PATHS.heart} fill="#ed4956" />
-                      </svg>
-                      <svg
-                        className="action-icon comment"
-                        viewBox="0 0 48 48"
-                        width="28"
-                        height="28"
-                      >
-                        <path d={ICON_PATHS.comment} fill="#262626" />
-                      </svg>
-                      <svg
-                        className="action-icon share"
-                        viewBox="0 0 48 48"
-                        width="28"
-                        height="28"
-                      >
-                        <path d={ICON_PATHS.share} fill="#262626" />
-                      </svg>
-                    </div>
-                    <div className="action-right">
-                      <svg
-                        className="action-icon bookmark"
-                        viewBox="0 0 48 48"
-                        width="28"
-                        height="28"
-                      >
-                        <path d={ICON_PATHS.bookmark} fill="#262626" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="image-frame">
-                  <img
-                    src="/assets/personality/pictures/travel1.jpg"
-                    alt="Lucille Wang"
-                  />
-                  <div className="instagram-actions">
-                    <div className="action-left">
-                      <svg
-                        className="action-icon heart"
-                        viewBox="0 0 48 48"
-                        width="28"
-                        height="28"
-                      >
-                        <path d={ICON_PATHS.heart} fill="#ed4956" />
-                      </svg>
-                      <svg
-                        className="action-icon comment"
-                        viewBox="0 0 48 48"
-                        width="28"
-                        height="28"
-                      >
-                        <path d={ICON_PATHS.comment} fill="#262626" />
-                      </svg>
-                      <svg
-                        className="action-icon share"
-                        viewBox="0 0 48 48"
-                        width="28"
-                        height="28"
-                      >
-                        <path d={ICON_PATHS.share} fill="#262626" />
-                      </svg>
-                    </div>
-                    <div className="action-right">
-                      <svg
-                        className="action-icon bookmark"
-                        viewBox="0 0 48 48"
-                        width="28"
-                        height="28"
-                      >
-                        <path d={ICON_PATHS.bookmark} fill="#262626" />
-                      </svg>
+                {profilePhotos.map((item, index) => (
+                  <div
+                    key={index}
+                    className="image-frame"
+                    onClick={() => openModal(profilePhotos, index)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <img
+                      src={item.image}
+                      alt="Lucille Wang"
+                    />
+                    <div className="instagram-actions">
+                      <div className="action-left">
+                        <svg
+                          className="action-icon heart"
+                          viewBox="0 0 48 48"
+                          width="28"
+                          height="28"
+                        >
+                          <path d={ICON_PATHS.heart} fill="#ed4956" />
+                        </svg>
+                        <svg
+                          className="action-icon comment"
+                          viewBox="0 0 48 48"
+                          width="28"
+                          height="28"
+                        >
+                          <path d={ICON_PATHS.comment} fill="#262626" />
+                        </svg>
+                        <svg
+                          className="action-icon share"
+                          viewBox="0 0 48 48"
+                          width="28"
+                          height="28"
+                        >
+                          <path d={ICON_PATHS.share} fill="#262626" />
+                        </svg>
+                      </div>
+                      <div className="action-right">
+                        <svg
+                          className="action-icon bookmark"
+                          viewBox="0 0 48 48"
+                          width="28"
+                          height="28"
+                        >
+                          <path d={ICON_PATHS.bookmark} fill="#262626" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           </section>
@@ -948,7 +923,7 @@ const About = () => {
       <ImageModal
         isOpen={isModalOpen}
         onClose={closeModal}
-        images={[...musicItems, ...travelItems, ...danceItems]
+        images={[...profilePhotos, ...danceItems, ...travelItems, ...musicItems]
           .filter((item) => item.type === "image")
           .map((item) => ({
             src: item.image!,

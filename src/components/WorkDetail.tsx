@@ -10,6 +10,7 @@ import {
 } from "../data/worksData";
 import ImageModal from "./ImageModal";
 import VideoModal from "./VideoModal";
+import ElasticSlider from "../react_bits_effects/ElasticSlider";
 import "../styles/WorkDetail.css";
 
 const VideoBlockComponent = ({
@@ -114,6 +115,49 @@ const ContentRenderer = ({
                   block.emphasis ? "emphasis" : ""
                 }`}
                 style={marginStyle}
+                dangerouslySetInnerHTML={{ __html: parseInlineFormatting(block.content) }}
+              />
+            );
+
+          case "title":
+            const getFontSize = (size?: string) => {
+              if (!size) return undefined;
+              const presetSizes: Record<string, string> = {
+                small: "1.5rem",
+                medium: "2rem",
+                large: "2.5rem",
+                xlarge: "3rem",
+              };
+              return presetSizes[size] || size;
+            };
+
+            const getFontWeight = (weight?: string | number) => {
+              if (!weight) return undefined;
+              const presetWeights: Record<string, string> = {
+                normal: "400",
+                medium: "500",
+                semibold: "600",
+                bold: "700",
+              };
+              return typeof weight === "number" ? weight : presetWeights[weight] || weight;
+            };
+
+            const titleStyle: React.CSSProperties = {
+              ...marginStyle,
+              ...(block.size && { fontSize: getFontSize(block.size) }),
+              ...(block.color && { color: block.color }),
+              ...(block.align && { textAlign: block.align }),
+              ...(block.weight && { fontWeight: getFontWeight(block.weight) }),
+              ...(block.lineHeight && { lineHeight: block.lineHeight }),
+              ...(block.letterSpacing && { letterSpacing: block.letterSpacing }),
+              ...(block.textTransform && { textTransform: block.textTransform }),
+            };
+
+            return (
+              <h3
+                key={index}
+                className="title-block"
+                style={titleStyle}
                 dangerouslySetInnerHTML={{ __html: parseInlineFormatting(block.content) }}
               />
             );
@@ -431,7 +475,7 @@ const ContentRenderer = ({
 const WorkDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { isMusicPlaying, toggleMusic } = useMusic();
+  const { volume, setVolume } = useMusic();
   const [work, setWork] = useState<WorkData | null>(null);
   const [activeSection, setActiveSection] = useState("overview");
   const [showFooter, setShowFooter] = useState(false);
@@ -676,12 +720,9 @@ const WorkDetail = () => {
           >
             Resume
           </a>
-          <button className="music-toggle" onClick={toggleMusic}>
-            <img
-              src={isMusicPlaying ? "/icons/sound.png" : "/icons/mute.png"}
-              alt={isMusicPlaying ? "Sound on" : "Sound off"}
-            />
-          </button>
+          <div className="music-toggle">
+            <ElasticSlider value={volume} onValueChange={setVolume} />
+          </div>
         </nav>
       </motion.header>
 
