@@ -1,4 +1,11 @@
-import React, { createContext, useContext, useState, useEffect, useRef, ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+  ReactNode,
+} from "react";
 
 interface MusicContextType {
   isMusicPlaying: boolean;
@@ -19,25 +26,27 @@ export const MusicProvider: React.FC<MusicProviderProps> = ({ children }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    const audio = new Audio('/assets/sound/Main.mp3');
+    const audio = new Audio("/assets/sound/Main.mp3");
     audio.loop = true;
-    audio.volume = 0.5; // Set initial volume to 50%
+    audio.volume = 0; // Set initial volume to 50%
     audioRef.current = audio;
 
     // Add event listeners to sync state with actual playback
     const handlePlay = () => setIsMusicPlaying(true);
     const handlePause = () => setIsMusicPlaying(false);
 
-    audio.addEventListener('play', handlePlay);
-    audio.addEventListener('pause', handlePause);
+    audio.addEventListener("play", handlePlay);
+    audio.addEventListener("pause", handlePause);
 
     // Auto-play music when component mounts
     const playMusic = async () => {
       try {
         await audio.play();
-        console.log('Music started playing');
+        console.log("Music started playing");
       } catch (error) {
-        console.log('Auto-play blocked by browser. Click anywhere to start music.');
+        console.log(
+          "Auto-play blocked by browser. Click anywhere to start music."
+        );
         setIsMusicPlaying(false);
       }
     };
@@ -47,10 +56,10 @@ export const MusicProvider: React.FC<MusicProviderProps> = ({ children }) => {
 
     // Cleanup
     return () => {
-      audio.removeEventListener('play', handlePlay);
-      audio.removeEventListener('pause', handlePause);
+      audio.removeEventListener("play", handlePlay);
+      audio.removeEventListener("pause", handlePause);
       audio.pause();
-      audio.src = '';
+      audio.src = "";
     };
   }, []);
 
@@ -59,8 +68,8 @@ export const MusicProvider: React.FC<MusicProviderProps> = ({ children }) => {
       if (isMusicPlaying) {
         audioRef.current.pause();
       } else {
-        audioRef.current.play().catch(err => {
-          console.error('Playback failed:', err);
+        audioRef.current.play().catch((err) => {
+          console.error("Playback failed:", err);
         });
       }
     }
@@ -71,19 +80,21 @@ export const MusicProvider: React.FC<MusicProviderProps> = ({ children }) => {
     setVolumeState(newVolume);
     if (audioRef.current) {
       audioRef.current.volume = volumeValue;
-      console.log('Volume changed to:', volumeValue, '(', newVolume, '%)');
+      console.log("Volume changed to:", volumeValue, "(", newVolume, "%)");
 
-      // If volume is being set and music isn't playing, try to start it
-      if (!isMusicPlaying && volumeValue > 0) {
-        audioRef.current.play().catch(err => {
-          console.log('Could not auto-play when volume changed:', err);
+      // Start playing when user adjusts the slider
+      if (!isMusicPlaying && newVolume > 0) {
+        audioRef.current.play().catch((err) => {
+          console.error("Playback failed:", err);
         });
       }
     }
   };
 
   return (
-    <MusicContext.Provider value={{ isMusicPlaying, volume, toggleMusic, setVolume }}>
+    <MusicContext.Provider
+      value={{ isMusicPlaying, volume, toggleMusic, setVolume }}
+    >
       {children}
     </MusicContext.Provider>
   );
@@ -92,7 +103,7 @@ export const MusicProvider: React.FC<MusicProviderProps> = ({ children }) => {
 export const useMusic = () => {
   const context = useContext(MusicContext);
   if (context === undefined) {
-    throw new Error('useMusic must be used within a MusicProvider');
+    throw new Error("useMusic must be used within a MusicProvider");
   }
   return context;
 };

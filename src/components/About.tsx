@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowUp01Icon, ArrowDown01Icon } from "hugeicons-react";
 import { useNavigate } from "react-router-dom";
 import { useMusic } from "./BackgroundMusic";
@@ -312,6 +311,7 @@ const About = () => {
             href="/"
             onClick={(e) => {
               e.preventDefault();
+              window.scrollTo(0, 0);
               navigate("/");
             }}
           >

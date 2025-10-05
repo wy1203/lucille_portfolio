@@ -8,7 +8,7 @@ import {
   Vec3,
   Camera,
 } from "ogl";
-import "./MetaBalls.css";
+import "../react_bits_styles/MetaBalls.css";
 
 type MetaBallsProps = {
   color?: string;

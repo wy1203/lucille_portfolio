@@ -1,5 +1,5 @@
 import { RiVolumeDownFill, RiVolumeUpFill } from 'react-icons/ri';
-import "../styles/ElasticSlider.css";
+import "../react_bits_styles/ElasticSlider.css";
 
 interface ElasticSliderProps {
   value: number;

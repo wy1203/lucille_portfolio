@@ -688,6 +688,7 @@ const WorkDetail = () => {
             href="/"
             onClick={(e) => {
               e.preventDefault();
+              window.scrollTo(0, 0);
               navigate("/");
             }}
           >

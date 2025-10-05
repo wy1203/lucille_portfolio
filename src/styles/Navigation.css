@@ -24,7 +24,7 @@
 
 /* Hover state */
 .nav a:hover {
-  color: #F5E6FF;
+  color: #f5e6ff;
 }
 
 /* Active page indicator */
@@ -34,7 +34,10 @@
 .nav a.active:focus,
 .nav a.active:active,
 .nav a.active:hover {
-  color: #ffffff;
+  color: #ff743a !important;
+  font-weight: 900;
+  cursor: default;
+  pointer-events: none;
 }
 
 /* Music toggle button */
@@ -62,9 +65,9 @@
 /* Make sure nav links are NOT affected by slider */
 .nav > a {
   all: revert;
-  color: #ffffff !important;
+  color: #ffffff;
   text-decoration: none !important;
-  font-weight: 500 !important;
+  font-weight: 500;
   transition: color 0.3s ease !important;
   position: relative !important;
   outline: none !important;

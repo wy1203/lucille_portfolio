@@ -146,13 +146,7 @@ const MainContent = () => {
           <img src="/icons/luc.png" alt="LW" />
         </div>
         <nav className="nav">
-          <a
-            href="/"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-          >
+          <a href="/" className="active">
             Home
           </a>
           <a

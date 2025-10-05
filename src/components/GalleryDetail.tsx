@@ -68,9 +68,9 @@ const GalleryDetail = () => {
           <img src="/icons/luc.png" alt="LW" />
         </div>
         <nav className="nav">
-          <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }}>Home</a>
+          <a href="/" onClick={(e) => { e.preventDefault(); window.scrollTo(0, 0); navigate('/'); }}>Home</a>
           <a href="/about" onClick={(e) => { e.preventDefault(); window.scrollTo(0, 0); navigate('/about'); }}>About</a>
-          <a href="/gallery" onClick={(e) => { e.preventDefault(); window.scrollTo(0, 0); navigate('/gallery'); }} className="active">Gallery</a>
+          <a href="/gallery" className="active">Gallery</a>
           <a href="/data/Lucille Wang_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           <div className="music-toggle">
             <ElasticSlider value={volume} onValueChange={setVolume} />
