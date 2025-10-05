@@ -255,15 +255,7 @@ const MainContent = () => {
       </div>
 
       <section id="work" className="work-section" ref={workSectionRef}>
-        <motion.h2
-          className="work-section-title"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          My Works :)
-        </motion.h2>
+        <h2 className="work-section-title">MY WORKS :)</h2>
 
         <div className="work-grid">
           {works.map((work, index) => (
