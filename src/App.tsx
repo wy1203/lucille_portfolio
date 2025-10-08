@@ -8,6 +8,7 @@ import MainContent from './components/MainContent';
 import WorkDetail from './components/WorkDetail';
 import About from './components/About';
 import Gallery from './components/Gallery';
+import ScobyBook from './components/ScobyBook';
 import './App.css';
 
 function AppContent() {
@@ -60,6 +61,7 @@ function AppContent() {
               <Route path="/work/:id" element={<WorkDetail />} />
               <Route path="/about" element={<About />} />
               <Route path="/gallery" element={<Gallery />} />
+              <Route path="/scoby" element={<ScobyBook />} />
             </Routes>
           </motion.div>
         )}

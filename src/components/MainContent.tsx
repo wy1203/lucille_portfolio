@@ -170,6 +170,16 @@ const MainContent = () => {
             Gallery
           </a>
           <a
+            href="/scoby"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo(0, 0);
+              navigate("/scoby");
+            }}
+          >
+            SCOBY
+          </a>
+          <a
             href="/data/Lucille Wang_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
