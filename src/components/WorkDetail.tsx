@@ -11,6 +11,7 @@ import {
 import ImageModal from "./ImageModal";
 import VideoModal from "./VideoModal";
 import ElasticSlider from "../react_bits_effects/ElasticSlider";
+import NextProjects from "./NextProjects";
 import "../styles/WorkDetail.css";
 
 const VideoBlockComponent = ({
@@ -939,6 +940,8 @@ const WorkDetail = () => {
           </div>
         </main>
       </div>
+
+      <NextProjects currentWorkId={work.id} />
 
       {showFooter && (
         <motion.footer
