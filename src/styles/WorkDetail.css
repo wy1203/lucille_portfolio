@@ -436,6 +436,11 @@
   grid-template-columns: var(--left-size, 1fr) var(--right-size, 1fr);
 }
 
+.image-pair.top-bottom {
+  grid-template-rows: var(--top-size, 1fr) var(--bottom-size, 1fr);
+  grid-template-columns: 1fr;
+}
+
 .image-pair.gap-small {
   gap: 0.5rem;
 }

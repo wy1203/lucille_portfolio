@@ -60,7 +60,7 @@ export interface ImagePairBlock extends BaseContentBlock {
     caption?: string;
     size?: number; // 1-100, represents percentage of available space
   }>;
-  layout?: "equal" | "left-heavy" | "right-heavy" | "custom";
+  layout?: "equal" | "left-heavy" | "right-heavy" | "top-bottom" | "custom";
   gap?: "small" | "medium" | "large";
 }
 

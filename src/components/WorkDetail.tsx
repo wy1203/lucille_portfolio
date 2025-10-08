@@ -223,10 +223,19 @@ const ContentRenderer = ({
             const hasCustomSizes = block.images.some(
               (img) => img.size !== undefined
             );
-            const layout = hasCustomSizes ? "custom" : block.layout || "equal";
+            const isTopBottomLayout = block.layout === "top-bottom";
+            const layout = isTopBottomLayout
+              ? "top-bottom"
+              : (hasCustomSizes ? "custom" : block.layout || "equal");
+
             const pairStyle = {
               ...marginStyle,
-              ...(hasCustomSizes
+              ...(isTopBottomLayout && hasCustomSizes
+                ? {
+                    "--top-size": `${block.images[0]?.size || 50}%`,
+                    "--bottom-size": `${block.images[1]?.size || 50}%`,
+                  }
+                : hasCustomSizes
                 ? {
                     "--left-size": `${block.images[0]?.size || 50}%`,
                     "--right-size": `${block.images[1]?.size || 50}%`,
