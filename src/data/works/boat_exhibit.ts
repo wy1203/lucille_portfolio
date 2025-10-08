@@ -3,7 +3,7 @@ import { WorkDetail } from "../types";
 export const boatExhibitWork: WorkDetail = {
   id: 7,
   title: "Boat Exhibit",
-  category: "Exhibition Design",
+  category: "Design Strategy",
   description: "Immersive maritime exhibition experience",
   thumbnail: "/work_details/boat_exhibit/hero.png",
   heroImage: "/work_details/boat_exhibit/hero.png",

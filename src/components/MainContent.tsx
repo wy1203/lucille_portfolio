@@ -33,6 +33,53 @@ const MainContent = () => {
   const { volume, setVolume } = useMusic();
   const workSectionRef = useRef<HTMLElement>(null);
 
+  // Filter states
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(["All"]);
+
+  // Extract unique categories from works data (split comma-separated categories)
+  const allCategories = worksData.flatMap(work =>
+    work.category.split(',').map(cat => cat.trim())
+  );
+  const categories = ["All", ...Array.from(new Set(allCategories))];
+
+  // Handle category toggle
+  const toggleCategory = (category: string) => {
+    if (category === "All") {
+      setSelectedCategories(["All"]);
+    } else {
+      setSelectedCategories(prev => {
+        // Remove "All" if it's selected
+        const withoutAll = prev.filter(c => c !== "All");
+
+        // Toggle the clicked category
+        if (withoutAll.includes(category)) {
+          const newCategories = withoutAll.filter(c => c !== category);
+          // If no categories selected, default to "All"
+          return newCategories.length === 0 ? ["All"] : newCategories;
+        } else {
+          return [...withoutAll, category];
+        }
+      });
+    }
+  };
+
+  // Filter works based on selected categories (check if work has ANY of the selected categories)
+  const filteredWorksData = worksData.filter(work => {
+    if (selectedCategories.includes("All")) return true;
+    const workCategories = work.category.split(',').map(cat => cat.trim());
+    return selectedCategories.some(selectedCat => workCategories.includes(selectedCat));
+  });
+
+  const filteredWorks: Work[] = filteredWorksData.map((work) => ({
+    id: work.id,
+    title: work.title,
+    category: work.category,
+    description: work.description,
+    image: work.thumbnail,
+    thumbnailImagePos: work.thumbnailImagePos,
+    thumbnailImageFit: work.thumbnailImageFit,
+  }));
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
@@ -257,8 +304,20 @@ const MainContent = () => {
       <section id="work" className="home-work-section" ref={workSectionRef}>
         <h2 className="work-section-title">MY WORKS :)</h2>
 
+        <div className="filters-container">
+          {categories.map(category => (
+            <button
+              key={category}
+              className={`filter-button ${selectedCategories.includes(category) ? 'active' : ''}`}
+              onClick={() => toggleCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
         <div className="work-grid">
-          {works.map((work, index) => (
+          {filteredWorks.map((work, index) => (
             <WorkCard key={work.id} work={work} index={index} />
           ))}
         </div>

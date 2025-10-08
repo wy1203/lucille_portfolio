@@ -3,7 +3,7 @@ import { WorkDetail } from "../types";
 export const bikewalkWork: WorkDetail = {
   id: 5,
   title: "BikeWalk",
-  category: "Urban Design & Planning",
+  category: "Retail Store Design, Design Strategy",
   description: "Sustainable mobility infrastructure for urban communities",
   thumbnail: "/work_details/bikewalk/hero.png",
   thumbnailImagePos: "50% 80%",

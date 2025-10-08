@@ -3,7 +3,7 @@ import { WorkDetail } from "../types";
 export const iceyWork: WorkDetail = {
   id: 2,
   title: "ICEY!",
-  category: "Interactive Installation / Climate Awareness",
+  category: "Interactive Installation, Design Strategy",
   description:
     "Interactive device simulating melting Arctic ice through 3D printing, LEDs, and Arduino technology to foster reflection on climate change",
   thumbnail: "/work_details/icey/thumbnail.png",
@@ -102,8 +102,7 @@ export const iceyWork: WorkDetail = {
             {
               src: "/work_details/icey/5right.png",
               alt: "3D printing parametric shell process",
-              caption:
-                "3D printing process of the parametric shell components",
+              caption: "3D printing process of the parametric shell components",
             },
           ],
           layout: "equal",

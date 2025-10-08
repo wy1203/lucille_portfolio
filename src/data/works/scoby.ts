@@ -3,7 +3,7 @@ import { WorkDetail } from "../types";
 export const scobyWork: WorkDetail = {
   id: 1,
   title: "The SCOBY Spot",
-  category: "Retail Store Design",
+  category: "Retail Store Design, Design Strategy",
   description: "Kombucha tea store promoting wellness and community",
   thumbnail: "/work_details/scoby/hero.png",
   thumbnailImagePos: "50% 90%",

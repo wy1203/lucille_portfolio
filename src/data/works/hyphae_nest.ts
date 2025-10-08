@@ -3,7 +3,7 @@ import { WorkDetail } from "../types";
 export const hyphaeNestWork: WorkDetail = {
   id: 3,
   title: "Hyphae Nest",
-  category: "Interactive Installation Design",
+  category: "Interactive Installation, Design Strategy",
   description:
     "Biomimetic art installation exploring mycelial networks and interconnectedness",
   thumbnail: "/work_details/hyphae_nest/hero.png",
