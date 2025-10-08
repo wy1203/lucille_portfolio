@@ -5,9 +5,10 @@ import { iceyWork } from "./works/icey";
 import { hyphaeNestWork } from "./works/hyphae_nest";
 import { nimbusWork } from "./works/nimbus";
 import { bikewalkWork } from "./works/bikewalk";
+import { cornellClassWork } from "./works/cornell_class";
 
 // Re-export all types
 export * from "./types";
 
 // Export combined works array
-export const worksData: WorkDetail[] = [scobyWork, iceyWork, hyphaeNestWork, nimbusWork, bikewalkWork];
+export const worksData: WorkDetail[] = [scobyWork, iceyWork, hyphaeNestWork, nimbusWork, bikewalkWork, cornellClassWork];
