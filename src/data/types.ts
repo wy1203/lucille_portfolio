@@ -66,7 +66,7 @@ export interface ImagePairBlock extends BaseContentBlock {
 
 export interface ImageTrioBlock extends BaseContentBlock {
   type: "image-trio";
-  layout?: "left-right" | "top-bottom"; // "left-right" is default (1 left, 2 right), "top-bottom" is required to add(1 top, 2 bottom)
+  layout?: "left-right" | "top-bottom" | "horizontal"; // "left-right" is default (1 left, 2 right), "top-bottom" (1 top, 2 bottom), "horizontal" (3 images in a row)
   leftImage?: {
     src: string;
     alt?: string;
@@ -91,6 +91,12 @@ export interface ImageTrioBlock extends BaseContentBlock {
     alt?: string;
     caption?: string;
     size?: number; // 1-100, percentage of bottom row width for each image
+  }>;
+  horizontalImages?: Array<{
+    src: string;
+    alt?: string;
+    caption?: string;
+    size?: number; // 1-100, percentage of total row width for each image
   }>;
   gap?: "small" | "medium" | "large";
 }
@@ -168,10 +174,13 @@ export interface WorkDetail {
   skills?: string[];
   sections: {
     overview: Section;
+    strategyAndAnalysis?: Section;
+    designSolution?: Section;
+    impactAndResults?: Section;
+    reflection?: Section;
     challenge?: Section;
     solution?: Section;
     impact?: Section;
-    reflection?: Section;
     [key: string]: Section | undefined;
   };
 }

@@ -257,8 +257,41 @@ const ContentRenderer = ({
 
           case "image-trio":
             const isTopBottom = block.layout === "top-bottom";
+            const isHorizontal = block.layout === "horizontal";
 
-            if (isTopBottom && block.topImage && block.bottomImages) {
+            if (isHorizontal && block.horizontalImages) {
+              // Horizontal layout: three images in a row
+              const horizontalImages = block.horizontalImages;
+
+              // Calculate CSS variables for image sizes
+              const horizontalStyle = {
+                ...marginStyle,
+                "--image-width-1": horizontalImages[0]?.size ? `${horizontalImages[0].size}%` : '33.33%',
+                "--image-width-2": horizontalImages[1]?.size ? `${horizontalImages[1].size}%` : '33.33%',
+                "--image-width-3": horizontalImages[2]?.size ? `${horizontalImages[2].size}%` : '33.33%',
+              } as React.CSSProperties;
+
+              return (
+                <div
+                  key={index}
+                  className={`image-trio horizontal gap-${block.gap || "medium"}`}
+                  style={horizontalStyle}
+                >
+                  {horizontalImages.map((img, imgIndex) => (
+                    <div key={imgIndex} className="image-item">
+                      <img
+                        src={img.src}
+                        alt={img.alt || ""}
+                        className="clickable-image"
+                        onClick={() => onImageClick(img.src)}
+                        style={{ cursor: 'pointer' }}
+                      />
+                      {img.caption && <figcaption>{img.caption}</figcaption>}
+                    </div>
+                  ))}
+                </div>
+              );
+            } else if (isTopBottom && block.topImage && block.bottomImages) {
               // Top-bottom layout: one image on top, two on bottom
               const topImage = block.topImage;
               const bottomImages = block.bottomImages;
@@ -520,7 +553,15 @@ const WorkDetail = () => {
               });
               break;
             case "image-trio":
-              if (block.layout === "top-bottom") {
+              if (block.layout === "horizontal" && block.horizontalImages) {
+                block.horizontalImages.forEach((img) => {
+                  images.push({
+                    src: img.src,
+                    alt: img.alt,
+                    caption: img.caption,
+                  });
+                });
+              } else if (block.layout === "top-bottom") {
                 if (block.topImage) {
                   const topImage = block.topImage;
                   images.push({
@@ -617,16 +658,31 @@ const WorkDetail = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = [
+      // Get all section keys that exist in the work
+      const sectionKeys = work?.sections ? Object.keys(work.sections).filter(key => work.sections[key]) : [];
+
+      // Define preferred order for sections
+      const sectionOrder = [
         "overview",
+        "strategyAndAnalysis",
         "challenge",
+        "designSolution",
         "solution",
+        "impactAndResults",
         "impact",
         "reflection",
-      ].filter((section) => {
-        if (section === "overview") return true;
-        return work?.sections?.[section];
+      ];
+
+      // Sort sections by preferred order
+      const sections = sectionKeys.sort((a, b) => {
+        const aIndex = sectionOrder.indexOf(a);
+        const bIndex = sectionOrder.indexOf(b);
+        if (aIndex === -1 && bIndex === -1) return 0;
+        if (aIndex === -1) return 1;
+        if (bIndex === -1) return -1;
+        return aIndex - bIndex;
       });
+
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -730,22 +786,43 @@ const WorkDetail = () => {
       <div className="work-detail-container">
         <aside className="work-sidebar">
           <nav className="sidebar-nav">
-            {["overview", "challenge", "solution", "impact", "reflection"].map(
-              (sectionKey) => {
-                const section = work?.sections?.[sectionKey];
-                if (!section) return null;
+            {(() => {
+              const sectionKeys = work?.sections ? Object.keys(work.sections).filter(key => work.sections[key]) : [];
+              const sectionOrder = [
+                "overview",
+                "strategyAndAnalysis",
+                "challenge",
+                "designSolution",
+                "solution",
+                "impactAndResults",
+                "impact",
+                "reflection",
+              ];
 
-                return (
-                  <button
-                    key={sectionKey}
-                    className={activeSection === sectionKey ? "active" : ""}
-                    onClick={() => scrollToSection(sectionKey)}
-                  >
-                    {section.title}
-                  </button>
-                );
-              }
-            )}
+              return sectionKeys
+                .sort((a, b) => {
+                  const aIndex = sectionOrder.indexOf(a);
+                  const bIndex = sectionOrder.indexOf(b);
+                  if (aIndex === -1 && bIndex === -1) return 0;
+                  if (aIndex === -1) return 1;
+                  if (bIndex === -1) return -1;
+                  return aIndex - bIndex;
+                })
+                .map((sectionKey) => {
+                  const section = work?.sections?.[sectionKey];
+                  if (!section) return null;
+
+                  return (
+                    <button
+                      key={sectionKey}
+                      className={activeSection === sectionKey ? "active" : ""}
+                      onClick={() => scrollToSection(sectionKey)}
+                    >
+                      {section.title}
+                    </button>
+                  );
+                });
+            })()}
           </nav>
         </aside>
 
@@ -812,23 +889,44 @@ const WorkDetail = () => {
               )}
             </div>
 
-            {["overview", "challenge", "solution", "impact", "reflection"].map(
-              (sectionKey) => {
-                const section = work?.sections?.[sectionKey];
-                if (!section) return null;
+            {(() => {
+              const sectionKeys = work?.sections ? Object.keys(work.sections).filter(key => work.sections[key]) : [];
+              const sectionOrder = [
+                "overview",
+                "strategyAndAnalysis",
+                "challenge",
+                "designSolution",
+                "solution",
+                "impactAndResults",
+                "impact",
+                "reflection",
+              ];
 
-                return (
-                  <section
-                    key={sectionKey}
-                    id={sectionKey}
-                    className="work-section"
-                  >
-                    <h2>{section.title}</h2>
-                    <ContentRenderer blocks={section.blocks} onImageClick={openModal} onVideoClick={openVideoModal} />
-                  </section>
-                );
-              }
-            )}
+              return sectionKeys
+                .sort((a, b) => {
+                  const aIndex = sectionOrder.indexOf(a);
+                  const bIndex = sectionOrder.indexOf(b);
+                  if (aIndex === -1 && bIndex === -1) return 0;
+                  if (aIndex === -1) return 1;
+                  if (bIndex === -1) return -1;
+                  return aIndex - bIndex;
+                })
+                .map((sectionKey) => {
+                  const section = work?.sections?.[sectionKey];
+                  if (!section) return null;
+
+                  return (
+                    <section
+                      key={sectionKey}
+                      id={sectionKey}
+                      className="work-section"
+                    >
+                      <h2>{section.title}</h2>
+                      <ContentRenderer blocks={section.blocks} onImageClick={openModal} onVideoClick={openVideoModal} />
+                    </section>
+                  );
+                });
+            })()}
           </div>
         </main>
       </div>

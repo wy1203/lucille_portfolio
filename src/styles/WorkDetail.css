@@ -170,15 +170,20 @@
 }
 
 .work-section {
+  min-height: 10vh;
+  padding: 4rem 4rem;
+  position: relative;
+  z-index: 10;
+  background: white;
   margin-bottom: 2.5rem;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 10px;
 }
 
 .work-section h2 {
   font-size: 2.5em;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #ffffff;
+  color: #000000;
   font-family: "Montserrat";
 }
 
@@ -467,6 +472,39 @@
   display: grid;
   grid-template-columns: var(--left-width, 1fr) var(--right-width, 1fr);
   align-items: start;
+}
+
+/* Image Trio Horizontal Layout (3 images in a row) */
+.image-trio.horizontal {
+  display: grid;
+  grid-template-columns: var(--image-width-1, 1fr) var(--image-width-2, 1fr) var(--image-width-3, 1fr);
+  align-items: start;
+}
+
+.image-trio.horizontal .image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-trio.horizontal .image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image-trio.horizontal.gap-small {
+  gap: 0.5rem;
+}
+
+.image-trio.horizontal.gap-medium {
+  gap: 1rem;
+}
+
+.image-trio.horizontal.gap-large {
+  gap: 2rem;
 }
 
 /* Image Trio Top-Bottom Layout (1 top, 2 bottom) */
@@ -835,6 +873,11 @@ figcaption {
   }
 
   .image-trio.top-bottom .bottom-images {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  .image-trio.horizontal {
     grid-template-columns: 1fr !important;
     gap: 1rem;
   }

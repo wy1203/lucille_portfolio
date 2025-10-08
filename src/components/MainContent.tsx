@@ -254,7 +254,7 @@ const MainContent = () => {
         </div>
       </div>
 
-      <section id="work" className="work-section" ref={workSectionRef}>
+      <section id="work" className="home-work-section" ref={workSectionRef}>
         <h2 className="work-section-title">MY WORKS :)</h2>
 
         <div className="work-grid">
