@@ -53,7 +53,7 @@ Each section has:
   src: "/work_details/cornell_class/9.png",
   caption: "9",
   size: "full",
-- for size, always use "full" for all images.
+- **!!!important!!!**: for size, always use "full" for single images.
 
 #### Image Pairs (2 images)
 
