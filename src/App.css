@@ -22,6 +22,16 @@ body {
   overflow-x: hidden;
 }
 
+/* Ensure all images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .App {
   position: relative;
   min-height: 100vh;
@@ -55,6 +65,17 @@ body {
   z-index: -1;
 }
 
+.reveal-layer {
+  will-change: clip-path, -webkit-clip-path;
+  transition: opacity 0.3s ease-out;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -65,8 +86,12 @@ body {
   left: 0;
   right: 0;
   z-index: 100;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   background: #00000080;
+  background: rgba(0, 0, 0, 0.5);
+  flex-wrap: wrap;
+  min-height: 60px;
 }
 
 .logo {
@@ -484,6 +509,39 @@ body {
     padding: 0.6rem 1.2rem;
     font-size: 0.85rem;
   }
+
+  .hero {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1rem;
+  }
+
+  .work-card-image {
+    height: 250px;
+  }
+
+  .home-work-section {
+    padding: 4rem 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-experiences {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .experiences-logos {
+    gap: 1.5rem;
+  }
+
+  .scrolling-text span {
+    font-size: 1.35rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -493,9 +551,31 @@ body {
 
   .work-section-title {
     margin-bottom: 3rem;
+    font-size: 2rem;
+    padding: 1rem 2rem;
   }
 
   .work-card-content {
     padding: 1.5rem;
+  }
+
+  .home-work-section {
+    padding: 3rem 1rem;
+  }
+
+  .hero {
+    padding: 0 1rem;
+  }
+
+  .name {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .title {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+  }
+
+  .scrolling-text span {
+    font-size: 1.2rem;
   }
 }

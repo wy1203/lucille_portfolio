@@ -16,22 +16,14 @@ interface Work {
   thumbnailImageFit?: "cover" | "contain" | "fill" | "scale-down" | "none";
 }
 
-const works: Work[] = worksData.map((work) => ({
-  id: work.id,
-  title: work.title,
-  category: work.category,
-  description: work.description,
-  image: work.thumbnail,
-  thumbnailImagePos: work.thumbnailImagePos,
-  thumbnailImageFit: work.thumbnailImageFit,
-}));
 
 const MainContent = () => {
   const navigate = useNavigate();
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
   const { volume, setVolume } = useMusic();
   const workSectionRef = useRef<HTMLElement>(null);
+  const revealLayerRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Filter states
   const [selectedCategories, setSelectedCategories] = useState<string[]>(["All"]);
@@ -81,10 +73,53 @@ const MainContent = () => {
   }));
 
   useEffect(() => {
+    // Detect if device is mobile/tablet
+    const checkMobile = () => {
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const isSmallScreen = window.innerWidth <= 1024;
+      setIsMobile(isTouchDevice || isSmallScreen);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Skip mask effect on mobile - will show base layer only
+    if (isMobile) return;
+
+    // Direct DOM manipulation for better Safari performance
+    let rafId: number | null = null;
+
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+
+      rafId = requestAnimationFrame(() => {
+        if (revealLayerRef.current) {
+          const headerHeight = 120;
+          const pageWidth = window.innerWidth;
+          const pageHeight = window.innerHeight;
+          const targetSize = Math.min(pageWidth, pageHeight) * 0.3;
+          const x = Math.round(e.clientX);
+          const y = Math.round(e.clientY);
+          const size = Math.round(targetSize);
+
+          if (y <= headerHeight) {
+            revealLayerRef.current.style.clipPath = "circle(0px at 50% 50%)";
+            (revealLayerRef.current.style as any).webkitClipPath = "circle(0px at 50% 50%)";
+          } else {
+            const clipPathValue = `circle(${size}px at ${x}px ${y}px)`;
+            revealLayerRef.current.style.clipPath = clipPathValue;
+            (revealLayerRef.current.style as any).webkitClipPath = clipPathValue;
+          }
+        }
+        rafId = null;
       });
     };
 
@@ -92,47 +127,17 @@ const MainContent = () => {
       setScrollY(window.scrollY);
     };
 
+    // Use passive listeners for better scroll performance
     window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
+      if (rafId) cancelAnimationFrame(rafId);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isMobile]);
 
-  const createClipPath = () => {
-    const headerHeight = 120;
-
-    if (mousePosition.y <= headerHeight) {
-      return "circle(0px at 50% 50%)";
-    }
-
-    const pathData =
-      "M 767.996094 0.203125 L 767.996094 484.464844 C 703.996094 484.464844 703.996094 645.796875 640 645.796875 C 575.976562 645.796875 575.976562 484.464844 511.980469 484.464844 C 447.980469 484.464844 447.980469 645.796875 383.980469 645.796875 C 319.980469 645.796875 319.980469 484.464844 255.980469 484.464844 C 191.980469 484.464844 191.980469 645.796875 128.003906 645.796875 C 64.003906 645.796875 64.003906 484.464844 0.00390625 484.464844 L 0.00390625 0.203125 C 64.003906 0.203125 64.003906 161.539062 128.003906 161.539062 C 191.980469 161.539062 191.980469 0.203125 255.980469 0.203125 C 319.980469 0.203125 319.980469 161.539062 383.980469 161.539062 C 447.980469 161.539062 447.980469 0.203125 511.980469 0.203125 C 575.976562 0.203125 575.976562 161.539062 640 161.539062 C 703.996094 161.539062 703.996094 0.203125 767.996094 0.203125 Z M 767.996094 0.203125";
-
-    const pageWidth = window.innerWidth;
-    const pageHeight = window.innerHeight;
-    const targetSize = Math.min(pageWidth, pageHeight) * 0.6;
-
-    const originalWidth = 768;
-    const originalHeight = 646;
-
-    const scale = targetSize / Math.max(originalWidth, originalHeight);
-
-    const offsetX = mousePosition.x - (originalWidth * scale) / 2;
-    const offsetY = mousePosition.y - (originalHeight * scale) / 2;
-
-    return `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(`
-        <svg width="${pageWidth}" height="${pageHeight}" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <clipPath id="waveClip" clipPathUnits="userSpaceOnUse">
-                    <path d="${pathData}" transform="translate(${offsetX}, ${offsetY}) scale(${scale})"/>
-                </clipPath>
-            </defs>
-        </svg>
-    `)}#waveClip")`;
-  };
 
   const scrollToWork = () => {
     workSectionRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -152,7 +157,7 @@ const MainContent = () => {
         }}
       />
 
-      {/* Base layer - shows 3D geometric shapes on black background */}
+      {/* Base layer - shows 3D geometric shapes on black background (shown on mobile) */}
       <div
         className="background-layer"
         style={{
@@ -162,23 +167,24 @@ const MainContent = () => {
           backgroundRepeat: "no-repeat",
           opacity: backgroundOpacity,
           transition: "opacity 0.3s ease-out",
+          display: isMobile ? "block" : "block",
         }}
       />
 
-      {/* Reveal layer - shows colorful design strategy content with mouse-following circular reveal */}
-      <div
-        className="background-layer"
-        style={{
-          backgroundImage: 'url("/main_background/layer_reveal.png")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          clipPath: createClipPath(),
-          WebkitClipPath: createClipPath(),
-          transition: "clip-path 0.1s ease-out, opacity 0.3s ease-out",
-          opacity: backgroundOpacity,
-        }}
-      />
+      {/* Reveal layer - shows colorful design strategy content with mouse-following circular reveal (hidden on mobile) */}
+      {!isMobile && (
+        <div
+          ref={revealLayerRef}
+          className="background-layer reveal-layer"
+          style={{
+            backgroundImage: 'url("/main_background/layer_reveal.png")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            opacity: backgroundOpacity,
+          }}
+        />
+      )}
 
       <motion.header
         className="header"

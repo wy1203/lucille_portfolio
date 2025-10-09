@@ -54,6 +54,9 @@
   inset: 0;
   pointer-events: none;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .meta-icon {
@@ -61,6 +64,8 @@
   transform: translate(-50%, -50%);
   object-fit: contain;
   filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.25));
+  max-width: 25vw;
+  height: auto;
 }
 
 .meta-actions {
@@ -156,6 +161,7 @@
   background: rgba(12, 13, 19, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 28px;
+  -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
   text-align: center;
   color: #ffffff;
@@ -223,7 +229,9 @@
   text-transform: uppercase;
   padding: 14px 26px;
   border-radius: 999px;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
+  -webkit-transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease,
     border-color 0.3s ease;
 }
@@ -259,6 +267,10 @@
   .meta-balls {
     height: 85vh;
     min-height: 480px;
+  }
+
+  .meta-icon {
+    max-width: 20vw;
   }
 
   .meta-action-top {
@@ -376,8 +388,10 @@
 
 .profile-images .image-frame {
   position: relative;
-  width: 300px;
-  height: 388.8px;
+  width: min(300px, 90vw);
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 300 / 388.8;
   background: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -712,8 +726,10 @@
 /* iPad-style video frame */
 .video-frame.ipad-frame {
   position: relative;
-  width: 650px;
-  height: 380px;
+  width: min(650px, 90vw);
+  max-width: 650px;
+  height: auto;
+  aspect-ratio: 650 / 380;
   background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
   border-radius: 30px;
   padding: 15px;
@@ -736,19 +752,19 @@
 /* Dance section - center two images with gap on exact center */
 .dance-section .personality-grid.two-per-row {
   position: relative;
-  display: flex;
-  justify-content: flex-start;
-  gap: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 360px));
+  gap: 60px;
   width: 100%;
-  padding-left: calc(50% - 390px);
+  justify-content: center;
 }
 
 .dance-section .personality-grid.two-per-row .personality-item:first-child {
-  margin-right: 30px;
+  margin-right: 0;
 }
 
 .dance-section .personality-grid.two-per-row .personality-item:last-child {
-  margin-left: 30px;
+  margin-left: 0;
 }
 
 .video-frame.ipad-frame::before {
@@ -781,15 +797,17 @@
 /* Two images per row grid */
 .personality-grid.two-per-row {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
   gap: 60px;
+  justify-items: center;
 }
 
 .personality-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(288px, 100%), 1fr));
   gap: 30px;
-  max-width: 800px;
+  max-width: 1200px;
+  justify-items: center;
 }
 
 .personality-item {
@@ -800,8 +818,10 @@
 
 .personality-item .image-frame {
   position: relative;
-  width: 360px;
-  height: 435px;
+  width: min(324px, 90vw);
+  max-width: 324px;
+  height: auto;
+  aspect-ratio: 360 / 435;
   background: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -817,15 +837,7 @@
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
 }
 
-.travel-section .personality-item:nth-child(2),
-.travel-section .personality-item:nth-child(5) {
-  margin-top: 40px;
-}
-
-.travel-section .personality-item:nth-child(3),
-.travel-section .personality-item:nth-child(6) {
-  margin-top: 80px;
-}
+/* Remove staggered heights - they don't work well on responsive layouts */
 
 .personality-item .image-frame img {
   width: 100%;
@@ -903,8 +915,10 @@
 
 .phone-mockup {
   position: relative;
-  width: 300px;
-  height: 600px;
+  width: min(300px, 85vw);
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 300 / 600;
   background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
   border-radius: 52px;
   padding: 12px;
@@ -1036,6 +1050,27 @@
     width: 270px;
     height: 540px;
   }
+
+  /* iPad: Better spacing for personality grids */
+  .personality-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
+    gap: 28px;
+  }
+
+  .personality-item .image-frame {
+    width: 100%;
+    max-width: 306px;
+  }
+
+  .dance-section .personality-grid.two-per-row {
+    grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
+    gap: 28px;
+  }
+
+  .video-frame.ipad-frame {
+    width: min(468px, 90vw);
+    max-width: 468px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1096,14 +1131,26 @@
   }
 
   .personality-item .image-frame {
-    width: 280px;
-    height: 340px;
+    width: 100%;
+    max-width: 288px;
+  }
+
+  .personality-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(252px, 100%), 1fr));
+    gap: 24px;
+    justify-items: center;
+  }
+
+  .dance-section .personality-grid.two-per-row {
+    grid-template-columns: repeat(auto-fit, minmax(min(252px, 100%), 1fr));
+    gap: 24px;
   }
 
   .video-frame.ipad-frame {
-    width: 350px;
-    height: 280px;
+    width: min(450px, 90vw);
+    max-width: 450px;
   }
+
 
   .section-header h3 {
     font-size: 1.8rem;
@@ -1138,12 +1185,17 @@
   }
 
   .phone-mockup {
-    width: 210px;
-    height: 420px;
+    width: min(210px, 85vw);
+    max-width: 210px;
   }
 
   .phone-caption {
     font-size: 0.8rem;
+  }
+
+  .personality-item .image-frame {
+    width: 100%;
+    max-width: 100%;
   }
 
   .section-header h3 {
