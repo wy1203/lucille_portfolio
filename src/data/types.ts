@@ -172,8 +172,10 @@ export interface WorkDetail {
   timeline: string;
   team?: string;
   skills?: string[];
+  displayType?: "standard" | "pdf"; // Display type: standard (default) or PDF viewer
+  pdfPath?: string; // Path to PDF file (required when displayType is "pdf")
   sections: {
-    overview: Section;
+    overview?: Section;
     strategyAndAnalysis?: Section;
     designSolution?: Section;
     impactAndResults?: Section;

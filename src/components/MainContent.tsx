@@ -19,7 +19,7 @@ interface Work {
 
 const MainContent = () => {
   const navigate = useNavigate();
-  const [scrollY, setScrollY] = useState(0);
+  const [scrollY, setScrollY] = useState(() => window.scrollY);
   const { volume, setVolume } = useMusic();
   const workSectionRef = useRef<HTMLElement>(null);
   const revealLayerRef = useRef<HTMLDivElement>(null);
@@ -165,9 +165,6 @@ const MainContent = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          opacity: backgroundOpacity,
-          transition: "opacity 0.3s ease-out",
-          display: isMobile ? "block" : "block",
         }}
       />
 
@@ -181,7 +178,8 @@ const MainContent = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
-            opacity: backgroundOpacity,
+            clipPath: "circle(0px at 50% 50%)",
+            WebkitClipPath: "circle(0px at 50% 50%)",
           }}
         />
       )}

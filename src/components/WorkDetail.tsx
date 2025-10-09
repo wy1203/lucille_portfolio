@@ -12,6 +12,7 @@ import ImageModal from "./ImageModal";
 import VideoModal from "./VideoModal";
 import ElasticSlider from "../react_bits_effects/ElasticSlider";
 import NextProjects from "./NextProjects";
+import PDFViewer from "./PDFViewer";
 import "../styles/WorkDetail.css";
 
 const VideoBlockComponent = ({
@@ -793,48 +794,50 @@ const WorkDetail = () => {
         </nav>
       </motion.header>
 
-      <div className="work-detail-container">
-        <aside className="work-sidebar">
-          <nav className="sidebar-nav">
-            {(() => {
-              const sectionKeys = work?.sections ? Object.keys(work.sections).filter(key => work.sections[key]) : [];
-              const sectionOrder = [
-                "overview",
-                "strategyAndAnalysis",
-                "challenge",
-                "designSolution",
-                "solution",
-                "impactAndResults",
-                "impact",
-                "reflection",
-              ];
+      <div className={`work-detail-container ${work.displayType === "pdf" ? "pdf-layout" : ""}`}>
+        {work.displayType !== "pdf" && (
+          <aside className="work-sidebar">
+            <nav className="sidebar-nav">
+              {(() => {
+                const sectionKeys = work?.sections ? Object.keys(work.sections).filter(key => work.sections[key]) : [];
+                const sectionOrder = [
+                  "overview",
+                  "strategyAndAnalysis",
+                  "challenge",
+                  "designSolution",
+                  "solution",
+                  "impactAndResults",
+                  "impact",
+                  "reflection",
+                ];
 
-              return sectionKeys
-                .sort((a, b) => {
-                  const aIndex = sectionOrder.indexOf(a);
-                  const bIndex = sectionOrder.indexOf(b);
-                  if (aIndex === -1 && bIndex === -1) return 0;
-                  if (aIndex === -1) return 1;
-                  if (bIndex === -1) return -1;
-                  return aIndex - bIndex;
-                })
-                .map((sectionKey) => {
-                  const section = work?.sections?.[sectionKey];
-                  if (!section) return null;
+                return sectionKeys
+                  .sort((a, b) => {
+                    const aIndex = sectionOrder.indexOf(a);
+                    const bIndex = sectionOrder.indexOf(b);
+                    if (aIndex === -1 && bIndex === -1) return 0;
+                    if (aIndex === -1) return 1;
+                    if (bIndex === -1) return -1;
+                    return aIndex - bIndex;
+                  })
+                  .map((sectionKey) => {
+                    const section = work?.sections?.[sectionKey];
+                    if (!section) return null;
 
-                  return (
-                    <button
-                      key={sectionKey}
-                      className={activeSection === sectionKey ? "active" : ""}
-                      onClick={() => scrollToSection(sectionKey)}
-                    >
-                      {section.title}
-                    </button>
-                  );
-                });
-            })()}
-          </nav>
-        </aside>
+                    return (
+                      <button
+                        key={sectionKey}
+                        className={activeSection === sectionKey ? "active" : ""}
+                        onClick={() => scrollToSection(sectionKey)}
+                      >
+                        {section.title}
+                      </button>
+                    );
+                  });
+              })()}
+            </nav>
+          </aside>
+        )}
 
         <main className="work-detail-main">
           <motion.div
@@ -899,44 +902,50 @@ const WorkDetail = () => {
               )}
             </div>
 
-            {(() => {
-              const sectionKeys = work?.sections ? Object.keys(work.sections).filter(key => work.sections[key]) : [];
-              const sectionOrder = [
-                "overview",
-                "strategyAndAnalysis",
-                "challenge",
-                "designSolution",
-                "solution",
-                "impactAndResults",
-                "impact",
-                "reflection",
-              ];
+            {work.displayType === "pdf" && work.pdfPath ? (
+              <PDFViewer pdfPath={work.pdfPath} />
+            ) : (
+              <>
+                {(() => {
+                  const sectionKeys = work?.sections ? Object.keys(work.sections).filter(key => work.sections[key]) : [];
+                  const sectionOrder = [
+                    "overview",
+                    "strategyAndAnalysis",
+                    "challenge",
+                    "designSolution",
+                    "solution",
+                    "impactAndResults",
+                    "impact",
+                    "reflection",
+                  ];
 
-              return sectionKeys
-                .sort((a, b) => {
-                  const aIndex = sectionOrder.indexOf(a);
-                  const bIndex = sectionOrder.indexOf(b);
-                  if (aIndex === -1 && bIndex === -1) return 0;
-                  if (aIndex === -1) return 1;
-                  if (bIndex === -1) return -1;
-                  return aIndex - bIndex;
-                })
-                .map((sectionKey) => {
-                  const section = work?.sections?.[sectionKey];
-                  if (!section) return null;
+                  return sectionKeys
+                    .sort((a, b) => {
+                      const aIndex = sectionOrder.indexOf(a);
+                      const bIndex = sectionOrder.indexOf(b);
+                      if (aIndex === -1 && bIndex === -1) return 0;
+                      if (aIndex === -1) return 1;
+                      if (bIndex === -1) return -1;
+                      return aIndex - bIndex;
+                    })
+                    .map((sectionKey) => {
+                      const section = work?.sections?.[sectionKey];
+                      if (!section) return null;
 
-                  return (
-                    <section
-                      key={sectionKey}
-                      id={sectionKey}
-                      className="work-section"
-                    >
-                      <h2>{section.title}</h2>
-                      <ContentRenderer blocks={section.blocks} onImageClick={openModal} onVideoClick={openVideoModal} />
-                    </section>
-                  );
-                });
-            })()}
+                      return (
+                        <section
+                          key={sectionKey}
+                          id={sectionKey}
+                          className="work-section"
+                        >
+                          <h2>{section.title}</h2>
+                          <ContentRenderer blocks={section.blocks} onImageClick={openModal} onVideoClick={openVideoModal} />
+                        </section>
+                      );
+                    });
+                })()}
+              </>
+            )}
           </div>
         </main>
       </div>

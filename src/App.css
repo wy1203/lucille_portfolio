@@ -67,7 +67,6 @@ img {
 
 .reveal-layer {
   will-change: clip-path, -webkit-clip-path;
-  transition: opacity 0.3s ease-out;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   backface-visibility: hidden;

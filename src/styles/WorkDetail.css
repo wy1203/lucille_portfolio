@@ -32,6 +32,19 @@
   gap: 4rem;
 }
 
+/* PDF layout: no sidebar, centered main content with equal padding */
+.work-detail-container.pdf-layout {
+  display: block;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.work-detail-container.pdf-layout .work-detail-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+}
+
 .work-sidebar {
   position: sticky;
   top: 6rem;
@@ -247,6 +260,11 @@
     max-width: 100%;
     padding: 0 2rem 4rem;
   }
+
+  .work-detail-container.pdf-layout {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -257,6 +275,11 @@
 
   .work-detail-main {
     padding: 0 1.5rem 3rem;
+  }
+
+  .work-detail-container.pdf-layout {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .work-meta {
@@ -902,6 +925,11 @@ figcaption {
 @media (max-width: 480px) {
   .work-detail-main {
     padding: 0 1rem 2rem;
+  }
+
+  .work-detail-container.pdf-layout {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .work-meta {

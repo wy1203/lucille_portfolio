@@ -7,9 +7,10 @@ import { nimbusWork } from "./works/nimbus";
 import { bikewalkWork } from "./works/bikewalk";
 import { cornellClassWork } from "./works/cornell_class";
 import { boatExhibitWork } from "./works/boat_exhibit";
+import { programmingCornellMakerspaceWork } from "./works/programming_cornell_makerspace";
 
 // Re-export all types
 export * from "./types";
 
 // Export combined works array
-export const worksData: WorkDetail[] = [scobyWork, iceyWork, hyphaeNestWork, nimbusWork, bikewalkWork, cornellClassWork, boatExhibitWork];
+export const worksData: WorkDetail[] = [scobyWork, iceyWork, hyphaeNestWork, nimbusWork, bikewalkWork, cornellClassWork, boatExhibitWork, programmingCornellMakerspaceWork];
