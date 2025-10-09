@@ -50,7 +50,7 @@ export const bikewalkWork: WorkDetail = {
       ],
     },
     strategyAndAnalysis: {
-      title: "Strategy and Analysis",
+      title: "Strategy & Analysis",
       blocks: [
         {
           type: "text",
@@ -170,7 +170,7 @@ export const bikewalkWork: WorkDetail = {
       ],
     },
     impactAndResults: {
-      title: "Impact and Results",
+      title: "Impact & Results",
       blocks: [
         {
           type: "text",

@@ -168,7 +168,7 @@ export const iceyWork: WorkDetail = {
       ],
     },
     impact: {
-      title: "Impact and Results",
+      title: "Impact & Results",
       blocks: [
         {
           type: "text",

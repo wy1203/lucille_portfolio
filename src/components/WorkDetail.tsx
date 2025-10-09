@@ -13,6 +13,7 @@ import VideoModal from "./VideoModal";
 import ElasticSlider from "../react_bits_effects/ElasticSlider";
 import NextProjects from "./NextProjects";
 import PDFViewer from "./PDFViewer";
+import AnimatedSidebar from "./AnimatedSidebar";
 import "../styles/WorkDetail.css";
 
 const VideoBlockComponent = ({
@@ -528,6 +529,7 @@ const WorkDetail = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [currentVideoSrc, setCurrentVideoSrc] = useState("");
   const [currentVideoTitle, setCurrentVideoTitle] = useState("");
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   // Extract all images from work data in order
   const allImages = useMemo(() => {
@@ -794,51 +796,48 @@ const WorkDetail = () => {
         </nav>
       </motion.header>
 
-      <div className={`work-detail-container ${work.displayType === "pdf" ? "pdf-layout" : ""}`}>
-        {work.displayType !== "pdf" && (
-          <aside className="work-sidebar">
-            <nav className="sidebar-nav">
-              {(() => {
-                const sectionKeys = work?.sections ? Object.keys(work.sections).filter(key => work.sections[key]) : [];
-                const sectionOrder = [
-                  "overview",
-                  "strategyAndAnalysis",
-                  "challenge",
-                  "designSolution",
-                  "solution",
-                  "impactAndResults",
-                  "impact",
-                  "reflection",
-                ];
+      {work.displayType !== "pdf" && (() => {
+        const sectionKeys = work?.sections ? Object.keys(work.sections).filter(key => work.sections[key]) : [];
+        const sectionOrder = [
+          "overview",
+          "strategyAndAnalysis",
+          "challenge",
+          "designSolution",
+          "solution",
+          "impactAndResults",
+          "impact",
+          "reflection",
+        ];
 
-                return sectionKeys
-                  .sort((a, b) => {
-                    const aIndex = sectionOrder.indexOf(a);
-                    const bIndex = sectionOrder.indexOf(b);
-                    if (aIndex === -1 && bIndex === -1) return 0;
-                    if (aIndex === -1) return 1;
-                    if (bIndex === -1) return -1;
-                    return aIndex - bIndex;
-                  })
-                  .map((sectionKey) => {
-                    const section = work?.sections?.[sectionKey];
-                    if (!section) return null;
+        const sortedSections = sectionKeys
+          .sort((a, b) => {
+            const aIndex = sectionOrder.indexOf(a);
+            const bIndex = sectionOrder.indexOf(b);
+            if (aIndex === -1 && bIndex === -1) return 0;
+            if (aIndex === -1) return 1;
+            if (bIndex === -1) return -1;
+            return aIndex - bIndex;
+          })
+          .map((sectionKey) => {
+            const section = work?.sections?.[sectionKey];
+            return {
+              id: sectionKey,
+              title: section?.title || "",
+            };
+          })
+          .filter((section) => section.title);
 
-                    return (
-                      <button
-                        key={sectionKey}
-                        className={activeSection === sectionKey ? "active" : ""}
-                        onClick={() => scrollToSection(sectionKey)}
-                      >
-                        {section.title}
-                      </button>
-                    );
-                  });
-              })()}
-            </nav>
-          </aside>
-        )}
+        return (
+          <AnimatedSidebar
+            sections={sortedSections}
+            activeSection={activeSection}
+            onSectionClick={scrollToSection}
+            onCollapseChange={setIsSidebarCollapsed}
+          />
+        );
+      })()}
 
+      <div className={`work-detail-container ${work.displayType === "pdf" ? "pdf-layout" : ""} ${isSidebarCollapsed ? "sidebar-collapsed" : ""}`}>
         <main className="work-detail-main">
           <motion.div
             className="work-hero"

@@ -61,7 +61,7 @@ export const hyphaeNestWork: WorkDetail = {
       ],
     },
     strategyAndAnalysis: {
-      title: "Strategy and Analysis",
+      title: "Strategy & Analysis",
       blocks: [
         {
           type: "text",
@@ -239,7 +239,7 @@ export const hyphaeNestWork: WorkDetail = {
       ],
     },
     impactAndResults: {
-      title: "Impact and Results",
+      title: "Impact & Results",
       blocks: [
         {
           type: "text",

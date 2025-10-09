@@ -40,7 +40,7 @@ export const scobyWork: WorkDetail = {
       ],
     },
     strategyAndAnalysis: {
-      title: "Strategy and Analysis",
+      title: "Strategy & Analysis",
       blocks: [
         {
           type: "image-trio",
@@ -176,7 +176,7 @@ export const scobyWork: WorkDetail = {
       ],
     },
     impactAndResults: {
-      title: "Impact and Results",
+      title: "Impact & Results",
       blocks: [
         {
           type: "text",
