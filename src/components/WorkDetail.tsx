@@ -529,7 +529,6 @@ const WorkDetail = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [currentVideoSrc, setCurrentVideoSrc] = useState("");
   const [currentVideoTitle, setCurrentVideoTitle] = useState("");
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   // Extract all images from work data in order
   const allImages = useMemo(() => {
@@ -832,12 +831,11 @@ const WorkDetail = () => {
             sections={sortedSections}
             activeSection={activeSection}
             onSectionClick={scrollToSection}
-            onCollapseChange={setIsSidebarCollapsed}
           />
         );
       })()}
 
-      <div className={`work-detail-container ${work.displayType === "pdf" ? "pdf-layout" : ""} ${isSidebarCollapsed ? "sidebar-collapsed" : ""}`}>
+      <div className={`work-detail-container${work.displayType === "pdf" ? " pdf-layout" : ""}`}>
         <main className="work-detail-main">
           <motion.div
             className="work-hero"

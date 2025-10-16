@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useMusic } from "./BackgroundMusic";
 import { worksData } from "../data/worksData";
 import SplitText from "../react_bits_effects/SplitText";
@@ -19,6 +19,7 @@ interface Work {
 
 const MainContent = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [scrollY, setScrollY] = useState(() => window.scrollY);
   const { volume, setVolume } = useMusic();
   const workSectionRef = useRef<HTMLElement>(null);
@@ -87,6 +88,16 @@ const MainContent = () => {
       window.removeEventListener('resize', checkMobile);
     };
   }, []);
+
+  useEffect(() => {
+    const state = location.state as { scrollTo?: string } | null;
+    if (state?.scrollTo === "work") {
+      requestAnimationFrame(() => {
+        workSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      navigate(location.pathname + location.search, { replace: true });
+    }
+  }, [location, navigate]);
 
   useEffect(() => {
     // Skip mask effect on mobile - will show base layer only

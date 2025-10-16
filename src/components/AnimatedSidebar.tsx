@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/AnimatedSidebar.css";
 
 interface SidebarSection {
@@ -11,59 +12,18 @@ interface AnimatedSidebarProps {
   sections: SidebarSection[];
   activeSection: string;
   onSectionClick: (sectionId: string) => void;
-  onCollapseChange?: (isCollapsed: boolean) => void;
 }
 
 const AnimatedSidebar = ({
   sections,
   activeSection,
   onSectionClick,
-  onCollapseChange,
 }: AnimatedSidebarProps) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const navigate = useNavigate();
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
 
-  const handleToggle = () => {
-    const newCollapsedState = !isCollapsed;
-    setIsCollapsed(newCollapsedState);
-    if (onCollapseChange) {
-      onCollapseChange(newCollapsedState);
-    }
-  };
-
-  const sidebarVariants = {
-    expanded: {
-      width: 240,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut" as const,
-      },
-    },
-    collapsed: {
-      width: 80,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut" as const,
-      },
-    },
-  };
-
-  const textVariants = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.2,
-        delay: 0.1,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      x: -10,
-      transition: {
-        duration: 0.2,
-      },
-    },
+  const handleBackToWorks = () => {
+    navigate("/", { state: { scrollTo: "work" } });
   };
 
   const indicatorVariants = {
@@ -75,24 +35,19 @@ const AnimatedSidebar = ({
   return (
     <motion.aside
       className="animated-sidebar"
-      variants={sidebarVariants}
-      initial="expanded"
-      animate={isCollapsed ? "collapsed" : "expanded"}
+      initial={{ x: -20, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
     >
       <div className="sidebar-header">
         <motion.button
           className="sidebar-toggle"
-          onClick={handleToggle}
+          onClick={handleBackToWorks}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+          aria-label="Back to My Works"
         >
-          <motion.span
-            animate={{ rotate: isCollapsed ? 0 : 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            {isCollapsed ? "→" : "←"}
-          </motion.span>
+          <span>←</span>
         </motion.button>
       </div>
 
@@ -131,10 +86,10 @@ const AnimatedSidebar = ({
                   />
                 )}
 
-                {/* Dot indicator - enhanced for collapsed mode */}
+                {/* Dot indicator animation */}
                 <div className="dot-indicator">
                   <motion.div
-                    className={`dot ${isActive ? "active" : ""} ${isCollapsed ? "collapsed-mode" : ""}`}
+                    className={`dot ${isActive ? "active" : ""}`}
                     variants={indicatorVariants}
                     initial="initial"
                     animate={isActive || isHovered ? "animate" : "initial"}
@@ -142,27 +97,10 @@ const AnimatedSidebar = ({
                 </div>
 
                 {/* Section text */}
-                <motion.span
-                  className="sidebar-text"
-                  variants={textVariants}
-                  animate={isCollapsed ? "hidden" : "visible"}
-                >
+                <span className="sidebar-text">
                   {section.title}
-                </motion.span>
+                </span>
               </motion.button>
-
-              {/* Tooltip for collapsed state */}
-              {isCollapsed && isHovered && (
-                <motion.div
-                  className="sidebar-tooltip"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -10 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {section.title}
-                </motion.div>
-              )}
             </motion.div>
           );
         })}
