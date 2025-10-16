@@ -32,7 +32,6 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/1.png",
-          caption: "1",
           size: "full",
         },
         {
@@ -44,7 +43,6 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/2.png",
-          caption: "2",
           size: "full",
         },
       ],
@@ -64,17 +62,14 @@ export const bikewalkWork: WorkDetail = {
           horizontalImages: [
             {
               src: "/work_details/bikewalk/3left.png",
-              caption: "3left",
               size: 41,
             },
             {
               src: "/work_details/bikewalk/3middle.png",
-              caption: "3middle",
               size: 29,
             },
             {
               src: "/work_details/bikewalk/3right.png",
-              caption: "3right",
               size: 29,
             },
           ],
@@ -92,17 +87,14 @@ export const bikewalkWork: WorkDetail = {
           horizontalImages: [
             {
               src: "/work_details/bikewalk/4left.png",
-              caption: "4left",
               size: 33,
             },
             {
               src: "/work_details/bikewalk/4middle.png",
-              caption: "4middle",
               size: 33,
             },
             {
               src: "/work_details/bikewalk/4right.png",
-              caption: "4right",
               size: 33,
             },
           ],
@@ -124,11 +116,9 @@ export const bikewalkWork: WorkDetail = {
           images: [
             {
               src: "/work_details/bikewalk/5left.png",
-              caption: "5left",
             },
             {
               src: "/work_details/bikewalk/5right.png",
-              caption: "5right",
             },
           ],
           layout: "left-heavy",
@@ -143,13 +133,11 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/6.png",
-          caption: "6",
           size: "full",
         },
         {
           type: "image",
           src: "/work_details/bikewalk/7.png",
-          caption: "7",
           size: "full",
         },
         {
@@ -202,17 +190,14 @@ export const bikewalkWork: WorkDetail = {
           horizontalImages: [
             {
               src: "/work_details/bikewalk/10left.png",
-              caption: "10left",
               size: 33,
             },
             {
               src: "/work_details/bikewalk/10middle.png",
-              caption: "10middle",
               size: 33,
             },
             {
               src: "/work_details/bikewalk/10right.png",
-              caption: "10right",
               size: 33,
             },
           ],

@@ -45,12 +45,10 @@ export const iceyWork: WorkDetail = {
             {
               src: "/work_details/icey/2left.png",
               alt: "Parametric ice structure design",
-              caption: "Parametric design with geometric lattice framework",
             },
             {
               src: "/work_details/icey/2right.png",
               alt: "LED-embedded ice structure glowing",
-              caption: "LED integration creating dynamic light patterns",
             },
           ],
           gap: "medium",
@@ -74,13 +72,11 @@ export const iceyWork: WorkDetail = {
               src: "/work_details/icey/3left.png",
               alt: "Close-up of geometric lattice structure",
               size: 40,
-              caption: "Detailed view of the geometric lattice structure",
             },
             {
               src: "/work_details/icey/3right.png",
               alt: "Interactive installation in exhibition space",
               size: 60,
-              caption: "Installation displayed in exhibition context",
             },
           ],
           gap: "medium",
@@ -89,7 +85,6 @@ export const iceyWork: WorkDetail = {
           type: "image",
           src: "/work_details/icey/4.png",
           size: "full",
-          caption: "Form exploration and parametric design development",
         },
         {
           type: "image-pair",
@@ -97,12 +92,10 @@ export const iceyWork: WorkDetail = {
             {
               src: "/work_details/icey/5left.png",
               alt: "Technical diagram of Arduino setup",
-              caption: "Arduino circuit diagram and LED wiring configuration",
             },
             {
               src: "/work_details/icey/5right.png",
               alt: "3D printing parametric shell process",
-              caption: "3D printing process of the parametric shell components",
             },
           ],
           layout: "equal",
@@ -112,13 +105,11 @@ export const iceyWork: WorkDetail = {
           type: "image",
           src: "/work_details/icey/6.png",
           size: "full",
-          caption: "Material studies and structural prototyping",
         },
         {
           type: "image",
           src: "/work_details/icey/7.png",
           size: "full",
-          caption: "Assembly process and component integration",
         },
         {
           type: "image-pair",
@@ -126,12 +117,10 @@ export const iceyWork: WorkDetail = {
             {
               src: "/work_details/icey/1.gif",
               alt: "Close-up of melting simulation effect",
-              caption: "LED sequence simulating ice melting animation",
             },
             {
               src: "/work_details/icey/8right.png",
               alt: "Audience engagement at showcase",
-              caption: "Viewer interaction during design showcase",
             },
           ],
           gap: "medium",
@@ -141,29 +130,22 @@ export const iceyWork: WorkDetail = {
           type: "image",
           src: "/work_details/icey/9.png",
           size: "full",
-          caption: "Final installation in low-light exhibition setting",
         },
         {
           type: "image",
           src: "/work_details/icey/10.png",
           size: "full",
-          caption:
-            "Close-up detail of LED light diffusion through the structure",
         },
         {
           type: "image",
           src: "/work_details/icey/11.png",
           size: "full",
-          caption:
-            "User interaction demonstrating the tactile and visual experience",
         },
         {
           type: "video",
           src: "/work_details/icey/video.mp4",
           title: "ICEY! Interactive Installation",
           size: "large",
-          caption:
-            "Full demonstration of the interactive ice melting simulation",
         },
       ],
     },

@@ -54,13 +54,11 @@ export const scobyWork: WorkDetail = {
             {
               src: "/work_details/scoby/2left.png",
               alt: "Interior perspective showing hexagonal framework",
-              caption: "Main interior view with hexagonal ceiling",
               size: 60,
             },
             {
               src: "/work_details/scoby/2right.png",
               alt: "Seating area with organic design elements",
-              caption: "Pod seating area with biophilic elements",
               size: 39,
             },
           ],
@@ -93,12 +91,10 @@ export const scobyWork: WorkDetail = {
             {
               src: "/work_details/scoby/3left.png",
               alt: "Interior perspective showing hexagonal framework",
-              caption: "Main interior view with hexagonal ceiling",
             },
             {
               src: "/work_details/scoby/3right.png",
               alt: "Seating area with organic design elements",
-              caption: "Pod seating area with biophilic elements",
             },
           ],
           layout: "right-heavy",
@@ -125,20 +121,17 @@ export const scobyWork: WorkDetail = {
           leftImage: {
             src: "/work_details/scoby/4left.png",
             alt: "Main design concept with detailed interior view",
-            caption: "Primary design concept showing spatial organization",
             size: 75,
           },
           rightImages: [
             {
               src: "/work_details/scoby/4topright.png",
               alt: "Top detail view of hexagonal framework",
-              caption: "Ceiling detail with hexagonal pattern",
               size: 50,
             },
             {
               src: "/work_details/scoby/4buttonright.png",
               alt: "Bottom detail view of seating area",
-              caption: "Pod seating arrangement detail",
               size: 50,
             },
           ],

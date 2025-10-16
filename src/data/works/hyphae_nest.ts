@@ -38,7 +38,6 @@ export const hyphaeNestWork: WorkDetail = {
           layout: "top-bottom",
           topImage: {
             src: "/work_details/hyphae_nest/1.png",
-            caption: "1",
             height: "70px",
             position: "50% 40%",
           },
@@ -46,13 +45,11 @@ export const hyphaeNestWork: WorkDetail = {
             {
               src: "/work_details/hyphae_nest/2left.png",
               alt: "Mycelial network research and biomimicry study",
-              caption: "2left",
               size: 50,
             },
             {
               src: "/work_details/hyphae_nest/2right.png",
               alt: "User interaction study and spatial mapping",
-              caption: "2right",
               size: 50,
             },
           ],
@@ -75,12 +72,10 @@ export const hyphaeNestWork: WorkDetail = {
             {
               src: "/work_details/hyphae_nest/3left.png",
               alt: "Biomimicry analysis and pattern studies",
-              caption: "3left",
             },
             {
               src: "/work_details/hyphae_nest/3right.png",
               alt: "Interaction strategy and sensor placement",
-              caption: "3right",
             },
           ],
           layout: "equal",
@@ -92,12 +87,10 @@ export const hyphaeNestWork: WorkDetail = {
             {
               src: "/work_details/hyphae_nest/4left.png",
               alt: "Early prototype testing with fiber optics",
-              caption: "4left",
             },
             {
               src: "/work_details/hyphae_nest/4right.png",
               alt: "Sensor integration prototype",
-              caption: "4right",
             },
           ],
           layout: "right-heavy",
@@ -119,20 +112,17 @@ export const hyphaeNestWork: WorkDetail = {
           leftImage: {
             src: "/work_details/hyphae_nest/5left.png",
             alt: "Main installation view showing complete structure",
-            caption: "5left",
             size: 50,
           },
           rightImages: [
             {
               src: "/work_details/hyphae_nest/5topright.png",
               alt: "Close-up of fiber optic canopy",
-              caption: "5topright",
               size: 60,
             },
             {
               src: "/work_details/hyphae_nest/5bottomright.png",
               alt: "Base structure and sensor integration",
-              caption: "5bottomright",
               size: 50,
             },
           ],
@@ -145,19 +135,16 @@ export const hyphaeNestWork: WorkDetail = {
             {
               src: "/work_details/hyphae_nest/7left.png",
               alt: "Wide view of visitor interaction within the installation",
-              caption: "7left",
               size: 28,
             },
             {
               src: "/work_details/hyphae_nest/6bottomleft.png",
               alt: "Wide view of visitor interaction within the installation",
-              caption: "6bottomleft",
               size: 33,
             },
             {
               src: "/work_details/hyphae_nest/6bottomright.png",
               alt: "Installation illuminated at night showing light patterns",
-              caption: "6bottomright",
               size: 33,
             },
           ],
@@ -169,12 +156,10 @@ export const hyphaeNestWork: WorkDetail = {
             {
               src: "/work_details/hyphae_nest/6.png",
               alt: "Interactive experience detail",
-              caption: "6",
             },
             {
               src: "/work_details/hyphae_nest/7right.png",
               alt: "User interaction flow",
-              caption: "7right",
             },
           ],
           layout: "left-heavy",
@@ -193,19 +178,16 @@ export const hyphaeNestWork: WorkDetail = {
             {
               src: "/work_details/hyphae_nest/8left.png",
               alt: "Interaction flow detail",
-              caption: "8left",
               size: 33,
             },
             {
               src: "/work_details/hyphae_nest/8middle.png",
               alt: "User experience journey",
-              caption: "8middle",
               size: 33,
             },
             {
               src: "/work_details/hyphae_nest/8right.png",
               alt: "Close-up of visitor interaction with responsive elements",
-              caption: "8right",
               size: 33,
             },
           ],
@@ -218,19 +200,16 @@ export const hyphaeNestWork: WorkDetail = {
             {
               src: "/work_details/hyphae_nest/9left.png",
               alt: "Additional installation view",
-              caption: "9left",
               size: 33,
             },
             {
               src: "/work_details/hyphae_nest/9middle.png",
               alt: "Detailed perspective",
-              caption: "9middle",
               size: 33,
             },
             {
               src: "/work_details/hyphae_nest/9right.png",
               alt: "Final interaction detail",
-              caption: "9right",
               size: 33,
             },
           ],

@@ -31,7 +31,6 @@ export const boatExhibitWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/boat_exhibit/1.png",
-          caption: "1",
           size: "full",
         },
         {
@@ -43,7 +42,6 @@ export const boatExhibitWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/boat_exhibit/2.png",
-          caption: "2",
           size: "full",
         },
       ],
@@ -60,7 +58,6 @@ export const boatExhibitWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/boat_exhibit/3.png",
-          caption: "3",
           size: "full",
         },
         {
@@ -83,7 +80,6 @@ export const boatExhibitWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/boat_exhibit/4.png",
-          caption: "4",
           size: "full",
         },
         {
@@ -95,7 +91,6 @@ export const boatExhibitWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/boat_exhibit/5.png",
-          caption: "5",
           size: "full",
         },
         {
@@ -107,7 +102,6 @@ export const boatExhibitWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/boat_exhibit/6.png",
-          caption: "6",
           size: "full",
         },
       ],

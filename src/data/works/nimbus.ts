@@ -30,7 +30,6 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/1top.png",
-          caption: "1top",
           size: "full",
         },
         {
@@ -53,19 +52,16 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/1bottom.png",
-          caption: "1bottom",
           size: "full",
         },
         {
           type: "image",
           src: "/work_details/nimbus/2.png",
-          caption: "3",
           size: "full",
         },
         {
           type: "image",
           src: "/work_details/nimbus/3.png",
-          caption: "3",
           size: "full",
         },
         {
@@ -77,7 +73,6 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/4.png",
-          caption: "4",
           size: "full",
         },
       ],
@@ -94,13 +89,11 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/5.png",
-          caption: "5",
           size: "full",
         },
         {
           type: "image",
           src: "/work_details/nimbus/6.png",
-          caption: "6",
           size: "full",
         },
         {
@@ -114,11 +107,9 @@ export const nimbusWork: WorkDetail = {
           images: [
             {
               src: "/work_details/nimbus/7left.png",
-              caption: "7left",
             },
             {
               src: "/work_details/nimbus/7right.png",
-              caption: "7right",
             },
           ],
           layout: "equal",
@@ -127,7 +118,6 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/8.png",
-          caption: "8",
           size: "large",
         },
         {
@@ -142,17 +132,14 @@ export const nimbusWork: WorkDetail = {
           horizontalImages: [
             {
               src: "/work_details/nimbus/9left.png",
-              caption: "9left",
               size: 33,
             },
             {
               src: "/work_details/nimbus/9middle.png",
-              caption: "9middle",
               size: 33,
             },
             {
               src: "/work_details/nimbus/9right.png",
-              caption: "9right",
               size: 33,
             },
           ],
@@ -164,17 +151,14 @@ export const nimbusWork: WorkDetail = {
           horizontalImages: [
             {
               src: "/work_details/nimbus/10left.png",
-              caption: "10left",
               size: 38,
             },
             {
               src: "/work_details/nimbus/10middle.png",
-              caption: "10middle",
               size: 25,
             },
             {
               src: "/work_details/nimbus/10right.png",
-              caption: "10right",
               size: 37,
             },
           ],
@@ -194,7 +178,6 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/11.png",
-          caption: "11",
           size: "full",
         },
         {
@@ -218,7 +201,6 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/12.png",
-          caption: "12",
         },
         {
           type: "text",
@@ -246,7 +228,6 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/13.png",
-          caption: "13",
         },
       ],
     },
