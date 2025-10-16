@@ -35,25 +35,9 @@ const MainContent = () => {
   );
   const categories = ["All", ...Array.from(new Set(allCategories))];
 
-  // Handle category toggle
+  // Handle category selection (only one at a time)
   const toggleCategory = (category: string) => {
-    if (category === "All") {
-      setSelectedCategories(["All"]);
-    } else {
-      setSelectedCategories(prev => {
-        // Remove "All" if it's selected
-        const withoutAll = prev.filter(c => c !== "All");
-
-        // Toggle the clicked category
-        if (withoutAll.includes(category)) {
-          const newCategories = withoutAll.filter(c => c !== category);
-          // If no categories selected, default to "All"
-          return newCategories.length === 0 ? ["All"] : newCategories;
-        } else {
-          return [...withoutAll, category];
-        }
-      });
-    }
+    setSelectedCategories([category]);
   };
 
   // Filter works based on selected categories (check if work has ANY of the selected categories)

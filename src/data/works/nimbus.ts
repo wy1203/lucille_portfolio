@@ -3,7 +3,7 @@ import { WorkDetail } from "../types";
 export const nimbusWork: WorkDetail = {
   id: 6,
   title: "Nimbus",
-  category: "Interactive Installation, Design Strategy",
+  category: "Hospitality",
   description: "Immersive cloud-inspired spatial experience",
   thumbnail: "/work_details/nimbus/hero.png",
   heroImage: "/work_details/nimbus/hero.png",

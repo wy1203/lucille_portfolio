@@ -3,7 +3,7 @@ import { WorkDetail } from "../types";
 export const hyphaeNestWork: WorkDetail = {
   id: 3,
   title: "Hyphae Nest",
-  category: "Conceptual Architecture, Sustainable Design",
+  category: "Hospitality",
   description:
     "Architectural exploration of mycelium as a regenerative material for eco-utopian living",
   thumbnail: "/work_details/hyphae_nest/hero.png",

@@ -3,7 +3,7 @@ import { WorkDetail } from "../types";
 export const programmingCornellMakerspaceWork: WorkDetail = {
   id: 8,
   title: "Programming Cornell Makerspace",
-  category: "Programming",
+  category: "Other",
   description:
     "Comprehensive programming document for Cornell Makerspace facility design and operations planning",
   thumbnail: "/work_details/programming_cornell_makerspace/hero.png",
