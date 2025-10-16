@@ -28,16 +28,22 @@ export const iceyWork: WorkDetail = {
       title: "Overview",
       blocks: [
         {
+          type: "text",
+          content:
+            "ICEY! is an **interactive device** that mimics **melting Arctic ice** to spark **climate change awareness**. A **3D-printed parametric shell** embedded with **LED lighting** and controlled via **Arduino** renders slow, fading glows that resemble ice loss under warming conditions. The goal is to encourage **environmental care** by transforming an abstract crisis into a **tangible, contemplative encounter**.",
+          size: "normal",
+        },
+        {
           type: "image",
           src: "/work_details/icey/ICEY! - overview.svg",
           alt: "ICEY! Overview",
           size: "full",
         },
         {
-          type: "text",
-          content:
-            "ICEY! is an **interactive device** that mimics **melting Arctic ice** to spark **climate change awareness**. A **3D-printed parametric shell** embedded with **LED lighting** and controlled via **Arduino** renders slow, fading glows that resemble ice loss under warming conditions. The goal is to encourage **environmental care** by transforming an abstract crisis into a **tangible, contemplative encounter**.",
-          size: "normal",
+          type: "image",
+          src: "/work_details/icey/ICEY! - overview 2.svg",
+          alt: "ICEY! Overview2",
+          size: "full",
         },
         {
           type: "image-trio",
@@ -159,6 +165,12 @@ export const iceyWork: WorkDetail = {
     designSolution: {
       title: "Design Solution",
       blocks: [
+        {
+          type: "image",
+          src: "/work_details/icey/ICEY! - design solution.svg",
+          alt: "ICEY! Design Solution",
+          size: "full",
+        },
         {
           type: "text",
           content:

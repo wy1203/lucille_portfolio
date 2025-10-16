@@ -88,7 +88,7 @@ img {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   background: #00000080;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 1);
   flex-wrap: wrap;
   min-height: 60px;
 }
