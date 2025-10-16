@@ -3,9 +3,9 @@ import { WorkDetail } from "../types";
 export const hyphaeNestWork: WorkDetail = {
   id: 3,
   title: "Hyphae Nest",
-  category: "Interactive Installation, Design Strategy",
+  category: "Conceptual Architecture, Sustainable Design",
   description:
-    "Biomimetic art installation exploring mycelial networks and interconnectedness",
+    "Architectural exploration of mycelium as a regenerative material for eco-utopian living",
   thumbnail: "/work_details/hyphae_nest/hero.png",
   thumbnailImagePos: "50% 50%",
   thumbnailImageFit: "cover",
@@ -13,15 +13,15 @@ export const hyphaeNestWork: WorkDetail = {
   heroImagePosition: "50% 50%",
   heroImageFit: "cover",
   client: "Academic design project (Cornell DEA, 2024)",
-  role: "Lead Designer & Creative Technologist",
+  role: "Lead Designer",
   timeline: "2024",
   skills: [
-    "Interactive Design",
-    "Biomimicry",
-    "Sensor Integration",
+    "Sustainable Design",
+    "Material Ecology",
+    "Human-Centered Design",
+    "Biophilic Architecture",
     "Parametric Modeling",
-    "Unity",
-    "Arduino",
+    "Environmental Systems Thinking",
   ],
   sections: {
     overview: {
@@ -30,7 +30,13 @@ export const hyphaeNestWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Project Vision**: Hyphae Nest is an interactive art installation that translates the hidden language of fungal networks into a tangible, immersive experience. Visitors walk through a canopy of suspended fiber-optic threads that pulse and glow in response to movement, simulating the communication patterns of mycelium. This installation bridges natural systems with digital interaction, creating a space for contemplation about interconnectedness and ecological intelligence.",
+            "**Project Vision:** Hyphae Nest is a conceptual architectural project envisioning a **utopian, eco-friendly future**. It reimagines the built environment as a **living organism**, fostering sustainability and communal connection through bio-based materials. The project’s goal is to **promote ecological harmony** while strengthening **family and community bonds** in a self-sustaining habitat.",
+          size: "normal",
+        },
+        {
+          type: "text",
+          content:
+            "**Offerings:** The design explores **mycelium**—a regenerative, biodegradable, and lightweight material—as a sustainable construction medium. Hyphae Nest envisions an architecture that **grows with time**, integrating structure and nature through adaptive, self-healing materials that return to the earth at the end of their lifecycle.",
           size: "normal",
         },
         {
@@ -49,7 +55,7 @@ export const hyphaeNestWork: WorkDetail = {
             },
             {
               src: "/work_details/hyphae_nest/2right.png",
-              alt: "User interaction study and spatial mapping",
+              alt: "Spatial mapping and community interaction diagrams",
               size: 50,
             },
           ],
@@ -63,7 +69,13 @@ export const hyphaeNestWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Research Foundation**: Through extensive study of mycological systems and sensor-based interactive art, we developed a framework that translates biological communication into aesthetic experience. The installation draws from scientific research on mycelial information transfer while creating an accessible, poetic interpretation for general audiences.",
+            "**Design Foundation:** The strategy behind Hyphae Nest stems from observing **hyphal networks**, the microscopic threads that form the mycelium of fungi. These biological systems demonstrate principles of **connection, exchange, and resilience**, offering a model for rethinking architectural organization and community structure.",
+          size: "normal",
+        },
+        {
+          type: "text",
+          content:
+            "**Analytical Approach:** The project integrates **material ecology**, **environmental psychology**, and **social design** to craft spaces that mirror natural systems. Spatial studies examined how mycelial growth patterns could inform circulation, clustering, and community gathering areas—encouraging both **private reflection** and **collective interaction**. The research highlights the potential of bio-fabricated materials to reduce carbon footprints and foster regenerative living cycles.",
           size: "normal",
         },
         {
@@ -71,11 +83,11 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/3left.png",
-              alt: "Biomimicry analysis and pattern studies",
+              alt: "Biomimicry analysis and structural mapping",
             },
             {
               src: "/work_details/hyphae_nest/3right.png",
-              alt: "Interaction strategy and sensor placement",
+              alt: "Spatial and environmental strategy diagrams",
             },
           ],
           layout: "equal",
@@ -86,11 +98,11 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/4left.png",
-              alt: "Early prototype testing with fiber optics",
+              alt: "Early physical prototype using mycelium composites",
             },
             {
               src: "/work_details/hyphae_nest/4right.png",
-              alt: "Sensor integration prototype",
+              alt: "Material performance and assembly study",
             },
           ],
           layout: "right-heavy",
@@ -104,115 +116,55 @@ export const hyphaeNestWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Parametric Design Process**: Using Grasshopper and parametric modeling, we generated organic branching structures that mimic hyphal growth patterns. Each fiber strand follows algorithmic rules based on actual mycelial expansion, creating an authentic yet abstracted representation. The installation uses motion sensors and proximity detection to trigger light sequences that ripple through the network, visualizing invisible communication.",
+            "**Design Inspiration:** Rooted in the natural growth of **hyphae forming mycelium**, the architectural form embodies **organic expansion and interconnectivity**. Each structural component functions like a branching network—modular, adaptive, and alive. The architecture’s geometry draws from fungal root systems, mirroring how underground networks nurture and connect ecological communities.",
+          size: "normal",
+        },
+        {
+          type: "text",
+          content:
+            "**Material System:** The design employs **mycelium-based panels** within a modular timber frame, allowing structures to grow, heal, and eventually decompose. The construction process emphasizes **circularity and biodegradability**, minimizing waste and enabling components to re-enter natural cycles. This approach transforms architecture into a **temporal ecosystem** rather than a static monument.",
           size: "normal",
         },
         {
           type: "image-trio",
           leftImage: {
             src: "/work_details/hyphae_nest/5left.png",
-            alt: "Main installation view showing complete structure",
+            alt: "Main architectural render showing structure growth form",
             size: 50,
           },
           rightImages: [
             {
               src: "/work_details/hyphae_nest/5topright.png",
-              alt: "Close-up of fiber optic canopy",
+              alt: "Close-up view of mycelium panel textures",
               size: 60,
             },
             {
               src: "/work_details/hyphae_nest/5bottomright.png",
-              alt: "Base structure and sensor integration",
+              alt: "Interior modular system detail",
               size: 50,
             },
           ],
           gap: "medium",
         },
         {
-          type: "image-trio",
-          layout: "horizontal",
-          horizontalImages: [
-            {
-              src: "/work_details/hyphae_nest/7left.png",
-              alt: "Wide view of visitor interaction within the installation",
-              size: 28,
-            },
-            {
-              src: "/work_details/hyphae_nest/6bottomleft.png",
-              alt: "Wide view of visitor interaction within the installation",
-              size: 33,
-            },
-            {
-              src: "/work_details/hyphae_nest/6bottomright.png",
-              alt: "Installation illuminated at night showing light patterns",
-              size: 33,
-            },
-          ],
-          gap: "medium",
+          type: "text",
+          content:
+            "**Human-Centered Experience:** Hyphae Nest embodies **interconnectedness**—fostering shared spaces that strengthen community and family relationships. The fluid circulation encourages spontaneous encounters, while semi-private alcoves allow moments of reflection. Natural light filters through porous walls, producing a calming, **biophilic atmosphere** that aligns human rhythms with environmental cycles.",
+          size: "normal",
         },
         {
           type: "image-pair",
           images: [
             {
               src: "/work_details/hyphae_nest/6.png",
-              alt: "Interactive experience detail",
+              alt: "Interior communal space emphasizing natural light and organic form",
             },
             {
               src: "/work_details/hyphae_nest/7right.png",
-              alt: "User interaction flow",
+              alt: "User experience visualization and spatial flow diagram",
             },
           ],
           layout: "left-heavy",
-          gap: "medium",
-        },
-        {
-          type: "text",
-          content:
-            "**Interactive Experience**: As visitors move through the space, their presence triggers cascading light patterns that spread through the fiber network like signals through mycelium. The experience is both meditative and playful, encouraging exploration while fostering awareness of how individual actions ripple through interconnected systems.",
-          size: "normal",
-        },
-        {
-          type: "image-trio",
-          layout: "horizontal",
-          horizontalImages: [
-            {
-              src: "/work_details/hyphae_nest/8left.png",
-              alt: "Interaction flow detail",
-              size: 33,
-            },
-            {
-              src: "/work_details/hyphae_nest/8middle.png",
-              alt: "User experience journey",
-              size: 33,
-            },
-            {
-              src: "/work_details/hyphae_nest/8right.png",
-              alt: "Close-up of visitor interaction with responsive elements",
-              size: 33,
-            },
-          ],
-          gap: "medium",
-        },
-        {
-          type: "image-trio",
-          layout: "horizontal",
-          horizontalImages: [
-            {
-              src: "/work_details/hyphae_nest/9left.png",
-              alt: "Additional installation view",
-              size: 33,
-            },
-            {
-              src: "/work_details/hyphae_nest/9middle.png",
-              alt: "Detailed perspective",
-              size: 33,
-            },
-            {
-              src: "/work_details/hyphae_nest/9right.png",
-              alt: "Final interaction detail",
-              size: 33,
-            },
-          ],
           gap: "medium",
         },
       ],
@@ -223,7 +175,7 @@ export const hyphaeNestWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Exhibition Impact:** Hyphae Nest has been exhibited in three university galleries and one public art space, engaging over 2,000 visitors. The installation successfully bridged art, science, and technology, making complex biological systems accessible through embodied interaction.",
+            "**Conceptual Impact:** Hyphae Nest challenges the conventions of architectural permanence by proposing **living architecture**—structures that evolve, decay, and regenerate with their environment. The project demonstrates how **biomaterial innovation** can reshape the future of sustainable housing and communal design.",
           size: "normal",
         },
         {
@@ -236,10 +188,10 @@ export const hyphaeNestWork: WorkDetail = {
           type: "list",
           listType: "unordered",
           items: [
-            "Created an award-winning installation recognized for innovative use of biomimicry in interactive art",
-            "Developed reusable framework for sensor-based environmental installations",
-            "Published technical documentation for parametric mycelial modeling",
-            "Engaged diverse audiences in conversations about ecological systems and interconnectedness",
+            "Explored the architectural potential of mycelium as a structural and ecological material",
+            "Developed modular design system inspired by fungal growth networks",
+            "Proposed biophilic spatial strategies that enhance social and environmental well-being",
+            "Redefined architectural sustainability through biodegradability and circular lifecycles",
           ],
           size: "normal",
           marginTop: "-0.25rem",
@@ -247,7 +199,7 @@ export const hyphaeNestWork: WorkDetail = {
         {
           type: "text",
           content:
-            "The project demonstrated how computational design and physical computing can create meaningful experiences that transform abstract scientific concepts into visceral, memorable encounters.",
+            "Through speculative design and material experimentation, Hyphae Nest presents a **vision for regenerative living**—where architecture coexists with the ecosystem rather than consuming it, encouraging humans to live symbiotically with their environment.",
           size: "normal",
         },
       ],
@@ -258,13 +210,13 @@ export const hyphaeNestWork: WorkDetail = {
         {
           type: "text",
           content:
-            "This project deepened my practice at the intersection of natural systems, parametric design, and interactive technology. I learned to translate biological principles into algorithmic rules while maintaining the poetic essence of the source material. Working with fiber optics and sensor arrays expanded my technical capabilities in physical computing.",
+            "Designing Hyphae Nest revealed how deeply **material choice shapes social connection**. By translating mycelium’s logic of growth and exchange into architectural form, the project became both a study in sustainability and a meditation on belonging. It reframed design as a **collaborative process with nature**, not merely a human endeavor.",
           size: "normal",
         },
         {
           type: "text",
           content:
-            "The biggest challenge was calibrating sensor sensitivity to create responsive but not overwhelming interactions. Through iterative testing with users, we found the right balance between ambient behavior and reactive moments. Future iterations would explore outdoor installations with solar power and weather-responsive behaviors, further connecting the artificial network to environmental conditions.",
+            "Future development of this concept could involve **biotechnological prototyping** and partnerships with environmental scientists to explore real-world applications of living materials. Hyphae Nest continues to inspire inquiries into how architecture can evolve beyond shelter—toward being an **active participant in ecological restoration** and human connection.",
           size: "normal",
         },
       ],

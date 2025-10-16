@@ -1,7 +1,7 @@
 import { WorkDetail } from "../types";
 
 export const nimbusWork: WorkDetail = {
-  id: 4,
+  id: 6,
   title: "Nimbus",
   category: "Interactive Installation, Design Strategy",
   description: "Immersive cloud-inspired spatial experience",

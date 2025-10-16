@@ -1,7 +1,7 @@
 import { WorkDetail } from "../types";
 
 export const cornellClassWork: WorkDetail = {
-  id: 6,
+  id: 4,
   title: "Cornell Class",
   category: "Educational Space Design, Design Strategy",
   description:
@@ -26,7 +26,7 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Project Vision:** Cornell Class reimagines the traditional university classroom as a dynamic, flexible learning environment that supports diverse pedagogical approaches. This project addresses the evolving needs of modern education by creating spaces that encourage active learning, collaboration, and student engagement through thoughtful spatial design and adaptable furniture systems.",
+            "**Project Vision:** Cornell Classroom reimagines two existing lecture spaces—**Riley Robb Hall** and **Rockefeller Hall**—through evidence-based design to create **inclusive, flexible, and engaging** learning environments. The redesign addresses acoustic, spatial, and ergonomic challenges to elevate day-to-day teaching and learning.",
           size: "normal",
         },
         {
@@ -45,7 +45,7 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Educational Transformation:** The design moves beyond lecture-based formats to support multiple learning modalities—individual study, small group discussions, project-based collaboration, and presentations. Each spatial decision prioritizes student agency and instructor flexibility while maintaining acoustic comfort and visual connectivity.",
+            "**Goal:** Improve **functionality, comfort, and inclusivity** by aligning room layout, furniture, acoustics, and lighting with a range of pedagogies—from lectures to discussions, seminars, and workshops.",
           size: "normal",
         },
         {
@@ -61,6 +61,12 @@ export const cornellClassWork: WorkDetail = {
           layout: "equal",
           gap: "medium",
         },
+        {
+          type: "text",
+          content:
+            "**Offerings:** Adaptive layouts, upgraded ergonomic furniture, targeted acoustic treatments, and layered lighting strategies tailored to **active learning**. Riley Robb adopts a **horseshoe configuration** to strengthen visibility and communication; Rockefeller integrates **reconfigurable furnishings** and **positive-distraction walls** to support multi-modal learning.",
+          size: "normal",
+        },
       ],
     },
     strategyAndAnalysis: {
@@ -69,7 +75,7 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Research Foundation:** Extensive research into contemporary pedagogy, student behavior patterns, and faculty teaching preferences informed the design strategy. Observation studies of existing classrooms revealed pain points—rigid seating arrangements limiting interaction, poor sightlines, inadequate technology integration, and inflexible layouts unable to adapt to different class activities.",
+            "**Research Foundation:** Observational studies, student/faculty interviews, and post-occupancy pain-point mapping surfaced issues with **sightlines, reverberation, circulation bottlenecks,** and **technology access**. Furniture fit tests and mock reconfigurations informed clear **adjacencies** for instruction zones, collaboration areas, and storage.",
           size: "normal",
         },
         {
@@ -80,7 +86,7 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Design Approach:** The strategy centers on modularity, adaptability, and human-centered comfort. Through interviews with students and educators, we identified key requirements: reconfigurable furniture, integrated technology, natural lighting, acoustic control, and zoned spaces that support both focused work and collaborative activities within a single classroom.",
+            "**Evidence-Based Criteria:** 1) **Acoustic intelligibility**—reduce echo and cross-talk; 2) **Ergonomics**—support varied postures and body types; 3) **Flexibility**—15-minute reconfig windows; 4) **Accessibility**—clear routes, multiple teaching focal points, and equitable sightlines; 5) **Lighting quality**—task, ambient, and presentation modes without glare.",
           size: "normal",
         },
         {
@@ -96,7 +102,7 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Flexible Furniture Systems:** The classroom features lightweight, mobile furniture that easily reconfigures for different activities. Modular tables, stackable seating, and mobile whiteboards enable rapid transitions between lecture, seminar, workshop, and presentation formats. Integrated power and data connections support technology-enabled learning throughout the space.",
+            "**Riley Robb Hall – Horseshoe Layout:** A tiered **horseshoe** plan improves **eye contact, audibility,** and **instructor roaming**. Curved rows with swivel seating enable quick pivots from lecture to discussion. Integrated power, under-desk bag zones, and aisle lighting enhance safety and comfort without visual clutter.",
           size: "normal",
         },
         {
@@ -115,7 +121,7 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Spatial Zones & Circulation:** The layout establishes distinct zones for different learning activities while maintaining visual openness. Careful attention to circulation patterns ensures students can move freely during group work without disrupting others. Multi-surface display areas—digital screens, writable walls, and pin-up surfaces—create opportunities for sharing work and displaying resources.",
+            "**Rockefeller Hall – Reconfigurable Studio Classroom:** **Mobile tables**, **stackable ergonomic chairs**, and **casters** support rapid shifts among seminar, cluster, and presentation modes. **Positive distraction walls** (writable/pin-up surfaces with soft texture and color) encourage ideation while providing **acoustic absorption** and visual calm.",
           size: "normal",
         },
         {
@@ -139,7 +145,7 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Environmental Quality:** Natural daylighting, acoustic treatments, and thermal comfort were prioritized to create an optimal learning environment. Adjustable lighting systems accommodate different activities, from detailed project work to multimedia presentations. Sound-absorbing materials reduce echo while maintaining speech intelligibility across the room.",
+            "**Acoustics & Lighting:** Ceiling baffles, wall panels, and soft finishes reduce reverberation and chatter. **Layered lighting**—ambient, task, and presentation—pairs with dimming presets for lectures, discussions, and screen-based work, maintaining **visual comfort** and **focus**.",
           size: "normal",
         },
         {
@@ -162,6 +168,12 @@ export const cornellClassWork: WorkDetail = {
           layout: "equal",
           gap: "medium",
         },
+        {
+          type: "text",
+          content:
+            "**Accessibility & Inclusivity:** Clear circulation routes, adjustable instructor stations, multiple display focal points, and seat-height variety ensure equitable participation. Finishes and color palette deliver **aesthetic calm** to reduce cognitive load.",
+          size: "normal",
+        },
       ],
     },
     impactAndResults: {
@@ -170,7 +182,7 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Project Impact:** Cornell Class demonstrates how thoughtful spatial design can transform educational outcomes. The flexible environment supports active learning pedagogies that have been shown to improve student engagement, retention, and collaborative skills. The design creates a model for 21st-century classrooms that adapt to evolving teaching methods rather than constraining them.",
+            "**Project Impact:** The redesign transforms outdated lecture halls into **future-ready learning environments** that foster connection, focus, and community. Spaces now support **active learning** with improved comfort, audibility, and sightlines for all students.",
           size: "normal",
         },
         {
@@ -183,11 +195,11 @@ export const cornellClassWork: WorkDetail = {
           type: "list",
           listType: "unordered",
           items: [
-            "Created a highly adaptable classroom environment supporting multiple pedagogical approaches and learning activities",
-            "Designed modular furniture systems that enable rapid reconfiguration for different class formats and group sizes",
-            "Integrated technology seamlessly throughout the space to support modern teaching tools and collaborative work",
-            "Established environmental quality standards—lighting, acoustics, and comfort—that enhance focus and learning effectiveness",
-            "Developed a replicable framework for educational space design applicable to other university settings",
+            "Enhanced **speech intelligibility** and reduced echo via targeted acoustic treatments",
+            "Improved **visibility and collaboration** with the Riley Robb **horseshoe** layout",
+            "Greater **flexibility** at Rockefeller through **reconfigurable furniture** and positive distraction walls",
+            "Increased **comfort and accessibility** with ergonomic seating, clear routes, and adjustable stations",
+            "Preset **lighting modes** aligned to lectures, discussions, and presentations",
           ],
           size: "normal",
           marginTop: "-0.25rem",
@@ -200,7 +212,7 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "text",
           content:
-            "The project successfully bridges pedagogical theory with spatial practice, proving that classroom design is not merely functional infrastructure but a critical component of educational innovation and student success.",
+            "By combining functionality with **aesthetic calm**, Cornell Classroom demonstrates how evidence-based interior design can measurably improve **engagement, equity,** and **learning outcomes**.",
           size: "normal",
         },
       ],
@@ -211,13 +223,13 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "text",
           content:
-            "Designing Cornell Class deepened my understanding of how physical environments influence learning and social interaction. The project challenged me to think beyond aesthetics and focus on behavioral patterns, teaching methodologies, and user comfort—balancing multiple requirements within spatial and budgetary constraints.",
+            "This project reinforced that **classroom design is pedagogical**. Translating active-learning principles into layout, acoustics, and lighting required balancing **behavioral insights** with pragmatic constraints of budget and existing construction.",
           size: "normal",
         },
         {
           type: "text",
           content:
-            "The process refined my skills in participatory design, furniture specification, and environmental systems integration. Working closely with educators and students taught me the importance of co-design in creating spaces that truly serve their users. Future iterations would explore more advanced technology integration, including AR/VR learning tools and adaptive environmental controls that respond to real-time occupancy and activity patterns, creating even more responsive and personalized learning environments.",
+            "Future steps include longitudinal **post-occupancy evaluation** and refinement of furniture kits, acoustical tuning, and control presets—continuing to align the spaces with evolving **teaching modes** and **student well-being**.",
           size: "normal",
         },
       ],

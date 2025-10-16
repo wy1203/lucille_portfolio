@@ -16,6 +16,24 @@ import PDFViewer from "./PDFViewer";
 import AnimatedSidebar from "./AnimatedSidebar";
 import "../styles/WorkDetail.css";
 
+const SECTION_ORDER = [
+  "overview",
+  "strategyAndAnalysis",
+  "designSolution",
+  "impactAndResults",
+  "reflection",
+];
+
+const sortSectionsByOrder = (sectionKeys: string[]) =>
+  sectionKeys.sort((a, b) => {
+    const aIndex = SECTION_ORDER.indexOf(a);
+    const bIndex = SECTION_ORDER.indexOf(b);
+    if (aIndex === -1 && bIndex === -1) return 0;
+    if (aIndex === -1) return 1;
+    if (bIndex === -1) return -1;
+    return aIndex - bIndex;
+  });
+
 const VideoBlockComponent = ({
   block,
   marginStyle,
@@ -84,7 +102,7 @@ const VideoBlockComponent = ({
 const ContentRenderer = ({
   blocks,
   onImageClick,
-  onVideoClick
+  onVideoClick,
 }: {
   blocks: ContentBlock[];
   onImageClick: (imageSrc: string) => void;
@@ -100,8 +118,8 @@ const ContentRenderer = ({
   const parseInlineFormatting = (text: string) => {
     // Support both **bold** markdown syntax and <strong> HTML tags
     return text
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*(.*?)\*/g, '<em>$1</em>');
+      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*(.*?)\*/g, "<em>$1</em>");
   };
 
   return (
@@ -118,7 +136,9 @@ const ContentRenderer = ({
                   block.emphasis ? "emphasis" : ""
                 }`}
                 style={marginStyle}
-                dangerouslySetInnerHTML={{ __html: parseInlineFormatting(block.content) }}
+                dangerouslySetInnerHTML={{
+                  __html: parseInlineFormatting(block.content),
+                }}
               />
             );
 
@@ -142,7 +162,9 @@ const ContentRenderer = ({
                 semibold: "600",
                 bold: "700",
               };
-              return typeof weight === "number" ? weight : presetWeights[weight] || weight;
+              return typeof weight === "number"
+                ? weight
+                : presetWeights[weight] || weight;
             };
 
             const titleStyle: React.CSSProperties = {
@@ -152,8 +174,12 @@ const ContentRenderer = ({
               ...(block.align && { textAlign: block.align }),
               ...(block.weight && { fontWeight: getFontWeight(block.weight) }),
               ...(block.lineHeight && { lineHeight: block.lineHeight }),
-              ...(block.letterSpacing && { letterSpacing: block.letterSpacing }),
-              ...(block.textTransform && { textTransform: block.textTransform }),
+              ...(block.letterSpacing && {
+                letterSpacing: block.letterSpacing,
+              }),
+              ...(block.textTransform && {
+                textTransform: block.textTransform,
+              }),
             };
 
             return (
@@ -161,7 +187,9 @@ const ContentRenderer = ({
                 key={index}
                 className="title-block"
                 style={titleStyle}
-                dangerouslySetInnerHTML={{ __html: parseInlineFormatting(block.content) }}
+                dangerouslySetInnerHTML={{
+                  __html: parseInlineFormatting(block.content),
+                }}
               />
             );
 
@@ -178,19 +206,27 @@ const ContentRenderer = ({
                     return (
                       <li
                         key={itemIndex}
-                        dangerouslySetInnerHTML={{ __html: parseInlineFormatting(item) }}
+                        dangerouslySetInnerHTML={{
+                          __html: parseInlineFormatting(item),
+                        }}
                       />
                     );
                   } else {
                     return (
                       <li key={itemIndex}>
-                        <span dangerouslySetInnerHTML={{ __html: parseInlineFormatting(item.content) }} />
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: parseInlineFormatting(item.content),
+                          }}
+                        />
                         {item.subItems && item.subItems.length > 0 && (
                           <ul className="sub-list">
                             {item.subItems.map((subItem, subIndex) => (
                               <li
                                 key={subIndex}
-                                dangerouslySetInnerHTML={{ __html: parseInlineFormatting(subItem) }}
+                                dangerouslySetInnerHTML={{
+                                  __html: parseInlineFormatting(subItem),
+                                }}
                               />
                             ))}
                           </ul>
@@ -216,7 +252,7 @@ const ContentRenderer = ({
                     block.aspectRatio ? `aspect-${block.aspectRatio}` : ""
                   } clickable-image`}
                   onClick={() => onImageClick(block.src)}
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                 />
                 {block.caption && <figcaption>{block.caption}</figcaption>}
               </div>
@@ -229,7 +265,9 @@ const ContentRenderer = ({
             const isTopBottomLayout = block.layout === "top-bottom";
             const layout = isTopBottomLayout
               ? "top-bottom"
-              : (hasCustomSizes ? "custom" : block.layout || "equal");
+              : hasCustomSizes
+              ? "custom"
+              : block.layout || "equal";
 
             const pairStyle = {
               ...marginStyle,
@@ -259,7 +297,7 @@ const ContentRenderer = ({
                       alt={img.alt || ""}
                       className="clickable-image"
                       onClick={() => onImageClick(img.src)}
-                      style={{ cursor: 'pointer' }}
+                      style={{ cursor: "pointer" }}
                     />
                     {img.caption && <figcaption>{img.caption}</figcaption>}
                   </div>
@@ -278,15 +316,23 @@ const ContentRenderer = ({
               // Calculate CSS variables for image sizes
               const horizontalStyle = {
                 ...marginStyle,
-                "--image-width-1": horizontalImages[0]?.size ? `${horizontalImages[0].size}%` : '33.33%',
-                "--image-width-2": horizontalImages[1]?.size ? `${horizontalImages[1].size}%` : '33.33%',
-                "--image-width-3": horizontalImages[2]?.size ? `${horizontalImages[2].size}%` : '33.33%',
+                "--image-width-1": horizontalImages[0]?.size
+                  ? `${horizontalImages[0].size}%`
+                  : "33.33%",
+                "--image-width-2": horizontalImages[1]?.size
+                  ? `${horizontalImages[1].size}%`
+                  : "33.33%",
+                "--image-width-3": horizontalImages[2]?.size
+                  ? `${horizontalImages[2].size}%`
+                  : "33.33%",
               } as React.CSSProperties;
 
               return (
                 <div
                   key={index}
-                  className={`image-trio horizontal gap-${block.gap || "medium"}`}
+                  className={`image-trio horizontal gap-${
+                    block.gap || "medium"
+                  }`}
                   style={horizontalStyle}
                 >
                   {horizontalImages.map((img, imgIndex) => (
@@ -296,7 +342,7 @@ const ContentRenderer = ({
                         alt={img.alt || ""}
                         className="clickable-image"
                         onClick={() => onImageClick(img.src)}
-                        style={{ cursor: 'pointer' }}
+                        style={{ cursor: "pointer" }}
                       />
                       {img.caption && <figcaption>{img.caption}</figcaption>}
                     </div>
@@ -311,14 +357,20 @@ const ContentRenderer = ({
               // Calculate CSS variables for bottom image sizes
               const bottomStyle = {
                 ...marginStyle,
-                "--image-width-1": bottomImages[0]?.size ? `${bottomImages[0].size}%` : '1fr',
-                "--image-width-2": bottomImages[1]?.size ? `${bottomImages[1].size}%` : '1fr',
+                "--image-width-1": bottomImages[0]?.size
+                  ? `${bottomImages[0].size}%`
+                  : "1fr",
+                "--image-width-2": bottomImages[1]?.size
+                  ? `${bottomImages[1].size}%`
+                  : "1fr",
               } as React.CSSProperties;
 
               return (
                 <div
                   key={index}
-                  className={`image-trio top-bottom gap-${block.gap || "medium"}`}
+                  className={`image-trio top-bottom gap-${
+                    block.gap || "medium"
+                  }`}
                   style={bottomStyle}
                 >
                   <div className="top-image">
@@ -328,9 +380,11 @@ const ContentRenderer = ({
                       className="clickable-image"
                       onClick={() => onImageClick(topImage.src)}
                       style={{
-                        cursor: 'pointer',
+                        cursor: "pointer",
                         ...(topImage.height && { maxHeight: topImage.height }),
-                        ...(topImage.position && { objectPosition: topImage.position })
+                        ...(topImage.position && {
+                          objectPosition: topImage.position,
+                        }),
                       }}
                     />
                     {topImage.caption && (
@@ -345,7 +399,7 @@ const ContentRenderer = ({
                           alt={img.alt || ""}
                           className="clickable-image"
                           onClick={() => onImageClick(img.src)}
-                          style={{ cursor: 'pointer' }}
+                          style={{ cursor: "pointer" }}
                         />
                         {img.caption && <figcaption>{img.caption}</figcaption>}
                       </div>
@@ -368,7 +422,9 @@ const ContentRenderer = ({
               return (
                 <div
                   key={index}
-                  className={`image-trio left-right gap-${block.gap || "medium"}`}
+                  className={`image-trio left-right gap-${
+                    block.gap || "medium"
+                  }`}
                   style={trioStyle}
                 >
                   <div className="left-image">
@@ -377,7 +433,7 @@ const ContentRenderer = ({
                       alt={leftImage.alt || ""}
                       className="clickable-image"
                       onClick={() => onImageClick(leftImage.src)}
-                      style={{ cursor: 'pointer' }}
+                      style={{ cursor: "pointer" }}
                     />
                     {leftImage.caption && (
                       <figcaption>{leftImage.caption}</figcaption>
@@ -402,9 +458,11 @@ const ContentRenderer = ({
                             alt={img.alt || ""}
                             className="clickable-image"
                             onClick={() => onImageClick(img.src)}
-                            style={{ cursor: 'pointer' }}
+                            style={{ cursor: "pointer" }}
                           />
-                          {img.caption && <figcaption>{img.caption}</figcaption>}
+                          {img.caption && (
+                            <figcaption>{img.caption}</figcaption>
+                          )}
                         </div>
                       );
                     })}
@@ -431,7 +489,7 @@ const ContentRenderer = ({
                       img.span ? `span-${img.span}` : ""
                     }`}
                     style={{
-                      ...(img.height && { height: img.height })
+                      ...(img.height && { height: img.height }),
                     }}
                   >
                     <img
@@ -440,10 +498,10 @@ const ContentRenderer = ({
                       className="clickable-image"
                       onClick={() => onImageClick(img.src)}
                       style={{
-                        cursor: 'pointer',
-                        ...(img.height && { height: '100%', width: 'auto' }),
+                        cursor: "pointer",
+                        ...(img.height && { height: "100%", width: "auto" }),
                         ...(img.position && { objectPosition: img.position }),
-                        ...(img.objectFit && { objectFit: img.objectFit })
+                        ...(img.objectFit && { objectFit: img.objectFit }),
                       }}
                     />
                     {img.caption && <figcaption>{img.caption}</figcaption>}
@@ -454,8 +512,12 @@ const ContentRenderer = ({
 
           case "image-full":
             // Handle custom height and width values
-            const isCustomHeight = block.height && !["small", "medium", "large", "viewport"].includes(block.height);
-            const isCustomWidth = block.width && !["small", "medium", "large", "full"].includes(block.width);
+            const isCustomHeight =
+              block.height &&
+              !["small", "medium", "large", "viewport"].includes(block.height);
+            const isCustomWidth =
+              block.width &&
+              !["small", "medium", "large", "full"].includes(block.width);
             const alignment = block.align || "center";
             const alignItemsValue =
               alignment === "left"
@@ -490,9 +552,12 @@ const ContentRenderer = ({
             };
 
             const imageStyle: React.CSSProperties = {
-              cursor: 'pointer',
+              cursor: "pointer",
               ...(isCustomHeight && { maxHeight: block.height }),
-              ...(isCustomWidth && { maxWidth: block.width, width: block.width }),
+              ...(isCustomWidth && {
+                maxWidth: block.width,
+                width: block.width,
+              }),
             };
 
             return (
@@ -500,9 +565,7 @@ const ContentRenderer = ({
                 key={index}
                 className={`image-full ${
                   !isCustomHeight ? block.height || "medium" : ""
-                } ${
-                  !isCustomWidth ? block.width || "" : ""
-                }`.trim()}
+                } ${!isCustomWidth ? block.width || "" : ""}`.trim()}
                 style={imageFullStyle}
               >
                 <img
@@ -521,7 +584,8 @@ const ContentRenderer = ({
             );
 
           case "text-image":
-            const layoutClass = block.layout === "text-right" ? "text-right" : "text-left";
+            const layoutClass =
+              block.layout === "text-right" ? "text-right" : "text-left";
             const textSizeClass = block.text.size || "normal";
             const textWidth = block.textWidth;
             const imageWidth =
@@ -546,7 +610,9 @@ const ContentRenderer = ({
               cursor: "pointer",
               ...(block.image.width && { width: block.image.width }),
               ...(block.image.height && { height: block.image.height }),
-              ...(block.image.objectFit && { objectFit: block.image.objectFit }),
+              ...(block.image.objectFit && {
+                objectFit: block.image.objectFit,
+              }),
               ...(block.image.objectPosition && {
                 objectPosition: block.image.objectPosition,
               }),
@@ -762,29 +828,12 @@ const WorkDetail = () => {
   useEffect(() => {
     const handleScroll = () => {
       // Get all section keys that exist in the work
-      const sectionKeys = work?.sections ? Object.keys(work.sections).filter(key => work.sections[key]) : [];
-
-      // Define preferred order for sections
-      const sectionOrder = [
-        "overview",
-        "strategyAndAnalysis",
-        "challenge",
-        "designSolution",
-        "solution",
-        "impactAndResults",
-        "impact",
-        "reflection",
-      ];
+      const sectionKeys = work?.sections
+        ? Object.keys(work.sections).filter((key) => work.sections[key])
+        : [];
 
       // Sort sections by preferred order
-      const sections = sectionKeys.sort((a, b) => {
-        const aIndex = sectionOrder.indexOf(a);
-        const bIndex = sectionOrder.indexOf(b);
-        if (aIndex === -1 && bIndex === -1) return 0;
-        if (aIndex === -1) return 1;
-        if (bIndex === -1) return -1;
-        return aIndex - bIndex;
-      });
+      const sections = sortSectionsByOrder(sectionKeys);
 
       const scrollPosition = window.scrollY + 200;
 
@@ -888,47 +937,36 @@ const WorkDetail = () => {
         </nav>
       </motion.header>
 
-      {shouldRenderSidebar && (() => {
-        const sectionKeys = work?.sections ? Object.keys(work.sections).filter(key => work.sections[key]) : [];
-        const sectionOrder = [
-          "overview",
-          "strategyAndAnalysis",
-          "challenge",
-          "designSolution",
-          "solution",
-          "impactAndResults",
-          "impact",
-          "reflection",
-        ];
+      {shouldRenderSidebar &&
+        (() => {
+          const sectionKeys = work?.sections
+            ? Object.keys(work.sections).filter((key) => work.sections[key])
+            : [];
 
-        const sortedSections = sectionKeys
-          .sort((a, b) => {
-            const aIndex = sectionOrder.indexOf(a);
-            const bIndex = sectionOrder.indexOf(b);
-            if (aIndex === -1 && bIndex === -1) return 0;
-            if (aIndex === -1) return 1;
-            if (bIndex === -1) return -1;
-            return aIndex - bIndex;
-          })
-          .map((sectionKey) => {
-            const section = work?.sections?.[sectionKey];
-            return {
-              id: sectionKey,
-              title: section?.title || "",
-            };
-          })
-          .filter((section) => section.title);
+          const sortedSections = sortSectionsByOrder(sectionKeys)
+            .map((sectionKey) => {
+              const section = work?.sections?.[sectionKey];
+              return {
+                id: sectionKey,
+                title: section?.title || "",
+              };
+            })
+            .filter((section) => section.title);
 
-        return (
-          <AnimatedSidebar
-            sections={sortedSections}
-            activeSection={activeSection}
-            onSectionClick={scrollToSection}
-          />
-        );
-      })()}
+          return (
+            <AnimatedSidebar
+              sections={sortedSections}
+              activeSection={activeSection}
+              onSectionClick={scrollToSection}
+            />
+          );
+        })()}
 
-      <div className={`work-detail-container${work.displayType === "pdf" ? " pdf-layout" : ""}`}>
+      <div
+        className={`work-detail-container${
+          work.displayType === "pdf" ? " pdf-layout" : ""
+        }`}
+      >
         <main className="work-detail-main">
           <motion.div
             className="work-hero"
@@ -946,9 +984,9 @@ const WorkDetail = () => {
               alt={work.title}
               className="work-hero-image clickable-image"
               style={{
-                objectPosition: work.heroImagePosition || 'center',
-                objectFit: work.heroImageFit || 'cover',
-                cursor: 'pointer'
+                objectPosition: work.heroImagePosition || "center",
+                objectFit: work.heroImageFit || "cover",
+                cursor: "pointer",
               }}
               onClick={() => openModal(work.heroImage)}
             />
@@ -997,42 +1035,31 @@ const WorkDetail = () => {
             ) : (
               <>
                 {(() => {
-                  const sectionKeys = work?.sections ? Object.keys(work.sections).filter(key => work.sections[key]) : [];
-                  const sectionOrder = [
-                    "overview",
-                    "strategyAndAnalysis",
-                    "challenge",
-                    "designSolution",
-                    "solution",
-                    "impactAndResults",
-                    "impact",
-                    "reflection",
-                  ];
+                  const sectionKeys = work?.sections
+                    ? Object.keys(work.sections).filter(
+                        (key) => work.sections[key]
+                      )
+                    : [];
 
-                  return sectionKeys
-                    .sort((a, b) => {
-                      const aIndex = sectionOrder.indexOf(a);
-                      const bIndex = sectionOrder.indexOf(b);
-                      if (aIndex === -1 && bIndex === -1) return 0;
-                      if (aIndex === -1) return 1;
-                      if (bIndex === -1) return -1;
-                      return aIndex - bIndex;
-                    })
-                    .map((sectionKey) => {
-                      const section = work?.sections?.[sectionKey];
-                      if (!section) return null;
+                  return sortSectionsByOrder(sectionKeys).map((sectionKey) => {
+                    const section = work?.sections?.[sectionKey];
+                    if (!section) return null;
 
-                      return (
-                        <section
-                          key={sectionKey}
-                          id={sectionKey}
-                          className="work-section"
-                        >
-                          <h2>{section.title}</h2>
-                          <ContentRenderer blocks={section.blocks} onImageClick={openModal} onVideoClick={openVideoModal} />
-                        </section>
-                      );
-                    });
+                    return (
+                      <section
+                        key={sectionKey}
+                        id={sectionKey}
+                        className="work-section"
+                      >
+                        <h2>{section.title}</h2>
+                        <ContentRenderer
+                          blocks={section.blocks}
+                          onImageClick={openModal}
+                          onVideoClick={openVideoModal}
+                        />
+                      </section>
+                    );
+                  });
                 })()}
               </>
             )}

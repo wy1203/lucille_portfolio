@@ -13,4 +13,13 @@ import { programmingCornellMakerspaceWork } from "./works/programming_cornell_ma
 export * from "./types";
 
 // Export combined works array
-export const worksData: WorkDetail[] = [scobyWork, iceyWork, hyphaeNestWork, nimbusWork, bikewalkWork, cornellClassWork, boatExhibitWork, programmingCornellMakerspaceWork];
+export const worksData: WorkDetail[] = [
+  scobyWork,
+  iceyWork,
+  hyphaeNestWork,
+  cornellClassWork,
+  bikewalkWork,
+  nimbusWork,
+  boatExhibitWork,
+  programmingCornellMakerspaceWork,
+];

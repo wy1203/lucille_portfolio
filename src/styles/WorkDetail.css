@@ -48,7 +48,6 @@
   padding: 0;
 }
 
-
 .work-sidebar {
   position: sticky;
   top: 6rem;
@@ -197,11 +196,16 @@
 }
 
 .work-section h2 {
-  font-size: 2.5em;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #000000;
+  font-weight: 900;
+  text-align: center;
+  font-size: 1.2em;
   font-family: "Montserrat";
+  margin-bottom: 2%;
+  background: linear-gradient(135deg, #0054f3 0%, #ff743a 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  display: inline-block;
 }
 
 .work-section p {

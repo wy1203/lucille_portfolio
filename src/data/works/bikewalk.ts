@@ -3,21 +3,22 @@ import { WorkDetail } from "../types";
 export const bikewalkWork: WorkDetail = {
   id: 5,
   title: "BikeWalk",
-  category: "Retail Store Design, Design Strategy",
-  description: "Sustainable mobility infrastructure for urban communities",
+  category: "Community Space Redesign, Design Strategy",
+  description:
+    "Community-centered redesign for Bike Walk Tompkins, enhancing spatial efficiency, engagement, and identity through evidence-based design",
   thumbnail: "/work_details/bikewalk/hero.png",
   thumbnailImagePos: "50% 80%",
   heroImage: "/work_details/bikewalk/hero.png",
-  client: "Academic design project",
+  client: "Bike Walk Tompkins (Non-profit Organization, Ithaca, NY)",
   role: "Lead Designer",
   timeline: "2024",
   skills: [
-    "Urban Planning",
-    "Transportation Design",
+    "Interior Architecture",
     "Community Engagement",
-    "Sustainable Infrastructure",
-    "GIS Mapping",
-    "Public Space Design",
+    "Evidence-Based Design",
+    "Spatial Planning",
+    "Brand Identity Integration",
+    "Human-Centered Design",
   ],
   sections: {
     overview: {
@@ -26,7 +27,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Project Vision:** BikeWalk reimagines urban mobility through an integrated network of pedestrian and bicycle infrastructure. This project addresses the critical need for safe, accessible, and sustainable transportation alternatives in urban environments, creating connections that prioritize human-centered movement over vehicular traffic.",
+            "**Project Vision:** BikeWalk is a **community-centered redesign project** for **Bike Walk Tompkins**, a non-profit bike repair shop based in **Ithaca, New York**. The project aims to enhance **spatial efficiency**, **community engagement**, and **brand identity** through an **evidence-based design** approach that balances functionality and inclusivity.",
           size: "normal",
         },
         {
@@ -37,7 +38,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Urban Transformation:** The design establishes a comprehensive mobility framework that weaves through existing urban fabric, transforming underutilized spaces into vibrant corridors for walking and cycling. This strategic intervention promotes healthier lifestyles, reduces carbon emissions, and fosters stronger community connections.",
+            "**Goal:** Reimagine the existing repair and community space to optimize **workflow, storage, and accessibility**, while fostering a welcoming environment where **cyclists of all ages and skill levels** can learn, collaborate, and repair together.",
           size: "normal",
         },
         {
@@ -53,7 +54,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Research Foundation:** Comprehensive analysis of existing transportation patterns, pedestrian flow data, and community needs informed the strategic placement of infrastructure. GIS mapping revealed critical gaps in the current network, identifying opportunities to connect neighborhoods, parks, schools, and commercial districts through safe, continuous pathways.",
+            "**Research Foundation:** The design process began with **observational studies**, **staff interviews**, and **spatial workflow mapping** to identify inefficiencies in storage, repair flow, and user circulation. Analysis of user demographics revealed the need for clearer zoning, more intuitive tool placement, and expanded communal areas to accommodate workshops and events.",
           size: "normal",
         },
         {
@@ -78,7 +79,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Design Approach:** The strategy prioritizes accessibility, safety, and user experience through evidence-based design. Stakeholder engagement sessions with residents, cyclists, and local organizations shaped the design criteria, ensuring the infrastructure responds to real community needs and usage patterns.",
+            "**Design Approach:** Using evidence-based insights, the redesign prioritizes **efficiency, visibility, and inclusivity**. A clear hierarchy of space divides the shop into **three functional zones**: (1) a repair and tool zone for mechanics, (2) a flexible learning and workshop area, and (3) a community engagement zone for events and education. The workflow now follows the intuitive rhythm of a cycling loop—enter, repair, collaborate, and connect.",
           size: "normal",
         },
         {
@@ -108,7 +109,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Infrastructure Design:** The network integrates protected bike lanes, widened sidewalks, pedestrian crossings, and traffic-calming measures throughout the urban corridor. Careful attention to materials, lighting, and wayfinding creates an intuitive, welcoming environment that encourages active transportation year-round.",
+            "**Spatial Strategy:** The redesigned layout translates the **rhythm of cycling** into spatial form—fluid pathways, open sightlines, and dynamic activity zones. Modular storage and mobile workbenches allow flexible reconfiguration for group repairs or large community events. Lighting, flooring, and color accents subtly guide movement and reinforce brand cohesion.",
           size: "normal",
         },
         {
@@ -127,7 +128,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Placemaking Elements:** Beyond pure transportation function, the design incorporates public seating, green infrastructure, bike parking, and urban landscaping. These elements transform the corridors into destination spaces that serve multiple community functions—gathering spots, linear parks, and social infrastructure.",
+            "**Materiality & Identity:** Industrial materials like **reclaimed wood**, **powder-coated steel**, and **rubber flooring** reflect the organization’s values of sustainability and repair. Branding elements—logos, signage, and color bands inspired by **bike lane markings**—create visual continuity between the physical and digital identities of Bike Walk Tompkins.",
           size: "normal",
         },
         {
@@ -143,7 +144,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Connectivity & Integration:** Strategic connections link the bike-walk network to transit hubs, residential areas, and key destinations. The design considers multi-modal integration, ensuring seamless transitions between walking, cycling, and public transportation while prioritizing accessibility for all users regardless of age or ability.",
+            "**Human-Centered Experience:** The space fosters **accessibility and empowerment**. Adjustable workstations accommodate diverse users, while open workshop areas encourage collaboration and mentorship. A dedicated corner for community gatherings and digital kiosks strengthens engagement beyond the physical space, uniting **education, repair, and advocacy** under one cohesive design.",
           size: "normal",
         },
         {
@@ -163,7 +164,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Project Impact:** BikeWalk demonstrates how strategic infrastructure investment can catalyze urban transformation. The project creates safer streets, reduces reliance on private vehicles, and establishes a replicable model for sustainable urban mobility that balances environmental, social, and economic benefits.",
+            "**Project Impact:** BikeWalk demonstrates how **evidence-based spatial design** can elevate community organizations by improving both function and identity. The redesign enhances safety, accessibility, and engagement while reinforcing the organization’s role as a local hub for sustainable mobility and education.",
           size: "normal",
         },
         {
@@ -176,10 +177,10 @@ export const bikewalkWork: WorkDetail = {
           type: "list",
           listType: "unordered",
           items: [
-            "Established a comprehensive network of protected bike lanes and pedestrian pathways connecting key community destinations",
-            "Integrated sustainable infrastructure with public space design, creating multi-functional urban corridors",
-            "Developed an accessible, safe mobility system that serves diverse user groups and promotes active transportation",
-            "Created a scalable framework for sustainable urban mobility that can be adapted to other neighborhoods and cities",
+            "Optimized workshop layout improving tool visibility and circulation efficiency",
+            "Integrated community zones supporting education, repair, and collaboration",
+            "Unified brand presence through coordinated interior and digital identity",
+            "Enhanced user inclusivity and safety through ergonomic and accessible design strategies",
           ],
           size: "normal",
           marginTop: "-0.25rem",
@@ -206,7 +207,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "text",
           content:
-            "The project successfully bridges infrastructure planning with community placemaking, demonstrating how mobility design can enhance urban livability while advancing environmental sustainability goals.",
+            "The redesign transforms Bike Walk Tompkins into a **model of inclusive community infrastructure**, merging repair, education, and advocacy into a cohesive spatial experience that supports both sustainability and empowerment.",
           size: "normal",
         },
       ],
@@ -217,13 +218,13 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "text",
           content:
-            "Designing BikeWalk deepened my understanding of how transportation infrastructure shapes urban life beyond mere movement. The project challenged me to balance engineering requirements with human-centered design, creating spaces that are functionally efficient yet socially meaningful.",
+            "Redesigning BikeWalk reinforced my belief that **spatial design is a catalyst for community connection**. This project required balancing operational functionality with social mission—translating everyday repair tasks into opportunities for collaboration, education, and inclusion.",
           size: "normal",
         },
         {
           type: "text",
           content:
-            "The process refined my skills in urban analysis, stakeholder engagement, and systems thinking. Integrating safety standards, accessibility guidelines, and sustainability principles while maintaining design quality required careful coordination across multiple disciplines. Future iterations would explore more adaptive infrastructure that responds to seasonal use patterns and incorporates emerging micro-mobility technologies to create even more flexible, resilient urban transportation networks.",
+            "The process strengthened my approach to **evidence-based design**—from workflow analysis to stakeholder feedback integration. Future directions include exploring **adaptive modular systems** for pop-up bike workshops and expanding the design into a **city-wide identity network**, connecting repair, mobility, and advocacy through cohesive spatial storytelling.",
           size: "normal",
         },
       ],
