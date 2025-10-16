@@ -8,7 +8,8 @@ export type ContentBlockType =
   | "image-grid"
   | "image-full"
   | "video"
-  | "spacer";
+  | "spacer"
+  | "text-image";
 
 export interface BaseContentBlock {
   id?: string;
@@ -123,6 +124,7 @@ export interface ImageFullBlock extends BaseContentBlock {
   caption?: string;
   height?: "small" | "medium" | "large" | "viewport" | string; // Support custom percentage/pixel values
   width?: "small" | "medium" | "large" | "full" | string; // Support custom percentage/pixel values
+  align?: "left" | "center" | "right";
 }
 
 export interface VideoBlock extends BaseContentBlock {
@@ -139,6 +141,27 @@ export interface SpacerBlock extends BaseContentBlock {
   size?: "small" | "medium" | "large";
 }
 
+export interface TextImageBlock extends BaseContentBlock {
+  type: "text-image";
+  layout?: "text-left" | "text-right";
+  textWidth?: number; // Percentage width allocation for text content (0-100)
+  imageWidth?: number; // Percentage width allocation for image content (0-100)
+  text: {
+    content: string;
+    size?: "normal" | "large" | "small";
+    title?: string;
+  };
+  image: {
+    src: string;
+    alt?: string;
+    caption?: string;
+    width?: string;
+    height?: string;
+    objectFit?: "cover" | "contain" | "fill" | "scale-down" | "none";
+    objectPosition?: string;
+  };
+}
+
 export type ContentBlock =
   | TextBlock
   | TitleBlock
@@ -149,7 +172,8 @@ export type ContentBlock =
   | ImageGridBlock
   | VideoBlock
   | ImageFullBlock
-  | SpacerBlock;
+  | SpacerBlock
+  | TextImageBlock;
 
 export interface Section {
   title: string;

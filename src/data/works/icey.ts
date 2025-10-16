@@ -31,7 +31,7 @@ export const iceyWork: WorkDetail = {
           type: "text",
           content:
             "ICEY! is an **interactive installation** designed to spark **climate awareness** by simulating the slow, fragile process of **melting ice**. A **3D-printed parametric shell** embedded with **LED lights** and controlled through **Arduino** captures the shifting glow of **polar ice** as it dissolves under warming conditions.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-trio",
@@ -57,13 +57,13 @@ export const iceyWork: WorkDetail = {
           type: "text",
           content:
             "The design draws inspiration from the **duality** of the **ice caps**—**strong** in form yet **vulnerable** to change. The **geometric lattice** embodies both **resilience** and **fragility**, symbolizing the **urgent reality** of **global warming**.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "text",
           content:
             "At its core, ICEY! prioritizes **human-centered experience**. By engaging people **visually** and **emotionally**, the device transforms **abstract concerns** into a **tangible symbol**. Viewers are prompted to **pause**, **reflect**, and **act**, considering their own role in **environmental care**—making the installation a **catalyst** for **awareness** and **action**.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-pair",
@@ -145,7 +145,7 @@ export const iceyWork: WorkDetail = {
           type: "video",
           src: "/work_details/icey/video.mp4",
           title: "ICEY! Interactive Installation",
-          size: "large",
+          size: "normal",
         },
       ],
     },
@@ -156,13 +156,13 @@ export const iceyWork: WorkDetail = {
           type: "text",
           content:
             "ICEY! successfully created a **reflective**, **emotionally resonant** interaction that translated **climate change** from a **distant abstraction** into a **personal encounter**.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "text",
           content: "**Key Outcomes:**",
           marginBottom: "0rem",
-          size: "large",
+          size: "normal",
         },
         {
           type: "list",
@@ -172,7 +172,7 @@ export const iceyWork: WorkDetail = {
             "**80%** of surveyed participants reported the installation deepened their **awareness** of **climate urgency**",
             "Highlighted in **critique sessions** as a strong example of **design** translating **global issues** into **human-centered experiences**",
           ],
-          size: "large",
+          size: "normal",
           marginTop: "-0.25rem",
         },
       ],
@@ -184,19 +184,19 @@ export const iceyWork: WorkDetail = {
           type: "text",
           content:
             "This project reinforced the power of **human-centered design** in addressing **global challenges**. **Technical prototyping skills**—**Arduino coding**, **LED sequencing**, and **parametric modeling**—became tools for crafting **emotional resonance** and **symbolic meaning**.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "text",
           content:
             "**Key Challenges:** Capturing the **look** and **feel** of **melting ice** realistically within the constraints of **lightweight materials** and **accessible technology**.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "text",
           content:
             "**Future Iterations:** Future iterations would integrate **sound** and **haptic elements** for a **multi-sensory experience**, and expand to **public spaces** to measure broader **impact**.",
-          size: "large",
+          size: "normal",
         },
       ],
     },

@@ -1,7 +1,20 @@
+.next-projects-section-wrapper {
+  margin: 0 0 0 260px;
+  max-width: calc(100vw - 260px);
+  padding: 4rem 2rem 2rem 2rem;
+}
+
+.next-projects-section-wrapper.pdf-layout {
+  margin-left: 0;
+  max-width: 100%;
+}
+
 .next-projects-section {
-  padding: 4rem 4rem 2rem 4rem;
   background: white;
   margin-top: 2rem;
+  padding: 3rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
 }
 
 .next-projects-title {
@@ -23,7 +36,7 @@
 
 .next-projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -96,8 +109,9 @@
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-  .next-projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .next-projects-section-wrapper {
+    margin-left: 0;
+    max-width: 100%;
   }
 
   .next-projects-section {

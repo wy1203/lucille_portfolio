@@ -27,7 +27,7 @@ export const cornellClassWork: WorkDetail = {
           type: "text",
           content:
             "**Project Vision:** Cornell Class reimagines the traditional university classroom as a dynamic, flexible learning environment that supports diverse pedagogical approaches. This project addresses the evolving needs of modern education by creating spaces that encourage active learning, collaboration, and student engagement through thoughtful spatial design and adaptable furniture systems.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-pair",
@@ -46,7 +46,7 @@ export const cornellClassWork: WorkDetail = {
           type: "text",
           content:
             "**Educational Transformation:** The design moves beyond lecture-based formats to support multiple learning modalities—individual study, small group discussions, project-based collaboration, and presentations. Each spatial decision prioritizes student agency and instructor flexibility while maintaining acoustic comfort and visual connectivity.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-pair",
@@ -70,7 +70,7 @@ export const cornellClassWork: WorkDetail = {
           type: "text",
           content:
             "**Research Foundation:** Extensive research into contemporary pedagogy, student behavior patterns, and faculty teaching preferences informed the design strategy. Observation studies of existing classrooms revealed pain points—rigid seating arrangements limiting interaction, poor sightlines, inadequate technology integration, and inflexible layouts unable to adapt to different class activities.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image",
@@ -81,7 +81,7 @@ export const cornellClassWork: WorkDetail = {
           type: "text",
           content:
             "**Design Approach:** The strategy centers on modularity, adaptability, and human-centered comfort. Through interviews with students and educators, we identified key requirements: reconfigurable furniture, integrated technology, natural lighting, acoustic control, and zoned spaces that support both focused work and collaborative activities within a single classroom.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image",
@@ -97,7 +97,7 @@ export const cornellClassWork: WorkDetail = {
           type: "text",
           content:
             "**Flexible Furniture Systems:** The classroom features lightweight, mobile furniture that easily reconfigures for different activities. Modular tables, stackable seating, and mobile whiteboards enable rapid transitions between lecture, seminar, workshop, and presentation formats. Integrated power and data connections support technology-enabled learning throughout the space.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-pair",
@@ -116,7 +116,7 @@ export const cornellClassWork: WorkDetail = {
           type: "text",
           content:
             "**Spatial Zones & Circulation:** The layout establishes distinct zones for different learning activities while maintaining visual openness. Careful attention to circulation patterns ensures students can move freely during group work without disrupting others. Multi-surface display areas—digital screens, writable walls, and pin-up surfaces—create opportunities for sharing work and displaying resources.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-trio",
@@ -140,7 +140,7 @@ export const cornellClassWork: WorkDetail = {
           type: "text",
           content:
             "**Environmental Quality:** Natural daylighting, acoustic treatments, and thermal comfort were prioritized to create an optimal learning environment. Adjustable lighting systems accommodate different activities, from detailed project work to multimedia presentations. Sound-absorbing materials reduce echo while maintaining speech intelligibility across the room.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image",
@@ -171,13 +171,13 @@ export const cornellClassWork: WorkDetail = {
           type: "text",
           content:
             "**Project Impact:** Cornell Class demonstrates how thoughtful spatial design can transform educational outcomes. The flexible environment supports active learning pedagogies that have been shown to improve student engagement, retention, and collaborative skills. The design creates a model for 21st-century classrooms that adapt to evolving teaching methods rather than constraining them.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "text",
           content: "**Key Outcomes:**",
           marginBottom: "0rem",
-          size: "large",
+          size: "normal",
         },
         {
           type: "list",
@@ -189,7 +189,7 @@ export const cornellClassWork: WorkDetail = {
             "Established environmental quality standards—lighting, acoustics, and comfort—that enhance focus and learning effectiveness",
             "Developed a replicable framework for educational space design applicable to other university settings",
           ],
-          size: "large",
+          size: "normal",
           marginTop: "-0.25rem",
         },
         {
@@ -201,7 +201,7 @@ export const cornellClassWork: WorkDetail = {
           type: "text",
           content:
             "The project successfully bridges pedagogical theory with spatial practice, proving that classroom design is not merely functional infrastructure but a critical component of educational innovation and student success.",
-          size: "large",
+          size: "normal",
         },
       ],
     },
@@ -212,13 +212,13 @@ export const cornellClassWork: WorkDetail = {
           type: "text",
           content:
             "Designing Cornell Class deepened my understanding of how physical environments influence learning and social interaction. The project challenged me to think beyond aesthetics and focus on behavioral patterns, teaching methodologies, and user comfort—balancing multiple requirements within spatial and budgetary constraints.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "text",
           content:
             "The process refined my skills in participatory design, furniture specification, and environmental systems integration. Working closely with educators and students taught me the importance of co-design in creating spaces that truly serve their users. Future iterations would explore more advanced technology integration, including AR/VR learning tools and adaptive environmental controls that respond to real-time occupancy and activity patterns, creating even more responsive and personalized learning environments.",
-          size: "large",
+          size: "normal",
         },
       ],
     },

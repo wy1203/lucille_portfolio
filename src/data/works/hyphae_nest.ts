@@ -31,7 +31,7 @@ export const hyphaeNestWork: WorkDetail = {
           type: "text",
           content:
             "**Project Vision**: Hyphae Nest is an interactive art installation that translates the hidden language of fungal networks into a tangible, immersive experience. Visitors walk through a canopy of suspended fiber-optic threads that pulse and glow in response to movement, simulating the communication patterns of mycelium. This installation bridges natural systems with digital interaction, creating a space for contemplation about interconnectedness and ecological intelligence.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-trio",
@@ -64,7 +64,7 @@ export const hyphaeNestWork: WorkDetail = {
           type: "text",
           content:
             "**Research Foundation**: Through extensive study of mycological systems and sensor-based interactive art, we developed a framework that translates biological communication into aesthetic experience. The installation draws from scientific research on mycelial information transfer while creating an accessible, poetic interpretation for general audiences.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-pair",
@@ -105,7 +105,7 @@ export const hyphaeNestWork: WorkDetail = {
           type: "text",
           content:
             "**Parametric Design Process**: Using Grasshopper and parametric modeling, we generated organic branching structures that mimic hyphal growth patterns. Each fiber strand follows algorithmic rules based on actual mycelial expansion, creating an authentic yet abstracted representation. The installation uses motion sensors and proximity detection to trigger light sequences that ripple through the network, visualizing invisible communication.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-trio",
@@ -169,7 +169,7 @@ export const hyphaeNestWork: WorkDetail = {
           type: "text",
           content:
             "**Interactive Experience**: As visitors move through the space, their presence triggers cascading light patterns that spread through the fiber network like signals through mycelium. The experience is both meditative and playful, encouraging exploration while fostering awareness of how individual actions ripple through interconnected systems.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-trio",
@@ -224,13 +224,13 @@ export const hyphaeNestWork: WorkDetail = {
           type: "text",
           content:
             "**Exhibition Impact:** Hyphae Nest has been exhibited in three university galleries and one public art space, engaging over 2,000 visitors. The installation successfully bridged art, science, and technology, making complex biological systems accessible through embodied interaction.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "text",
           content: "**Key Outcomes:**",
           marginBottom: "0rem",
-          size: "large",
+          size: "normal",
         },
         {
           type: "list",
@@ -241,14 +241,14 @@ export const hyphaeNestWork: WorkDetail = {
             "Published technical documentation for parametric mycelial modeling",
             "Engaged diverse audiences in conversations about ecological systems and interconnectedness",
           ],
-          size: "large",
+          size: "normal",
           marginTop: "-0.25rem",
         },
         {
           type: "text",
           content:
             "The project demonstrated how computational design and physical computing can create meaningful experiences that transform abstract scientific concepts into visceral, memorable encounters.",
-          size: "large",
+          size: "normal",
         },
       ],
     },
@@ -259,13 +259,13 @@ export const hyphaeNestWork: WorkDetail = {
           type: "text",
           content:
             "This project deepened my practice at the intersection of natural systems, parametric design, and interactive technology. I learned to translate biological principles into algorithmic rules while maintaining the poetic essence of the source material. Working with fiber optics and sensor arrays expanded my technical capabilities in physical computing.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "text",
           content:
             "The biggest challenge was calibrating sensor sensitivity to create responsive but not overwhelming interactions. Through iterative testing with users, we found the right balance between ambient behavior and reactive moments. Future iterations would explore outdoor installations with solar power and weather-responsive behaviors, further connecting the artificial network to environmental conditions.",
-          size: "large",
+          size: "normal",
         },
       ],
     },

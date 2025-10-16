@@ -27,7 +27,7 @@ export const bikewalkWork: WorkDetail = {
           type: "text",
           content:
             "**Project Vision:** BikeWalk reimagines urban mobility through an integrated network of pedestrian and bicycle infrastructure. This project addresses the critical need for safe, accessible, and sustainable transportation alternatives in urban environments, creating connections that prioritize human-centered movement over vehicular traffic.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image",
@@ -38,7 +38,7 @@ export const bikewalkWork: WorkDetail = {
           type: "text",
           content:
             "**Urban Transformation:** The design establishes a comprehensive mobility framework that weaves through existing urban fabric, transforming underutilized spaces into vibrant corridors for walking and cycling. This strategic intervention promotes healthier lifestyles, reduces carbon emissions, and fosters stronger community connections.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image",
@@ -54,7 +54,7 @@ export const bikewalkWork: WorkDetail = {
           type: "text",
           content:
             "**Research Foundation:** Comprehensive analysis of existing transportation patterns, pedestrian flow data, and community needs informed the strategic placement of infrastructure. GIS mapping revealed critical gaps in the current network, identifying opportunities to connect neighborhoods, parks, schools, and commercial districts through safe, continuous pathways.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-trio",
@@ -79,7 +79,7 @@ export const bikewalkWork: WorkDetail = {
           type: "text",
           content:
             "**Design Approach:** The strategy prioritizes accessibility, safety, and user experience through evidence-based design. Stakeholder engagement sessions with residents, cyclists, and local organizations shaped the design criteria, ensuring the infrastructure responds to real community needs and usage patterns.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-trio",
@@ -109,7 +109,7 @@ export const bikewalkWork: WorkDetail = {
           type: "text",
           content:
             "**Infrastructure Design:** The network integrates protected bike lanes, widened sidewalks, pedestrian crossings, and traffic-calming measures throughout the urban corridor. Careful attention to materials, lighting, and wayfinding creates an intuitive, welcoming environment that encourages active transportation year-round.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-pair",
@@ -128,7 +128,7 @@ export const bikewalkWork: WorkDetail = {
           type: "text",
           content:
             "**Placemaking Elements:** Beyond pure transportation function, the design incorporates public seating, green infrastructure, bike parking, and urban landscaping. These elements transform the corridors into destination spaces that serve multiple community functions—gathering spots, linear parks, and social infrastructure.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image",
@@ -144,7 +144,7 @@ export const bikewalkWork: WorkDetail = {
           type: "text",
           content:
             "**Connectivity & Integration:** Strategic connections link the bike-walk network to transit hubs, residential areas, and key destinations. The design considers multi-modal integration, ensuring seamless transitions between walking, cycling, and public transportation while prioritizing accessibility for all users regardless of age or ability.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-pair",
@@ -164,13 +164,13 @@ export const bikewalkWork: WorkDetail = {
           type: "text",
           content:
             "**Project Impact:** BikeWalk demonstrates how strategic infrastructure investment can catalyze urban transformation. The project creates safer streets, reduces reliance on private vehicles, and establishes a replicable model for sustainable urban mobility that balances environmental, social, and economic benefits.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "text",
           content: "**Key Outcomes:**",
           marginBottom: "0rem",
-          size: "large",
+          size: "normal",
         },
         {
           type: "list",
@@ -181,7 +181,7 @@ export const bikewalkWork: WorkDetail = {
             "Developed an accessible, safe mobility system that serves diverse user groups and promotes active transportation",
             "Created a scalable framework for sustainable urban mobility that can be adapted to other neighborhoods and cities",
           ],
-          size: "large",
+          size: "normal",
           marginTop: "-0.25rem",
         },
         {
@@ -207,7 +207,7 @@ export const bikewalkWork: WorkDetail = {
           type: "text",
           content:
             "The project successfully bridges infrastructure planning with community placemaking, demonstrating how mobility design can enhance urban livability while advancing environmental sustainability goals.",
-          size: "large",
+          size: "normal",
         },
       ],
     },
@@ -218,13 +218,13 @@ export const bikewalkWork: WorkDetail = {
           type: "text",
           content:
             "Designing BikeWalk deepened my understanding of how transportation infrastructure shapes urban life beyond mere movement. The project challenged me to balance engineering requirements with human-centered design, creating spaces that are functionally efficient yet socially meaningful.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "text",
           content:
             "The process refined my skills in urban analysis, stakeholder engagement, and systems thinking. Integrating safety standards, accessibility guidelines, and sustainability principles while maintaining design quality required careful coordination across multiple disciplines. Future iterations would explore more adaptive infrastructure that responds to seasonal use patterns and incorporates emerging micro-mobility technologies to create even more flexible, resilient urban transportation networks.",
-          size: "large",
+          size: "normal",
         },
       ],
     },

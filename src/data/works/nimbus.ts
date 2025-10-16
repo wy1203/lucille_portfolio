@@ -25,7 +25,7 @@ export const nimbusWork: WorkDetail = {
           type: "text",
           content:
             "**Project Vision:** Nimbus is an immersive spatial installation that explores the ephemeral nature of clouds through interactive design. The project transforms physical space into a dreamlike environment where visitors can experience the weightless, ever-changing qualities of cloud formations through carefully orchestrated light, material, and spatial sequences.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image",
@@ -36,7 +36,7 @@ export const nimbusWork: WorkDetail = {
           type: "text",
           content:
             "**Spatial Narrative:** The installation creates a journey through multiple atmospheric conditions, inviting participants to pause, observe, and connect with the transient beauty of natural phenomena reimagined in built form.",
-          size: "large",
+          size: "normal",
         },
       ],
     },
@@ -47,7 +47,7 @@ export const nimbusWork: WorkDetail = {
           type: "text",
           content:
             "**Research Foundation:** The design emerged from extensive research into meteorological patterns, light diffusion in atmospheric conditions, and the psychological impact of cloud formations on human perception. Analysis of visitor behavior in immersive environments informed the spatial strategy and interaction design.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image",
@@ -68,7 +68,7 @@ export const nimbusWork: WorkDetail = {
           type: "text",
           content:
             "**Design Approach:** The project employs a multi-sensory strategy combining material research, lighting design, and spatial choreography to evoke the sensation of moving through cloud layers. Each design decision was grounded in understanding how atmospheric phenomena can be translated into tangible architectural experiences.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image",
@@ -84,7 +84,7 @@ export const nimbusWork: WorkDetail = {
           type: "text",
           content:
             "**Material & Light System:** The installation utilizes translucent membranes, dynamic lighting systems, and suspended elements to create cloud-like forms that respond to movement and time. Carefully calibrated light diffusion creates shifting shadows and highlights, mimicking the ever-changing nature of clouds.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image",
@@ -100,7 +100,7 @@ export const nimbusWork: WorkDetail = {
           type: "text",
           content:
             "**Spatial Experience:** The journey unfolds through distinct atmospheric zones—from dense fog-like conditions to ethereal, light-filled chambers. Visitors navigate pathways that reveal and conceal views, creating moments of discovery and contemplation throughout the experience.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-pair",
@@ -118,13 +118,13 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/8.png",
-          size: "large",
+          size: "normal",
         },
         {
           type: "text",
           content:
             "**Interactive Elements:** The design incorporates responsive systems that allow visitors to influence the environment—subtle interactions create ripples of light and movement through the installation, reinforcing the connection between human presence and atmospheric transformation.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-trio",
@@ -173,7 +173,7 @@ export const nimbusWork: WorkDetail = {
           type: "text",
           content:
             "**Project Impact:** Nimbus successfully created an immersive environment that challenged visitors' perception of space and atmosphere. The installation demonstrated how natural phenomena can inspire innovative spatial design that fosters contemplation and sensory engagement.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image",
@@ -184,7 +184,7 @@ export const nimbusWork: WorkDetail = {
           type: "text",
           content: "**Key Outcomes:**",
           marginBottom: "0rem",
-          size: "large",
+          size: "normal",
         },
         {
           type: "list",
@@ -195,18 +195,21 @@ export const nimbusWork: WorkDetail = {
             "Established a new approach to environmental storytelling through multi-sensory design",
             "Generated visitor engagement through contemplative, slow-paced spatial experience",
           ],
-          size: "large",
+          size: "normal",
           marginTop: "-0.25rem",
         },
         {
-          type: "image",
-          src: "/work_details/nimbus/12.png",
-        },
-        {
-          type: "text",
-          content:
-            "The installation successfully bridged natural inspiration with built environment, demonstrating how ephemeral qualities can be captured and reinterpreted through thoughtful design intervention.",
-          size: "large",
+          type: "text-image",
+          layout: "text-right",
+          text: {
+            content:
+              "The installation successfully bridged natural inspiration with built environment, demonstrating how ephemeral qualities can be captured and reinterpreted through thoughtful design intervention.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/nimbus/12.png",
+            alt: "",
+          },
         },
       ],
     },
@@ -214,20 +217,17 @@ export const nimbusWork: WorkDetail = {
       title: "Reflection",
       blocks: [
         {
-          type: "text",
-          content:
-            "Designing Nimbus deepened my understanding of how atmospheric conditions influence emotional response and spatial perception. The project challenged me to translate intangible phenomena into physical form while maintaining the essence of what makes clouds captivating—their constant transformation and ethereal presence.",
-          size: "large",
-        },
-        {
-          type: "text",
-          content:
-            "The process refined my skills in lighting design, material experimentation, and interactive systems. Balancing technical requirements with poetic experience required careful orchestration of every design element. Future iterations would explore more advanced responsive technologies and sustainable material alternatives to enhance both the environmental sensitivity and interactive possibilities of the installation.",
-          size: "large",
-        },
-        {
-          type: "image",
-          src: "/work_details/nimbus/13.png",
+          type: "text-image",
+          layout: "text-right",
+          text: {
+            content:
+              "Designing Nimbus deepened my understanding of how atmospheric conditions influence emotional response and spatial perception. The project challenged me to translate intangible phenomena into physical form while maintaining the essence of what makes clouds captivating—their constant transformation and ethereal presence. The process refined my skills in lighting design, material experimentation, and interactive systems. Balancing technical requirements with poetic experience required careful orchestration of every design element. Future iterations would explore more advanced responsive technologies and sustainable material alternatives to enhance both the environmental sensitivity and interactive possibilities of the installation.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/nimbus/13.png",
+            alt: "",
+          },
         },
       ],
     },

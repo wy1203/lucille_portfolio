@@ -11,12 +11,12 @@ interface NextProjectsProps {
 const NextProjects = ({ currentWorkId }: NextProjectsProps) => {
   const navigate = useNavigate();
 
-  // Get the next 3 projects (循环到开头如果不够)
+  // Get the next projects after the current entry
   const getNextProjects = () => {
     const currentIndex = worksData.findIndex((work) => work.id === currentWorkId);
     const nextProjects = [];
 
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 4; i++) {
       const nextIndex = (currentIndex + i) % worksData.length;
       nextProjects.push(worksData[nextIndex]);
     }

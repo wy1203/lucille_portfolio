@@ -22,6 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 remove-captions.js
+update-text-size.js
 
 # Claude Code instructions
 AGENTS.md

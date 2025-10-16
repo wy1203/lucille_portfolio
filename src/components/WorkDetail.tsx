@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useState, useEffect, useMemo, useRef } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { useMusic } from "./BackgroundMusic";
 import {
@@ -456,11 +456,37 @@ const ContentRenderer = ({
             // Handle custom height and width values
             const isCustomHeight = block.height && !["small", "medium", "large", "viewport"].includes(block.height);
             const isCustomWidth = block.width && !["small", "medium", "large", "full"].includes(block.width);
+            const alignment = block.align || "center";
+            const alignItemsValue =
+              alignment === "left"
+                ? "flex-start"
+                : alignment === "right"
+                ? "flex-end"
+                : "center";
 
             const imageFullStyle = {
               ...marginStyle,
               ...(isCustomHeight && { maxHeight: block.height }),
               ...(isCustomWidth && { maxWidth: block.width }),
+              alignItems: alignItemsValue,
+              alignSelf:
+                alignment === "left"
+                  ? "flex-start"
+                  : alignment === "right"
+                  ? "flex-end"
+                  : "center",
+              marginLeft:
+                alignment === "left"
+                  ? "0"
+                  : alignment === "right"
+                  ? "auto"
+                  : "auto",
+              marginRight:
+                alignment === "left"
+                  ? "auto"
+                  : alignment === "right"
+                  ? "0"
+                  : "auto",
             };
 
             const imageStyle: React.CSSProperties = {
@@ -486,7 +512,72 @@ const ContentRenderer = ({
                   onClick={() => onImageClick(block.src)}
                   style={imageStyle}
                 />
-                {block.caption && <figcaption>{block.caption}</figcaption>}
+                {block.caption && (
+                  <figcaption style={{ textAlign: alignment }}>
+                    {block.caption}
+                  </figcaption>
+                )}
+              </div>
+            );
+
+          case "text-image":
+            const layoutClass = block.layout === "text-right" ? "text-right" : "text-left";
+            const textSizeClass = block.text.size || "normal";
+            const textWidth = block.textWidth;
+            const imageWidth =
+              block.imageWidth !== undefined
+                ? block.imageWidth
+                : textWidth !== undefined
+                ? Math.max(0, 100 - textWidth)
+                : undefined;
+            type TextImageStyles = React.CSSProperties & {
+              "--text-width"?: string;
+              "--image-width"?: string;
+            };
+            const layoutStyle: TextImageStyles = { ...marginStyle };
+            if (textWidth !== undefined) {
+              layoutStyle["--text-width"] = `${textWidth}%`;
+            }
+            if (imageWidth !== undefined) {
+              layoutStyle["--image-width"] = `${imageWidth}%`;
+            }
+
+            const imageStyles: React.CSSProperties = {
+              cursor: "pointer",
+              ...(block.image.width && { width: block.image.width }),
+              ...(block.image.height && { height: block.image.height }),
+              ...(block.image.objectFit && { objectFit: block.image.objectFit }),
+              ...(block.image.objectPosition && {
+                objectPosition: block.image.objectPosition,
+              }),
+            };
+
+            return (
+              <div
+                key={index}
+                className={`text-image-block ${layoutClass}`}
+                style={layoutStyle}
+              >
+                <div className={`text-content ${textSizeClass}`}>
+                  {block.text.title && <h3>{block.text.title}</h3>}
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: parseInlineFormatting(block.text.content),
+                    }}
+                  />
+                </div>
+                <div className="image-content">
+                  <img
+                    src={block.image.src}
+                    alt={block.image.alt || ""}
+                    className="clickable-image"
+                    onClick={() => onImageClick(block.image.src)}
+                    style={imageStyles}
+                  />
+                  {block.image.caption && (
+                    <figcaption>{block.image.caption}</figcaption>
+                  )}
+                </div>
               </div>
             );
 
@@ -740,6 +831,8 @@ const WorkDetail = () => {
     );
   }
 
+  const shouldRenderSidebar = work.displayType !== "pdf";
+
   return (
     <div className="work-detail-page">
       <motion.header
@@ -795,7 +888,7 @@ const WorkDetail = () => {
         </nav>
       </motion.header>
 
-      {work.displayType !== "pdf" && (() => {
+      {shouldRenderSidebar && (() => {
         const sectionKeys = work?.sections ? Object.keys(work.sections).filter(key => work.sections[key]) : [];
         const sectionOrder = [
           "overview",
@@ -947,7 +1040,13 @@ const WorkDetail = () => {
         </main>
       </div>
 
-      <NextProjects currentWorkId={work.id} />
+      <div
+        className={`next-projects-section-wrapper${
+          work.displayType === "pdf" ? " pdf-layout" : ""
+        }`}
+      >
+        <NextProjects currentWorkId={work.id} />
+      </div>
 
       {showFooter && (
         <motion.footer

@@ -27,15 +27,17 @@ export const scobyWork: WorkDetail = {
       title: "Overview",
       blocks: [
         {
-          type: "text",
-          content:
-            "**Offerings**: The SCOBY Spot is a kombucha tea + pastry store that doubles as a relax and study space in the heart of Ithaca Commons. This tea store serves various kombucha flavored tea, pastry and brewing services. The space offers kombucha flights, flavored pastries, and interactive brewing experiences. Its programming and layout promote both individual retreat and social engagement, positioning the store as a cultural and wellness anchor within Ithaca Commons.",
-          size: "large",
-        },
-        {
-          type: "image",
-          src: "/work_details/scoby/overview.svg",
-          alt: "Project overview diagram",
+          type: "text-image",
+          layout: "text-right",
+          text: {
+            content:
+              "**Offerings**: The SCOBY Spot is a kombucha tea + pastry store that doubles as a relax and study space in the heart of Ithaca Commons. This tea store serves various kombucha flavored tea, pastry and brewing services. The space offers kombucha flights, flavored pastries, and interactive brewing experiences. Its programming and layout promote both individual retreat and social engagement, positioning the store as a cultural and wellness anchor within Ithaca Commons.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/scoby/overview.svg",
+            alt: "Project overview diagram",
+          },
         },
       ],
     },
@@ -68,7 +70,7 @@ export const scobyWork: WorkDetail = {
           type: "text",
           content:
             "**Tea Shop Concept**: The SCOBY Spot was conceived to fill a gap in Ithaca's wellness and social scene. Through site analysis and user research, we identified the need for a space that combines kombucha culture with restorative design—creating a third place that promotes both health and community connection.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "image-pair",
@@ -106,15 +108,19 @@ export const scobyWork: WorkDetail = {
       title: "Design Solution",
       blocks: [
         {
-          type: "text",
-          content:
-            "**Design inspiration**: Inspiration was drawn from the organic branching patterns of trees. The structure integrates a hexagonal wooden framework, elevated pod seating, and soft natural lighting to create a restorative, biophilic environment. Every design decision—from large glass windows to warm wooden textures—was made to connect people with nature and foster mindful relaxation.",
-          size: "large",
-        },
-        {
-          type: "image",
-          src: "/work_details/scoby/design_inspiration.svg",
-          alt: "Design inspiration and concept development",
+          type: "text-image",
+          layout: "text-right",
+          textWidth: 60,
+          imageWidth: 40,
+          text: {
+            content:
+              "**Design inspiration**: Inspiration was drawn from the organic branching patterns of trees. The structure integrates a hexagonal wooden framework, elevated pod seating, and soft natural lighting to create a restorative, biophilic environment. Every design decision—from large glass windows to warm wooden textures—was made to connect people with nature and foster mindful relaxation.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/scoby/design_inspiration.svg",
+            alt: "Design inspiration and concept development",
+          },
         },
         {
           type: "image-trio",
@@ -150,15 +156,17 @@ export const scobyWork: WorkDetail = {
           height: "large",
         },
         {
-          type: "text",
-          content:
-            "**Human-Centered Experience**: The environment facilitates a restorative connection between people and nature as people relax in this spot in a cozy, daydreaming afternoon. Conceived as both a retail destination and a wellness hub, the store introduces a new fermented tea culture to the city while providing cozy spaces for rest, reflection, and community gathering.",
-          size: "large",
-        },
-        {
-          type: "image",
-          src: "/work_details/scoby/human_centered_experience.svg",
-          alt: "Human-centered experience design",
+          type: "text-image",
+          layout: "text-right",
+          text: {
+            content:
+              "**Human-Centered Experience**: The environment facilitates a restorative connection between people and nature as people relax in this spot in a cozy, daydreaming afternoon. Conceived as both a retail destination and a wellness hub, the store introduces a new fermented tea culture to the city while providing cozy spaces for rest, reflection, and community gathering.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/scoby/human_centered_experience.svg",
+            alt: "Human-centered experience design",
+          },
         },
         {
           type: "image-full",
@@ -175,13 +183,13 @@ export const scobyWork: WorkDetail = {
           type: "text",
           content:
             "**Impact:** The SCOBY Spot delivers more than a retail experience—it functions as a healing and restoration hub for Ithaca residents and university students. Its unique integration of tea culture, nature-inspired architecture, and community wellness provides an innovative model for retail spaces.",
-          size: "large",
+          size: "normal",
         },
         {
           type: "text",
           content: "**Key Outcomes:**",
           marginBottom: "0rem",
-          size: "large",
+          size: "normal",
         },
         {
           type: "list",
@@ -191,17 +199,17 @@ export const scobyWork: WorkDetail = {
             "Created a restorative environment that attracts both residents and visitors seeking alternative café experiences",
             "Offered a flexible space for study, social gatherings, and cultural engagement",
           ],
-          size: "large",
+          size: "normal",
           marginTop: "-0.25rem",
         },
         {
           type: "text",
           content:
             "By blending wellness rituals with immersive design, the SCOBY Spot bridges commerce and community, showcasing how retail can be a catalyst for well-being.",
-          size: "large",
+          size: "normal",
         },
         {
-          type: "image",
+          type: "image-full",
           src: "/work_details/scoby/community_impact.svg",
           alt: "Community impact and results",
         },
@@ -214,18 +222,20 @@ export const scobyWork: WorkDetail = {
           type: "text",
           content:
             "Designing the SCOBY Spot taught me how spatial storytelling can directly influence emotional well-being. I deepened my understanding of biophilic design and its capacity to create restorative environments within urban retail settings.",
-          size: "large",
+          size: "normal",
         },
         {
-          type: "text",
-          content:
-            "Developed a layout that supports both individual retreat and social engagement. The hexagonal framework, pod seating, and wellness-driven design narrative created a unique, restorative retail destination. Balancing functional requirements (kitchen, circulation, retail display) with immersive, organic forms was a central design challenge. In future iterations, I would explore more modular construction methods to enhance scalability and sustainability for rollout in other urban contexts.",
-          size: "large",
-        },
-        {
-          type: "image",
-          src: "/work_details/scoby/reflection_for_the_future.svg",
-          alt: "Reflection and future considerations",
+          type: "text-image",
+          layout: "text-right",
+          text: {
+            content:
+              "Developed a layout that supports both individual retreat and social engagement. The hexagonal framework, pod seating, and wellness-driven design narrative created a unique, restorative retail destination. Balancing functional requirements (kitchen, circulation, retail display) with immersive, organic forms was a central design challenge. In future iterations, I would explore more modular construction methods to enhance scalability and sustainability for rollout in other urban contexts.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/scoby/reflection_for_the_future.svg",
+            alt: "Reflection and future considerations",
+          },
         },
       ],
     },
