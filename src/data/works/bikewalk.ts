@@ -25,6 +25,19 @@ export const bikewalkWork: WorkDetail = {
       title: "Overview",
       blocks: [
         {
+          type: "image-pair",
+          images: [
+            {
+              src: "/work_details/bikewalk/BikeWalk Tompkins - overview 1.svg",
+            },
+            {
+              src: "/work_details/bikewalk/BikeWalk Tompkins overview 2.svg",
+            },
+          ],
+          layout: "left-heavy",
+          gap: "medium",
+        },
+        {
           type: "text",
           content:
             "**Project Vision:** BikeWalk is a **community-centered redesign project** for **Bike Walk Tompkins**, a non-profit bike repair shop based in **Ithaca, New York**. The project aims to enhance **spatial efficiency**, **community engagement**, and **brand identity** through an **evidence-based design** approach that balances functionality and inclusivity.",
@@ -51,6 +64,19 @@ export const bikewalkWork: WorkDetail = {
     strategyAndAnalysis: {
       title: "Strategy & Analysis",
       blocks: [
+        {
+          type: "image-pair",
+          images: [
+            {
+              src: "/work_details/bikewalk/BikeWalk Tompkins - strategy analysis.svg",
+            },
+            {
+              src: "/work_details/bikewalk/BikeWalk Tompkins - strategy analysis 2.svg",
+            },
+          ],
+          layout: "equal",
+          gap: "medium",
+        },
         {
           type: "text",
           content:
@@ -107,10 +133,18 @@ export const bikewalkWork: WorkDetail = {
       title: "Design Solution",
       blocks: [
         {
-          type: "text",
-          content:
-            "**Spatial Strategy:** The redesigned layout translates the **rhythm of cycling** into spatial form—fluid pathways, open sightlines, and dynamic activity zones. Modular storage and mobile workbenches allow flexible reconfiguration for group repairs or large community events. Lighting, flooring, and color accents subtly guide movement and reinforce brand cohesion.",
-          size: "normal",
+          type: "text-image",
+          layout: "text-right",
+          imageWidth: 80,
+          textWidth: 30,
+          image: {
+            src: "/work_details/bikewalk/BikeWalk Tompkins - design solution.svg",
+          },
+          text: {
+            content:
+              "**Spatial Strategy:** The redesigned layout translates the **rhythm of cycling** into spatial form—fluid pathways, open sightlines, and dynamic activity zones. Modular storage and mobile workbenches allow flexible reconfiguration for group repairs or large community events. Lighting, flooring, and color accents subtly guide movement and reinforce brand cohesion.",
+            size: "normal",
+          },
         },
         {
           type: "image-pair",
@@ -161,6 +195,10 @@ export const bikewalkWork: WorkDetail = {
     impactAndResults: {
       title: "Impact & Results",
       blocks: [
+        {
+          type: "image",
+          src: "/work_details/bikewalk/BikeWalk Tompkins - impact.svg",
+        },
         {
           type: "text",
           content:
@@ -216,16 +254,16 @@ export const bikewalkWork: WorkDetail = {
       title: "Reflection",
       blocks: [
         {
-          type: "text",
-          content:
-            "Redesigning BikeWalk reinforced my belief that **spatial design is a catalyst for community connection**. This project required balancing operational functionality with social mission—translating everyday repair tasks into opportunities for collaboration, education, and inclusion.",
-          size: "normal",
-        },
-        {
-          type: "text",
-          content:
-            "The process strengthened my approach to **evidence-based design**—from workflow analysis to stakeholder feedback integration. Future directions include exploring **adaptive modular systems** for pop-up bike workshops and expanding the design into a **city-wide identity network**, connecting repair, mobility, and advocacy through cohesive spatial storytelling.",
-          size: "normal",
+          type: "text-image",
+          layout: "text-right",
+          image: {
+            src: "/work_details/bikewalk/BikeWalk Tompkins - reflection.svg",
+          },
+          text: {
+            content:
+              "Redesigning BikeWalk reinforced my belief that **spatial design is a catalyst for community connection**. This project required balancing operational functionality with social mission—translating everyday repair tasks into opportunities for collaboration, education, and inclusion.\n\nThe process strengthened my approach to **evidence-based design**—from workflow analysis to stakeholder feedback integration. Future directions include exploring **adaptive modular systems** for pop-up bike workshops and expanding the design into a **city-wide identity network**, connecting repair, mobility, and advocacy through cohesive spatial storytelling.",
+            size: "normal",
+          },
         },
       ],
     },

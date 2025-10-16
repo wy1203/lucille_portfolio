@@ -7,6 +7,7 @@ import {
   WorkDetail as WorkData,
   ContentBlock,
   VideoBlock,
+  ListBlock,
 } from "../data/worksData";
 import ImageModal from "./ImageModal";
 import VideoModal from "./VideoModal";
@@ -122,6 +123,42 @@ const ContentRenderer = ({
       .replace(/\*(.*?)\*/g, "<em>$1</em>");
   };
 
+  const renderListItems = (items: ListBlock["items"]) =>
+    items.map((item, itemIndex) => {
+      if (typeof item === "string") {
+        return (
+          <li
+            key={itemIndex}
+            dangerouslySetInnerHTML={{
+              __html: parseInlineFormatting(item),
+            }}
+          />
+        );
+      }
+
+      return (
+        <li key={itemIndex}>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: parseInlineFormatting(item.content),
+            }}
+          />
+          {item.subItems && item.subItems.length > 0 && (
+            <ul className="sub-list">
+              {item.subItems.map((subItem, subIndex) => (
+                <li
+                  key={subIndex}
+                  dangerouslySetInnerHTML={{
+                    __html: parseInlineFormatting(subItem),
+                  }}
+                />
+              ))}
+            </ul>
+          )}
+        </li>
+      );
+    });
+
   return (
     <div className="content-blocks">
       {blocks.map((block, index) => {
@@ -201,40 +238,7 @@ const ContentRenderer = ({
                 className={`list-block ${block.size || "normal"}`}
                 style={marginStyle}
               >
-                {block.items.map((item, itemIndex) => {
-                  if (typeof item === "string") {
-                    return (
-                      <li
-                        key={itemIndex}
-                        dangerouslySetInnerHTML={{
-                          __html: parseInlineFormatting(item),
-                        }}
-                      />
-                    );
-                  } else {
-                    return (
-                      <li key={itemIndex}>
-                        <span
-                          dangerouslySetInnerHTML={{
-                            __html: parseInlineFormatting(item.content),
-                          }}
-                        />
-                        {item.subItems && item.subItems.length > 0 && (
-                          <ul className="sub-list">
-                            {item.subItems.map((subItem, subIndex) => (
-                              <li
-                                key={subIndex}
-                                dangerouslySetInnerHTML={{
-                                  __html: parseInlineFormatting(subItem),
-                                }}
-                              />
-                            ))}
-                          </ul>
-                        )}
-                      </li>
-                    );
-                  }
-                })}
+                {renderListItems(block.items)}
               </ListTag>
             );
 
@@ -643,6 +647,82 @@ const ContentRenderer = ({
                   {block.image.caption && (
                     <figcaption>{block.image.caption}</figcaption>
                   )}
+                </div>
+              </div>
+            );
+
+          case "image-textlist":
+            const layoutVariant = block.layout || "image-left";
+            const isVertical =
+              layoutVariant === "image-top" || layoutVariant === "image-bottom";
+            const imageTextListStyle: React.CSSProperties & {
+              "--image-width"?: string;
+              "--text-width"?: string;
+            } = { ...marginStyle };
+
+            if (!isVertical) {
+              if (block.imageWidth !== undefined) {
+                imageTextListStyle["--image-width"] = `${block.imageWidth}%`;
+              }
+              if (block.textWidth !== undefined) {
+                imageTextListStyle["--text-width"] = `${block.textWidth}%`;
+              }
+            }
+
+            const gapClass = `gap-${block.gap || "medium"}`;
+            const textSectionClass = block.text?.size || "normal";
+            const listSectionClass = block.list.size || "normal";
+            const ListComponent = block.list.listType === "ordered" ? "ol" : "ul";
+
+            const imageContentStyle: React.CSSProperties = {
+              cursor: "pointer",
+              ...(block.image.width && { width: block.image.width }),
+              ...(block.image.height && { height: block.image.height }),
+              ...(block.image.objectFit && { objectFit: block.image.objectFit }),
+              ...(block.image.objectPosition && {
+                objectPosition: block.image.objectPosition,
+              }),
+            };
+
+            return (
+              <div
+                key={index}
+                className={`image-textlist-block ${layoutVariant} ${gapClass}`.trim()}
+                style={imageTextListStyle}
+              >
+                <div className="image-content">
+                  <img
+                    src={block.image.src}
+                    alt={block.image.alt || ""}
+                    className="clickable-image"
+                    onClick={() => onImageClick(block.image.src)}
+                    style={imageContentStyle}
+                  />
+                  {block.image.caption && (
+                    <figcaption>{block.image.caption}</figcaption>
+                  )}
+                </div>
+
+                <div className="textlist-content">
+                  {block.text && (
+                    <div className={`text-section ${textSectionClass}`}>
+                      {block.text.title && <h3>{block.text.title}</h3>}
+                      {block.text.content && (
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: parseInlineFormatting(block.text.content),
+                          }}
+                        />
+                      )}
+                    </div>
+                  )}
+
+                  <div className={`list-section ${listSectionClass}`}>
+                    {block.list.title && <h4>{block.list.title}</h4>}
+                    <ListComponent className={`list-block ${block.list.size || "normal"}`}>
+                      {renderListItems(block.list.items)}
+                    </ListComponent>
+                  </div>
                 </div>
               </div>
             );

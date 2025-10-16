@@ -147,13 +147,13 @@ export const scobyWork: WorkDetail = {
           type: "image-full",
           src: "/work_details/scoby/5.png",
           alt: "Full interior view showing the complete space design",
-          height: "large",
+          width: "full",
         },
         {
           type: "image-full",
           src: "/work_details/scoby/6.png",
           alt: "Full interior view showing the complete space design",
-          height: "large",
+          width: "full",
         },
         {
           type: "text-image",
@@ -168,50 +168,47 @@ export const scobyWork: WorkDetail = {
             alt: "Human-centered experience design",
           },
         },
-        {
-          type: "image-full",
-          src: "/work_details/scoby/7.png",
-          alt: "Full interior view showing the complete space design",
-          height: "large",
-        },
       ],
     },
     impactAndResults: {
       title: "Impact & Results",
       blocks: [
         {
-          type: "text",
-          content:
-            "**Impact:** The SCOBY Spot delivers more than a retail experience—it functions as a healing and restoration hub for Ithaca residents and university students. Its unique integration of tea culture, nature-inspired architecture, and community wellness provides an innovative model for retail spaces.",
-          size: "normal",
+          type: "text-image",
+          layout: "text-right",
+          text: {
+            content:
+              "**Impact:** The SCOBY Spot delivers more than a retail experience—it functions as a healing and restoration hub for Ithaca residents and university students. Its unique integration of tea culture, nature-inspired architecture, and community wellness provides an innovative model for retail spaces. By blending wellness rituals with immersive design, the SCOBY Spot bridges commerce and community, showcasing how retail can be a catalyst for well-being.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/scoby/7.png",
+            alt: "Full interior view showing the complete space design",
+            height: "large",
+          },
         },
         {
-          type: "text",
-          content: "**Key Outcomes:**",
-          marginBottom: "0rem",
-          size: "normal",
-        },
-        {
-          type: "list",
-          listType: "unordered",
-          items: [
-            "Established the first kombucha-focused tea house in Ithaca Commons",
-            "Created a restorative environment that attracts both residents and visitors seeking alternative café experiences",
-            "Offered a flexible space for study, social gatherings, and cultural engagement",
-          ],
-          size: "normal",
-          marginTop: "-0.25rem",
-        },
-        {
-          type: "text",
-          content:
-            "By blending wellness rituals with immersive design, the SCOBY Spot bridges commerce and community, showcasing how retail can be a catalyst for well-being.",
-          size: "normal",
-        },
-        {
-          type: "image-full",
-          src: "/work_details/scoby/community_impact.svg",
-          alt: "Community impact and results",
+          type: "image-textlist",
+          layout: "image-left",
+          imageWidth: 60,
+          textWidth: 60,
+          image: {
+            src: "/work_details/scoby/community_impact.svg",
+            alt: "Community impact and results",
+          },
+          text: {
+            content: "**Key Outcomes:**",
+            size: "normal",
+          },
+          list: {
+            listType: "unordered",
+            items: [
+              "Established the first kombucha-focused tea house in Ithaca Commons",
+              "Created a restorative environment that attracts both residents and visitors seeking alternative café experiences",
+              "Offered a flexible space for study, social gatherings, and cultural engagement",
+            ],
+            size: "normal",
+          },
         },
       ],
     },
@@ -219,17 +216,11 @@ export const scobyWork: WorkDetail = {
       title: "Reflection",
       blocks: [
         {
-          type: "text",
-          content:
-            "Designing the SCOBY Spot taught me how spatial storytelling can directly influence emotional well-being. I deepened my understanding of biophilic design and its capacity to create restorative environments within urban retail settings.",
-          size: "normal",
-        },
-        {
           type: "text-image",
           layout: "text-right",
           text: {
             content:
-              "Developed a layout that supports both individual retreat and social engagement. The hexagonal framework, pod seating, and wellness-driven design narrative created a unique, restorative retail destination. Balancing functional requirements (kitchen, circulation, retail display) with immersive, organic forms was a central design challenge. In future iterations, I would explore more modular construction methods to enhance scalability and sustainability for rollout in other urban contexts.",
+              "Designing the SCOBY Spot taught me how spatial storytelling can directly influence emotional well-being. I deepened my understanding of biophilic design and its capacity to create restorative environments within urban retail settings. Developed a layout that supports both individual retreat and social engagement. The hexagonal framework, pod seating, and wellness-driven design narrative created a unique, restorative retail destination. Balancing functional requirements (kitchen, circulation, retail display) with immersive, organic forms was a central design challenge. In future iterations, I would explore more modular construction methods to enhance scalability and sustainability for rollout in other urban contexts.",
             size: "normal",
           },
           image: {

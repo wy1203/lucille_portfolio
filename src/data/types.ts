@@ -9,7 +9,8 @@ export type ContentBlockType =
   | "image-full"
   | "video"
   | "spacer"
-  | "text-image";
+  | "text-image"
+  | "image-textlist";
 
 export interface BaseContentBlock {
   id?: string;
@@ -162,6 +163,34 @@ export interface TextImageBlock extends BaseContentBlock {
   };
 }
 
+export interface ImageTextListBlock extends BaseContentBlock {
+  type: "image-textlist";
+  layout?: "image-left" | "image-right" | "image-top" | "image-bottom";
+  imageWidth?: number; // Percentage width allocation for image content (0-100)
+  textWidth?: number; // Percentage width allocation for text+list content (0-100)
+  gap?: "small" | "medium" | "large";
+  image: {
+    src: string;
+    alt?: string;
+    caption?: string;
+    width?: string;
+    height?: string;
+    objectFit?: "cover" | "contain" | "fill" | "scale-down" | "none";
+    objectPosition?: string;
+  };
+  text?: {
+    content: string;
+    size?: "normal" | "large" | "small";
+    title?: string;
+  };
+  list: {
+    listType: "ordered" | "unordered";
+    items: Array<string | { content: string; subItems?: string[] }>;
+    size?: "normal" | "large" | "small";
+    title?: string;
+  };
+}
+
 export type ContentBlock =
   | TextBlock
   | TitleBlock
@@ -173,7 +202,8 @@ export type ContentBlock =
   | VideoBlock
   | ImageFullBlock
   | SpacerBlock
-  | TextImageBlock;
+  | TextImageBlock
+  | ImageTextListBlock;
 
 export interface Section {
   title: string;
