@@ -487,7 +487,14 @@ const ContentRenderer = ({
                 style={pairStyle}
               >
                 {block.images.map((img, imgIndex) => (
-                  <div key={imgIndex} className="image-item">
+                  <div
+                    key={imgIndex}
+                    className="image-item"
+                    style={{
+                      ...(img.marginTop && { marginTop: img.marginTop }),
+                      ...(img.marginBottom && { marginBottom: img.marginBottom }),
+                    }}
+                  >
                     <img
                       src={img.src}
                       alt={img.alt || ""}

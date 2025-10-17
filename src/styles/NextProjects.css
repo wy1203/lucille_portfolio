@@ -1,13 +1,16 @@
 .next-projects-section-wrapper {
   margin: 0 0 0 260px;
-  max-width: calc(100vw - 260px);
+  width: calc(100% - 260px);
+  max-width: 100%;
   padding-left: 80px;
   padding-right: 260px;
   padding-bottom: 100px;
+  min-width: 0;
 }
 
 .next-projects-section-wrapper.pdf-layout {
   margin-left: 0;
+  width: 100%;
   max-width: 100%;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -120,6 +123,7 @@
 @media (max-width: 1200px) {
   .next-projects-section-wrapper {
     margin-left: 0;
+    width: 100%;
     max-width: 100%;
   }
 

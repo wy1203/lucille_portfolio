@@ -103,6 +103,12 @@ export const scobyWork: WorkDetail = {
           alt: "The SCOBY Spot Design Solution",
         },
         {
+          type: "text",
+          content:
+            "**Human-Centered Experience:** **Private pods** offer acoustic separation for study and conversation while maintaining visual connection to the main floor. **Natural light**, **warm palettes**, and **planting** support restoration; service counters and circulation are kept intuitive to reduce cognitive load. Together, these choices nurture a **cozy, daydreaming afternoon** vibe that ties tea rituals to well-being.",
+          size: "normal",
+        },
+        {
           type: "image-pair",
           images: [
             {
@@ -120,28 +126,16 @@ export const scobyWork: WorkDetail = {
           gap: "medium",
         },
         {
-          type: "image-trio",
-          leftImage: {
-            src: "/work_details/scoby/4left.png",
-            caption: "4left",
-            alt: "Main design concept with detailed interior view",
-            size: 75,
-          },
-          rightImages: [
-            {
-              src: "/work_details/scoby/4topright.png",
-              caption: "4topright",
-              alt: "Top detail view of hexagonal framework",
-              size: 50,
-            },
-            {
-              src: "/work_details/scoby/4buttonright.png",
-              caption: "4buttonright",
-              alt: "Bottom detail view of seating area",
-              size: 50,
-            },
-          ],
-          gap: "medium",
+          type: "image",
+          src: "/work_details/scoby/4.png",
+          size: "full",
+        },
+        {
+          type: "image",
+          src: "/work_details/scoby/4left.png",
+          caption: "4left",
+          alt: "Main design concept with detailed interior view",
+          size: "large",
         },
         {
           type: "image-full",
@@ -158,12 +152,6 @@ export const scobyWork: WorkDetail = {
           height: "large",
         },
         {
-          type: "text",
-          content:
-            "**Human-Centered Experience:** **Private pods** offer acoustic separation for study and conversation while maintaining visual connection to the main floor. **Natural light**, **warm palettes**, and **planting** support restoration; service counters and circulation are kept intuitive to reduce cognitive load. Together, these choices nurture a **cozy, daydreaming afternoon** vibe that ties tea rituals to well-being.",
-          size: "normal",
-        },
-        {
           type: "image-full",
           src: "/work_details/scoby/7.png",
           caption: "7",
@@ -176,18 +164,17 @@ export const scobyWork: WorkDetail = {
       title: "Impact & Results",
       blocks: [
         {
-          type: "text-image",
-          layout: "text-left",
-          text: {
-            content:
-              "**Impact:** The SCOBY Spot reframes retail as a **wellness catalyst**—blending beverage culture with restorative spatial design. The concept strengthens neighborhood social life while offering Ithacans a dependable setting for **focus, gathering, and quiet repair**.\n\n**Key Outcomes:**\n\n- Delivered a **relaxation hub** in Ithaca Commons with study-friendly pods and communal seating\n- Unified **kombucha service**, **pastry program**, and **brewing workshops** in a clear guest journey\n- Demonstrated a **biophilic retail model** that couples hospitality with mental well-being\n\nBy pairing **tea rituals** with **nature-inspired architecture**, the store invites repeat visits and everyday restoration—showing how small commercial spaces can meaningfully support community health.",
-            size: "normal",
-          },
-          image: {
-            src: "/work_details/scoby/The SCOBY Spot - impact.svg",
-            caption: "The SCOBY Spot - impact",
-            alt: "The SCOBY Spot Impact & Results",
-          },
+          type: "text",
+          content:
+            "**Impact:** The SCOBY Spot reframes retail as a **wellness catalyst**—blending beverage culture with restorative spatial design. The concept strengthens neighborhood social life while offering Ithacans a dependable setting for **focus, gathering, and quiet repair**.\n\n**Key Outcomes:**\n\n- Delivered a **relaxation hub** in Ithaca Commons with study-friendly pods and communal seating\n- Unified **kombucha service**, **pastry program**, and **brewing workshops** in a clear guest journey\n- Demonstrated a **biophilic retail model** that couples hospitality with mental well-being\n\nBy pairing **tea rituals** with **nature-inspired architecture**, the store invites repeat visits and everyday restoration—showing how small commercial spaces can meaningfully support community health.",
+          size: "normal",
+        },
+        {
+          type: "image",
+          src: "/work_details/scoby/The SCOBY Spot - impact.svg",
+          caption: "The SCOBY Spot - impact",
+          alt: "The SCOBY Spot Impact & Results",
+          size: "large",
         },
       ],
     },
@@ -195,18 +182,17 @@ export const scobyWork: WorkDetail = {
       title: "Reflection",
       blocks: [
         {
-          type: "text-image",
-          layout: "text-right",
-          text: {
-            content:
-              "To include **lean thinking and streamlining** the construction process, future iterations will test **modular pod kits** for faster build-out, explore **lower-carbon finishes**, and refine **workshop logistics** to better support brewing education. The aim is a scalable, neighborhood-ready model where **commerce, culture, and calm** thrive together. Designing The SCOBY Spot underscored how **material warmth, light, and acoustics** shape mood and behavior. Translating the metaphor of **branching trees** into circulation and seating taught me to balance **poetry** with **operational clarity**—from queue management to seat turnover.",
-            size: "normal",
-          },
-          image: {
-            src: "/work_details/scoby/The SCOBY Spot - reflection.svg",
-            caption: "The SCOBY Spot - reflection",
-            alt: "The SCOBY Spot Reflection",
-          },
+          type: "text",
+          content:
+            "To include **lean thinking and streamlining** the construction process, future iterations will test **modular pod kits** for faster build-out, explore **lower-carbon finishes**, and refine **workshop logistics** to better support brewing education. The aim is a scalable, neighborhood-ready model where **commerce, culture, and calm** thrive together. Designing The SCOBY Spot underscored how **material warmth, light, and acoustics** shape mood and behavior. Translating the metaphor of **branching trees** into circulation and seating taught me to balance **poetry** with **operational clarity**—from queue management to seat turnover.",
+          size: "normal",
+        },
+        {
+          type: "image",
+          src: "/work_details/scoby/The SCOBY Spot - reflection.svg",
+          caption: "The SCOBY Spot - reflection",
+          alt: "The SCOBY Spot Reflection",
+          size: "large",
         },
       ],
     },
