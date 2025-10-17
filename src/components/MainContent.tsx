@@ -26,8 +26,11 @@ const MainContent = () => {
   const revealLayerRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Filter states
-  const [selectedCategories, setSelectedCategories] = useState<string[]>(["All"]);
+  // Filter states - persist in sessionStorage
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(() => {
+    const saved = sessionStorage.getItem('selectedCategories');
+    return saved ? JSON.parse(saved) : ["All"];
+  });
 
   // Extract unique categories from works data (split comma-separated categories)
   const allCategories = worksData.flatMap(work =>
@@ -39,6 +42,11 @@ const MainContent = () => {
   const toggleCategory = (category: string) => {
     setSelectedCategories([category]);
   };
+
+  // Save selected categories to sessionStorage whenever they change
+  useEffect(() => {
+    sessionStorage.setItem('selectedCategories', JSON.stringify(selectedCategories));
+  }, [selectedCategories]);
 
   // Filter works based on selected categories (check if work has ANY of the selected categories)
   const filteredWorksData = worksData.filter(work => {
