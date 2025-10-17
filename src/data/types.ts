@@ -15,8 +15,7 @@ export type ContentBlockType =
 export interface BaseContentBlock {
   id?: string;
   type: ContentBlockType;
-  marginTop?: string;
-  marginBottom?: string;
+  spacing?: "none" | "tight" | "normal" | "relaxed";
 }
 
 export interface TextBlock extends BaseContentBlock {
@@ -42,6 +41,7 @@ export interface ListBlock extends BaseContentBlock {
   type: "list";
   listType: "ordered" | "unordered";
   items: Array<string | { content: string; subItems?: string[] }>;
+  heading?: string;
   size?: "normal" | "large" | "small";
 }
 

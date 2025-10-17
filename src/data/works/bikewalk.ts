@@ -29,9 +29,11 @@ export const bikewalkWork: WorkDetail = {
           images: [
             {
               src: "/work_details/bikewalk/BikeWalk Tompkins - overview 1.svg",
+              caption: "BikeWalk Tompkins - overview 1",
             },
             {
               src: "/work_details/bikewalk/BikeWalk Tompkins overview 2.svg",
+              caption: "BikeWalk Tompkins overview 2",
             },
           ],
           layout: "left-heavy",
@@ -46,6 +48,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/1.png",
+          caption: "1",
           size: "full",
         },
         {
@@ -57,6 +60,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/2.png",
+          caption: "2",
           size: "full",
         },
       ],
@@ -69,9 +73,11 @@ export const bikewalkWork: WorkDetail = {
           images: [
             {
               src: "/work_details/bikewalk/BikeWalk Tompkins - strategy analysis.svg",
+              caption: "BikeWalk Tompkins - strategy analysis",
             },
             {
               src: "/work_details/bikewalk/BikeWalk Tompkins - strategy analysis 2.svg",
+              caption: "BikeWalk Tompkins - strategy analysis 2",
             },
           ],
           layout: "equal",
@@ -89,14 +95,17 @@ export const bikewalkWork: WorkDetail = {
           horizontalImages: [
             {
               src: "/work_details/bikewalk/3left.png",
+              caption: "3left",
               size: 41,
             },
             {
               src: "/work_details/bikewalk/3middle.png",
+              caption: "3middle",
               size: 29,
             },
             {
               src: "/work_details/bikewalk/3right.png",
+              caption: "3right",
               size: 29,
             },
           ],
@@ -114,14 +123,17 @@ export const bikewalkWork: WorkDetail = {
           horizontalImages: [
             {
               src: "/work_details/bikewalk/4left.png",
+              caption: "4left",
               size: 33,
             },
             {
               src: "/work_details/bikewalk/4middle.png",
+              caption: "4middle",
               size: 33,
             },
             {
               src: "/work_details/bikewalk/4right.png",
+              caption: "4right",
               size: 33,
             },
           ],
@@ -139,6 +151,7 @@ export const bikewalkWork: WorkDetail = {
           textWidth: 30,
           image: {
             src: "/work_details/bikewalk/BikeWalk Tompkins - design solution.svg",
+            caption: "BikeWalk Tompkins - design solution",
           },
           text: {
             content:
@@ -151,9 +164,11 @@ export const bikewalkWork: WorkDetail = {
           images: [
             {
               src: "/work_details/bikewalk/5left.png",
+              caption: "5left",
             },
             {
               src: "/work_details/bikewalk/5right.png",
+              caption: "5right",
             },
           ],
           layout: "left-heavy",
@@ -168,11 +183,13 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/6.png",
+          caption: "6",
           size: "full",
         },
         {
           type: "image",
           src: "/work_details/bikewalk/7.png",
+          caption: "7",
           size: "full",
         },
         {
@@ -198,6 +215,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/BikeWalk Tompkins - impact.svg",
+          caption: "BikeWalk Tompkins - impact",
         },
         {
           type: "text",
@@ -206,14 +224,9 @@ export const bikewalkWork: WorkDetail = {
           size: "normal",
         },
         {
-          type: "text",
-          content: "**Key Outcomes:**",
-          marginBottom: "0rem",
-          size: "normal",
-        },
-        {
           type: "list",
           listType: "unordered",
+          heading: "**Key Outcomes:**",
           items: [
             "Optimized workshop layout improving tool visibility and circulation efficiency",
             "Integrated community zones supporting education, repair, and collaboration",
@@ -221,7 +234,6 @@ export const bikewalkWork: WorkDetail = {
             "Enhanced user inclusivity and safety through ergonomic and accessible design strategies",
           ],
           size: "normal",
-          marginTop: "-0.25rem",
         },
         {
           type: "image-trio",
@@ -229,14 +241,17 @@ export const bikewalkWork: WorkDetail = {
           horizontalImages: [
             {
               src: "/work_details/bikewalk/10left.png",
+              caption: "10left",
               size: 33,
             },
             {
               src: "/work_details/bikewalk/10middle.png",
+              caption: "10middle",
               size: 33,
             },
             {
               src: "/work_details/bikewalk/10right.png",
+              caption: "10right",
               size: 33,
             },
           ],
@@ -258,6 +273,7 @@ export const bikewalkWork: WorkDetail = {
           layout: "text-right",
           image: {
             src: "/work_details/bikewalk/BikeWalk Tompkins - reflection.svg",
+            caption: "BikeWalk Tompkins - reflection",
           },
           text: {
             content:

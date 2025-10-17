@@ -36,12 +36,14 @@ export const iceyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/icey/ICEY! - overview.svg",
+          caption: "ICEY! - overview",
           alt: "ICEY! Overview",
           size: "full",
         },
         {
           type: "image",
           src: "/work_details/icey/ICEY! - overview 2.svg",
+          caption: "ICEY! - overview 2",
           alt: "ICEY! Overview2",
           size: "full",
         },
@@ -50,16 +52,19 @@ export const iceyWork: WorkDetail = {
           layout: "top-bottom",
           topImage: {
             src: "/work_details/icey/1.png",
+            caption: "1",
             height: "70px",
             position: "50% 45%",
           },
           bottomImages: [
             {
               src: "/work_details/icey/2left.png",
+              caption: "2left",
               alt: "Parametric ice structure design",
             },
             {
               src: "/work_details/icey/2right.png",
+              caption: "2right",
               alt: "LED-embedded ice structure glowing",
             },
           ],
@@ -86,6 +91,7 @@ export const iceyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/icey/ICEY! - strategy & analysis.svg",
+          caption: "ICEY! - strategy & analysis",
           alt: "ICEY! Strategy & Analysis",
           size: "full",
         },
@@ -106,11 +112,13 @@ export const iceyWork: WorkDetail = {
           images: [
             {
               src: "/work_details/icey/3left.png",
+              caption: "3left",
               alt: "Close-up of geometric lattice structure",
               size: 40,
             },
             {
               src: "/work_details/icey/3right.png",
+              caption: "3right",
               alt: "Interactive installation in exhibition space",
               size: 60,
             },
@@ -120,6 +128,7 @@ export const iceyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/icey/4.png",
+          caption: "4",
           size: "full",
         },
         {
@@ -127,10 +136,12 @@ export const iceyWork: WorkDetail = {
           images: [
             {
               src: "/work_details/icey/5left.png",
+              caption: "5left",
               alt: "Technical diagram of Arduino setup",
             },
             {
               src: "/work_details/icey/5right.png",
+              caption: "5right",
               alt: "3D printing parametric shell process",
             },
           ],
@@ -140,11 +151,13 @@ export const iceyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/icey/6.png",
+          caption: "6",
           size: "full",
         },
         {
           type: "image",
           src: "/work_details/icey/7.png",
+          caption: "7",
           size: "full",
         },
         {
@@ -168,6 +181,7 @@ export const iceyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/icey/ICEY! - design solution.svg",
+          caption: "ICEY! - design solution",
           alt: "ICEY! Design Solution",
           size: "full",
         },
@@ -200,10 +214,12 @@ export const iceyWork: WorkDetail = {
           images: [
             {
               src: "/work_details/icey/1.gif",
+              caption: "1",
               alt: "Close-up of melting simulation effect",
             },
             {
               src: "/work_details/icey/8right.png",
+              caption: "8right",
               alt: "Audience engagement at showcase",
             },
           ],
@@ -213,11 +229,13 @@ export const iceyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/icey/11.png",
+          caption: "11",
           size: "full",
         },
         {
           type: "video",
           src: "/work_details/icey/video.mp4",
+          caption: "video.mp4",
           title: "ICEY! Interactive Installation",
           size: "medium",
         },
@@ -230,6 +248,7 @@ export const iceyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/icey/ICEY! - impact & result.svg",
+          caption: "ICEY! - impact & result",
           alt: "ICEY! Impact & Results",
           size: "full",
         },
@@ -240,30 +259,26 @@ export const iceyWork: WorkDetail = {
           size: "normal",
         },
         {
-          type: "text",
-          content: "**Key Outcomes:**",
-          marginBottom: "0rem",
-          size: "normal",
-        },
-        {
           type: "list",
           listType: "unordered",
+          heading: "**Key Outcomes:**",
           items: [
             "Presented at a **design showcase** with positive **engagement** from **50+** attendees",
             "**80%** of surveyed participants reported deeper **awareness** of climate urgency",
             "Highlighted in critiques as a strong example of **design translating global issues** into **human-centered experiences**",
           ],
           size: "normal",
-          marginTop: "-0.25rem",
         },
         {
           type: "image",
           src: "/work_details/icey/9.png",
+          caption: "9",
           size: "full",
         },
         {
           type: "image",
           src: "/work_details/icey/10.png",
+          caption: "10",
           size: "full",
         },
         {
@@ -281,6 +296,7 @@ export const iceyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/icey/ICEY! - reflection.svg",
+          caption: "ICEY! - reflection",
           alt: "ICEY! Reflection",
           size: "full",
         },
@@ -305,6 +321,7 @@ export const iceyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/icey/ICEY! Poster.png",
+          caption: "ICEY! Poster",
           alt: "ICEY! Project Poster",
           size: "full",
         },

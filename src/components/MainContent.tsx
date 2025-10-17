@@ -5,6 +5,7 @@ import { useMusic } from "./BackgroundMusic";
 import { worksData } from "../data/worksData";
 import SplitText from "../react_bits_effects/SplitText";
 import ElasticSlider from "../react_bits_effects/ElasticSlider";
+import InteractiveSoundLayer from "./InteractiveSoundLayer";
 
 interface Work {
   id: number;
@@ -15,7 +16,6 @@ interface Work {
   thumbnailImagePos?: string;
   thumbnailImageFit?: "cover" | "contain" | "fill" | "scale-down" | "none";
 }
-
 
 const MainContent = () => {
   const navigate = useNavigate();
@@ -28,13 +28,13 @@ const MainContent = () => {
 
   // Filter states - persist in sessionStorage
   const [selectedCategories, setSelectedCategories] = useState<string[]>(() => {
-    const saved = sessionStorage.getItem('selectedCategories');
+    const saved = sessionStorage.getItem("selectedCategories");
     return saved ? JSON.parse(saved) : ["All"];
   });
 
   // Extract unique categories from works data (split comma-separated categories)
-  const allCategories = worksData.flatMap(work =>
-    work.category.split(',').map(cat => cat.trim())
+  const allCategories = worksData.flatMap((work) =>
+    work.category.split(",").map((cat) => cat.trim())
   );
   const categories = ["All", ...Array.from(new Set(allCategories))];
 
@@ -45,14 +45,19 @@ const MainContent = () => {
 
   // Save selected categories to sessionStorage whenever they change
   useEffect(() => {
-    sessionStorage.setItem('selectedCategories', JSON.stringify(selectedCategories));
+    sessionStorage.setItem(
+      "selectedCategories",
+      JSON.stringify(selectedCategories)
+    );
   }, [selectedCategories]);
 
   // Filter works based on selected categories (check if work has ANY of the selected categories)
-  const filteredWorksData = worksData.filter(work => {
+  const filteredWorksData = worksData.filter((work) => {
     if (selectedCategories.includes("All")) return true;
-    const workCategories = work.category.split(',').map(cat => cat.trim());
-    return selectedCategories.some(selectedCat => workCategories.includes(selectedCat));
+    const workCategories = work.category.split(",").map((cat) => cat.trim());
+    return selectedCategories.some((selectedCat) =>
+      workCategories.includes(selectedCat)
+    );
   });
 
   const filteredWorks: Work[] = filteredWorksData.map((work) => ({
@@ -68,16 +73,17 @@ const MainContent = () => {
   useEffect(() => {
     // Detect if device is mobile/tablet
     const checkMobile = () => {
-      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const isTouchDevice =
+        "ontouchstart" in window || navigator.maxTouchPoints > 0;
       const isSmallScreen = window.innerWidth <= 1024;
       setIsMobile(isTouchDevice || isSmallScreen);
     };
 
     checkMobile();
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
 
     return () => {
-      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener("resize", checkMobile);
     };
   }, []);
 
@@ -85,7 +91,10 @@ const MainContent = () => {
     const state = location.state as { scrollTo?: string } | null;
     if (state?.scrollTo === "work") {
       requestAnimationFrame(() => {
-        workSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        workSectionRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       });
       navigate(location.pathname + location.search, { replace: true });
     }
@@ -115,11 +124,13 @@ const MainContent = () => {
 
           if (y <= headerHeight) {
             revealLayerRef.current.style.clipPath = "circle(0px at 50% 50%)";
-            (revealLayerRef.current.style as any).webkitClipPath = "circle(0px at 50% 50%)";
+            (revealLayerRef.current.style as any).webkitClipPath =
+              "circle(0px at 50% 50%)";
           } else {
             const clipPathValue = `circle(${size}px at ${x}px ${y}px)`;
             revealLayerRef.current.style.clipPath = clipPathValue;
-            (revealLayerRef.current.style as any).webkitClipPath = clipPathValue;
+            (revealLayerRef.current.style as any).webkitClipPath =
+              clipPathValue;
           }
         }
         rafId = null;
@@ -140,7 +151,6 @@ const MainContent = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isMobile]);
-
 
   const scrollToWork = () => {
     workSectionRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -173,18 +183,22 @@ const MainContent = () => {
 
       {/* Reveal layer - shows colorful design strategy content with mouse-following circular reveal (hidden on mobile) */}
       {!isMobile && (
-        <div
-          ref={revealLayerRef}
-          className="background-layer reveal-layer"
-          style={{
-            backgroundImage: 'url("/main_background/layer_reveal.png")',
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            clipPath: "circle(0px at 50% 50%)",
-            WebkitClipPath: "circle(0px at 50% 50%)",
-          }}
-        />
+        <>
+          <div
+            ref={revealLayerRef}
+            className="background-layer reveal-layer"
+            style={{
+              backgroundImage: 'url("/main_background/layer_reveal.svg")',
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              clipPath: "circle(0px at 50% 50%)",
+              WebkitClipPath: "circle(0px at 50% 50%)",
+            }}
+          />
+          {/* Interactive sound layer - clickable rectangles that play sound effects */}
+          <InteractiveSoundLayer />
+        </>
       )}
 
       <motion.header
@@ -312,10 +326,12 @@ const MainContent = () => {
         <h2 className="work-section-title">MY WORKS :)</h2>
 
         <div className="filters-container">
-          {categories.map(category => (
+          {categories.map((category) => (
             <button
               key={category}
-              className={`filter-button ${selectedCategories.includes(category) ? 'active' : ''}`}
+              className={`filter-button ${
+                selectedCategories.includes(category) ? "active" : ""
+              }`}
               onClick={() => toggleCategory(category)}
             >
               {category}

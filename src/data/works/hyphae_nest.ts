@@ -44,17 +44,20 @@ export const hyphaeNestWork: WorkDetail = {
           layout: "top-bottom",
           topImage: {
             src: "/work_details/hyphae_nest/1.png",
+            caption: "1",
             height: "70px",
             position: "50% 40%",
           },
           bottomImages: [
             {
               src: "/work_details/hyphae_nest/2left.png",
+              caption: "2left",
               alt: "Mycelial network research and biomimicry study",
               size: 50,
             },
             {
               src: "/work_details/hyphae_nest/2right.png",
+              caption: "2right",
               alt: "Spatial mapping and community interaction diagrams",
               size: 50,
             },
@@ -83,10 +86,12 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/3left.png",
+              caption: "3left",
               alt: "Biomimicry analysis and structural mapping",
             },
             {
               src: "/work_details/hyphae_nest/3right.png",
+              caption: "3right",
               alt: "Spatial and environmental strategy diagrams",
             },
           ],
@@ -98,10 +103,12 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/4left.png",
+              caption: "4left",
               alt: "Early physical prototype using mycelium composites",
             },
             {
               src: "/work_details/hyphae_nest/4right.png",
+              caption: "4right",
               alt: "Material performance and assembly study",
             },
           ],
@@ -129,17 +136,20 @@ export const hyphaeNestWork: WorkDetail = {
           type: "image-trio",
           leftImage: {
             src: "/work_details/hyphae_nest/5left.png",
+            caption: "5left",
             alt: "Main architectural render showing structure growth form",
             size: 50,
           },
           rightImages: [
             {
               src: "/work_details/hyphae_nest/5topright.png",
+              caption: "5topright",
               alt: "Close-up view of mycelium panel textures",
               size: 60,
             },
             {
               src: "/work_details/hyphae_nest/5bottomright.png",
+              caption: "5bottomright",
               alt: "Interior modular system detail",
               size: 50,
             },
@@ -157,10 +167,12 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/6.png",
+              caption: "6",
               alt: "Interior communal space emphasizing natural light and organic form",
             },
             {
               src: "/work_details/hyphae_nest/7right.png",
+              caption: "7right",
               alt: "User experience visualization and spatial flow diagram",
             },
           ],
@@ -179,14 +191,9 @@ export const hyphaeNestWork: WorkDetail = {
           size: "normal",
         },
         {
-          type: "text",
-          content: "**Key Outcomes:**",
-          marginBottom: "0rem",
-          size: "normal",
-        },
-        {
           type: "list",
           listType: "unordered",
+          heading: "**Key Outcomes:**",
           items: [
             "Explored the architectural potential of mycelium as a structural and ecological material",
             "Developed modular design system inspired by fungal growth networks",
@@ -194,7 +201,6 @@ export const hyphaeNestWork: WorkDetail = {
             "Redefined architectural sustainability through biodegradability and circular lifecycles",
           ],
           size: "normal",
-          marginTop: "-0.25rem",
         },
         {
           type: "text",

@@ -27,18 +27,18 @@ export const scobyWork: WorkDetail = {
       title: "Overview",
       blocks: [
         {
-          type: "text-image",
-          layout: "text-right",
-          text: {
-            content:
-              "**Project Vision & Offerings:** The SCOBY Spot is a **kombucha tea + pastry store** that doubles as a **relax & study space** in Ithaca Commons. The goal is to create a **relaxation and well-being hub** for Ithacans through a program that offers **kombucha flights**, **tea-flavored pastries**, and **hands-on brewing services**. A calm, nature-forward atmosphere positions the shop as both a neighborhood retreat and a cultural anchor for fermented tea.",
-            size: "normal",
-          },
-          image: {
-            src: "/work_details/scoby/The SCOBY Spot - overview.svg",
-            caption: "The SCOBY Spot - overview",
-            alt: "The SCOBY Spot Overview",
-          },
+          type: "text",
+          content:
+            "**Project Vision & Offerings:** The SCOBY Spot is a **kombucha tea + pastry store** that doubles as a **relax & study space** in Ithaca Commons. The goal is to create a **relaxation and well-being hub** for Ithacans through a program that offers **kombucha flights**, **tea-flavored pastries**, and **hands-on brewing services**. A calm, nature-forward atmosphere positions the shop as both a neighborhood retreat and a cultural anchor for fermented tea.",
+          size: "normal",
+        },
+
+        {
+          type: "image",
+          src: "/work_details/scoby/The SCOBY Spot - overview.svg",
+          caption: "The SCOBY Spot - overview",
+          alt: "The SCOBY Spot Overview",
+          size: "large",
         },
       ],
     },
@@ -46,66 +46,62 @@ export const scobyWork: WorkDetail = {
       title: "Strategy & Analysis",
       blocks: [
         {
-          type: "text-image",
-          layout: "text-left",
-          text: {
-            content:
-              "**Intent & Users:** Research identified a gap for a **wellness-oriented third place** serving students, downtown workers, and weekend visitors. Interviews and on-site counts revealed demand for **quiet study niches**, **small-group gathering pods**, and a **short, intuitive purchase-to-seating journey** during peak hours.",
-            size: "normal",
-          },
-          image: {
-            src: "/work_details/scoby/The SCOBY Spot - strategy 1.svg",
-            caption: "The SCOBY Spot - strategy 1",
-            alt: "The SCOBY Spot Strategy & Analysis - Part 1",
-          },
+          type: "text",
+          content:
+            "**Intent & Users:** Research identified a gap for a **wellness-oriented third place** serving students, downtown workers, and weekend visitors. Interviews and on-site counts revealed demand for **quiet study niches**, **small-group gathering pods**, and a **short, intuitive purchase-to-seating journey** during peak hours.",
+          size: "normal",
         },
         {
-          type: "text-image",
-          layout: "text-right",
-          text: {
-            content:
-              "**Intent & Users:** Research identified a gap for a **wellness-oriented third place** serving students, downtown workers, and weekend visitors. Interviews and on-site counts revealed demand for **quiet study niches**, **small-group gathering pods**, and a **short, intuitive purchase-to-seating journey** during peak hours.",
-            size: "normal",
-          },
-          image: {
-            src: "/work_details/scoby/The SCOBY Spot - strategy 2.svg",
-            caption: "The SCOBY Spot - strategy 2",
-            alt: "The SCOBY Spot Strategy & Analysis - Part 2",
-          },
+          type: "image",
+          src: "/work_details/scoby/The SCOBY Spot - strategy 1.svg",
+          caption: "The SCOBY Spot - strategy 1",
+          alt: "The SCOBY Spot Strategy & Analysis - Part 1",
+          size: "large",
         },
         {
-          type: "text-image",
-          layout: "text-left",
-          text: {
-            content:
-              "**Evidence-Based Drivers:** Planning priorities included (1) **clear wayfinding** from entry → display → seating, (2) **acoustic comfort** for study and conversation, (3) **biophilic cues** to lower stress, and (4) a **flexible layout** that supports workshops and casual hangouts without re-setting the entire store.",
-            size: "normal",
-          },
-          image: {
-            src: "/work_details/scoby/The SCOBY Spot - strategy 3.svg",
-            caption: "The SCOBY Spot - strategy 3",
-            alt: "The SCOBY Spot Strategy & Analysis - Part 3",
-          },
+          type: "image",
+          src: "/work_details/scoby/The SCOBY Spot - strategy 2.svg",
+          caption: "The SCOBY Spot - strategy 2",
+          alt: "The SCOBY Spot Strategy & Analysis - Part 2",
+          size: "large",
         },
         {
-          type: "text-image",
-          layout: "text-right",
-          text: {
-            content:
-              "**Evidence-Based Drivers:** Planning priorities included (1) **clear wayfinding** from entry → display → seating, (2) **acoustic comfort** for study and conversation, (3) **biophilic cues** to lower stress, and (4) a **flexible layout** that supports workshops and casual hangouts without re-setting the entire store.",
-            size: "normal",
-          },
-          image: {
-            src: "/work_details/scoby/The SCOBY Spot - strategy 4.svg",
-            caption: "The SCOBY Spot - strategy 4",
-            alt: "The SCOBY Spot Strategy & Analysis - Part 4",
-          },
+          type: "text",
+          content:
+            "**Evidence-Based Drivers:** Planning priorities included (1) **clear wayfinding** from entry → display → seating, (2) **acoustic comfort** for study and conversation, (3) **biophilic cues** to lower stress, and (4) a **flexible layout** that supports workshops and casual hangouts without re-setting the entire store.",
+          size: "normal",
+        },
+        {
+          type: "image",
+          src: "/work_details/scoby/The SCOBY Spot - strategy 3.svg",
+          caption: "The SCOBY Spot - strategy 3",
+          alt: "The SCOBY Spot Strategy & Analysis - Part 3",
+          size: "large",
+        },
+        {
+          type: "image",
+          src: "/work_details/scoby/The SCOBY Spot - strategy 4.svg",
+          caption: "The SCOBY Spot - strategy 4",
+          alt: "The SCOBY Spot Strategy & Analysis - Part 4",
+          size: "large",
         },
       ],
     },
     designSolution: {
       title: "Design Solution",
       blocks: [
+        {
+          type: "text",
+          content:
+            "**Design Inspiration:** Guided by the image of **giant forest branches**, the space employs a **hexagonal wooden structure** that grows into **elevated seating platforms**. Warm timber, skylit apertures, and soft edges create a **biophilic setting** where circulation flows like branching paths—inviting guests to wander, perch, and linger.",
+          size: "normal",
+        },
+        {
+          type: "image",
+          src: "/work_details/scoby/The SCOBY Spot - design solution.svg",
+          caption: "The SCOBY Spot - design solution",
+          alt: "The SCOBY Spot Design Solution",
+        },
         {
           type: "image-pair",
           images: [
@@ -122,22 +118,6 @@ export const scobyWork: WorkDetail = {
           ],
           layout: "right-heavy",
           gap: "medium",
-        },
-        {
-          type: "text-image",
-          layout: "text-right",
-          textWidth: 60,
-          imageWidth: 40,
-          text: {
-            content:
-              "**Design Inspiration:** Guided by the image of **giant forest branches**, the space employs a **hexagonal wooden structure** that grows into **elevated seating platforms**. Warm timber, skylit apertures, and soft edges create a **biophilic setting** where circulation flows like branching paths—inviting guests to wander, perch, and linger.",
-            size: "normal",
-          },
-          image: {
-            src: "/work_details/scoby/The SCOBY Spot - design solution.svg",
-            caption: "The SCOBY Spot - design solution",
-            alt: "The SCOBY Spot Design Solution",
-          },
         },
         {
           type: "image-trio",

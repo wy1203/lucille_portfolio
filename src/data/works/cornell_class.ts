@@ -34,9 +34,11 @@ export const cornellClassWork: WorkDetail = {
           images: [
             {
               src: "/work_details/cornell_class/1left.png",
+              caption: "1left",
             },
             {
               src: "/work_details/cornell_class/1right.png",
+              caption: "1right",
             },
           ],
           layout: "equal",
@@ -53,9 +55,11 @@ export const cornellClassWork: WorkDetail = {
           images: [
             {
               src: "/work_details/cornell_class/2left.png",
+              caption: "2left",
             },
             {
               src: "/work_details/cornell_class/2right.png",
+              caption: "2right",
             },
           ],
           layout: "equal",
@@ -81,6 +85,7 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/cornell_class/3.png",
+          caption: "3",
           size: "full",
         },
         {
@@ -92,6 +97,7 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/cornell_class/4.png",
+          caption: "4",
           size: "full",
         },
       ],
@@ -110,9 +116,11 @@ export const cornellClassWork: WorkDetail = {
           images: [
             {
               src: "/work_details/cornell_class/5left.png",
+              caption: "5left",
             },
             {
               src: "/work_details/cornell_class/5right.png",
+              caption: "5right",
             },
           ],
           layout: "equal",
@@ -128,15 +136,18 @@ export const cornellClassWork: WorkDetail = {
           type: "image-trio",
           leftImage: {
             src: "/work_details/cornell_class/6right.png",
+            caption: "6right",
             size: 50,
           },
           rightImages: [
             {
               src: "/work_details/cornell_class/6topleft.png",
+              caption: "6topleft",
               size: 30,
             },
             {
               src: "/work_details/cornell_class/6bottomleft.png",
+              caption: "6bottomleft",
               size: 70,
             },
           ],
@@ -151,6 +162,7 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/cornell_class/7.png",
+          caption: "7",
           size: "full",
         },
         {
@@ -158,10 +170,12 @@ export const cornellClassWork: WorkDetail = {
           images: [
             {
               src: "/work_details/cornell_class/8left.png",
+              caption: "8left",
               size: 40,
             },
             {
               src: "/work_details/cornell_class/8right.png",
+              caption: "8right",
               size: 60,
             },
           ],
@@ -186,14 +200,9 @@ export const cornellClassWork: WorkDetail = {
           size: "normal",
         },
         {
-          type: "text",
-          content: "**Key Outcomes:**",
-          marginBottom: "0rem",
-          size: "normal",
-        },
-        {
           type: "list",
           listType: "unordered",
+          heading: "**Key Outcomes:**",
           items: [
             "Enhanced **speech intelligibility** and reduced echo via targeted acoustic treatments",
             "Improved **visibility and collaboration** with the Riley Robb **horseshoe** layout",
@@ -202,11 +211,11 @@ export const cornellClassWork: WorkDetail = {
             "Preset **lighting modes** aligned to lectures, discussions, and presentations",
           ],
           size: "normal",
-          marginTop: "-0.25rem",
         },
         {
           type: "image",
           src: "/work_details/cornell_class/9.png",
+          caption: "9",
           size: "full",
         },
         {

@@ -31,6 +31,7 @@ export const boatExhibitWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/boat_exhibit/1.png",
+          caption: "1",
           size: "full",
         },
         {
@@ -42,6 +43,7 @@ export const boatExhibitWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/boat_exhibit/2.png",
+          caption: "2",
           size: "full",
         },
       ],
@@ -58,6 +60,7 @@ export const boatExhibitWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/boat_exhibit/3.png",
+          caption: "3",
           size: "full",
         },
         {
@@ -80,6 +83,7 @@ export const boatExhibitWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/boat_exhibit/4.png",
+          caption: "4",
           size: "full",
         },
         {
@@ -91,6 +95,7 @@ export const boatExhibitWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/boat_exhibit/5.png",
+          caption: "5",
           size: "full",
         },
         {
@@ -102,6 +107,7 @@ export const boatExhibitWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/boat_exhibit/6.png",
+          caption: "6",
           size: "full",
         },
       ],
@@ -116,14 +122,9 @@ export const boatExhibitWork: WorkDetail = {
           size: "normal",
         },
         {
-          type: "text",
-          content: "**Key Outcomes:**",
-          marginBottom: "0rem",
-          size: "normal",
-        },
-        {
           type: "list",
           listType: "unordered",
+          heading: "**Key Outcomes:**",
           items: [
             "Created an immersive exhibition environment that transforms passive viewing into active engagement with maritime heritage",
             "Developed a multi-layered storytelling approach combining artifacts, multimedia, and environmental design",
@@ -132,7 +133,6 @@ export const boatExhibitWork: WorkDetail = {
             "Established a replicable framework for experiential museum design applicable to other cultural exhibitions",
           ],
           size: "normal",
-          marginTop: "-0.25rem",
         },
         {
           type: "text",

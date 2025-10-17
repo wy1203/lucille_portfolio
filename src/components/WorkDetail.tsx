@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect, useMemo, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useMusic } from "./BackgroundMusic";
 import {
   worksData,
@@ -268,10 +268,33 @@ const ContentRenderer = ({
   onVideoClick: (videoSrc: string, title: string, currentTime: number, isPlaying: boolean) => void;
   videoSyncData?: { src: string; time: number; playing: boolean };
 }) => {
-  const getMarginStyle = (block: ContentBlock) => {
+  const resolveBlockSpacing = (spacing: ContentBlock["spacing"]) => {
+    switch (spacing) {
+      case "none":
+        return "0";
+      case "tight":
+        return "calc(var(--block-spacing, 2.5rem) * 0.5)";
+      case "relaxed":
+        return "calc(var(--block-spacing, 2.5rem) * 1.6)";
+      case "normal":
+      default:
+        return "var(--block-spacing, 2.5rem)";
+    }
+  };
+
+  const getBlockSpacingStyle = (block: ContentBlock, index: number) => {
     const style: React.CSSProperties = {};
-    if (block.marginTop) style.marginTop = block.marginTop;
-    if (block.marginBottom) style.marginBottom = block.marginBottom;
+    const hasExplicitSpacing = block.spacing !== undefined;
+    const spacingValue = resolveBlockSpacing(block.spacing);
+    const shouldApplyDefaultSpacing = index > 0 && !hasExplicitSpacing;
+    const shouldApplyExplicitSpacing =
+      (index > 0 && hasExplicitSpacing) ||
+      (index === 0 && block.spacing && block.spacing !== "normal");
+
+    if (shouldApplyDefaultSpacing || shouldApplyExplicitSpacing) {
+      style.marginTop = spacingValue;
+    }
+
     return style;
   };
 
@@ -321,7 +344,7 @@ const ContentRenderer = ({
   return (
     <div className="content-blocks">
       {blocks.map((block, index) => {
-        const marginStyle = getMarginStyle(block);
+        const marginStyle = getBlockSpacingStyle(block, index);
 
         switch (block.type) {
           case "text":
@@ -392,13 +415,23 @@ const ContentRenderer = ({
           case "list":
             const ListTag = block.listType === "ordered" ? "ol" : "ul";
             return (
-              <ListTag
+              <div
                 key={index}
-                className={`list-block ${block.size || "normal"}`}
+                className="list-block-wrapper"
                 style={marginStyle}
               >
-                {renderListItems(block.items)}
-              </ListTag>
+                {block.heading && (
+                  <p
+                    className={`list-block-heading ${block.size || "normal"}`}
+                    dangerouslySetInnerHTML={{
+                      __html: parseInlineFormatting(block.heading),
+                    }}
+                  />
+                )}
+                <ListTag className={`list-block ${block.size || "normal"}`}>
+                  {renderListItems(block.items)}
+                </ListTag>
+              </div>
             );
 
           case "image":
@@ -923,6 +956,7 @@ const WorkDetail = () => {
   const [work, setWork] = useState<WorkData | null>(null);
   const [activeSection, setActiveSection] = useState("overview");
   const [showFooter, setShowFooter] = useState(false);
+  const [isNearBottom, setIsNearBottom] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImageIndex, setModalImageIndex] = useState(0);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -931,6 +965,8 @@ const WorkDetail = () => {
   const [currentVideoTime, setCurrentVideoTime] = useState(0);
   const [currentVideoPlaying, setCurrentVideoPlaying] = useState(false);
   const [videoSyncData, setVideoSyncData] = useState<{ src: string; time: number; playing: boolean } | undefined>();
+  const nextProjectsWrapperRef = useRef<HTMLDivElement | null>(null);
+  const isNextProjectsInView = useInView(nextProjectsWrapperRef, { amount: 0.2 });
 
   // Extract all images from work data in order
   const allImages = useMemo(() => {
@@ -1112,12 +1148,17 @@ const WorkDetail = () => {
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY;
       const isAtBottom = windowHeight + scrollTop >= documentHeight - 100;
-      setShowFooter(isAtBottom);
+      setIsNearBottom(isAtBottom);
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, [work]);
+
+  useEffect(() => {
+    setShowFooter(isNextProjectsInView || isNearBottom);
+  }, [isNextProjectsInView, isNearBottom]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -1326,6 +1367,7 @@ const WorkDetail = () => {
       </div>
 
       <div
+        ref={nextProjectsWrapperRef}
         className={`next-projects-section-wrapper${
           work.displayType === "pdf" ? " pdf-layout" : ""
         }`}
