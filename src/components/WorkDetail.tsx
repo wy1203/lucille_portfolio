@@ -39,30 +39,159 @@ const VideoBlockComponent = ({
   block,
   marginStyle,
   onVideoClick,
+  syncTime,
+  syncPlaying,
 }: {
   block: VideoBlock;
   marginStyle: React.CSSProperties;
-  onVideoClick: (videoSrc: string, title: string) => void;
+  onVideoClick: (videoSrc: string, title: string, currentTime: number, isPlaying: boolean) => void;
+  syncTime?: number;
+  syncPlaying?: boolean;
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const progressRef = useRef<HTMLDivElement>(null);
 
-  const togglePlayPause = (e: React.MouseEvent) => {
+  // Sync time and playing state from modal when it closes
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || syncTime === undefined) return;
+
+    video.currentTime = syncTime;
+    setCurrentTime(syncTime);
+
+    if (syncPlaying) {
+      video.play().catch(error => {
+        console.error('Error resuming video playback:', error);
+      });
+    }
+  }, [syncTime, syncPlaying]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleTimeUpdate = () => {
+      if (!isDragging) {
+        setCurrentTime(video.currentTime);
+      }
+    };
+
+    const handleLoadedMetadata = () => {
+      setDuration(video.duration);
+    };
+
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+    const handleEnded = () => setIsPlaying(false);
+
+    video.addEventListener('timeupdate', handleTimeUpdate);
+    video.addEventListener('loadedmetadata', handleLoadedMetadata);
+    video.addEventListener('play', handlePlay);
+    video.addEventListener('pause', handlePause);
+    video.addEventListener('ended', handleEnded);
+
+    return () => {
+      video.removeEventListener('timeupdate', handleTimeUpdate);
+      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      video.removeEventListener('play', handlePlay);
+      video.removeEventListener('pause', handlePause);
+      video.removeEventListener('ended', handleEnded);
+    };
+  }, [isDragging]);
+
+  // Global mouse up handler for when user releases outside the progress bar
+  useEffect(() => {
+    const handleGlobalMouseUp = () => {
+      setIsDragging(false);
+    };
+
+    if (isDragging) {
+      document.addEventListener('mouseup', handleGlobalMouseUp);
+      return () => {
+        document.removeEventListener('mouseup', handleGlobalMouseUp);
+      };
+    }
+  }, [isDragging]);
+
+  const togglePlayPause = async (e: React.MouseEvent) => {
     e.stopPropagation();
     const video = videoRef.current;
     if (!video) return;
 
-    if (isPlaying) {
-      video.pause();
-    } else {
-      video.play();
+    try {
+      if (isPlaying) {
+        video.pause();
+      } else {
+        await video.play();
+      }
+    } catch (error) {
+      console.error('Error playing video:', error);
     }
-    setIsPlaying(!isPlaying);
   };
 
   const handleVideoClick = () => {
-    onVideoClick(block.src, block.title || "Video");
+    const video = videoRef.current;
+    if (video) {
+      // Pause the inline video before opening modal
+      video.pause();
+      onVideoClick(block.src, block.title || "Video", video.currentTime, isPlaying);
+    }
   };
+
+  const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isDragging) return;
+
+    const progressBar = progressRef.current;
+    const video = videoRef.current;
+    if (!progressBar || !video || duration === 0) return;
+
+    const rect = progressBar.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const newTime = Math.max(0, Math.min((clickX / rect.width) * duration, duration));
+
+    video.currentTime = newTime;
+    setCurrentTime(newTime);
+  };
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsDragging(true);
+    handleProgressUpdate(e);
+  };
+
+  const handleProgressUpdate = (e: React.MouseEvent<HTMLDivElement>) => {
+    const progressBar = progressRef.current;
+    const video = videoRef.current;
+    if (!progressBar || !video || duration === 0) return;
+
+    const rect = progressBar.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const newTime = Math.max(0, Math.min((clickX / rect.width) * duration, duration));
+
+    video.currentTime = newTime;
+    setCurrentTime(newTime);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isDragging) {
+      handleProgressUpdate(e);
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+  const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
     <div
@@ -75,8 +204,6 @@ const VideoBlockComponent = ({
           className="video-inline"
           src={block.src}
           onClick={handleVideoClick}
-          onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
         />
         <div className="video-inline-controls">
           <button
@@ -86,6 +213,36 @@ const VideoBlockComponent = ({
           >
             {isPlaying ? "⏸" : "▶"}
           </button>
+
+          <div className="video-inline-time">
+            {formatTime(currentTime)}
+          </div>
+
+          <div
+            className="video-inline-progress-container"
+            ref={progressRef}
+            onClick={handleProgressClick}
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={() => setIsDragging(false)}
+          >
+            <div className="video-inline-progress-bar">
+              <div
+                className="video-inline-progress-fill"
+                style={{ width: `${progressPercentage}%` }}
+              />
+              <div
+                className="video-inline-progress-thumb"
+                style={{ left: `${progressPercentage}%` }}
+              />
+            </div>
+          </div>
+
+          <div className="video-inline-time">
+            {formatTime(duration)}
+          </div>
+
           <button
             className="video-fullscreen-btn"
             onClick={handleVideoClick}
@@ -104,10 +261,12 @@ const ContentRenderer = ({
   blocks,
   onImageClick,
   onVideoClick,
+  videoSyncData,
 }: {
   blocks: ContentBlock[];
   onImageClick: (imageSrc: string) => void;
-  onVideoClick: (videoSrc: string, title: string) => void;
+  onVideoClick: (videoSrc: string, title: string, currentTime: number, isPlaying: boolean) => void;
+  videoSyncData?: { src: string; time: number; playing: boolean };
 }) => {
   const getMarginStyle = (block: ContentBlock) => {
     const style: React.CSSProperties = {};
@@ -728,12 +887,15 @@ const ContentRenderer = ({
             );
 
           case "video":
+            const isSyncVideo = videoSyncData && videoSyncData.src === block.src;
             return (
               <VideoBlockComponent
                 key={index}
                 block={block}
                 marginStyle={marginStyle}
                 onVideoClick={onVideoClick}
+                syncTime={isSyncVideo ? videoSyncData.time : undefined}
+                syncPlaying={isSyncVideo ? videoSyncData.playing : undefined}
               />
             );
 
@@ -766,6 +928,9 @@ const WorkDetail = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [currentVideoSrc, setCurrentVideoSrc] = useState("");
   const [currentVideoTitle, setCurrentVideoTitle] = useState("");
+  const [currentVideoTime, setCurrentVideoTime] = useState(0);
+  const [currentVideoPlaying, setCurrentVideoPlaying] = useState(false);
+  const [videoSyncData, setVideoSyncData] = useState<{ src: string; time: number; playing: boolean } | undefined>();
 
   // Extract all images from work data in order
   const allImages = useMemo(() => {
@@ -890,14 +1055,26 @@ const WorkDetail = () => {
     setModalImageIndex(index);
   };
 
-  const openVideoModal = (videoSrc: string, title: string) => {
+  const openVideoModal = (videoSrc: string, title: string, currentTime: number = 0, isPlaying: boolean = false) => {
     setCurrentVideoSrc(videoSrc);
     setCurrentVideoTitle(title);
+    setCurrentVideoTime(currentTime);
+    setCurrentVideoPlaying(isPlaying);
+    setVideoSyncData(undefined); // Clear sync data when opening modal
     setIsVideoModalOpen(true);
   };
 
-  const closeVideoModal = () => {
+  const closeVideoModal = (returnTime?: number, wasPlaying?: boolean) => {
     setIsVideoModalOpen(false);
+
+    // Set sync data to update the inline video
+    if (returnTime !== undefined) {
+      setVideoSyncData({
+        src: currentVideoSrc,
+        time: returnTime,
+        playing: wasPlaying || false
+      });
+    }
   };
 
   useEffect(() => {
@@ -1136,6 +1313,7 @@ const WorkDetail = () => {
                           blocks={section.blocks}
                           onImageClick={openModal}
                           onVideoClick={openVideoModal}
+                          videoSyncData={videoSyncData}
                         />
                       </section>
                     );
@@ -1206,6 +1384,8 @@ const WorkDetail = () => {
         onClose={closeVideoModal}
         videoSrc={currentVideoSrc}
         title={currentVideoTitle}
+        initialTime={currentVideoTime}
+        autoPlay={currentVideoPlaying}
       />
     </div>
   );

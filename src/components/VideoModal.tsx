@@ -4,12 +4,14 @@ import '../styles/VideoModal.css';
 
 interface VideoModalProps {
   isOpen: boolean;
-  onClose: () => void;
+  onClose: (currentTime?: number, wasPlaying?: boolean) => void;
   videoSrc: string;
   title: string;
+  initialTime?: number;
+  autoPlay?: boolean;
 }
 
-const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, title }) => {
+const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, title, initialTime = 0, autoPlay = false }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -27,9 +29,19 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
       }
     };
 
-    const handleLoadedMetadata = () => {
+    const handleLoadedMetadata = async () => {
       setDuration(video.duration);
-      setCurrentTime(0);
+      setCurrentTime(initialTime);
+      video.currentTime = initialTime;
+
+      // Auto-play if requested
+      if (autoPlay && isOpen) {
+        try {
+          await video.play();
+        } catch (error) {
+          console.error('Error auto-playing video:', error);
+        }
+      }
     };
 
     const handlePlay = () => setIsPlaying(true);
@@ -46,7 +58,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
     if (isOpen && video.src) {
       video.load();
       setIsPlaying(false);
-      setCurrentTime(0);
+      setCurrentTime(initialTime);
       setDuration(0);
     }
 
@@ -57,7 +69,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
       video.removeEventListener('pause', handlePause);
       video.removeEventListener('ended', handleEnded);
     };
-  }, [isDragging, isOpen, videoSrc]);
+  }, [isDragging, isOpen, videoSrc, initialTime, autoPlay]);
 
   const togglePlayPause = async () => {
     const video = videoRef.current;
@@ -139,6 +151,15 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
 
   const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
 
+  const handleClose = () => {
+    const video = videoRef.current;
+    if (video) {
+      onClose(video.currentTime, isPlaying);
+    } else {
+      onClose();
+    }
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -147,7 +168,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onClick={onClose}
+          onClick={handleClose}
         >
           <motion.div
             className="video-modal-content"
@@ -156,7 +177,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
             exit={{ scale: 0.8, opacity: 0 }}
             onClick={(e) => e.stopPropagation()}
           >
-            <button className="video-modal-close" onClick={onClose}>
+            <button className="video-modal-close" onClick={handleClose}>
               ✕
             </button>
 
