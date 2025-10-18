@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/AnimatedSidebar.css";
 
@@ -21,92 +20,108 @@ const AnimatedSidebar = ({
 }: AnimatedSidebarProps) => {
   const navigate = useNavigate();
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const listener = (event: MediaQueryListEvent) =>
+      setPrefersReducedMotion(event.matches);
+
+    const supportsEventListener =
+      typeof mediaQuery.addEventListener === "function";
+
+    if (supportsEventListener) {
+      mediaQuery.addEventListener("change", listener);
+    } else if (typeof mediaQuery.addListener === "function") {
+      mediaQuery.addListener(listener);
+    }
+
+    return () => {
+      if (supportsEventListener) {
+        mediaQuery.removeEventListener("change", listener);
+      } else if (typeof mediaQuery.removeListener === "function") {
+        mediaQuery.removeListener(listener);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setIsMounted(true);
+      return;
+    }
+
+    setIsMounted(false);
+    const frame = window.requestAnimationFrame(() => setIsMounted(true));
+    return () => window.cancelAnimationFrame(frame);
+  }, [prefersReducedMotion]);
 
   const handleBackToWorks = () => {
     navigate("/", { state: { scrollTo: "work" } });
   };
 
-  const indicatorVariants = {
-    initial: { scale: 0, opacity: 0 },
-    animate: { scale: 1, opacity: 1 },
-    exit: { scale: 0, opacity: 0 },
-  };
-
   return (
-    <motion.aside
-      className="animated-sidebar"
-      initial={{ x: -20, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
+    <aside
+      className={`animated-sidebar ${
+        isMounted || prefersReducedMotion ? "entered" : ""
+      }`}
     >
       <div className="sidebar-header">
-        <motion.button
+        <button
+          type="button"
           className="sidebar-toggle"
           onClick={handleBackToWorks}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
           aria-label="Back to My Works"
         >
           <span>←</span>
-        </motion.button>
+        </button>
       </div>
 
       <nav className="sidebar-nav-animated">
-        {sections.map((section, index) => {
+        {sections.map((section) => {
           const isActive = activeSection === section.id;
           const isHovered = hoveredSection === section.id;
 
           return (
-            <motion.div
+            <div
               key={section.id}
               className="sidebar-item-wrapper"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.05 }}
             >
-              <motion.button
-                className={`sidebar-item ${isActive ? "active" : ""}`}
+              <button
+                type="button"
+                className={`sidebar-item ${isActive ? "active" : ""} ${
+                  isHovered ? "hovered" : ""
+                }`}
                 onClick={() => onSectionClick(section.id)}
-                onHoverStart={() => setHoveredSection(section.id)}
-                onHoverEnd={() => setHoveredSection(null)}
-                whileHover={{ x: 4 }}
-                whileTap={{ scale: 0.98 }}
+                onMouseEnter={() => setHoveredSection(section.id)}
+                onMouseLeave={() => setHoveredSection(null)}
+                onFocus={() => setHoveredSection(section.id)}
+                onBlur={() => setHoveredSection(null)}
+                aria-current={isActive ? "true" : undefined}
               >
-                {/* Active indicator bar */}
                 {isActive && (
-                  <motion.div
-                    className="active-indicator"
-                    layoutId="activeIndicator"
-                    initial={false}
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 30,
-                    }}
-                  />
+                  <span className="active-indicator" aria-hidden="true" />
                 )}
 
-                {/* Dot indicator animation */}
                 <div className="dot-indicator">
-                  <motion.div
-                    className={`dot ${isActive ? "active" : ""}`}
-                    variants={indicatorVariants}
-                    initial="initial"
-                    animate={isActive || isHovered ? "animate" : "initial"}
+                  <span
+                    className={`dot ${isActive ? "active" : ""} ${
+                      isHovered ? "hovered" : ""
+                    }`}
+                    aria-hidden="true"
                   />
                 </div>
 
-                {/* Section text */}
-                <span className="sidebar-text">
-                  {section.title}
-                </span>
-              </motion.button>
-            </motion.div>
+                <span className="sidebar-text">{section.title}</span>
+              </button>
+            </div>
           );
         })}
       </nav>
-
-    </motion.aside>
+    </aside>
   );
 };
 
