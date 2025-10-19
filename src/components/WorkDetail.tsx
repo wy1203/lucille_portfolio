@@ -23,6 +23,7 @@ const SECTION_ORDER = [
   "designSolution",
   "impactAndResults",
   "reflection",
+  "other",
 ];
 
 const sortSectionsByOrder = (sectionKeys: string[]) =>
@@ -44,7 +45,12 @@ const VideoBlockComponent = ({
 }: {
   block: VideoBlock;
   marginStyle: React.CSSProperties;
-  onVideoClick: (videoSrc: string, title: string, currentTime: number, isPlaying: boolean) => void;
+  onVideoClick: (
+    videoSrc: string,
+    title: string,
+    currentTime: number,
+    isPlaying: boolean
+  ) => void;
   syncTime?: number;
   syncPlaying?: boolean;
 }) => {
@@ -64,8 +70,8 @@ const VideoBlockComponent = ({
     setCurrentTime(syncTime);
 
     if (syncPlaying) {
-      video.play().catch(error => {
-        console.error('Error resuming video playback:', error);
+      video.play().catch((error) => {
+        console.error("Error resuming video playback:", error);
       });
     }
   }, [syncTime, syncPlaying]);
@@ -88,18 +94,18 @@ const VideoBlockComponent = ({
     const handlePause = () => setIsPlaying(false);
     const handleEnded = () => setIsPlaying(false);
 
-    video.addEventListener('timeupdate', handleTimeUpdate);
-    video.addEventListener('loadedmetadata', handleLoadedMetadata);
-    video.addEventListener('play', handlePlay);
-    video.addEventListener('pause', handlePause);
-    video.addEventListener('ended', handleEnded);
+    video.addEventListener("timeupdate", handleTimeUpdate);
+    video.addEventListener("loadedmetadata", handleLoadedMetadata);
+    video.addEventListener("play", handlePlay);
+    video.addEventListener("pause", handlePause);
+    video.addEventListener("ended", handleEnded);
 
     return () => {
-      video.removeEventListener('timeupdate', handleTimeUpdate);
-      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
-      video.removeEventListener('play', handlePlay);
-      video.removeEventListener('pause', handlePause);
-      video.removeEventListener('ended', handleEnded);
+      video.removeEventListener("timeupdate", handleTimeUpdate);
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      video.removeEventListener("play", handlePlay);
+      video.removeEventListener("pause", handlePause);
+      video.removeEventListener("ended", handleEnded);
     };
   }, [isDragging]);
 
@@ -110,9 +116,9 @@ const VideoBlockComponent = ({
     };
 
     if (isDragging) {
-      document.addEventListener('mouseup', handleGlobalMouseUp);
+      document.addEventListener("mouseup", handleGlobalMouseUp);
       return () => {
-        document.removeEventListener('mouseup', handleGlobalMouseUp);
+        document.removeEventListener("mouseup", handleGlobalMouseUp);
       };
     }
   }, [isDragging]);
@@ -129,7 +135,7 @@ const VideoBlockComponent = ({
         await video.play();
       }
     } catch (error) {
-      console.error('Error playing video:', error);
+      console.error("Error playing video:", error);
     }
   };
 
@@ -138,7 +144,12 @@ const VideoBlockComponent = ({
     if (video) {
       // Pause the inline video before opening modal
       video.pause();
-      onVideoClick(block.src, block.title || "Video", video.currentTime, isPlaying);
+      onVideoClick(
+        block.src,
+        block.title || "Video",
+        video.currentTime,
+        isPlaying
+      );
     }
   };
 
@@ -151,7 +162,10 @@ const VideoBlockComponent = ({
 
     const rect = progressBar.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
-    const newTime = Math.max(0, Math.min((clickX / rect.width) * duration, duration));
+    const newTime = Math.max(
+      0,
+      Math.min((clickX / rect.width) * duration, duration)
+    );
 
     video.currentTime = newTime;
     setCurrentTime(newTime);
@@ -169,7 +183,10 @@ const VideoBlockComponent = ({
 
     const rect = progressBar.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
-    const newTime = Math.max(0, Math.min((clickX / rect.width) * duration, duration));
+    const newTime = Math.max(
+      0,
+      Math.min((clickX / rect.width) * duration, duration)
+    );
 
     video.currentTime = newTime;
     setCurrentTime(newTime);
@@ -188,7 +205,7 @@ const VideoBlockComponent = ({
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
   };
 
   const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
@@ -214,9 +231,7 @@ const VideoBlockComponent = ({
             {isPlaying ? "⏸" : "▶"}
           </button>
 
-          <div className="video-inline-time">
-            {formatTime(currentTime)}
-          </div>
+          <div className="video-inline-time">{formatTime(currentTime)}</div>
 
           <div
             className="video-inline-progress-container"
@@ -239,9 +254,7 @@ const VideoBlockComponent = ({
             </div>
           </div>
 
-          <div className="video-inline-time">
-            {formatTime(duration)}
-          </div>
+          <div className="video-inline-time">{formatTime(duration)}</div>
 
           <button
             className="video-fullscreen-btn"
@@ -265,7 +278,12 @@ const ContentRenderer = ({
 }: {
   blocks: ContentBlock[];
   onImageClick: (imageSrc: string) => void;
-  onVideoClick: (videoSrc: string, title: string, currentTime: number, isPlaying: boolean) => void;
+  onVideoClick: (
+    videoSrc: string,
+    title: string,
+    currentTime: number,
+    isPlaying: boolean
+  ) => void;
   videoSyncData?: { src: string; time: number; playing: boolean };
 }) => {
   const resolveBlockSpacing = (spacing: ContentBlock["spacing"]) => {
@@ -492,7 +510,9 @@ const ContentRenderer = ({
                     className="image-item"
                     style={{
                       ...(img.marginTop && { marginTop: img.marginTop }),
-                      ...(img.marginBottom && { marginBottom: img.marginBottom }),
+                      ...(img.marginBottom && {
+                        marginBottom: img.marginBottom,
+                      }),
                     }}
                   >
                     <img
@@ -871,13 +891,16 @@ const ContentRenderer = ({
             const gapClass = `gap-${block.gap || "medium"}`;
             const textSectionClass = block.text?.size || "normal";
             const listSectionClass = block.list.size || "normal";
-            const ListComponent = block.list.listType === "ordered" ? "ol" : "ul";
+            const ListComponent =
+              block.list.listType === "ordered" ? "ol" : "ul";
 
             const imageContentStyle: React.CSSProperties = {
               cursor: "pointer",
               ...(block.image.width && { width: block.image.width }),
               ...(block.image.height && { height: block.image.height }),
-              ...(block.image.objectFit && { objectFit: block.image.objectFit }),
+              ...(block.image.objectFit && {
+                objectFit: block.image.objectFit,
+              }),
               ...(block.image.objectPosition && {
                 objectPosition: block.image.objectPosition,
               }),
@@ -918,7 +941,9 @@ const ContentRenderer = ({
 
                   <div className={`list-section ${listSectionClass}`}>
                     {block.list.title && <h4>{block.list.title}</h4>}
-                    <ListComponent className={`list-block ${block.list.size || "normal"}`}>
+                    <ListComponent
+                      className={`list-block ${block.list.size || "normal"}`}
+                    >
                       {renderListItems(block.list.items)}
                     </ListComponent>
                   </div>
@@ -927,7 +952,8 @@ const ContentRenderer = ({
             );
 
           case "video":
-            const isSyncVideo = videoSyncData && videoSyncData.src === block.src;
+            const isSyncVideo =
+              videoSyncData && videoSyncData.src === block.src;
             return (
               <VideoBlockComponent
                 key={index}
@@ -971,9 +997,13 @@ const WorkDetail = () => {
   const [currentVideoTitle, setCurrentVideoTitle] = useState("");
   const [currentVideoTime, setCurrentVideoTime] = useState(0);
   const [currentVideoPlaying, setCurrentVideoPlaying] = useState(false);
-  const [videoSyncData, setVideoSyncData] = useState<{ src: string; time: number; playing: boolean } | undefined>();
+  const [videoSyncData, setVideoSyncData] = useState<
+    { src: string; time: number; playing: boolean } | undefined
+  >();
   const nextProjectsWrapperRef = useRef<HTMLDivElement | null>(null);
-  const isNextProjectsInView = useInView(nextProjectsWrapperRef, { amount: 0.2 });
+  const isNextProjectsInView = useInView(nextProjectsWrapperRef, {
+    amount: 0.2,
+  });
 
   // Extract all images from work data in order
   const allImages = useMemo(() => {
@@ -1074,6 +1104,13 @@ const WorkDetail = () => {
                 caption: block.caption,
               });
               break;
+            case "text-image":
+              images.push({
+                src: block.image.src,
+                alt: block.image.alt,
+                caption: block.image.caption,
+              });
+              break;
           }
         });
       }
@@ -1098,7 +1135,12 @@ const WorkDetail = () => {
     setModalImageIndex(index);
   };
 
-  const openVideoModal = (videoSrc: string, title: string, currentTime: number = 0, isPlaying: boolean = false) => {
+  const openVideoModal = (
+    videoSrc: string,
+    title: string,
+    currentTime: number = 0,
+    isPlaying: boolean = false
+  ) => {
     setCurrentVideoSrc(videoSrc);
     setCurrentVideoTitle(title);
     setCurrentVideoTime(currentTime);
@@ -1115,7 +1157,7 @@ const WorkDetail = () => {
       setVideoSyncData({
         src: currentVideoSrc,
         time: returnTime,
-        playing: wasPlaying || false
+        playing: wasPlaying || false,
       });
     }
   };

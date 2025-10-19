@@ -234,11 +234,9 @@ export interface WorkDetail {
     overview?: Section;
     strategyAndAnalysis?: Section;
     designSolution?: Section;
-    impactAndResults?: Section;
     reflection?: Section;
-    challenge?: Section;
-    solution?: Section;
     impact?: Section;
+    other?: Section;
     [key: string]: Section | undefined;
   };
 }

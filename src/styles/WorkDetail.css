@@ -212,10 +212,8 @@
 }
 
 .work-section p {
-  font-size: 1.1rem;
   line-height: 1.8;
   color: #333;
-  margin-bottom: 1.5rem;
 }
 
 .work-section p:last-child {
@@ -348,11 +346,12 @@
 
 /* Text Blocks */
 .text-block {
-  margin-top: 30px;
+  margin-top: 10px;
   margin-left: 50px;
   margin-right: 50px;
   line-height: 1.6;
   color: #333;
+  white-space: pre-line;
 }
 
 .text-block.small {
@@ -418,6 +417,7 @@
 .text-image-block .text-content {
   flex: 0 1 var(--text-width, 50%);
   max-width: var(--text-width, 50%);
+  white-space: pre-line;
 }
 
 .text-image-block .text-content h3 {
@@ -729,6 +729,10 @@
 /* Image Pair Layout */
 .image-pair {
   display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  margin: 0 auto;
 }
 
 .image-pair.equal {

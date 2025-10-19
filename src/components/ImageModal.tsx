@@ -60,6 +60,11 @@ const ImageModal: React.FC<ImageModalProps> = ({
   if (!isOpen || !images.length) return null;
 
   const currentImage = images[currentIndex];
+  const isSvgImage =
+    currentImage.src
+      ?.toLowerCase()
+      .split('?')[0]
+      .endsWith('.svg') ?? false;
 
   return (
     <AnimatePresence>
@@ -116,7 +121,9 @@ const ImageModal: React.FC<ImageModalProps> = ({
             <img
               src={currentImage.src}
               alt={currentImage.alt || ''}
-              className="modal-image"
+              className={`modal-image${
+                isSvgImage ? ' modal-image--solid' : ''
+              }`}
             />
           </div>
 
