@@ -203,6 +203,7 @@ export const iceyWork: WorkDetail = {
           imageWidth: 60,
           image: {
             src: "/work_details/icey/ICEY! - design solution.svg",
+            caption: "ICEY! - design solution",
             alt: "Parametric shell design logic",
             objectFit: "contain",
           },
