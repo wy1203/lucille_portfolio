@@ -23,9 +23,11 @@ const SOUND_ASSET_BASE = "/main_background/sound_effects";
 type SoundFileName =
   | "cat_meow.wav"
   | "ufo.mp3"
+  | "ufo2.wav"
   | "clap.wav"
   | "pencil.wav"
-  | "baby_alien.mp3";
+  | "baby_alien.mp3"
+  | "flip_page.wav";
 
 // Easy mapping: Just specify which rect plays which sound!
 // Ordered by x position (left to right), then y position (top to bottom)
@@ -44,12 +46,12 @@ const layerRevealMapping: Array<{
   {
     id: "layer-reveal-rect-10",
     bounds: { x: 0, y: 667, width: 141, height: 119 },
-    sound: "ufo.mp3",
+    sound: "ufo2.wav",
   },
   {
     id: "layer-reveal-rect-9",
     bounds: { x: 157, y: 727, width: 98, height: 138 },
-    sound: "ufo.mp3",
+    sound: "ufo2.wav",
   },
   {
     id: "layer-reveal-rect-12",
@@ -76,7 +78,7 @@ const layerRevealMapping: Array<{
   {
     id: "layer-reveal-rect-2",
     bounds: { x: 1774, y: 806, width: 94, height: 102 },
-    sound: "ufo.mp3",
+    sound: "flip_page.wav",
   },
   {
     id: "layer-reveal-rect-4",
@@ -86,7 +88,7 @@ const layerRevealMapping: Array<{
   {
     id: "layer-reveal-rect-1",
     bounds: { x: 1821, y: 1016, width: 113, height: 88 },
-    sound: "ufo.mp3",
+    sound: "ufo2.wav",
   },
   {
     id: "layer-reveal-rect-5",

@@ -23,8 +23,6 @@
   filter: brightness(0) invert(1);
 }
 
-/* Navigation styles are handled in Navigation.css */
-
 .work-detail-container {
   width: 65%;
   max-width: 65%;
@@ -94,7 +92,7 @@
 .work-detail-main {
   flex: 1;
   max-width: 100%;
-  padding: 0 1rem 4rem 0;
+  padding: 0 0 4rem 0;
 }
 
 .work-detail-error {
@@ -197,6 +195,7 @@
   background: white;
   margin-bottom: 2.5rem;
   scroll-margin-top: 10px;
+  border-radius: 24px;
 }
 
 .work-section h2 {
@@ -259,6 +258,31 @@
   margin-top: 4rem;
 }
 
+/* Portrait mode - hide sidebar and use 80% width */
+@media (orientation: portrait) {
+  .work-sidebar {
+    display: none;
+  }
+
+  .work-detail-container {
+    width: 80%;
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 4rem;
+  }
+
+  .work-detail-main {
+    max-width: 100%;
+    padding: 0 0 4rem 0;
+  }
+
+  .work-detail-container.pdf-layout {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 /* Tablets and mobile - hide sidebar and adjust layout */
 @media (max-width: 1024px) {
   .work-sidebar {
@@ -267,14 +291,15 @@
 
   .work-detail-container {
     padding-top: 4rem;
-    margin-left: 0;
-    width: 100%;
-    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 90%;
   }
 
   .work-detail-main {
     max-width: 100%;
-    padding: 0 2rem 4rem;
+    padding: 0 0 4rem 0;
   }
 
   .work-detail-container.pdf-layout {
@@ -290,7 +315,7 @@
   }
 
   .work-detail-main {
-    padding: 0 1.5rem 3rem;
+    padding: 0 0 3rem 0;
   }
 
   .work-detail-container.pdf-layout {
