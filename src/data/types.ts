@@ -87,6 +87,7 @@ export interface ImageTrioBlock extends BaseContentBlock {
     src: string;
     alt?: string;
     caption?: string;
+    size?: number; // 1-100, percentage of available width for top image
     height?: string; // Custom height for top image
     position?: string; // CSS object-position value (e.g., "center", "top", "50% 30%")
   };

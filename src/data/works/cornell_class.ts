@@ -64,6 +64,11 @@ export const cornellClassWork: WorkDetail = {
           alt: "Cornell Classroom design goals",
           size: "medium",
         },
+      ],
+    },
+    strategyAndAnalysis: {
+      title: "Strategy & Analysis",
+      blocks: [
         {
           type: "text-image",
           layout: "text-right",
@@ -77,11 +82,6 @@ export const cornellClassWork: WorkDetail = {
             alt: "Offerings and multi-modal learning",
           },
         },
-      ],
-    },
-    strategyAndAnalysis: {
-      title: "Strategy & Analysis",
-      blocks: [
         {
           type: "text-image",
           layout: "text-right",
@@ -103,51 +103,40 @@ export const cornellClassWork: WorkDetail = {
           size: "medium",
         },
         {
-          type: "image-grid",
+          type: "image-pair",
           images: [
             {
               src: "/work_details/cornell_class/1left.png",
               alt: "Riley Robb Hall existing conditions",
+              size: 35,
             },
             {
               src: "/work_details/cornell_class/1right.png",
               alt: "Riley Robb Hall layout analysis",
-            },
-            {
-              src: "/work_details/cornell_class/2left.png",
-              alt: "Rockefeller Hall existing conditions",
-            },
-            {
-              src: "/work_details/cornell_class/2right.png",
-              alt: "Rockefeller Hall layout analysis",
+              size: 35,
             },
           ],
-          columns: 4,
+          layout: "equal",
           gap: "medium",
         },
         {
-          type: "image-grid",
+          type: "image-pair",
           images: [
-            {
-              src: "/work_details/cornell_class/1left.png",
-              alt: "Riley Robb Hall existing conditions",
-            },
-            {
-              src: "/work_details/cornell_class/1right.png",
-              alt: "Riley Robb Hall layout analysis",
-            },
             {
               src: "/work_details/cornell_class/2left.png",
               alt: "Rockefeller Hall existing conditions",
+              size: 35,
             },
             {
               src: "/work_details/cornell_class/2right.png",
               alt: "Rockefeller Hall layout analysis",
+              size: 35,
             },
           ],
-          columns: 2,
+          layout: "equal",
           gap: "medium",
         },
+
         {
           type: "text",
           content:
@@ -159,7 +148,7 @@ export const cornellClassWork: WorkDetail = {
           layout: "text-right",
           text: {
             content:
-              "• **Ceiling design:** Exposed beams and pipelines created visual clutter and sound reflection.\n• **Lighting:** Lack of ambient or modular lighting limited comfort and adaptability.\n• **Furniture:** Outdated chairs and fixed layouts reduced flexibility for different teaching formats.\n• **Accessibility:** Narrow aisles and tight row spacing limited ease of movement.\n• **Sightlines and acoustics:** Poor seating elevation and echo reduced visibility and speech intelligibility.",
+              "• **Ceiling design:** Exposed beams and pipelines created visual clutter and sound reflection.\n\n• **Lighting:** Lack of ambient or modular lighting limited comfort and adaptability.\n\n• **Furniture:** Outdated chairs and fixed layouts reduced flexibility for different teaching formats.\n\n• **Accessibility:** Narrow aisles and tight row spacing limited ease of movement.\n\n• **Sightlines and acoustics:** Poor seating elevation and echo reduced visibility and speech intelligibility.",
             size: "normal",
           },
           image: {
@@ -219,7 +208,7 @@ export const cornellClassWork: WorkDetail = {
           textWidth: 40,
           text: {
             content:
-              "1. **Acoustic intelligibility:** Minimize echo and cross-talk to improve speech clarity.\n2. **Ergonomic support:** Provide furniture adaptable to different body types and postures.\n3. **Spatial flexibility:** Allow reconfiguration within a 15-minute turnover period.\n4. **Accessibility and inclusion:** Ensure clear circulation and equitable sightlines for all users.\n5. **Lighting quality:** Deliver layered light modes—task, ambient, and presentation—to reduce glare.",
+              "1. **Acoustic intelligibility:** Minimize echo and cross-talk to improve speech clarity.\n\n2. **Ergonomic support:** Provide furniture adaptable to different body types and postures.\n\n3. **Spatial flexibility:** Allow reconfiguration within a 15-minute turnover period.\n\n4. **Accessibility and inclusion:** Ensure clear circulation and equitable sightlines for all users.\n\n5. **Lighting quality:** Deliver layered light modes—task, ambient, and presentation—to reduce glare.",
             size: "normal",
           },
           image: {
@@ -238,25 +227,28 @@ export const cornellClassWork: WorkDetail = {
       title: "Design Solution",
       blocks: [
         {
-          type: "text",
-          content: "**Riley Robb Hall – Horseshoe Layout**",
-          size: "normal",
+          type: "title",
+          content: "**Riley Robb Hall - Horseshoe Layout**",
+          size: "medium",
         },
         {
-          type: "image-pair",
-          images: [
-            { src: "/work_details/cornell_class/6.png", size: 65 },
-            {
-              src: "/work_details/cornell_class/Cornell Classroom - visual selection (3).svg",
-              size: 37,
-            },
-          ],
+          type: "image",
+          src: "/work_details/cornell_class/6.png",
+          size: "large",
         },
         {
-          type: "text",
-          content:
-            "A **tiered horseshoe configuration** enhances **eye contact, voice projection, and spatial clarity**.\n• Curved rows equalize sightlines across all seats.\n• Swivel chairs enable seamless transition from lecture to discussion.\n• Integrated lighting strips and under-desk zones improve safety and accessibility.",
-          size: "normal",
+          type: "text-image",
+          layout: "text-right",
+          imageWidth: 40,
+          text: {
+            content:
+              "A **tiered horseshoe configuration** enhances **eye contact, voice projection, and spatial clarity**.\n• Curved rows equalize sightlines across all seats.\n• Swivel chairs enable seamless transition from lecture to discussion.\n• Integrated lighting strips and under-desk zones improve safety and accessibility.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/cornell_class/Cornell Classroom - visual selection (3).svg",
+            alt: "Tiered horseshoe classroom layout",
+          },
         },
         {
           type: "image-pair",
@@ -278,25 +270,26 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Accessible Layout & Ceiling Design**\n\nMaterial palette board displays teal acoustical panels, light wood tables, adjustable seating, and smart lighting and shading systems.\n\nThe design ensures **clear circulation**, **varied seating heights**, and **multiple focal points** for instructors.\nNeutral tones and biophilic textures reduce cognitive load, creating a calm environment that supports concentration and well-being.",
+            "**Accessible Layout & Ceiling Design**\n\nMaterial palette board displays teal acoustical panels, light wood tables, adjustable seating, and smart lighting and shading systems.\n\nThe design ensures **clear circulation**, **varied seating heights**, and **multiple focal points** for instructors. Neutral tones and biophilic textures reduce cognitive load, creating a calm environment that supports concentration and well-being.",
           size: "normal",
         },
         {
           type: "image",
           src: "/work_details/cornell_class/10.png",
           alt: "Material palette and design details",
-          size: "medium",
+          size: "large",
         },
         {
           type: "image",
           src: "/work_details/cornell_class/7.png",
           alt: "Riley Robb Hall ceiling and lighting design",
-          size: "medium",
+          size: "large",
         },
+        { type: "spacer", size: "medium" },
         {
-          type: "text",
-          content: "**Rockefeller Hall – Reconfigurable Studio Classroom**",
-          size: "normal",
+          type: "title",
+          content: "**Rockefeller Hall - Reconfigurable Studio Classroom**",
+          size: "medium",
         },
         {
           type: "image-trio",
@@ -327,28 +320,47 @@ export const cornellClassWork: WorkDetail = {
           size: "normal",
         },
         {
-          type: "image",
-          src: "/work_details/cornell_class/5right.png",
-          alt: "Rockefeller Hall positive distraction walls",
-          size: "medium",
+          type: "image-trio",
+          layout: "top-bottom",
+          topImage: {
+            src: "/work_details/cornell_class/12.png",
+            alt: "Top image placeholder",
+            caption: "Top",
+            size: 60,
+          },
+          bottomImages: [
+            {
+              src: "/work_details/cornell_class/16.png",
+              alt: "Bottom left image placeholder",
+              caption: "Bottom Left",
+              size: 50,
+            },
+            {
+              src: "/work_details/cornell_class/17.png",
+              alt: "Bottom right image placeholder",
+              caption: "Bottom Right",
+              size: 50,
+            },
+          ],
+          gap: "medium",
         },
         {
           type: "text",
           content:
-            "**Adaptable Layout & Acoustics & Lighting**\n\nLayered acoustic strategies—**ceiling baffles, wall panels, and upholstered furniture**—control reverberation.\nLighting layers are pre-set for **lecture**, **discussion**, and **presentation** modes to reduce glare and adapt to digital tasks.",
+            "**Adaptable Layout & Acoustics & Lighting**\n\nLayered acoustic strategies—**ceiling baffles, wall panels, and upholstered furniture**—control reverberation. Lighting layers are pre-set for **lecture**, **discussion**, and **presentation** modes to reduce glare and adapt to digital tasks.",
           size: "normal",
         },
         {
           type: "image",
           src: "/work_details/cornell_class/11.png",
           alt: "Rockefeller Hall acoustics and lighting systems",
-          size: "medium",
+          size: "large",
         },
         {
           type: "image",
           src: "/work_details/cornell_class/9.png",
           alt: "Rockefeller Hall complete interior view",
-          size: "medium",
+          size: "large",
         },
       ],
     },

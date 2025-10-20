@@ -383,9 +383,9 @@ const ContentRenderer = ({
             const getFontSize = (size?: string) => {
               if (!size) return undefined;
               const presetSizes: Record<string, string> = {
-                small: "1.5rem",
-                medium: "2rem",
-                large: "2.5rem",
+                small: "1.0rem",
+                medium: "1.5rem",
+                large: "2.0rem",
                 xlarge: "3rem",
               };
               return presetSizes[size] || size;
@@ -576,16 +576,30 @@ const ContentRenderer = ({
               // Top-bottom layout: one image on top, two on bottom
               const topImage = block.topImage;
               const bottomImages = block.bottomImages;
+              const clampPercentage = (value: number) =>
+                Math.min(Math.max(value, 1), 100);
+              const topWidth = typeof topImage.size === "number" &&
+                Number.isFinite(topImage.size)
+                  ? `${clampPercentage(topImage.size)}%`
+                  : "100%";
+              const getBottomColumnWidth = (index: number) => {
+                const size = bottomImages[index]?.size;
+                if (typeof size === "number" && Number.isFinite(size)) {
+                  return `${clampPercentage(size)}%`;
+                }
+                return "1fr";
+              };
 
               // Calculate CSS variables for bottom image sizes
               const bottomStyle = {
                 ...marginStyle,
-                "--image-width-1": bottomImages[0]?.size
-                  ? `${bottomImages[0].size}%`
-                  : "1fr",
-                "--image-width-2": bottomImages[1]?.size
-                  ? `${bottomImages[1].size}%`
-                  : "1fr",
+                "--image-width-1": getBottomColumnWidth(0),
+                "--image-width-2": getBottomColumnWidth(1),
+              } as React.CSSProperties;
+              const topImageWrapperStyle = {
+                alignSelf: "center",
+                width: topWidth,
+                maxWidth: "100%",
               } as React.CSSProperties;
 
               return (
@@ -596,13 +610,14 @@ const ContentRenderer = ({
                   }`}
                   style={bottomStyle}
                 >
-                  <div className="top-image">
+                  <div className="top-image" style={topImageWrapperStyle}>
                     <img
                       src={topImage.src}
                       alt={topImage.alt || ""}
                       className="clickable-image"
                       onClick={() => onImageClick(topImage.src)}
                       style={{
+                        width: "100%",
                         cursor: "pointer",
                         ...(topImage.height && { maxHeight: topImage.height }),
                         ...(topImage.position && {
