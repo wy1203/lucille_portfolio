@@ -581,8 +581,8 @@ const About = () => {
           color="#ffffffff"
           cursorBallColor="#ffffffff"
           cursorBallSize={3}
-          ballCount={20}
-          animationSize={20}
+          ballCount={35}
+          animationSize={25}
           enableMouseInteraction={true}
           enableTransparency={true}
           hoverSmoothness={0.15}
