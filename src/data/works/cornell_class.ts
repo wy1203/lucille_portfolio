@@ -69,7 +69,7 @@ export const cornellClassWork: WorkDetail = {
           layout: "text-right",
           text: {
             content:
-              "\n**Offerings:**\nAdaptive layouts, upgraded ergonomic furniture, targeted acoustic treatments, and layered lighting strategies tailored to active learning.\n\n• **Riley Robb Hall** adopts a **horseshoe configuration** to improve visibility and communication.\n• **Rockefeller Hall** integrates **reconfigurable furnishings** and **positive-distraction walls** to support multi-modal learning.",
+              "**Offerings:**\nAdaptive layouts, upgraded ergonomic furniture, targeted acoustic treatments, and layered lighting strategies tailored to active learning.\n\n• **Riley Robb Hall** adopts a **horseshoe configuration** to improve visibility and communication.\n• **Rockefeller Hall** integrates **reconfigurable furnishings** and **positive-distraction walls** to support multi-modal learning.",
             size: "normal",
           },
           image: {
@@ -219,7 +219,7 @@ export const cornellClassWork: WorkDetail = {
           textWidth: 40,
           text: {
             content:
-              "\n\n\n1. **Acoustic intelligibility:** Minimize echo and cross-talk to improve speech clarity.\n2. **Ergonomic support:** Provide furniture adaptable to different body types and postures.\n3. **Spatial flexibility:** Allow reconfiguration within a 15-minute turnover period.\n4. **Accessibility and inclusion:** Ensure clear circulation and equitable sightlines for all users.\n5. **Lighting quality:** Deliver layered light modes—task, ambient, and presentation—to reduce glare.",
+              "1. **Acoustic intelligibility:** Minimize echo and cross-talk to improve speech clarity.\n2. **Ergonomic support:** Provide furniture adaptable to different body types and postures.\n3. **Spatial flexibility:** Allow reconfiguration within a 15-minute turnover period.\n4. **Accessibility and inclusion:** Ensure clear circulation and equitable sightlines for all users.\n5. **Lighting quality:** Deliver layered light modes—task, ambient, and presentation—to reduce glare.",
             size: "normal",
           },
           image: {
@@ -371,7 +371,7 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "text",
           content:
-            "\nThe result: A **future-ready educational environment** where spatial design directly enhances teaching performance and student engagement.",
+            "The result: A **future-ready educational environment** where spatial design directly enhances teaching performance and student engagement.",
         },
       ],
     },
