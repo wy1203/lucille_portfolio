@@ -26,50 +26,56 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Project Vision:** Cornell Classroom reimagines two existing lecture spaces—**Riley Robb Hall** and **Rockefeller Hall**—through evidence-based design to create **inclusive, flexible, and engaging** learning environments. The redesign addresses acoustic, spatial, and ergonomic challenges to elevate day-to-day teaching and learning.",
+            "**Project Vision:**\nCornell Classroom reimagines two existing lecture spaces—**Riley Robb Hall** and **Rockefeller Hall**—through **evidence-based interior design** to create **inclusive, flexible, and engaging learning environments**. The redesign addresses acoustic, spatial, and ergonomic challenges to elevate everyday teaching and learning.",
           size: "normal",
         },
         {
           type: "image-pair",
           images: [
             {
-              src: "/work_details/cornell_class/1left.png",
-              caption: "1left",
+              src: "/work_details/cornell_class/hero.png",
+              alt: "Riley Robb Hall overview",
+              size: 40,
             },
             {
-              src: "/work_details/cornell_class/1right.png",
-              caption: "1right",
+              src: "/work_details/cornell_class/12.png",
+              alt: "Rockefeller Hall overview",
+              size: 47,
             },
           ],
           layout: "equal",
           gap: "medium",
         },
         {
-          type: "text",
-          content:
-            "**Goal:** Improve **functionality, comfort, and inclusivity** by aligning room layout, furniture, acoustics, and lighting with a range of pedagogies—from lectures to discussions, seminars, and workshops.",
-          size: "normal",
-        },
-        {
-          type: "image-pair",
-          images: [
-            {
-              src: "/work_details/cornell_class/2left.png",
-              caption: "2left",
-            },
-            {
-              src: "/work_details/cornell_class/2right.png",
-              caption: "2right",
-            },
-          ],
-          layout: "equal",
-          gap: "medium",
+          type: "image",
+          src: "/work_details/cornell_class/Cornell Classroom - visual selection (10).svg",
+          alt: "Cornell Classroom visual selection",
+          size: "medium",
         },
         {
           type: "text",
           content:
-            "**Offerings:** Adaptive layouts, upgraded ergonomic furniture, targeted acoustic treatments, and layered lighting strategies tailored to **active learning**. Riley Robb adopts a **horseshoe configuration** to strengthen visibility and communication; Rockefeller integrates **reconfigurable furnishings** and **positive-distraction walls** to support multi-modal learning.",
+            "**Goal:**\nImprove functionality, comfort, and inclusivity by aligning **layout**, **furniture**, **acoustics**, and **lighting** with a range of teaching styles—from **lectures** to **discussions**, **seminars**, and **workshops**.",
           size: "normal",
+        },
+        {
+          type: "image",
+          src: "/work_details/cornell_class/Cornell Classroom - visual selection (9).svg",
+          alt: "Cornell Classroom design goals",
+          size: "medium",
+        },
+        {
+          type: "text-image",
+          layout: "text-right",
+          text: {
+            content:
+              "\n**Offerings:**\nAdaptive layouts, upgraded ergonomic furniture, targeted acoustic treatments, and layered lighting strategies tailored to active learning.\n\n• **Riley Robb Hall** adopts a **horseshoe configuration** to improve visibility and communication.\n• **Rockefeller Hall** integrates **reconfigurable furnishings** and **positive-distraction walls** to support multi-modal learning.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/cornell_class/Cornell Classroom - visual selection (8).svg",
+            alt: "Offerings and multi-modal learning",
+          },
         },
       ],
     },
@@ -77,28 +83,154 @@ export const cornellClassWork: WorkDetail = {
       title: "Strategy & Analysis",
       blocks: [
         {
-          type: "text",
-          content:
-            "**Research Foundation:** Observational studies, student/faculty interviews, and post-occupancy pain-point mapping surfaced issues with **sightlines, reverberation, circulation bottlenecks,** and **technology access**. Furniture fit tests and mock reconfigurations informed clear **adjacencies** for instruction zones, collaboration areas, and storage.",
-          size: "normal",
+          type: "text-image",
+          layout: "text-right",
+          imageWidth: 60,
+          text: {
+            content:
+              "**Research Approach:**\nThe design process began with **firsthand field observation** and **stakeholder interviews**. Our team visited both **Riley Robb Hall** and **Rockefeller Hall** to understand how their spatial, acoustic, and ergonomic conditions affect teaching and learning. We interviewed **professors, students, and building staff**, gathering direct feedback on what aspects of each classroom worked well and which hindered instruction.\n\nTheir responses consistently emphasized issues around **lighting quality, sound clarity, visibility, comfort, and mobility**.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/cornell_class/Cornell Classroom - visual selection (6).svg",
+            alt: "Research approach methodology",
+          },
         },
         {
           type: "image",
-          src: "/work_details/cornell_class/3.png",
-          caption: "3",
-          size: "full",
+          src: "/work_details/cornell_class/Cornell Classroom - visual selection (7).svg",
+          alt: "Research findings overview",
+          size: "medium",
+        },
+        {
+          type: "image-grid",
+          images: [
+            {
+              src: "/work_details/cornell_class/1left.png",
+              alt: "Riley Robb Hall existing conditions",
+            },
+            {
+              src: "/work_details/cornell_class/1right.png",
+              alt: "Riley Robb Hall layout analysis",
+            },
+            {
+              src: "/work_details/cornell_class/2left.png",
+              alt: "Rockefeller Hall existing conditions",
+            },
+            {
+              src: "/work_details/cornell_class/2right.png",
+              alt: "Rockefeller Hall layout analysis",
+            },
+          ],
+          columns: 4,
+          gap: "medium",
+        },
+        {
+          type: "image-grid",
+          images: [
+            {
+              src: "/work_details/cornell_class/1left.png",
+              alt: "Riley Robb Hall existing conditions",
+            },
+            {
+              src: "/work_details/cornell_class/1right.png",
+              alt: "Riley Robb Hall layout analysis",
+            },
+            {
+              src: "/work_details/cornell_class/2left.png",
+              alt: "Rockefeller Hall existing conditions",
+            },
+            {
+              src: "/work_details/cornell_class/2right.png",
+              alt: "Rockefeller Hall layout analysis",
+            },
+          ],
+          columns: 2,
+          gap: "medium",
         },
         {
           type: "text",
           content:
-            "**Evidence-Based Criteria:** 1) **Acoustic intelligibility**—reduce echo and cross-talk; 2) **Ergonomics**—support varied postures and body types; 3) **Flexibility**—15-minute reconfig windows; 4) **Accessibility**—clear routes, multiple teaching focal points, and equitable sightlines; 5) **Lighting quality**—task, ambient, and presentation modes without glare.",
+            "**Evidence-Based Design:**\nAlongside interviews, we conducted **on-site environmental assessments** to document each classroom's **orientation, ceiling design, lighting, acoustics, and furniture ergonomics**. Using spatial mapping and photo documentation, we identified recurring issues:",
           size: "normal",
         },
         {
-          type: "image",
-          src: "/work_details/cornell_class/4.png",
-          caption: "4",
-          size: "full",
+          type: "text-image",
+          layout: "text-right",
+          text: {
+            content:
+              "• **Ceiling design:** Exposed beams and pipelines created visual clutter and sound reflection.\n• **Lighting:** Lack of ambient or modular lighting limited comfort and adaptability.\n• **Furniture:** Outdated chairs and fixed layouts reduced flexibility for different teaching formats.\n• **Accessibility:** Narrow aisles and tight row spacing limited ease of movement.\n• **Sightlines and acoustics:** Poor seating elevation and echo reduced visibility and speech intelligibility.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/cornell_class/Cornell Classroom - visual selection (5).svg",
+            alt: "Evidence-based design criteria",
+          },
+        },
+        {
+          type: "text",
+          content:
+            "The analysis synthesized **spatial ergonomics**, **environmental psychology**, and **inclusive design principles** to drive every design decision.",
+        },
+        {
+          type: "image-pair",
+          images: [
+            {
+              src: "/work_details/cornell_class/3.png",
+              alt: "Riley Robb Hall spatial analysis",
+              size: 58,
+            },
+            {
+              src: "/work_details/cornell_class/13.png",
+              alt: "Riley Robb Hall design response",
+              size: 32,
+            },
+          ],
+          layout: "equal",
+          gap: "medium",
+        },
+        {
+          type: "image-pair",
+          images: [
+            {
+              src: "/work_details/cornell_class/4.png",
+              alt: "Rockefeller Hall spatial analysis",
+              size: 58,
+            },
+            {
+              src: "/work_details/cornell_class/14.png",
+              alt: "Rockefeller Hall design response",
+              size: 34,
+            },
+          ],
+          layout: "equal",
+          gap: "medium",
+        },
+        {
+          type: "text",
+          content:
+            "**Design Criteria Development:**\nFindings from fieldwork informed the following **evidence-based design criteria**:",
+          size: "normal",
+        },
+        {
+          type: "text-image",
+          layout: "text-right",
+          imageWidth: 60,
+          textWidth: 40,
+          text: {
+            content:
+              "\n\n\n1. **Acoustic intelligibility:** Minimize echo and cross-talk to improve speech clarity.\n2. **Ergonomic support:** Provide furniture adaptable to different body types and postures.\n3. **Spatial flexibility:** Allow reconfiguration within a 15-minute turnover period.\n4. **Accessibility and inclusion:** Ensure clear circulation and equitable sightlines for all users.\n5. **Lighting quality:** Deliver layered light modes—task, ambient, and presentation—to reduce glare.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/cornell_class/Cornell Classroom - visual selection (4).svg",
+            alt: "Design criteria framework",
+          },
+        },
+        {
+          type: "text",
+          content:
+            "\nThis comprehensive research phase grounded the redesign in **user-centered insights** and **quantitative environmental data**, forming the basis for both **Riley Robb Hall's horseshoe configuration** and **Rockefeller Hall's reconfigurable studio layout**.",
         },
       ],
     },
@@ -107,20 +239,37 @@ export const cornellClassWork: WorkDetail = {
       blocks: [
         {
           type: "text",
+          content: "**Riley Robb Hall – Horseshoe Layout**",
+          size: "normal",
+        },
+        {
+          type: "image-pair",
+          images: [
+            { src: "/work_details/cornell_class/6.png", size: 65 },
+            {
+              src: "/work_details/cornell_class/Cornell Classroom - visual selection (3).svg",
+              size: 37,
+            },
+          ],
+        },
+        {
+          type: "text",
           content:
-            "**Riley Robb Hall – Horseshoe Layout:** A tiered **horseshoe** plan improves **eye contact, audibility,** and **instructor roaming**. Curved rows with swivel seating enable quick pivots from lecture to discussion. Integrated power, under-desk bag zones, and aisle lighting enhance safety and comfort without visual clutter.",
+            "A **tiered horseshoe configuration** enhances **eye contact, voice projection, and spatial clarity**.\n• Curved rows equalize sightlines across all seats.\n• Swivel chairs enable seamless transition from lecture to discussion.\n• Integrated lighting strips and under-desk zones improve safety and accessibility.",
           size: "normal",
         },
         {
           type: "image-pair",
           images: [
             {
-              src: "/work_details/cornell_class/5left.png",
-              caption: "5left",
+              src: "/work_details/cornell_class/15.png",
+              alt: "Riley Robb Hall interior perspective",
+              size: 60,
             },
             {
-              src: "/work_details/cornell_class/5right.png",
-              caption: "5right",
+              src: "/work_details/cornell_class/hero.png",
+              alt: "Riley Robb Hall complete view",
+              size: 41,
             },
           ],
           layout: "equal",
@@ -129,100 +278,100 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Rockefeller Hall – Reconfigurable Studio Classroom:** **Mobile tables**, **stackable ergonomic chairs**, and **casters** support rapid shifts among seminar, cluster, and presentation modes. **Positive distraction walls** (writable/pin-up surfaces with soft texture and color) encourage ideation while providing **acoustic absorption** and visual calm.",
+            "**Accessible Layout & Ceiling Design**\n\nMaterial palette board displays teal acoustical panels, light wood tables, adjustable seating, and smart lighting and shading systems.\n\nThe design ensures **clear circulation**, **varied seating heights**, and **multiple focal points** for instructors.\nNeutral tones and biophilic textures reduce cognitive load, creating a calm environment that supports concentration and well-being.",
           size: "normal",
         },
         {
-          type: "image-trio",
-          leftImage: {
-            src: "/work_details/cornell_class/6right.png",
-            caption: "6right",
-            size: 50,
-          },
-          rightImages: [
-            {
-              src: "/work_details/cornell_class/6topleft.png",
-              caption: "6topleft",
-              size: 30,
-            },
-            {
-              src: "/work_details/cornell_class/6bottomleft.png",
-              caption: "6bottomleft",
-              size: 70,
-            },
-          ],
-          gap: "medium",
-        },
-        {
-          type: "text",
-          content:
-            "**Acoustics & Lighting:** Ceiling baffles, wall panels, and soft finishes reduce reverberation and chatter. **Layered lighting**—ambient, task, and presentation—pairs with dimming presets for lectures, discussions, and screen-based work, maintaining **visual comfort** and **focus**.",
-          size: "normal",
+          type: "image",
+          src: "/work_details/cornell_class/10.png",
+          alt: "Material palette and design details",
+          size: "medium",
         },
         {
           type: "image",
           src: "/work_details/cornell_class/7.png",
-          caption: "7",
-          size: "full",
+          alt: "Riley Robb Hall ceiling and lighting design",
+          size: "medium",
         },
         {
-          type: "image-pair",
-          images: [
+          type: "text",
+          content: "**Rockefeller Hall – Reconfigurable Studio Classroom**",
+          size: "normal",
+        },
+        {
+          type: "image-trio",
+          layout: "horizontal",
+          horizontalImages: [
             {
               src: "/work_details/cornell_class/8left.png",
-              caption: "8left",
-              size: 40,
+              alt: "Rockefeller Hall layout option 1",
+              size: 21,
             },
             {
               src: "/work_details/cornell_class/8right.png",
-              caption: "8right",
-              size: 60,
+              alt: "Rockefeller Hall layout option 2",
+              size: 30,
+            },
+            {
+              src: "/work_details/cornell_class/Cornell Classroom - visual selection (8).svg",
+              alt: "Reconfigurable layouts diagram",
+              size: 44,
             },
           ],
-          layout: "equal",
           gap: "medium",
         },
         {
           type: "text",
           content:
-            "**Accessibility & Inclusivity:** Clear circulation routes, adjustable instructor stations, multiple display focal points, and seat-height variety ensure equitable participation. Finishes and color palette deliver **aesthetic calm** to reduce cognitive load.",
-          size: "normal",
-        },
-      ],
-    },
-    impactAndResults: {
-      title: "Impact & Results",
-      blocks: [
-        {
-          type: "text",
-          content:
-            "**Project Impact:** The redesign transforms outdated lecture halls into **future-ready learning environments** that foster connection, focus, and community. Spaces now support **active learning** with improved comfort, audibility, and sightlines for all students.",
-          size: "normal",
-        },
-        {
-          type: "list",
-          listType: "unordered",
-          heading: "**Key Outcomes:**",
-          items: [
-            "Enhanced **speech intelligibility** and reduced echo via targeted acoustic treatments",
-            "Improved **visibility and collaboration** with the Riley Robb **horseshoe** layout",
-            "Greater **flexibility** at Rockefeller through **reconfigurable furniture** and positive distraction walls",
-            "Increased **comfort and accessibility** with ergonomic seating, clear routes, and adjustable stations",
-            "Preset **lighting modes** aligned to lectures, discussions, and presentations",
-          ],
+            "Designed for adaptability, this classroom uses **mobile tables, stackable ergonomic chairs, and writable acoustic walls** to support **lecture, cluster, and seminar modes**.\n**Positive distraction walls** act as both sound absorbers and creative pin-up surfaces—offering tactile, visual, and functional engagement.",
           size: "normal",
         },
         {
           type: "image",
-          src: "/work_details/cornell_class/9.png",
-          caption: "9",
-          size: "full",
+          src: "/work_details/cornell_class/5right.png",
+          alt: "Rockefeller Hall positive distraction walls",
+          size: "medium",
         },
         {
           type: "text",
           content:
-            "By combining functionality with **aesthetic calm**, Cornell Classroom demonstrates how evidence-based interior design can measurably improve **engagement, equity,** and **learning outcomes**.",
+            "**Adaptable Layout & Acoustics & Lighting**\n\nLayered acoustic strategies—**ceiling baffles, wall panels, and upholstered furniture**—control reverberation.\nLighting layers are pre-set for **lecture**, **discussion**, and **presentation** modes to reduce glare and adapt to digital tasks.",
           size: "normal",
+        },
+        {
+          type: "image",
+          src: "/work_details/cornell_class/11.png",
+          alt: "Rockefeller Hall acoustics and lighting systems",
+          size: "medium",
+        },
+        {
+          type: "image",
+          src: "/work_details/cornell_class/9.png",
+          alt: "Rockefeller Hall complete interior view",
+          size: "medium",
+        },
+      ],
+    },
+    impactAndResults: {
+      title: "Impact",
+      blocks: [
+        {
+          type: "text-image",
+          layout: "text-right",
+          text: {
+            content:
+              "**Project Impact:**\nThe redesign transforms two outdated, lecture-centric classrooms into **active learning ecosystems** that foster **collaboration, focus, and inclusivity**.\n\n**Key Outcomes:**\n• **Improved audibility** and reduced echo through targeted acoustic zones.\n• **Enhanced visibility and participation** via curved layouts and multiple teaching points.\n• **Flexible adaptability** enabling quick reconfiguration.\n• **Greater accessibility** through ergonomic furniture and clear routing.\n• **Preset lighting scenes** aligned to each instructional mode.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/cornell_class/Cornell Classroom - visual selection (1).svg",
+            alt: "Project impact summary",
+          },
+        },
+        {
+          type: "text",
+          content:
+            "\nThe result: A **future-ready educational environment** where spatial design directly enhances teaching performance and student engagement.",
         },
       ],
     },
@@ -230,16 +379,24 @@ export const cornellClassWork: WorkDetail = {
       title: "Reflection",
       blocks: [
         {
-          type: "text",
-          content:
-            "This project reinforced that **classroom design is pedagogical**. Translating active-learning principles into layout, acoustics, and lighting required balancing **behavioral insights** with pragmatic constraints of budget and existing construction.",
-          size: "normal",
+          type: "text-image",
+          layout: "text-right",
+          textWidth: 45,
+          imageWidth: 55,
+          text: {
+            content:
+              "This project reaffirmed that **classroom design is itself an act of pedagogy**—how a space is arranged teaches collaboration, hierarchy, and engagement.Balancing **human behavior data** with **architectural feasibility** was key to translating research into physical form.\n\n**Future Directions:**\n• Implement **long-term post-occupancy studies** to track engagement and performance metrics.\n• Refine **furniture and lighting presets** for various disciplines.\n• Continue evolving design standards for **inclusive, adaptive learning spaces** that reflect evolving teaching practices.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/cornell_class/Cornell Classroom - visual selection.svg",
+            alt: "Reflection and future directions",
+          },
         },
         {
           type: "text",
           content:
-            "Future steps include longitudinal **post-occupancy evaluation** and refinement of furniture kits, acoustical tuning, and control presets—continuing to align the spaces with evolving **teaching modes** and **student well-being**.",
-          size: "normal",
+            "Cornell Classroom demonstrates how **evidence-based interior design** can transform learning into an active, equitable, and human-centered experience.",
         },
       ],
     },
