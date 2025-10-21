@@ -164,22 +164,22 @@ const About = () => {
   const musicItems: PersonalityItem[] = [
     {
       image: "/assets/personality/pictures/music1.jpg",
-      description: "Concert vibes",
+      description: "Concert with Night Espresso Band",
       type: "image",
     },
     {
       image: "/assets/personality/pictures/music2.jpg",
-      description: "Studio sessions",
+      description: "Concert with Night Espresso Band",
       type: "image",
     },
     {
       image: "/assets/personality/pictures/music3.jpg",
-      description: "Festival moments",
+      description: "Concert with Night Espresso Band",
       type: "image",
     },
     {
       video: "/assets/personality/videos/night_espresso.mp4",
-      description: "Night espresso vibes",
+      description: "Concert with Night Espresso Band",
       type: "video",
     },
   ];
@@ -187,12 +187,12 @@ const About = () => {
   const danceItems: PersonalityItem[] = [
     {
       image: "/assets/personality/pictures/dance1.jpg",
-      description: "Dance performances",
+      description: "Millennium Dance Studio",
       type: "image",
     },
     {
       image: "/assets/personality/pictures/dance2.jpg",
-      description: "Movement expression",
+      description: "Dancer Vibe",
       type: "image",
     },
   ];
@@ -200,7 +200,7 @@ const About = () => {
   const travelItems: PersonalityItem[] = [
     {
       image: "/assets/personality/pictures/travel1.jpg",
-      description: "Adventure awaits",
+      description: "New York",
       type: "image",
     },
     {
@@ -210,22 +210,22 @@ const About = () => {
     },
     {
       image: "/assets/personality/pictures/travel3.jpg",
-      description: "Journey discoveries",
+      description: "Travel Memories",
       type: "image",
     },
     {
       image: "/assets/personality/pictures/travel4.jpg",
-      description: "Travel memories",
+      description: "Travel Memories",
       type: "image",
     },
     {
       image: "/assets/personality/pictures/travel5.jpg",
-      description: "Jinan, China",
+      description: "New York",
       type: "image",
     },
     {
       image: "/assets/personality/pictures/travel6.jpg",
-      description: "New York",
+      description: "Jinan, China",
       type: "image",
     },
   ];
