@@ -24,19 +24,46 @@ export const nimbusWork: WorkDetail = {
         {
           type: "text",
           content:
-            "**Project Vision:** Nimbus is an immersive spatial installation that explores the ephemeral nature of clouds through interactive design. The project transforms physical space into a dreamlike environment where visitors can experience the weightless, ever-changing qualities of cloud formations through carefully orchestrated light, material, and spatial sequences.",
+            "**NIMBUS** is a **carbon-neutral, mobile hotel concept housed within a hot air balloon**, redefining remote tourism through **sustainable, lightweight, and luxurious design.**",
           size: "normal",
         },
         {
           type: "image",
-          src: "/work_details/nimbus/1top.png",
-          caption: "1top",
-          size: "full",
+          src: "/work_details/nimbus/12.png",
+          caption: "12",
+          alt: "NIMBUS floating hotel concept",
+          size: "large",
         },
         {
           type: "text",
           content:
-            "**Spatial Narrative:** The installation creates a journey through multiple atmospheric conditions, inviting participants to pause, observe, and connect with the transient beauty of natural phenomena reimagined in built form.",
+            "**Goal:**  To create an immersive hospitality experience that merges technological innovation with environmental consciousness, offering a once-in-a-lifetime journey through the skies of **NEOM, Saudi Arabia**.",
+          size: "normal",
+        },
+        {
+          type: "image",
+          src: "/work_details/nimbus/NIMBUS - visual selection (1).svg",
+          caption: "NIMBUS - visual selection (1)",
+          alt: "NIMBUS project goals",
+          size: "large",
+        },
+        {
+          type: "text",
+          content:
+            "**Offerings:** NIMBUS provides a floating accommodation experience that combines spatial efficiency with comfort and luxury. Each stay operates as a **two-day, one-night voyage**, allowing guests to explore the desert's beauty while leaving no trace on the landscape.",
+          size: "normal",
+        },
+        {
+          type: "image",
+          src: "/work_details/nimbus/NIMBUS - visual selection (6).svg",
+          caption: "NIMBUS - visual selection (6)",
+          alt: "NIMBUS offerings overview",
+          size: "medium",
+        },
+        {
+          type: "text",
+          content:
+            "**Design Inspiration:** The exterior adopts a **3D-printed organic structure** that expresses movement and lightness. Inside, furniture is **anchored to the floor** to ensure safety and elegance during flight. The concept transforms the dream of floating above the desert into a physical, inhabitable space that embodies balance between **luxury and sustainability.**\n\n**Human-Centered Experience:** Guests are immersed in an environment where **innovation and ecological responsibility** coexist — redefining luxury as meaningful connection with the natural world.",
           size: "normal",
         },
       ],
@@ -45,40 +72,140 @@ export const nimbusWork: WorkDetail = {
       title: "Strategy & Analysis",
       blocks: [
         {
+          type: "text-image",
+          layout: "text-right",
+          text: {
+            content:
+              "The project began by studying **NEOM's luxury tourism initiatives**, known for curating the world's most advanced and immersive experiences. The design team's challenge was to reinterpret this ambition through a **mobile, sustainable format**—a hot air balloon that serves as both transportation and destination.\n\nThrough collaboration with the **existing NIMBUS team**, including DEA Cornell alumni, the class examined the original prototype's limitations in spatial flow and interior organization. Research focused on improving **functionality, efficiency, and atmosphere** to create a more seamless travel experience.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/nimbus/NIMBUS - visual selection (4).svg",
+            caption: "NIMBUS - visual selection (4)",
+            alt: "NIMBUS strategy and research approach",
+          },
+        },
+        {
           type: "text",
           content:
-            "**Research Foundation:** The design emerged from extensive research into meteorological patterns, light diffusion in atmospheric conditions, and the psychological impact of cloud formations on human perception. Analysis of visitor behavior in immersive environments informed the spatial strategy and interaction design.",
+            "Extensive studies of **Saudi Arabia's cultural and natural attractions**—from desert expeditions to star observation and local craft experiences—helped identify opportunities for guest engagement. This informed both spatial programming and visual identity.\n\nThe **target users** were defined as:\n\n• **High-net-worth travelers** seeking exclusive, sustainable adventures.\n• **Influencers and professionals** looking for visually iconic experiences.\n• **Couples** desiring privacy, intimacy, and comfort within a minimal footprint.",
           size: "normal",
         },
         {
           type: "image",
-          src: "/work_details/nimbus/1bottom.png",
-          caption: "1bottom",
-          size: "full",
+          src: "/work_details/nimbus/2.png",
+          alt: "User research and journey mapping",
+          size: "large",
         },
         {
           type: "image",
-          src: "/work_details/nimbus/2.png",
-          caption: "2",
-          size: "full",
+          src: "/work_details/nimbus/1bottom.png",
+          alt: "User experience analysis",
+          size: "large",
         },
         {
           type: "image",
           src: "/work_details/nimbus/3.png",
           caption: "3",
-          size: "full",
+          alt: "Target user personas and needs",
+          size: "large",
         },
         {
           type: "text",
           content:
-            "**Design Approach:** The project employs a multi-sensory strategy combining material research, lighting design, and spatial choreography to evoke the sensation of moving through cloud layers. Each design decision was grounded in understanding how atmospheric phenomena can be translated into tangible architectural experiences.",
+            "From this, a **user journey** was designed to reflect the dual nature of motion and stillness: ascent and flight representing discovery, descent symbolizing grounding and reflection. The experience cycle guided how light, circulation, and privacy were composed within NIMBUS's compact footprint.",
           size: "normal",
         },
         {
           type: "image",
           src: "/work_details/nimbus/4.png",
           caption: "4",
+          alt: "User journey and experience cycle",
           size: "full",
+        },
+        {
+          type: "title",
+          content: "Form and Structure",
+          size: "medium",
+        },
+        {
+          type: "text-image",
+          layout: "text-right",
+          text: {
+            content:
+              "NIMBUS's architecture draws from cloud morphology — soft, continuous, and adaptive. The resulting form is a **cube-like structure** suspended beneath a hot air balloon, balancing geometric clarity with organic flow.\nIts outer shell is **3D-printed using lightweight polycarbonate and carbon fiber**, creating an expressive yet efficient framework that withstands altitude changes while minimizing weight.\n\nThe **facade perforations** diffuse sunlight, enhance ventilation, and frame panoramic desert views. Every component — from structural ribs to modular joints — is optimized for **aerodynamic stability and easy assembly.**",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/nimbus/NIMBUS - visual selection (3).svg",
+            caption: "NIMBUS - visual selection (3)",
+            alt: "Form and structural concept",
+          },
+        },
+        {
+          type: "image",
+          src: "/work_details/nimbus/5.png",
+          caption: "5",
+          alt: "3D-printed structure details",
+          size: "large",
+        },
+        {
+          type: "image",
+          src: "/work_details/nimbus/6.png",
+          caption: "6",
+          alt: "Facade perforation and ventilation system",
+          size: "large",
+        },
+        {
+          type: "title",
+          content: "Spatial Layout",
+          size: "medium",
+        },
+        {
+          type: "text-image",
+          layout: "text-right",
+          text: {
+            content:
+              "Designed for two adult guests, the interior prioritizes **clarity, balance, and comfort** within a compact volume. Upon entry, guests encounter a **lounge area** that transitions into a **bedroom and bathroom zone**. The **upper level** contains a **bar and pilot operating deck**, emphasizing luxury and functionality without excess.\n\nTo ensure flight safety, **all furniture is floor-anchored**, integrating seamlessly with the flooring and structure. Technology enhances experience efficiency — smart lighting, responsive wall panels, and built-in storage systems maintain a sense of order and calm.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/nimbus/NIMBUS - visual selection (2).svg",
+            caption: "NIMBUS - visual selection (2)",
+            alt: "Spatial layout and zoning",
+          },
+        },
+        {
+          type: "image",
+          src: "/work_details/nimbus/7left.png",
+          caption: "7left",
+          alt: "Interior spatial organization",
+          size: "large",
+        },
+        {
+          type: "image",
+          src: "/work_details/nimbus/8.png",
+          caption: "8",
+          alt: "Floor-anchored furniture system",
+          size: "large",
+        },
+        {
+          type: "title",
+          content: "Material and Technology Integration",
+          size: "medium",
+        },
+        {
+          type: "text",
+          content:
+            "Every material was chosen to balance **aesthetic refinement with environmental responsibility.**\n\n• **Carbon fiber and aluminum** provide strength-to-weight efficiency.\n• **Translucent polycarbonate** panels diffuse natural light.\n• **Recycled composite flooring** supports durability and acoustic control.\n\nIntegrated digital systems enable **real-time atmospheric adjustments**, adjusting lighting and temperature based on altitude, sunlight, and passenger comfort.",
+          size: "normal",
+        },
+        {
+          type: "image",
+          src: "/work_details/nimbus/7right.png",
+          caption: "7right",
+          alt: "Material palette and technology integration",
+          size: "medium",
         },
       ],
     },
@@ -86,127 +213,145 @@ export const nimbusWork: WorkDetail = {
       title: "Design Solution",
       blocks: [
         {
-          type: "text",
-          content:
-            "**Material & Light System:** The installation utilizes translucent membranes, dynamic lighting systems, and suspended elements to create cloud-like forms that respond to movement and time. Carefully calibrated light diffusion creates shifting shadows and highlights, mimicking the ever-changing nature of clouds.",
-          size: "normal",
-        },
-        {
-          type: "image",
-          src: "/work_details/nimbus/5.png",
-          caption: "5",
-          size: "full",
-        },
-        {
-          type: "image",
-          src: "/work_details/nimbus/6.png",
-          caption: "6",
-          size: "full",
+          type: "title",
+          content: "Interior Experience and Spatial Layout",
+          size: "medium",
         },
         {
           type: "text",
           content:
-            "**Spatial Experience:** The journey unfolds through distinct atmospheric zones—from dense fog-like conditions to ethereal, light-filled chambers. Visitors navigate pathways that reveal and conceal views, creating moments of discovery and contemplation throughout the experience.",
+            "The **interior of NIMBUS** merges comfort, technology, and spatial clarity within a lightweight, compact framework designed for two travelers. Every element—material, fixture, and furnishing—is engineered for **efficiency, safety, and sensory engagement** in flight.",
           size: "normal",
+        },
+        {
+          type: "image",
+          src: "/work_details/nimbus/Screenshot 2025-10-21 011213.png",
+          caption: "Screenshot 2025-10-21 011213",
+          alt: "Interior experience overview",
+          size: "large",
+        },
+        {
+          type: "text",
+          content:
+            "**1. Living Lounge and Interactive Systems**\nThe main lounge integrates a **curved seating pod** that functions as both rest and social area. A wall-mounted **interactive display** allows guests to access entertainment, environmental controls, and real-time flight paths. Compact **shelving and a mini fridge** are built into the wall grid, maintaining visual openness while optimizing utility.",
+          size: "normal",
+        },
+        {
+          type: "image",
+          src: "/work_details/nimbus/Screenshot 2025-10-21 011340.png",
+          caption: "Screenshot 2025-10-21 011340",
+          alt: "Living lounge with interactive systems",
+          size: "large",
+        },
+        {
+          type: "text",
+          content:
+            "**2. Digital Connectivity and Scenic Immersion**\nThe **panoramic front window** transforms into an **interactive touch-glass interface**, merging digital interaction with natural views. This responsive surface allows guests to browse, plan, or connect while immersed in the surrounding desert landscape—bridging relaxation with digital fluidity.",
+          size: "normal",
+        },
+        {
+          type: "image",
+          src: "/work_details/nimbus/Screenshot 2025-10-21 011420.png",
+          caption: "Screenshot 2025-10-21 011420",
+          alt: "Digital connectivity and interactive window",
+          size: "large",
+        },
+        {
+          type: "text",
+          content:
+            "**3. Bedroom and Privacy Transition**\nA minimal, open bedroom anchors the private end of the module. Its **floating bed platform** and continuous wall curvature create a sense of weightlessness, while integrated ambient lighting enhances spatial calm. The design maintains a **visual connection** between private and communal zones through partial partitions that preserve openness and air circulation.",
+          size: "normal",
+        },
+        {
+          type: "image",
+          src: "/work_details/nimbus/Screenshot 2025-10-21 011506.png",
+          caption: "Screenshot 2025-10-21 011506",
+          alt: "Bedroom and privacy zones",
+          size: "large",
+        },
+        {
+          type: "text",
+          content:
+            "**4. Bar and Social Niche**\nOn the upper deck, a compact **bar and lounge area** provides a casual yet refined space for dining and conversation. Lightweight bar stools and shelving are fabricated from recyclable composites, reinforcing both luxury and sustainability. This space serves as the central node for guest interaction and relaxation during stationary periods.",
+          size: "normal",
+        },
+        {
+          type: "title",
+          content: "Structural and Envelope System",
+          size: "medium",
         },
         {
           type: "image-pair",
           images: [
             {
-              src: "/work_details/nimbus/7left.png",
-              caption: "7left",
+              src: "/work_details/nimbus/10middle.png",
+              caption: "10middle",
+              alt: "Structural system diagram",
+              size: 38,
             },
             {
-              src: "/work_details/nimbus/7right.png",
-              caption: "7right",
+              src: "/work_details/nimbus/10right.png",
+              caption: "10right",
+              alt: "Envelope assembly details",
+              size: 59,
             },
           ],
           layout: "equal",
           gap: "medium",
         },
         {
-          type: "image",
-          src: "/work_details/nimbus/8.png",
-          caption: "8",
-          size: "normal",
-        },
-        {
           type: "text",
           content:
-            "**Interactive Elements:** The design incorporates responsive systems that allow visitors to influence the environment—subtle interactions create ripples of light and movement through the installation, reinforcing the connection between human presence and atmospheric transformation.",
-          size: "normal",
-        },
-        {
-          type: "image-trio",
-          layout: "horizontal",
-          horizontalImages: [
-            {
-              src: "/work_details/nimbus/9left.png",
-              caption: "9left",
-              size: 33,
-            },
-            {
-              src: "/work_details/nimbus/9middle.png",
-              caption: "9middle",
-              size: 33,
-            },
-            {
-              src: "/work_details/nimbus/9right.png",
-              caption: "9right",
-              size: 33,
-            },
-          ],
-          gap: "small",
-        },
-        {
-          type: "image-trio",
-          layout: "horizontal",
-          horizontalImages: [
-            {
-              src: "/work_details/nimbus/10left.png",
-              caption: "10left",
-              size: 38,
-            },
-            {
-              src: "/work_details/nimbus/10middle.png",
-              caption: "10middle",
-              size: 25,
-            },
-            {
-              src: "/work_details/nimbus/10right.png",
-              caption: "10right",
-              size: 37,
-            },
-          ],
-          gap: "small",
-        },
-      ],
-    },
-    impactAndResults: {
-      title: "Impact & Results",
-      blocks: [
-        {
-          type: "text",
-          content:
-            "**Project Impact:** Nimbus successfully created an immersive environment that challenged visitors' perception of space and atmosphere. The installation demonstrated how natural phenomena can inspire innovative spatial design that fosters contemplation and sensory engagement.",
+            "**5. Adaptive Pergola Roof System**\nNIMBUS employs a **retractable pergola system** that transitions between open and closed states depending on climate and operational mode. When airborne, the **disassembled pergola** integrates directly with the balloon's tethering rig; once landed, it reassembles into **sliding, weather-sealed panels** that provide solar and rain protection. The system's modular ribs use **weatherproof taping** and lightweight jointed tracks to minimize load and maximize flexibility.",
           size: "normal",
         },
         {
           type: "image",
           src: "/work_details/nimbus/11.png",
           caption: "11",
-          size: "full",
+          alt: "Adaptive pergola roof system",
+          size: "large",
         },
         {
-          type: "list",
-          listType: "unordered",
-          heading: "**Key Outcomes:**",
-          items: [
-            "Created a fully immersive environment that translated atmospheric phenomena into tangible spatial experience",
-            "Developed innovative material and lighting systems that respond to visitor interaction",
-            "Established a new approach to environmental storytelling through multi-sensory design",
-            "Generated visitor engagement through contemplative, slow-paced spatial experience",
-          ],
+          type: "image",
+          src: "/work_details/nimbus/12.png",
+          caption: "12",
+          alt: "Pergola assembly and disassembly states",
+          size: "large",
+        },
+        {
+          type: "text",
+          content:
+            "**6. Rationalized Facade Geometry**\nThe **exterior facade** consists of four sides with **elliptical apertures** sized according to interior function—larger for public spaces, smaller for private or technical zones. These perforations balance **natural light, structural stability, and aerodynamics**, while defining NIMBUS's iconic identity.",
+          size: "normal",
+        },
+        {
+          type: "title",
+          content: "Environmental Integration",
+          size: "medium",
+        },
+        {
+          type: "image",
+          src: "/work_details/nimbus/13.png",
+          caption: "13",
+          alt: "Environmental integration and floating ecology",
+          size: "large",
+        },
+        {
+          type: "text",
+          content:
+            '**7. Floating Ecology and Low Impact Design**\nOnce deployed, NIMBUS gently hovers above the desert terrain or rests temporarily without ground infrastructure. Its **carbon-neutral materials** and self-contained systems ensure zero trace after departure, aligning with the guiding principle: **"No Trace Is Left Behind."**',
+          size: "normal",
+        },
+      ],
+    },
+    impactAndResults: {
+      title: "Impact",
+      blocks: [
+        {
+          type: "text",
+          content:
+            "NIMBUS demonstrates how **luxury and sustainability can coexist within mobility-based architecture.** The project redefines what high-end hospitality can achieve when environmental ethics guide design innovation.",
           size: "normal",
         },
         {
@@ -214,13 +359,13 @@ export const nimbusWork: WorkDetail = {
           layout: "text-right",
           text: {
             content:
-              "The installation successfully bridged natural inspiration with built environment, demonstrating how ephemeral qualities can be captured and reinterpreted through thoughtful design intervention.",
+              "**Key Outcomes:**\n\n• Established a **carbon-neutral, mobile hospitality framework** for NEOM's desert tourism model.\n• Improved **spatial organization** and **user comfort** through research-based interior redesign.\n• Developed a **lightweight structural system** capable of supporting flight and stability.\n• Enhanced brand and experiential value through **technology-integrated, minimalist luxury.**\n\nThrough its adaptable, low-impact structure, NIMBUS proposes a future of **responsive, transient luxury** that honors both innovation and ecology.",
             size: "normal",
           },
           image: {
-            src: "/work_details/nimbus/12.png",
-            caption: "12",
-            alt: "",
+            src: "/work_details/nimbus/NIMBUS - visual selection (5).svg",
+            caption: "NIMBUS - visual selection (5)",
+            alt: "Project impact and outcomes",
           },
         },
       ],
@@ -233,13 +378,13 @@ export const nimbusWork: WorkDetail = {
           layout: "text-right",
           text: {
             content:
-              "Designing Nimbus deepened my understanding of how atmospheric conditions influence emotional response and spatial perception. The project challenged me to translate intangible phenomena into physical form while maintaining the essence of what makes clouds captivating—their constant transformation and ethereal presence. The process refined my skills in lighting design, material experimentation, and interactive systems. Balancing technical requirements with poetic experience required careful orchestration of every design element. Future iterations would explore more advanced responsive technologies and sustainable material alternatives to enhance both the environmental sensitivity and interactive possibilities of the installation.",
+              "Designing NIMBUS required navigating between **aerospace constraints, spatial efficiency, and experiential storytelling.** The project deepened my understanding of how material systems, environmental psychology, and technology can converge to shape meaningful luxury experiences.\n\nCollaborating with NEOM's existing concept framework and Cornell's interdisciplinary team reinforced the importance of designing **for mobility and minimalism**—not as limitations, but as opportunities for innovation.\n\nMoving forward, I aim to expand this exploration into **responsive energy systems, lightweight fabrication methods, and adaptable user interfaces**, further aligning high-end hospitality with the principles of circular, regenerative design.",
             size: "normal",
           },
           image: {
-            src: "/work_details/nimbus/13.png",
-            caption: "13",
-            alt: "",
+            src: "/work_details/nimbus/NIMBUS - visual selection.svg",
+            caption: "NIMBUS - visual selection",
+            alt: "Reflection and future directions",
           },
         },
       ],
