@@ -25,6 +25,8 @@ const MainContent = () => {
   const workSectionRef = useRef<HTMLElement>(null);
   const revealLayerRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const isWorkSectionInView = useInView(workSectionRef, { amount: 0 });
+  const isSoundLayerActive = !isWorkSectionInView;
 
   // Filter states - persist in sessionStorage
   const [selectedCategories, setSelectedCategories] = useState<string[]>(() => {
@@ -197,7 +199,7 @@ const MainContent = () => {
             }}
           />
           {/* Interactive sound layer - clickable rectangles that play sound effects */}
-          <InteractiveSoundLayer />
+          {isSoundLayerActive && <InteractiveSoundLayer />}
         </>
       )}
 
