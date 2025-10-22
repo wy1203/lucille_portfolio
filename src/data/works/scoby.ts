@@ -35,7 +35,6 @@ export const scobyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/scoby/7.png",
-          caption: "7",
           alt: "SCOBY Spot overview visualization",
           size: "large",
         },
@@ -48,7 +47,6 @@ export const scobyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/scoby/The SCOBY Spot - overview.svg",
-          caption: "The SCOBY Spot - overview",
           alt: "SCOBY Spot experience zones",
           size: "large",
         },
@@ -66,7 +64,6 @@ export const scobyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/scoby/The SCOBY Spot - strategy 1.svg",
-          caption: "The SCOBY Spot - strategy 1",
           alt: "User research findings",
           size: "medium",
         },
@@ -79,7 +76,6 @@ export const scobyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/scoby/The SCOBY Spot - strategy 5.svg",
-          caption: "The SCOBY Spot - strategy 5",
           alt: "Research methods visualization",
           size: "medium",
         },
@@ -94,13 +90,11 @@ export const scobyWork: WorkDetail = {
           images: [
             {
               src: "/work_details/scoby/The SCOBY Spot - strategy 4.svg",
-              caption: "The SCOBY Spot - strategy 4",
               alt: "Human-centered experience diagram",
               size: 50,
             },
             {
               src: "/work_details/scoby/The SCOBY Spot - strategy 3.svg",
-              caption: "The SCOBY Spot - strategy 3",
               alt: "Experience journey visualization",
               size: 45,
             },
@@ -117,7 +111,6 @@ export const scobyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/scoby/The SCOBY Spot - strategy 2.svg",
-          caption: "The SCOBY Spot - strategy 2",
           alt: "Evidence-based design drivers",
           size: "medium",
         },
@@ -129,7 +122,6 @@ export const scobyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/scoby/The SCOBY Spot - design solution.svg",
-          caption: "The SCOBY Spot - design solution",
           alt: "Design solution overview",
           size: "medium",
         },
@@ -142,7 +134,6 @@ export const scobyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/scoby/SCOBY Spot - Tree Pattern.png",
-          caption: "SCOBY Spot - Tree Pattern",
           alt: "Architectural inspiration - tree branching patterns",
           size: "large",
         },
@@ -151,13 +142,11 @@ export const scobyWork: WorkDetail = {
           images: [
             {
               src: "/work_details/scoby/8left.png",
-              caption: "8left",
               alt: "Design inspiration reference",
               size: 35,
             },
             {
               src: "/work_details/scoby/8right.png",
-              caption: "8right",
               alt: "Hexagonal framework concept",
               size: 50,
               marginTop: "30%",
@@ -175,14 +164,12 @@ export const scobyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/scoby/3right.png",
-          caption: "3right",
           alt: "Spatial composition diagram",
           size: "large",
         },
         {
           type: "image",
           src: "/work_details/scoby/4.png",
-          caption: "4",
           alt: "Interior spatial flow",
           size: "large",
         },
@@ -195,14 +182,12 @@ export const scobyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/scoby/5.png",
-          caption: "5",
           alt: "Natural lighting and materials",
           size: "large",
         },
         {
           type: "image",
           src: "/work_details/scoby/4left.png",
-          caption: "4left",
           alt: "Natural lighting and materials",
           size: "large",
         },
@@ -215,14 +200,12 @@ export const scobyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/scoby/6.png",
-          caption: "6",
           alt: "Private pod seating areas",
           size: "large",
         },
         {
           type: "image",
           src: "/work_details/scoby/7.png",
-          caption: "7",
           alt: "Interior perspective showing human-centered design",
           size: "large",
         },
@@ -234,7 +217,6 @@ export const scobyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/scoby/THE SCOBY Spot - Impact.svg",
-          caption: "THE SCOBY Spot - Impact",
           alt: "Private pod seating areas",
           size: "medium",
         },
@@ -264,7 +246,6 @@ export const scobyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/scoby/THE SCOBY Spot - reflection.svg",
-          caption: "THE SCOBY Spot - reflection",
           alt: "Reflection and future directions",
           size: "medium",
         },

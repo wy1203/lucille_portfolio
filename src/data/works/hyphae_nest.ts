@@ -36,7 +36,6 @@ export const hyphaeNestWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/hyphae_nest/hero.png",
-          caption: "hero",
           alt: "Hyphae Nest overview visualization",
           size: "medium",
         },
@@ -51,13 +50,11 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/Hyphae Nest - visual selection.svg",
-              caption: "Hyphae Nest - visual selection",
               alt: "Ecology and human life connection diagram",
               size: 43,
             },
             {
               src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (1).svg",
-              caption: "Hyphae Nest - visual selection (1)",
               alt: "Mycelium construction concept",
               size: 56,
             },
@@ -74,7 +71,6 @@ export const hyphaeNestWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (2).svg",
-          caption: "Hyphae Nest - visual selection (2)",
           alt: "Mycelium material properties and lifecycle",
           size: "medium",
         },
@@ -90,7 +86,6 @@ export const hyphaeNestWork: WorkDetail = {
           imageWidth: 60,
           image: {
             src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (3).svg",
-            caption: "Hyphae Nest - visual selection (3)",
             alt: "Diagram of hyphal networks and architectural translation",
             objectFit: "cover",
           },
@@ -110,7 +105,6 @@ export const hyphaeNestWork: WorkDetail = {
           },
           image: {
             src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (4).svg",
-            caption: "Hyphae Nest - visual selection (4)",
             alt: "Diagram showing multidisciplinary study framework connecting ecology, psychology, and design",
           },
         },
@@ -124,13 +118,11 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (5).svg",
-              caption: "Hyphae Nest - visual selection (5)",
               alt: "Hyphae Nest visual selection left",
               size: 46,
             },
             {
               src: "/work_details/hyphae_nest/Hyphae - Mycelium Strategy.png",
-              caption: "Hyphae - Mycelium Strategy",
               alt: "Hyphae Nest visual selection right",
             },
           ],
@@ -148,13 +140,11 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/4right.png",
-              caption: "4right",
               alt: "Hyphae Nest visual selection left",
               size: 60,
             },
             {
               src: "/work_details/hyphae_nest/4left.png",
-              caption: "4left",
               alt: "Hyphae Nest visual selection right",
               size: 33,
             },
@@ -173,12 +163,10 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/2left.png",
-              caption: "2left",
               alt: "Hyphae Nest visual selection left",
             },
             {
               src: "/work_details/hyphae_nest/2right.png",
-              caption: "2right",
               alt: "Hyphae Nest visual selection right",
               size: 36,
             },
@@ -197,13 +185,11 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/3left.png",
-              caption: "3left",
               alt: "Hyphae Nest visual selection left",
               size: 34,
             },
             {
               src: "/work_details/hyphae_nest/3right.png",
-              caption: "3right",
               alt: "Hyphae Nest visual selection right",
               size: 39,
             },
@@ -222,13 +208,11 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/6.png",
-              caption: "6",
               alt: "Hyphae Nest visual selection left",
               size: 54,
             },
             {
               src: "/work_details/hyphae_nest/7right.png",
-              caption: "7right",
               alt: "Hyphae Nest visual selection right",
               size: 38,
             },
@@ -251,20 +235,17 @@ export const hyphaeNestWork: WorkDetail = {
           type: "image-trio",
           leftImage: {
             src: "/work_details/hyphae_nest/5left.png",
-            caption: "5left",
             alt: "Main architectural render showing structure growth form",
             size: 51,
           },
           rightImages: [
             {
               src: "/work_details/hyphae_nest/5topright.png",
-              caption: "5topright",
               alt: "Close-up view of mycelium panel textures",
               size: 18,
             },
             {
               src: "/work_details/hyphae_nest/5bottomright.png",
-              caption: "5bottomright",
               alt: "Interior modular system detail",
               size: 40,
             },
@@ -282,13 +263,11 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/6bottomleft.png",
-              caption: "6bottomleft",
               alt: "Hyphae Nest visual selection left",
               size: 48,
             },
             {
               src: "/work_details/hyphae_nest/6bottomright.png",
-              caption: "6bottomright",
               alt: "Hyphae Nest visual selection right",
               size: 51,
             },
@@ -301,13 +280,11 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/7left.png",
-              caption: "Hyphae Nest - visual selection (3)",
               alt: "Hyphae Nest visual selection left",
               size: 43,
             },
             {
               src: "/work_details/hyphae_nest/right.png",
-              caption: "7left",
               alt: "Hyphae Nest visual selection right",
               size: 43,
             },
@@ -329,17 +306,14 @@ export const hyphaeNestWork: WorkDetail = {
             {
               src: "/work_details/hyphae_nest/8left.png",
               alt: "Left image placeholder",
-              caption: "Left",
             },
             {
               src: "/work_details/hyphae_nest/8middle.png",
               alt: "Middle image placeholder",
-              caption: "Middle",
             },
             {
               src: "/work_details/hyphae_nest/8right.png",
               alt: "Right image placeholder",
-              caption: "Right",
             },
           ],
           gap: "medium",
@@ -351,17 +325,14 @@ export const hyphaeNestWork: WorkDetail = {
             {
               src: "/work_details/hyphae_nest/9left.png",
               alt: "Left image placeholder",
-              caption: "Left",
             },
             {
               src: "/work_details/hyphae_nest/9middle.png",
               alt: "Middle image placeholder",
-              caption: "Middle",
             },
             {
               src: "/work_details/hyphae_nest/9right.png",
               alt: "Right image placeholder",
-              caption: "Right",
             },
           ],
           gap: "medium",
@@ -374,7 +345,6 @@ export const hyphaeNestWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (7).svg",
-          caption: "Hyphae Nest - visual selection (7)",
           alt: "Project impact overview",
           size: "medium",
         },
@@ -392,7 +362,6 @@ export const hyphaeNestWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (8).svg",
-          caption: "Hyphae Nest - visual selection (8)",
           alt: "Project impact overview",
           size: "medium",
         },
