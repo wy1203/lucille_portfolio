@@ -1092,6 +1092,18 @@ const About = () => {
                       <li>Hand Sketch and Render</li>
                     </ul>
                   </div>
+                  <div className="skill-category">
+                    <h3>AI Skills</h3>
+                    <ul>
+                      <li>Chatgpt GPT5</li>
+                      <li>Midjourney</li>
+                      <li>Nano Banana</li>
+                      <li>Figma Make</li>
+                      <li>Sora 2</li>
+                      <li>Suno</li>
+                      <li>AI-Enhanced Visualization</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </section>
