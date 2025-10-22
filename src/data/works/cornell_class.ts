@@ -5,7 +5,7 @@ export const cornellClassWork: WorkDetail = {
   title: "Cornell Class",
   category: "Education Design, Design Strategy",
   description:
-    "Innovative classroom environment fostering collaborative learning",
+    "Innovative classrooms fostering collaborative and engaging learning environments",
   thumbnail: "/work_details/cornell_class/hero.png",
   heroImage: "/work_details/cornell_class/hero.png",
   client: "Academic design project (Cornell University)",

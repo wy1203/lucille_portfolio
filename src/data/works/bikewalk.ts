@@ -5,7 +5,7 @@ export const bikewalkWork: WorkDetail = {
   title: "BikeWalk",
   category: "Commercial Space, Design Strategy",
   description:
-    "Community-centered redesign for Bike Walk Tompkins, enhancing spatial efficiency, engagement, and identity through evidence-based design",
+    "Community centered redesign for Bike Walk Tompkins to enhance community engagement, spatial efficiency, and brand identity",
   thumbnail: "/work_details/bikewalk/hero.png",
   thumbnailImagePos: "50% 80%",
   heroImage: "/work_details/bikewalk/hero.png",
