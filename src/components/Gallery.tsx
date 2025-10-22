@@ -6,36 +6,57 @@ import ElasticSlider from "../react_bits_effects/ElasticSlider";
 import DomeGallery from "../react_bits_effects/DomeGallery";
 import "../styles/Gallery.css";
 
-interface GalleryItem {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  category: string;
-}
-
 const Gallery = () => {
   const navigate = useNavigate();
   const { volume, setVolume } = useMusic();
-  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([]);
-  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
+  const [domeImages, setDomeImages] = useState<
+    Array<{ src: string; alt: string; title: string }>
+  >([]);
 
   useEffect(() => {
-    fetch("/data/gallery.json")
-      .then((res) => res.json())
-      .then((data: GalleryItem[]) => {
-        setGalleryItems(data);
-      })
-      .catch((err) => console.error("Error loading gallery data:", err));
-  }, []);
+    // Dynamically load all images from public/gallery folder
+    // Supported formats: .jpg, .jpeg, .png, .gif
+    const imageFiles = [
+      "Accessible and Affordable Food - Drawing.jpg",
+      "Icey Pengiun.gif",
+      "Play - Printmaking.jpg",
+      "Bad Intestine - Printmaking.jpg",
+      "Before Brain There was No Pain and Anxiety - Printmaking.jpg",
+      "GoldenYears - Oil Painting.jpg",
+      "HoneycombHouse - Design.png",
+      "The Box - Installation Design 1.jpg",
+      "The Box - Installation Design.JPG",
+      "2D Tessellation Units - Design.png",
+      "Remake of The Great Odalisque - Collage.JPG",
+      "Reciprocal Frame Bridge - Design.png",
+      "My Special Place - Installation 1.png",
+      "My Special Place - Installation.png",
+      "3D New Form - Design.png",
+      "The Butterfly Stool - Book Cover Design.jpg",
+      "The Elephant and The Man - Drawing.gif",
+      "The Game - Printmaking.jpg",
+      "The Swaying Heart - Printmaking.jpg",
+      "Tokyo Store - Watercolor.jpeg",
+    ];
 
-  // Convert gallery items to DomeGallery format with metadata
-  const domeImages = galleryItems.map((item) => ({
-    src: item.image,
-    alt: item.title,
-    title: item.title,
-    description: item.description,
-  }));
+    const images = imageFiles.map((filename) => {
+      // Extract title from filename (format: "Title - Medium.ext")
+      const nameWithoutExt = filename.replace(
+        /\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$/i,
+        ""
+      );
+      // Use the full filename without extension as the title
+      const title = nameWithoutExt;
+
+      return {
+        src: `/gallery/${filename}`,
+        alt: title,
+        title: title,
+      };
+    });
+
+    setDomeImages(images);
+  }, []);
 
   return (
     <div className="gallery-page">
@@ -91,7 +112,7 @@ const Gallery = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        {galleryItems.length > 0 && (
+        {domeImages.length > 0 && (
           <DomeGallery
             images={domeImages}
             fit={0.6}
@@ -102,13 +123,6 @@ const Gallery = () => {
             openedImageBorderRadius="20px"
             grayscale={false}
           />
-        )}
-
-        {selectedImage && (
-          <div className="gallery-image-info">
-            <h2>{selectedImage.title}</h2>
-            <p>{selectedImage.description}</p>
-          </div>
         )}
       </motion.main>
     </div>

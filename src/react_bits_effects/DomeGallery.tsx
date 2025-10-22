@@ -2,7 +2,9 @@ import { useEffect, useMemo, useRef, useCallback } from "react";
 import { useGesture } from "@use-gesture/react";
 import "../react_bits_styles/DomeGallery.css";
 
-type ImageItem = string | { src: string; alt?: string; title?: string; description?: string };
+type ImageItem =
+  | string
+  | { src: string; alt?: string; title?: string; description?: string };
 
 type DomeGalleryProps = {
   images?: ImageItem[];
@@ -114,7 +116,7 @@ function buildItems(pool: ImageItem[], seg: number): ItemDef[] {
       src: image.src || "",
       alt: image.alt || "",
       title: image.title || "",
-      description: image.description || ""
+      description: image.description || "",
     };
   });
 
@@ -319,6 +321,33 @@ export default function DomeGallery({
 
   useEffect(() => {
     applyTransform(rotationRef.current.x, rotationRef.current.y);
+  }, []);
+
+  // Auto-rotation effect
+  const autoRotateRAF = useRef<number | null>(null);
+  useEffect(() => {
+    const autoRotate = () => {
+      // Only auto-rotate if not dragging and no inertia is active
+      if (
+        !draggingRef.current &&
+        !inertiaRAF.current &&
+        !focusedElRef.current
+      ) {
+        const rotationSpeed = 0.15; // Degrees per frame (adjust for speed)
+        const nextY = wrapAngleSigned(rotationRef.current.y + rotationSpeed);
+        rotationRef.current = { x: rotationRef.current.x, y: nextY };
+        applyTransform(rotationRef.current.x, nextY);
+      }
+      autoRotateRAF.current = requestAnimationFrame(autoRotate);
+    };
+
+    autoRotateRAF.current = requestAnimationFrame(autoRotate);
+
+    return () => {
+      if (autoRotateRAF.current) {
+        cancelAnimationFrame(autoRotateRAF.current);
+      }
+    };
   }, []);
 
   const stopInertia = useCallback(() => {
