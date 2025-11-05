@@ -11,7 +11,7 @@
 
 .about-main {
   margin-top: 0;
-  padding-bottom: 120px;
+  padding-bottom: 10px;
 }
 
 .about-container {
@@ -195,7 +195,7 @@
 
 .non-designer-wrapper {
   padding-top: 120px;
-  background: #000000;
+  background: #faf7f2;
   display: flex;
   flex-direction: column;
   scroll-margin-top: 100px;
@@ -208,7 +208,7 @@
 }
 
 .designer-wrapper {
-  background: #ffffff;
+  background: #faf7f2;
   padding-top: 80px;
   scroll-margin-top: 100px;
 }
