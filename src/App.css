@@ -86,8 +86,7 @@ img {
   z-index: 100;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  background: #00000080;
-  background: rgba(0, 0, 0, 1);
+  background: #f6ead3a5;
   flex-wrap: wrap;
   min-height: 60px;
 }
@@ -104,7 +103,7 @@ img {
   height: 42px;
   width: 42px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(0);
 }
 
 /* Navigation styles are now in Navigation.css */
@@ -132,7 +131,7 @@ img {
   letter-spacing: -0.03em;
   margin-bottom: 0.5rem;
   margin-top: 2rem;
-  color: #ffffff;
+  color: #000000;
   font-family: "Montserrat";
   white-space: nowrap;
   margin-bottom: 5rem;
@@ -142,7 +141,7 @@ img {
   display: block;
   font-size: clamp(1.5rem, 3vw, 1.7rem);
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
+  color: #000000;
   letter-spacing: 0.02em;
   text-transform: none;
   margin-top: 1.5rem;
@@ -156,9 +155,7 @@ img {
 
 .title strong {
   font-weight: 900;
-  color: #ffffff;
-  text-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff;
-  -webkit-text-stroke: 0.5px #ffffff;
+  color: #000000;
 }
 
 .hero-description {
@@ -179,7 +176,7 @@ img {
 }
 
 .experiences-text {
-  color: rgba(255, 255, 255, 0.9);
+  color: #000000;
   font-size: clamp(1.5rem, 3vw, 1.7rem);
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
@@ -191,7 +188,7 @@ img {
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(0);
 }
 
 .experience-logo {

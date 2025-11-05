@@ -13,11 +13,6 @@
   margin-top: auto;
 }
 
-/* Header override for Gallery page - solid black instead of transparent */
-.gallery-page .header {
-  background: #000000 !important;
-}
-
 .gallery-main {
   margin-top: 120px;
   padding-bottom: 80px;

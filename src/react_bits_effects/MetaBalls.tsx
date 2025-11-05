@@ -110,7 +110,7 @@ void main() {
     }
     float m2 = getMetaBallValue(mouseW, iCursorBallSize, coord);
     float total = m1 + m2;
-    float f = smoothstep(-1.0, 1.0, (total - 1.3) / min(1.0, fwidth(total)));
+    float f = smoothstep(-1.0, 1.0, (total - 1.3) / min(1.0, fwidth(total) * 2.0));
     vec3 cFinal = vec3(0.0);
     if (total > 0.0) {
         float alpha1 = m1 / total;
@@ -270,7 +270,8 @@ const MetaBalls: React.FC<MetaBallsProps> = ({
       const elapsed = (t - startTime) * 0.001;
       program.uniforms.iTime.value = elapsed;
 
-      const aspect = gl.canvas.height === 0 ? 1 : gl.canvas.width / gl.canvas.height;
+      const aspect =
+        gl.canvas.height === 0 ? 1 : gl.canvas.width / gl.canvas.height;
       const horizontalHalfRange = animationSize * 0.5 * Math.max(aspect, 1);
       const verticalHalfRange = animationSize * 0.5;
 
@@ -280,10 +281,8 @@ const MetaBalls: React.FC<MetaBallsProps> = ({
         const th = p.st + dt;
         const x = Math.cos(th);
         const y = Math.sin(th + dt * p.toggle);
-        const posX =
-          x * horizontalHalfRange * p.orbitXFactor * clumpFactor;
-        const posY =
-          y * verticalHalfRange * p.orbitYFactor * clumpFactor;
+        const posX = x * horizontalHalfRange * p.orbitXFactor * clumpFactor;
+        const posY = y * verticalHalfRange * p.orbitYFactor * clumpFactor;
         metaBallsUniform[i].set(posX, posY, p.radius);
       }
 

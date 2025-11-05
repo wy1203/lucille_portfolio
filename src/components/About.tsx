@@ -578,8 +578,8 @@ const About = () => {
       </section>
       <section ref={metaSectionRef} className="meta-balls">
         <MetaBalls
-          color="#ffffffff"
-          cursorBallColor="#ffffffff"
+          color="#f6ead3a5"
+          cursorBallColor="#f6ead3a5"
           cursorBallSize={3}
           ballCount={35}
           animationSize={25}
