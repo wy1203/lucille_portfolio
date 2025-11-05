@@ -264,13 +264,10 @@ const MainContent = () => {
           </span>
           <span className="title">
             <SplitText delay={1.5} type="words">
-              Design strategist studying{" "}
-              <strong>Design and Environmental Analysis</strong> at Cornell
-              University. I mix{" "}
-              <strong>
-                human-centered design, business insight, and technology
-              </strong>{" "}
-              to build impactful, future-ready environments.
+              Design strategist studying <strong>Human Centered Design</strong>{" "}
+              at Cornell University. I use{" "}
+              <strong>design, business, and technology</strong> to create user
+              experiences.
             </SplitText>
           </span>
         </h1>
