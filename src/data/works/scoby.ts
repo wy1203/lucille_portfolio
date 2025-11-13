@@ -27,28 +27,30 @@ export const scobyWork: WorkDetail = {
       title: "Overview",
       blocks: [
         {
-          type: "text",
-          content:
-            "**Project Vision & Offerings:**\nThe SCOBY Spot is a kombucha tea + pastry store that doubles as a **relax & study space** in Ithaca Commons. The goal is to create a **relaxation and well-being hub** for Ithacans through a program that offers **kombucha flights, tea-flavored pastries, and hands-on brewing workshops.**\nA calm, nature-forward atmosphere positions the shop as both a neighborhood retreat and a cultural anchor for fermented tea.",
-          size: "normal",
+          type: "text-image",
+          layout: "text-right",
+          text: {
+            title: "Goal and Offering",
+            content:
+              "The SCOBY Spot is a kombucha tea + pastry store that doubles as a relax & study space in Ithaca Commons. The goal is to create a relaxation and well-being hub for Ithacans. A calm, nature like atmosphere positions the shop as both a neighborhood retreat and a cultural anchor for fermented tea.",
+            size: "small",
+          },
+          image: {
+            src: "/work_details/scoby/The SCOBY Spot - overview.svg",
+            alt: "SCOBY Spot experience zones",
+          },
         },
         {
           type: "image",
-          src: "/work_details/scoby/7.png",
+          src: "/work_details/scoby/overview1.png",
           alt: "SCOBY Spot overview visualization",
-          size: "large",
-        },
-        {
-          type: "text",
-          content:
-            "**Human-Centered Experience:**\nBy merging hospitality and mindfulness, the SCOBY Spot introduces a new typology of retail wellness. The design encourages community gathering, slow consumption, and sensory restoration. The experience balances public and private zones—open seating for social connection and elevated pods for reflection and study.",
-          size: "normal",
+          size: "full",
         },
         {
           type: "image",
-          src: "/work_details/scoby/The SCOBY Spot - overview.svg",
-          alt: "SCOBY Spot experience zones",
-          size: "large",
+          src: "/work_details/scoby/overview2.png",
+          alt: "SCOBY Spot overview visualization",
+          size: "full",
         },
       ],
     },
@@ -57,33 +59,33 @@ export const scobyWork: WorkDetail = {
       blocks: [
         {
           type: "text",
+          title: "Current Market Gap & User Insights",
           content:
-            "**Intent & Users:**\nResearch identified a gap in downtown Ithaca for a **wellness-oriented place** serving students, workers, and visitors seeking calm amid the city's cultural energy. Interviews and site observations confirmed the need for quiet study zones, comfortable lighting, and intuitive circulation from entry → display → seating.",
+            "Research identified a gap in downtown Ithaca for a **wellness-oriented place** serving students, workers, and visitors seeking calm amid the city's cultural energy. Interviews and site observations confirmed the need for quiet study zones, comfortable lighting, and intuitive circulation from entry → display → seating.",
           size: "normal",
         },
         {
-          type: "image",
-          src: "/work_details/scoby/The SCOBY Spot - strategy 1.svg",
-          alt: "User research findings",
-          size: "medium",
+          type: "image-pair",
+          images: [
+            {
+              src: "/work_details/scoby/The SCOBY Spot - strategy 1.svg",
+              alt: "User research findings",
+              size: 50,
+            },
+            {
+              src: "/work_details/scoby/The SCOBY Spot - strategy 5.svg",
+              alt: "Research methods visualization",
+              size: 50,
+            },
+          ],
+          layout: "equal",
+          gap: "medium",
         },
         {
           type: "text",
+          title: "Human-Centered Experience",
           content:
-            "**Research Methods:**\nUser interviews revealed strong enthusiasm for spaces promoting wellness through sensory experiences. Respondents valued the pairing of tea rituals and study comfort—informing a program mix of beverage, pastry, and retreat-like seating pods.",
-          size: "normal",
-        },
-        {
-          type: "image",
-          src: "/work_details/scoby/The SCOBY Spot - strategy 5.svg",
-          alt: "Research methods visualization",
-          size: "medium",
-        },
-        {
-          type: "text",
-          content:
-            "**Human-Centered Experience:**\nCreate **relaxation** and **well-being hub** for Ithacans. This tea store serves various **kombucha flavored tea, pastry and brewing services.** The environment facilitates a **restorative connection between people and nature** as people relax in this spot in a cozy, daydreaming afternoon.",
-          size: "normal",
+            "Create **relaxation** and **well-being hub** for Ithacans. This tea store serves various **kombucha flavored tea, pastry and brewing services.** The environment facilitates a **restorative connection between people and nature** as people relax in this spot in a cozy, daydreaming afternoon.",
         },
         {
           type: "image-pair",
@@ -104,21 +106,33 @@ export const scobyWork: WorkDetail = {
         },
         {
           type: "text",
+          title: "Evidence-Based Drivers",
           content:
-            "**Evidence-Based Drivers:**\nDesign development was informed by four evidence-based priorities:\n\n**1. Clear wayfinding** that flows naturally from the entrance to display to seating.\n**2. Acoustic comfort** for both group and individual use.\n**3. Biophilic design** elements—natural materials, light, and color—to reduce stress.\n**4. Flexible layout** to host brewing workshops and cultural events without major reconfiguration.",
+            "Design development was informed by four evidence-based priorities:\n**1. Clear wayfinding** that flows naturally from the entrance to display to seating.\n**2. Acoustic comfort** for both group and individual use.\n**3. Biophilic design** elements—natural materials, light, and color—to reduce stress.\n**4. Flexible layout** to host brewing workshops and cultural events without major reconfiguration.",
           size: "normal",
         },
         {
-          type: "image",
-          src: "/work_details/scoby/The SCOBY Spot - strategy 2.svg",
-          alt: "Evidence-based design drivers",
-          size: "medium",
+          type: "image-trio",
+          layout: "horizontal",
+          horizontalImages: [
+            {
+              src: "/work_details/scoby/The SCOBY Spot - strategy 2.svg",
+              alt: "Evidence-based design drivers",
+              size: 44.33,
+            },
+            {
+              src: "/work_details/scoby/3left.png",
+              alt: "Design evidence left",
+              size: 30.33,
+            },
+            {
+              src: "/work_details/scoby/3middle.png",
+              alt: "Design evidence middle",
+              size: 33,
+            },
+          ],
+          gap: "medium",
         },
-      ],
-    },
-    designSolution: {
-      title: "Design Solution",
-      blocks: [
         {
           type: "image",
           src: "/work_details/scoby/The SCOBY Spot - design solution.svg",
@@ -127,8 +141,9 @@ export const scobyWork: WorkDetail = {
         },
         {
           type: "text",
+          title: "Architectural Strategy",
           content:
-            "**Architectural Strategy:**\n**Inspired by the branching geometry of trees and the venation patterns of leaves,** the store's architectural system translates organic growth into structure. A **hexagonal wooden framework** rises upward like intertwining canopies, forming **elevated seating platforms** that evoke the feeling of resting within a forest canopy.\n\nThe structure's geometry evokes organic branching patterns, while skylights and glass panels introduce natural warmth.",
+            "Inspired by the branching geometry of trees and the venation patterns of leaves,** the store's architectural system translates organic growth into structure. A **hexagonal wooden framework** rises upward like intertwining canopies, forming **elevated seating platforms** that evoke the feeling of resting within a forest canopy. The structure's geometry evokes organic branching patterns, while skylights and glass panels introduce natural warmth.",
           size: "normal",
         },
         {
@@ -157,8 +172,9 @@ export const scobyWork: WorkDetail = {
         },
         {
           type: "text",
+          title: "Spatial Composition",
           content:
-            "**Spatial Composition:**\nWooden frameworks and elevated 'tree-branch' paths create a continuous flow between levels—allowing guests to explore, perch, and rest. Soft illumination, warm color tones, and natural finishes compose a tranquil, restorative setting.",
+            "Wooden frameworks and elevated 'tree-branch' paths create a continuous flow between levels—allowing guests to explore, perch, and rest. Soft illumination, warm color tones, and natural finishes compose a tranquil, restorative setting.",
           size: "normal",
         },
         {
@@ -175,8 +191,9 @@ export const scobyWork: WorkDetail = {
         },
         {
           type: "text",
+          title: "Biophilic Design Elements",
           content:
-            "**Biophilic Design Elements:**\n• **Organic Branching Patterns:** evoke canopy structures for calmness.\n• **Soft Natural Lighting:** connects visitors to daylight cycles.\n• **Warm Wooden Textures:** evoke comfort and authenticity.\n• **Elevated Pod Seating:** promotes a sense of retreat and privacy.\n• **Large Glass Windows:** frame views and enhance openness.",
+            "• **Organic Branching Patterns:** evoke canopy structures for calmness.\n• **Soft Natural Lighting:** connects visitors to daylight cycles.\n• **Warm Wooden Textures:** evoke comfort and authenticity.\n• **Elevated Pod Seating:** promotes a sense of retreat and privacy.\n• **Large Glass Windows:** frame views and enhance openness.",
           size: "normal",
         },
         {
@@ -193,21 +210,84 @@ export const scobyWork: WorkDetail = {
         },
         {
           type: "text",
+          title: "Human-Centered Experience",
           content:
-            "**Human-Centered Experience:**\nPrivate pods offer acoustic separation for study and intimate gatherings while preserving visual transparency. The combination of **natural light, greenery, and warm palettes** facilitates restoration and focus. Each detail—from circulation paths to furniture ergonomics—supports mental wellness and a slower rhythm of being.",
+            "Private pods offer acoustic separation for study and intimate gatherings while preserving visual transparency. The combination of **natural light, greenery, and warm palettes** facilitates restoration and focus. Each detail—from circulation paths to furniture ergonomics—supports mental wellness and a slower rhythm of being.",
           size: "normal",
         },
         {
           type: "image",
           src: "/work_details/scoby/6.png",
           alt: "Private pod seating areas",
-          size: "large",
+          size: "full",
+        },
+      ],
+    },
+    designSolution: {
+      title: "Design Solution",
+      blocks: [
+        {
+          type: "image",
+          src: "/work_details/scoby/design_solution1.png",
+          alt: "Design solution detail 1",
+          size: "xlarge",
+        },
+        {
+          type: "image-pair",
+          images: [
+            {
+              src: "/work_details/scoby/design_solution2.png",
+              alt: "Design solution detail 2",
+              size: 53,
+            },
+            {
+              src: "/work_details/scoby/design_solution3.png",
+              alt: "Design solution detail 3",
+              size: 47,
+            },
+          ],
+          layout: "equal",
+          gap: "medium",
+        },
+        {
+          type: "image-pair",
+          images: [
+            {
+              src: "/work_details/scoby/design_solution4.png",
+              alt: "Design solution detail 4",
+              size: 52,
+            },
+            {
+              src: "/work_details/scoby/design_solution5.png",
+              alt: "Design solution detail 5",
+              size: 48,
+            },
+          ],
+          layout: "equal",
+          gap: "medium",
+        },
+        {
+          type: "image-pair",
+          images: [
+            {
+              src: "/work_details/scoby/design_solution6.png",
+              alt: "Design solution detail 6",
+              size: 50,
+            },
+            {
+              src: "/work_details/scoby/design_solution7.png",
+              alt: "Design solution detail 7",
+              size: 50,
+            },
+          ],
+          layout: "equal",
+          gap: "medium",
         },
         {
           type: "image",
-          src: "/work_details/scoby/7.png",
-          alt: "Interior perspective showing human-centered design",
-          size: "large",
+          src: "/work_details/scoby/design_solution8.png",
+          alt: "Design solution detail 8",
+          size: "xlarge",
         },
       ],
     },

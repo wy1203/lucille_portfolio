@@ -23,6 +23,8 @@ export interface TextBlock extends BaseContentBlock {
   content: string;
   size?: "normal" | "large" | "small";
   emphasis?: boolean;
+  title?: string;
+  titleSize?: "normal" | "large" | "small";
 }
 
 export interface TitleBlock extends BaseContentBlock {
@@ -50,7 +52,7 @@ export interface ImageBlock extends BaseContentBlock {
   src: string;
   alt?: string;
   caption?: string;
-  size?: "small" | "medium" | "large" | "full";
+  size?: "small" | "medium" | "large" | "xlarge" | "full";
   aspectRatio?: "square" | "landscape" | "portrait" | "auto";
 }
 
@@ -154,6 +156,7 @@ export interface TextImageBlock extends BaseContentBlock {
     content: string;
     size?: "normal" | "large" | "small";
     title?: string;
+    titleSize?: "normal" | "large" | "small";
   };
   image: {
     src: string;
@@ -185,6 +188,7 @@ export interface ImageTextListBlock extends BaseContentBlock {
     content: string;
     size?: "normal" | "large" | "small";
     title?: string;
+    titleSize?: "normal" | "large" | "small";
   };
   list: {
     listType: "ordered" | "unordered";

@@ -3,7 +3,7 @@
 
 .work-detail-page {
   min-height: 100vh;
-  background: #fafaf8;
+  background: #ffffff;
   overflow-x: hidden;
 }
 
@@ -192,7 +192,7 @@
   padding: 4rem min(2rem, 3vw);
   position: relative;
   z-index: 10;
-  background: #fafaf8;
+  background: #ffffff;
   margin-bottom: 2.5rem;
   scroll-margin-top: 10px;
   border-radius: 24px;
@@ -201,7 +201,7 @@
 .work-section h2 {
   font-weight: 900;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-family: "Montserrat";
   margin-bottom: 2%;
   background: linear-gradient(135deg, #0054f3 0%, #ff743a 100%);
@@ -345,10 +345,30 @@
 }
 
 /* Text Blocks */
-.text-block {
-  margin-top: 10px;
+.text-block-wrapper {
   margin-left: 50px;
   margin-right: 50px;
+}
+
+.text-block-title {
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+  color: #000000;
+}
+
+.text-block-title.small {
+  font-size: 1.1rem;
+}
+
+.text-block-title.normal {
+  font-size: 1.3rem;
+}
+
+.text-block-title.large {
+  font-size: 1.8rem;
+}
+
+.text-block {
   line-height: 1.6;
   color: #333;
   white-space: pre-line;
@@ -422,9 +442,20 @@
 
 .text-image-block .text-content h3 {
   margin: 0 0 1rem 0;
-  font-size: 1.5rem;
   font-weight: 600;
   color: #000000;
+}
+
+.text-image-block .text-content .text-image-title.small {
+  font-size: 1.1rem;
+}
+
+.text-image-block .text-content .text-image-title.normal {
+  font-size: 1.3rem;
+}
+
+.text-image-block .text-content .text-image-title.large {
+  font-size: 1.8rem;
 }
 
 .text-image-block .text-content p {
@@ -564,9 +595,20 @@
 
 .image-textlist-block .text-section h3 {
   margin: 0 0 0.75rem 0;
-  font-size: 1.5rem;
   font-weight: 600;
   color: #0a0a0a;
+}
+
+.image-textlist-block .text-section .image-textlist-title.small {
+  font-size: 1.1rem;
+}
+
+.image-textlist-block .text-section .image-textlist-title.normal {
+  font-size: 1.3rem;
+}
+
+.image-textlist-block .text-section .image-textlist-title.large {
+  font-size: 1.8rem;
 }
 
 .image-textlist-block .text-section.normal p {
@@ -717,6 +759,10 @@
 
 .image-block.large img {
   max-width: 700px;
+}
+
+.image-block.xlarge img {
+  max-width: 900px;
 }
 
 .image-block.full img {

@@ -367,16 +367,25 @@ const ContentRenderer = ({
         switch (block.type) {
           case "text":
             return (
-              <p
+              <div
                 key={index}
-                className={`text-block ${block.size || "normal"} ${
-                  block.emphasis ? "emphasis" : ""
-                }`}
+                className="text-block-wrapper"
                 style={marginStyle}
-                dangerouslySetInnerHTML={{
-                  __html: parseInlineFormatting(block.content),
-                }}
-              />
+              >
+                {block.title && (
+                  <h3 className={`text-block-title ${block.titleSize || "normal"}`}>
+                    {block.title}
+                  </h3>
+                )}
+                <p
+                  className={`text-block ${block.size || "normal"} ${
+                    block.emphasis ? "emphasis" : ""
+                  }`}
+                  dangerouslySetInnerHTML={{
+                    __html: parseInlineFormatting(block.content),
+                  }}
+                />
+              </div>
             );
 
           case "title":
@@ -863,7 +872,11 @@ const ContentRenderer = ({
                 style={layoutStyle}
               >
                 <div className={`text-content ${textSizeClass}`}>
-                  {block.text.title && <h3>{block.text.title}</h3>}
+                  {block.text.title && (
+                    <h3 className={`text-image-title ${block.text.titleSize || "normal"}`}>
+                      {block.text.title}
+                    </h3>
+                  )}
                   <p
                     dangerouslySetInnerHTML={{
                       __html: parseInlineFormatting(block.text.content),
@@ -943,7 +956,11 @@ const ContentRenderer = ({
                 <div className="textlist-content">
                   {block.text && (
                     <div className={`text-section ${textSectionClass}`}>
-                      {block.text.title && <h3>{block.text.title}</h3>}
+                      {block.text.title && (
+                        <h3 className={`image-textlist-title ${block.text.titleSize || "normal"}`}>
+                          {block.text.title}
+                        </h3>
+                      )}
                       {block.text.content && (
                         <p
                           dangerouslySetInnerHTML={{
