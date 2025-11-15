@@ -158,8 +158,6 @@ const MainContent = () => {
     workSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const backgroundOpacity = scrollY > 0 ? Math.max(0, 1 - scrollY / 300) : 1;
-
   return (
     <div className="main-content">
       {/* Gradient background - fades in when scrolling */}

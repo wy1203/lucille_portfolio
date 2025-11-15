@@ -64,7 +64,8 @@ const InteractiveSoundLayer: React.FC<InteractiveSoundLayerProps> = ({ className
 
   useEffect(() => {
     return () => {
-      Object.values(audioRefs.current).forEach((audio) => {
+      const currentAudioRefs = audioRefs.current;
+      Object.values(currentAudioRefs).forEach((audio) => {
         audio.pause();
         audio.src = '';
       });

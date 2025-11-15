@@ -120,7 +120,7 @@ const PDFViewer = ({ pdfPath }: PDFViewerProps) => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [currentPage, numPages, twoPageMode]);
+  }, [currentPage, numPages, twoPageMode, goToNextPage, goToPrevPage]);
 
   // Update page input when current page changes
   useEffect(() => {

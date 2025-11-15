@@ -627,7 +627,7 @@ export default function DomeGallery({
     if (performance.now() - lastDragEndAt.current < 80) return;
     if (openingRef.current) return;
     openItemFromElement(e.currentTarget);
-  }, []);
+  }, [openItemFromElement]);
 
   const onTilePointerUp = useCallback(
     (e: React.PointerEvent<HTMLDivElement>) => {
@@ -637,7 +637,7 @@ export default function DomeGallery({
       if (openingRef.current) return;
       openItemFromElement(e.currentTarget);
     },
-    []
+    [openItemFromElement]
   );
 
   const onTileTouchEnd = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
@@ -645,7 +645,7 @@ export default function DomeGallery({
     if (performance.now() - lastDragEndAt.current < 80) return;
     if (openingRef.current) return;
     openItemFromElement(e.currentTarget);
-  }, []);
+  }, [openItemFromElement]);
 
   useEffect(() => {
     const scrim = scrimRef.current;
