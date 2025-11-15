@@ -333,7 +333,7 @@ export default function DomeGallery({
         !inertiaRAF.current &&
         !focusedElRef.current
       ) {
-        const rotationSpeed = 0.15; // Degrees per frame (adjust for speed)
+        const rotationSpeed = 0.05; // Degrees per frame (adjust for speed)
         const nextY = wrapAngleSigned(rotationRef.current.y + rotationSpeed);
         rotationRef.current = { x: rotationRef.current.x, y: nextY };
         applyTransform(rotationRef.current.x, nextY);
@@ -622,12 +622,15 @@ export default function DomeGallery({
     }
   };
 
-  const onTileClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (draggingRef.current) return;
-    if (performance.now() - lastDragEndAt.current < 80) return;
-    if (openingRef.current) return;
-    openItemFromElement(e.currentTarget);
-  }, [openItemFromElement]);
+  const onTileClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (draggingRef.current) return;
+      if (performance.now() - lastDragEndAt.current < 80) return;
+      if (openingRef.current) return;
+      openItemFromElement(e.currentTarget);
+    },
+    [openItemFromElement]
+  );
 
   const onTilePointerUp = useCallback(
     (e: React.PointerEvent<HTMLDivElement>) => {
@@ -640,12 +643,15 @@ export default function DomeGallery({
     [openItemFromElement]
   );
 
-  const onTileTouchEnd = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
-    if (draggingRef.current) return;
-    if (performance.now() - lastDragEndAt.current < 80) return;
-    if (openingRef.current) return;
-    openItemFromElement(e.currentTarget);
-  }, [openItemFromElement]);
+  const onTileTouchEnd = useCallback(
+    (e: React.TouchEvent<HTMLDivElement>) => {
+      if (draggingRef.current) return;
+      if (performance.now() - lastDragEndAt.current < 80) return;
+      if (openingRef.current) return;
+      openItemFromElement(e.currentTarget);
+    },
+    [openItemFromElement]
+  );
 
   useEffect(() => {
     const scrim = scrimRef.current;
