@@ -20,7 +20,7 @@
   height: 42px;
   width: 42px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(0);
 }
 
 .work-detail-container {
