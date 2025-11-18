@@ -7,6 +7,10 @@
   overflow-x: hidden;
 }
 
+.work-section {
+  padding: 2rem 2rem !important;
+}
+
 .work-detail-header {
   cursor: default;
   padding: 1rem 0 1rem 1.5rem !important;
@@ -808,7 +812,7 @@
 }
 
 .image-pair.gap-large {
-  gap: 2rem;
+  gap: 5rem;
 }
 
 .image-pair .image-item {
@@ -1169,7 +1173,7 @@
 }
 
 .video-block.large .video-inline-container {
-  max-width: 100%;
+  max-width: 900px;
 }
 
 .video-block.full .video-inline-container {

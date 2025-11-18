@@ -295,28 +295,18 @@ export const scobyWork: WorkDetail = {
       title: "Impact",
       blocks: [
         {
-          type: "image",
-          src: "/work_details/scoby/THE SCOBY Spot - Impact.svg",
-          alt: "Private pod seating areas",
-          size: "medium",
-        },
-        {
-          type: "text",
-          content:
-            "**Impact:**\nThe SCOBY Spot reframes retail as a **wellness catalyst**—blending beverage culture with restorative spatial design. It enhances Ithaca's downtown social fabric while providing a dependable third place for focus, gathering, and quiet restoration.",
-          size: "normal",
-        },
-        {
-          type: "text",
-          content:
-            "**Key Outcomes:**\n• Established the first **kombucha-centered cafe** in Ithaca Commons.\n• Unified **kombucha service, pastry program, and brewing workshops** into a single guest journey.\n• Demonstrated a **biophilic retail model** linking hospitality with well-being.\n• Increased opportunities for community engagement and study-friendly socialization.",
-          size: "normal",
-        },
-        {
-          type: "text",
-          content:
-            "**Social Impact:**\nBy merging mindful design and local beverage culture, the SCOBY Spot strengthens both individual wellness and collective belonging—showing how small-scale retail can support a city's mental and cultural health.",
-          size: "normal",
+          type: "text-image",
+          layout: "text-right",
+          text: {
+            title: "\nKey Outcome",
+            content:
+              "• Established the first **kombucha-centered cafe** in Ithaca Commons.\n• Unified **kombucha service, pastry program, and brewing workshops** into a single guest journey.\n• Demonstrated a **biophilic retail model** linking hospitality with well-being.\n• Increased opportunities for community engagement and study-friendly socialization.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/scoby/THE SCOBY Spot - Impact.svg",
+            alt: "Impact outcomes visualization",
+          },
         },
       ],
     },
@@ -324,22 +314,18 @@ export const scobyWork: WorkDetail = {
       title: "Reflection",
       blocks: [
         {
-          type: "image",
-          src: "/work_details/scoby/THE SCOBY Spot - reflection.svg",
-          alt: "Reflection and future directions",
-          size: "medium",
-        },
-        {
-          type: "text",
-          content:
-            "**Lean Thinking & Future Direction:**\nFuture iterations of the SCOBY Spot will apply **Lean construction principles** to streamline build-out and enhance sustainability. Next steps include:\n1. Implementing **modular pod kits** for faster, replicable construction.\n2. Adopting **low-carbon materials** for finishes and structure.\n3. Refining **workshop logistics** to better support education and community events.\n4. Scaling the model to future neighborhoods while maintaining intimacy and calm.",
-          size: "normal",
-        },
-        {
-          type: "text",
-          content:
-            "**Design Reflection:**\nDesigning the SCOBY Spot reaffirmed how **material warmth, light quality, and acoustic control** directly shape behavior and well-being. Translating the metaphor of branching trees into circulation taught the balance between **poetry and practicality**—from managing queue flow to encouraging lingering comfort.",
-          size: "normal",
+          type: "text-image",
+          layout: "text-right",
+          text: {
+            title: "\nLean Thinking & Future Direction",
+            content:
+              "Future iterations of the SCOBY Spot will apply **Lean construction principles** to streamline build-out and enhance sustainability. \nNext steps include:\n1. Implementing **modular pod kits** for faster, replicable construction.\n2. Adopting **low-carbon materials** for finishes and structure.\n3. Refining **workshop logistics** to better support education and community events.\n4. Scaling the model to future neighborhoods while maintaining intimacy and calm.",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/scoby/THE SCOBY Spot - reflection.svg",
+            alt: "Reflection and future directions",
+          },
         },
       ],
     },
