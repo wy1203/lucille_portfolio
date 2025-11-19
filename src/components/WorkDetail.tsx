@@ -366,6 +366,8 @@ const ContentRenderer = ({
 
         switch (block.type) {
           case "text":
+            const ListTagForText =
+              block.list?.listType === "ordered" ? "ol" : "ul";
             return (
               <div
                 key={index}
@@ -373,18 +375,38 @@ const ContentRenderer = ({
                 style={marginStyle}
               >
                 {block.title && (
-                  <h3 className={`text-block-title ${block.titleSize || "normal"}`}>
+                  <h3
+                    className={`text-block-title ${
+                      block.titleSize || "normal"
+                    }`}
+                  >
                     {block.title}
                   </h3>
                 )}
-                <p
-                  className={`text-block ${block.size || "normal"} ${
-                    block.emphasis ? "emphasis" : ""
-                  }`}
-                  dangerouslySetInnerHTML={{
-                    __html: parseInlineFormatting(block.content),
-                  }}
-                />
+                {block.content && (
+                  <p
+                    className={`text-block ${block.size || "normal"} ${
+                      block.emphasis ? "emphasis" : ""
+                    }`}
+                    dangerouslySetInnerHTML={{
+                      __html: parseInlineFormatting(block.content),
+                    }}
+                  />
+                )}
+                {block.list && (
+                  <ListTagForText
+                    className={`text-block-list ${block.size || "normal"}`}
+                  >
+                    {block.list.items.map((item, itemIndex) => (
+                      <li
+                        key={itemIndex}
+                        dangerouslySetInnerHTML={{
+                          __html: parseInlineFormatting(item),
+                        }}
+                      />
+                    ))}
+                  </ListTagForText>
+                )}
               </div>
             );
 
@@ -393,8 +415,8 @@ const ContentRenderer = ({
               if (!size) return undefined;
               const presetSizes: Record<string, string> = {
                 small: "1.0rem",
-                medium: "1.5rem",
-                large: "2.0rem",
+                medium: "1.0rem",
+                large: "1.3rem",
                 xlarge: "3rem",
               };
               return presetSizes[size] || size;
@@ -437,6 +459,33 @@ const ContentRenderer = ({
                   __html: parseInlineFormatting(block.content),
                 }}
               />
+            );
+
+          case "banner-title":
+            const bannerAlign = block.align || "left";
+            const bannerSize = block.size || "large";
+            const bannerStyle: React.CSSProperties = {
+              ...marginStyle,
+              textAlign: bannerAlign,
+            };
+            const bannerSpanStyle: React.CSSProperties = {
+              textAlign: bannerAlign,
+              ...(block.background && { background: block.background }),
+            };
+            return (
+              <div
+                key={index}
+                className="banner-title-wrapper"
+                style={bannerStyle}
+              >
+                <span
+                  className={`banner-title size-${bannerSize}`}
+                  style={bannerSpanStyle}
+                  dangerouslySetInnerHTML={{
+                    __html: parseInlineFormatting(block.content),
+                  }}
+                />
+              </div>
             );
 
           case "list":
@@ -587,7 +636,8 @@ const ContentRenderer = ({
               const bottomImages = block.bottomImages;
               const clampPercentage = (value: number) =>
                 Math.min(Math.max(value, 1), 100);
-              const topWidth = typeof topImage.size === "number" &&
+              const topWidth =
+                typeof topImage.size === "number" &&
                 Number.isFinite(topImage.size)
                   ? `${clampPercentage(topImage.size)}%`
                   : "100%";
@@ -873,7 +923,11 @@ const ContentRenderer = ({
               >
                 <div className={`text-content ${textSizeClass}`}>
                   {block.text.title && (
-                    <h3 className={`text-image-title ${block.text.titleSize || "normal"}`}>
+                    <h3
+                      className={`text-image-title ${
+                        block.text.titleSize || "normal"
+                      }`}
+                    >
                       {block.text.title}
                     </h3>
                   )}
@@ -957,7 +1011,11 @@ const ContentRenderer = ({
                   {block.text && (
                     <div className={`text-section ${textSectionClass}`}>
                       {block.text.title && (
-                        <h3 className={`image-textlist-title ${block.text.titleSize || "normal"}`}>
+                        <h3
+                          className={`image-textlist-title ${
+                            block.text.titleSize || "normal"
+                          }`}
+                        >
                           {block.text.title}
                         </h3>
                       )}

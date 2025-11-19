@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import '../styles/VideoModal.css';
+import React, { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import "../styles/VideoModal.css";
 
 interface VideoModalProps {
   isOpen: boolean;
@@ -11,7 +11,14 @@ interface VideoModalProps {
   autoPlay?: boolean;
 }
 
-const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, title, initialTime = 0, autoPlay = false }) => {
+const VideoModal: React.FC<VideoModalProps> = ({
+  isOpen,
+  onClose,
+  videoSrc,
+  title,
+  initialTime = 0,
+  autoPlay = false,
+}) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -39,7 +46,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
         try {
           await video.play();
         } catch (error) {
-          console.error('Error auto-playing video:', error);
+          console.error("Error auto-playing video:", error);
         }
       }
     };
@@ -48,11 +55,11 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
     const handlePause = () => setIsPlaying(false);
     const handleEnded = () => setIsPlaying(false);
 
-    video.addEventListener('timeupdate', handleTimeUpdate);
-    video.addEventListener('loadedmetadata', handleLoadedMetadata);
-    video.addEventListener('play', handlePlay);
-    video.addEventListener('pause', handlePause);
-    video.addEventListener('ended', handleEnded);
+    video.addEventListener("timeupdate", handleTimeUpdate);
+    video.addEventListener("loadedmetadata", handleLoadedMetadata);
+    video.addEventListener("play", handlePlay);
+    video.addEventListener("pause", handlePause);
+    video.addEventListener("ended", handleEnded);
 
     // Reset video when modal opens
     if (isOpen && video.src) {
@@ -63,11 +70,11 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
     }
 
     return () => {
-      video.removeEventListener('timeupdate', handleTimeUpdate);
-      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
-      video.removeEventListener('play', handlePlay);
-      video.removeEventListener('pause', handlePause);
-      video.removeEventListener('ended', handleEnded);
+      video.removeEventListener("timeupdate", handleTimeUpdate);
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      video.removeEventListener("play", handlePlay);
+      video.removeEventListener("pause", handlePause);
+      video.removeEventListener("ended", handleEnded);
     };
   }, [isDragging, isOpen, videoSrc, initialTime, autoPlay]);
 
@@ -82,7 +89,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
         await video.play();
       }
     } catch (error) {
-      console.error('Error playing video:', error);
+      console.error("Error playing video:", error);
     }
   };
 
@@ -95,7 +102,10 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
 
     const rect = progressBar.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
-    const newTime = Math.max(0, Math.min((clickX / rect.width) * duration, duration));
+    const newTime = Math.max(
+      0,
+      Math.min((clickX / rect.width) * duration, duration)
+    );
 
     video.currentTime = newTime;
     setCurrentTime(newTime);
@@ -113,7 +123,10 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
 
     const rect = progressBar.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
-    const newTime = Math.max(0, Math.min((clickX / rect.width) * duration, duration));
+    const newTime = Math.max(
+      0,
+      Math.min((clickX / rect.width) * duration, duration)
+    );
 
     video.currentTime = newTime;
     setCurrentTime(newTime);
@@ -136,9 +149,9 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
     };
 
     if (isDragging) {
-      document.addEventListener('mouseup', handleGlobalMouseUp);
+      document.addEventListener("mouseup", handleGlobalMouseUp);
       return () => {
-        document.removeEventListener('mouseup', handleGlobalMouseUp);
+        document.removeEventListener("mouseup", handleGlobalMouseUp);
       };
     }
   }, [isDragging]);
@@ -146,7 +159,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
   };
 
   const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
@@ -190,16 +203,11 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
               />
 
               <div className="video-controls">
-                <button
-                  className="play-pause-btn"
-                  onClick={togglePlayPause}
-                >
-                  {isPlaying ? '⏸' : '▶'}
+                <button className="play-pause-btn" onClick={togglePlayPause}>
+                  {isPlaying ? "⏸" : "▶"}
                 </button>
 
-                <div className="video-time">
-                  {formatTime(currentTime)}
-                </div>
+                <div className="video-time">{formatTime(currentTime)}</div>
 
                 <div
                   className="progress-container"
@@ -222,15 +230,11 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc, titl
                   </div>
                 </div>
 
-                <div className="video-time">
-                  {formatTime(duration)}
-                </div>
+                <div className="video-time">{formatTime(duration)}</div>
               </div>
             </div>
 
-            <div className="video-modal-title">
-              {title}
-            </div>
+            <div className="video-modal-title">{title}</div>
           </motion.div>
         </motion.div>
       )}

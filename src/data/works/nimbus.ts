@@ -35,18 +35,21 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/12.png",
+          caption: "12",
           alt: "NIMBUS floating hotel concept",
           size: "large",
         },
         {
           type: "text",
+          title: "Goal",
           content:
-            "**Goal:**  To create an immersive hospitality experience that merges technological innovation with environmental consciousness, offering a once-in-a-lifetime journey through the skies of **NEOM, Saudi Arabia**.",
+            "To create an immersive hospitality experience that merges technological innovation with environmental consciousness, offering a once-in-a-lifetime journey through the skies of **NEOM, Saudi Arabia**.",
           size: "normal",
         },
         {
           type: "image",
           src: "/work_details/nimbus/NIMBUS - visual selection (1).svg",
+          caption: "NIMBUS - visual selection (1)",
           alt: "NIMBUS project goals",
           size: "large",
         },
@@ -59,6 +62,7 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/NIMBUS - visual selection (6).svg",
+          caption: "NIMBUS - visual selection (6)",
           alt: "NIMBUS offerings overview",
           size: "medium",
         },
@@ -83,6 +87,7 @@ export const nimbusWork: WorkDetail = {
           },
           image: {
             src: "/work_details/nimbus/NIMBUS - visual selection (4).svg",
+            caption: "NIMBUS - visual selection (4)",
             alt: "NIMBUS strategy and research approach",
           },
         },
@@ -95,18 +100,21 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/2.png",
+          caption: "2",
           alt: "User research and journey mapping",
           size: "large",
         },
         {
           type: "image",
           src: "/work_details/nimbus/1bottom.png",
+          caption: "1bottom",
           alt: "User experience analysis",
           size: "large",
         },
         {
           type: "image",
           src: "/work_details/nimbus/3.png",
+          caption: "3",
           alt: "Target user personas and needs",
           size: "large",
         },
@@ -119,6 +127,7 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/4.png",
+          caption: "4",
           alt: "User journey and experience cycle",
           size: "full",
         },
@@ -137,18 +146,21 @@ export const nimbusWork: WorkDetail = {
           },
           image: {
             src: "/work_details/nimbus/NIMBUS - visual selection (3).svg",
+            caption: "NIMBUS - visual selection (3)",
             alt: "Form and structural concept",
           },
         },
         {
           type: "image",
           src: "/work_details/nimbus/5.png",
+          caption: "5",
           alt: "3D-printed structure details",
           size: "large",
         },
         {
           type: "image",
           src: "/work_details/nimbus/6.png",
+          caption: "6",
           alt: "Facade perforation and ventilation system",
           size: "large",
         },
@@ -167,18 +179,21 @@ export const nimbusWork: WorkDetail = {
           },
           image: {
             src: "/work_details/nimbus/NIMBUS - visual selection (2).svg",
+            caption: "NIMBUS - visual selection (2)",
             alt: "Spatial layout and zoning",
           },
         },
         {
           type: "image",
           src: "/work_details/nimbus/7left.png",
+          caption: "7left",
           alt: "Interior spatial organization",
           size: "large",
         },
         {
           type: "image",
           src: "/work_details/nimbus/8.png",
+          caption: "8",
           alt: "Floor-anchored furniture system",
           size: "large",
         },
@@ -196,6 +211,7 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/7right.png",
+          caption: "7right",
           alt: "Material palette and technology integration",
           size: "medium",
         },
@@ -218,6 +234,7 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/Screenshot 2025-10-21 011213.png",
+          caption: "Screenshot 2025-10-21 011213",
           alt: "Interior experience overview",
           size: "large",
         },
@@ -230,6 +247,7 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/Screenshot 2025-10-21 011340.png",
+          caption: "Screenshot 2025-10-21 011340",
           alt: "Living lounge with interactive systems",
           size: "large",
         },
@@ -242,6 +260,7 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/Screenshot 2025-10-21 011420.png",
+          caption: "Screenshot 2025-10-21 011420",
           alt: "Digital connectivity and interactive window",
           size: "large",
         },
@@ -254,6 +273,7 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/Screenshot 2025-10-21 011506.png",
+          caption: "Screenshot 2025-10-21 011506",
           alt: "Bedroom and privacy zones",
           size: "large",
         },
@@ -273,11 +293,13 @@ export const nimbusWork: WorkDetail = {
           images: [
             {
               src: "/work_details/nimbus/10middle.png",
+              caption: "10middle",
               alt: "Structural system diagram",
               size: 38,
             },
             {
               src: "/work_details/nimbus/10right.png",
+              caption: "10right",
               alt: "Envelope assembly details",
               size: 59,
             },
@@ -294,12 +316,14 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/11.png",
+          caption: "11",
           alt: "Adaptive pergola roof system",
           size: "large",
         },
         {
           type: "image",
           src: "/work_details/nimbus/12.png",
+          caption: "12",
           alt: "Pergola assembly and disassembly states",
           size: "large",
         },
@@ -317,6 +341,7 @@ export const nimbusWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/nimbus/13.png",
+          caption: "13",
           alt: "Environmental integration and floating ecology",
           size: "large",
         },
@@ -347,6 +372,7 @@ export const nimbusWork: WorkDetail = {
           },
           image: {
             src: "/work_details/nimbus/NIMBUS - visual selection (5).svg",
+            caption: "NIMBUS - visual selection (5)",
             alt: "Project impact and outcomes",
           },
         },
@@ -365,6 +391,7 @@ export const nimbusWork: WorkDetail = {
           },
           image: {
             src: "/work_details/nimbus/NIMBUS - visual selection.svg",
+            caption: "NIMBUS - visual selection",
             alt: "Reflection and future directions",
           },
         },

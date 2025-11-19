@@ -29,50 +29,17 @@ export const hyphaeNestWork: WorkDetail = {
       blocks: [
         {
           type: "text",
+          title: "Goal and Offering",
           content:
-            "**Hyphae Nest** is a conceptual architectural project envisioning a **utopian, eco-friendly future**. It reimagines the built environment as a **living organism**, fostering sustainability and community connection through **bio-based materials**. The project's goal is to promote **ecological harmony** while strengthening **family and community bonds** in a self-sustaining habitat.",
+            "**Hyphae Nest** is a conceptual architectural project envisioning a **utopian, eco-friendly future**. It reimagines the built environment as a **living organism**, fostering sustainability and community connection through **mycilium**. The project's goal is to promote **ecological harmony** while strengthening **family and community bonds** in a self-sustaining habitat.",
           size: "normal",
         },
         {
           type: "image",
-          src: "/work_details/hyphae_nest/hero.png",
+          src: "/work_details/hyphae_nest/overview.png",
+          caption: "hero",
           alt: "Hyphae Nest overview visualization",
-          size: "medium",
-        },
-        {
-          type: "text",
-          content:
-            "The project bridges ecology and human life, creating a **flourishing habitat** where environmental well-being and social connection coexist. Through the use of **mycelium**, the design transforms construction into a regenerative act, redefining architecture as part of a living ecosystem rather than a static object.",
-          size: "normal",
-        },
-        {
-          type: "image-pair",
-          images: [
-            {
-              src: "/work_details/hyphae_nest/Hyphae Nest - visual selection.svg",
-              alt: "Ecology and human life connection diagram",
-              size: 43,
-            },
-            {
-              src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (1).svg",
-              alt: "Mycelium construction concept",
-              size: 56,
-            },
-          ],
-          layout: "equal",
-          gap: "medium",
-        },
-        {
-          type: "text",
-          content:
-            "Hyphae Nest explores **mycelium**—a regenerative, biodegradable, and lightweight material—as a sustainable construction medium. The architecture is envisioned to **grow, heal, and return to the earth**, integrating structure and nature into one continuous cycle.",
-          size: "normal",
-        },
-        {
-          type: "image",
-          src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (2).svg",
-          alt: "Mycelium material properties and lifecycle",
-          size: "medium",
+          size: "xlarge",
         },
       ],
     },
@@ -80,198 +47,192 @@ export const hyphaeNestWork: WorkDetail = {
       title: "Strategy & Analysis",
       blocks: [
         {
-          type: "text-image",
-          layout: "text-right", // image on left, text on right
-          textWidth: 60,
-          imageWidth: 60,
-          image: {
-            src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (3).svg",
-            alt: "Diagram of hyphal networks and architectural translation",
-            objectFit: "cover",
-          },
-          text: {
-            content:
-              "The strategy behind Hyphae Nest draws inspiration from **hyphal networks**, the microscopic threads that compose fungal mycelium. These biological systems demonstrate **connection, exchange, and resilience**, offering a natural model for rethinking both **architectural organization** and **community structure**.\n\n**Design Foundation:**\nEach design principle mirrors a biological function:\n• **Connection:** Mycelial threads model how buildings can share resources and energy.\n• **Exchange:** The flow of nutrients parallels spatial and social communication.\n• **Resilience:** Growth patterns adapt to stress and change, shaping flexible forms.",
-            size: "normal",
-          },
-        },
-        {
-          type: "text-image",
-          layout: "text-right",
-          text: {
-            content:
-              "**Multidisciplinary Study:**\nThe analytical framework merges **material ecology**, **environmental psychology**, and **social design**, positioning architecture as a mediator between human emotion and ecological systems.",
-            size: "normal",
-          },
-          image: {
-            src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (4).svg",
-            alt: "Diagram showing multidisciplinary study framework connecting ecology, psychology, and design",
-          },
-        },
-        {
           type: "text",
+          title: "Architectural Strategy",
           content:
-            "**Architectural Strategy:**\nThe architectural strategy draws from the **biological intelligence of mycelium**, a natural system that thrives through interconnection, exchange, and adaptability. By translating fungal growth logic into spatial design, the project establishes a regenerative framework for architecture.",
+            "The architectural strategy draws from the **biological intelligence of mycelium**, a natural system that thrives through interconnection, exchange, and adaptability. By translating fungal growth logic into spatial design, the project establishes a regenerative framework for architecture.",
         },
         {
           type: "image-pair",
           images: [
+            {
+              src: "/work_details/hyphae_nest/Hyphae Nest - visual selection.svg",
+              caption: "Hyphae Nest - visual selection",
+              alt: "Hyphae Nest visual selection",
+              size: 45,
+            },
             {
               src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (5).svg",
-              alt: "Hyphae Nest visual selection left",
-              size: 46,
-            },
-            {
-              src: "/work_details/hyphae_nest/Hyphae - Mycelium Strategy.png",
-              alt: "Hyphae Nest visual selection right",
+              caption: "Hyphae Nest - visual selection (5)",
+              alt: "Hyphae Nest visual selection 5",
+              size: 45,
+              marginTop: "1.5rem",
             },
           ],
           layout: "equal",
           gap: "medium",
         },
         {
+          type: "image",
+          src: "/work_details/hyphae_nest/Hyphae - Mycelium Strategy.png",
+          caption: "Hyphae - Mycelium Strategy",
+          alt: "Mycelium strategy diagram",
+          size: "xlarge",
+        },
+        {
+          type: "text",
+          title: "Persona Strategy",
+          content: "The prototype home is designed for a family of three:",
+          list: {
+            items: [
+              "A creative director thrives on innovative projects and quality time with family",
+              "A game designer passionate about games, connection with friends and family",
+              "A 10-year-old child whose curiosity drives play, exploration, and connection with nature",
+            ],
+            listType: "unordered",
+          },
+          size: "normal",
+        },
+        {
           type: "text",
           content:
-            "**Persona Strategy:**\nThe prototype home is designed for a family of three:\n• A creative director thrives on innovative projects and quality time with family\n• A game designer passionate about games, connection with friends and family\n• A 10-year-old child whose curiosity drives play, exploration, and connection with nature.\nThe family dynamic informs spatial decisions—shared gathering zones, creative workspaces, and quiet alcoves—reflecting the tension between productivity, play, and reflection.",
+            "The family dynamic informs spatial decisions—shared gathering zones, creative workspaces, and quiet alcoves—reflecting the tension between productivity, play, and reflection.",
           size: "normal",
         },
         {
           type: "image-pair",
           images: [
             {
-              src: "/work_details/hyphae_nest/4right.png",
-              alt: "Hyphae Nest visual selection left",
-              size: 60,
+              src: "/work_details/hyphae_nest/4left.png",
+              caption: "4left",
+              alt: "Hyphae Nest visual selection right",
+              size: 20,
+              marginTop: "2rem",
             },
             {
-              src: "/work_details/hyphae_nest/4left.png",
-              alt: "Hyphae Nest visual selection right",
-              size: 33,
+              src: "/work_details/hyphae_nest/4right.png",
+              caption: "4right",
+              alt: "Hyphae Nest visual selection left",
+              size: 45,
             },
           ],
           layout: "equal",
-          gap: "medium",
+          gap: "xlarge",
         },
         {
           type: "text",
+          title: "Spatial Relationships",
           content:
-            "**Spatial Relationships:**\nBehavioral mapping and adjacency studies translate these relationships into zones of interaction and retreat, establishing a framework for cohabitation and regeneration.\n**Early sketches:**\nInitial explorations focused on clustering and vertical circulation—experimenting with **mycelial stacking**, porous layering, and integration with vegetation.",
+            "Initial explorations focused on clustering and vertical circulation—experimenting with **mycelial stacking**, porous layering, and integration with vegetation. The resulting form evolves into a **multi-level home** with garden terraces and branching supports that lift spaces off the ground—mimicking fungal roots connecting multiple ecosystems.",
           size: "normal",
         },
         {
-          type: "image-pair",
+          type: "image-grid",
           images: [
             {
               src: "/work_details/hyphae_nest/2left.png",
-              alt: "Hyphae Nest visual selection left",
+              caption: "2left",
+              alt: "Hyphae Nest visual selection 1",
+              height: "20rem",
+              objectFit: "contain",
             },
             {
               src: "/work_details/hyphae_nest/2right.png",
-              alt: "Hyphae Nest visual selection right",
-              size: 36,
-            },
-          ],
-          layout: "left-heavy",
-          gap: "medium",
-        },
-        {
-          type: "text",
-          content:
-            "The resulting form evolves into a **multi-level home** with garden terraces and branching supports that lift spaces off the ground—mimicking fungal roots connecting multiple ecosystems.",
-          size: "normal",
-        },
-        {
-          type: "image-pair",
-          images: [
-            {
-              src: "/work_details/hyphae_nest/3left.png",
-              alt: "Hyphae Nest visual selection left",
-              size: 34,
+              caption: "2right",
+              alt: "Hyphae Nest visual selection 2",
+              height: "20rem",
             },
             {
               src: "/work_details/hyphae_nest/3right.png",
-              alt: "Hyphae Nest visual selection right",
-              size: 39,
+              caption: "3right",
+              alt: "Hyphae Nest visual selection 4",
+              height: "20rem",
+            },
+            {
+              src: "/work_details/hyphae_nest/3left.png",
+              caption: "3left",
+              alt: "Hyphae Nest visual selection 3",
+              height: "20rem",
             },
           ],
-          layout: "equal",
+          columns: 4,
           gap: "medium",
         },
         {
           type: "text",
+          title: "Spatial Strategy",
           content:
-            "**Spatial Strategy:**\nEach space supports coexistence: a **communal kitchen/bar** at the core, surrounded by flexible study and relaxation areas.\nPrivate rooms are adapted to the family's creative routines—acoustic separation for work, visual openness for shared experiences.",
+            "Each space supports coexistence: a communal kitchen/bar at the core, surrounded by flexible study and relaxation areas. Private rooms are adapted to the family's creative routines—gaming and entertainment, work areas, book atic, outdoor garden, etc.",
           size: "normal",
+        },
+        {
+          type: "text",
+          content:
+            "The tall columns allow less disturbance to the surrounding forest, and taller height provides more sunlight. The space between tall columns form natural community playground.",
         },
         {
           type: "image-pair",
           images: [
             {
               src: "/work_details/hyphae_nest/6.png",
+              caption: "6",
               alt: "Hyphae Nest visual selection left",
               size: 54,
             },
             {
               src: "/work_details/hyphae_nest/7right.png",
+              caption: "7right",
               alt: "Hyphae Nest visual selection right",
               size: 38,
+              marginTop: "2rem",
             },
           ],
           layout: "equal",
           gap: "medium",
         },
-      ],
-    },
-    designSolution: {
-      title: "Design Solution",
-      blocks: [
         {
           type: "text",
-          content:
-            "**Human-Centered Experience:**\nHyphae Nest embodies interconnectedness—fostering shared spaces that strengthen community and family relationships. The fluid circulation encourages spontaneous encounters, while semi-private alcoves allow moments of reflection. Natural light filters through porous walls, producing a calming, biophilic atmosphere that aligns human rhythms with environmental cycles.",
+          title: "Human-Centered Experience",
+          content: "**Spatially, the structure integrates:**",
+          list: {
+            items: [
+              "Interconnected communal areas for collective gathering",
+              "Fluid circulation that fosters spontaneous interaction",
+              "Semi-private alcoves for reflection and rest",
+              "Biophilic atmosphere through filtered light and organic materiality",
+            ],
+            listType: "unordered",
+          },
           size: "normal",
         },
         {
-          type: "image-trio",
-          leftImage: {
-            src: "/work_details/hyphae_nest/5left.png",
-            alt: "Main architectural render showing structure growth form",
-            size: 51,
-          },
-          rightImages: [
+          type: "image",
+          src: "/work_details/hyphae_nest/5left.png",
+          size: "full",
+        },
+        { type: "title", content: "Floor Plans", size: "large" },
+        {
+          type: "image",
+          src: "/work_details/hyphae_nest/floor_plan.png",
+          size: "full",
+        },
+        { type: "title", content: "Interior Strategy", size: "large" },
+        {
+          type: "image-pair",
+          images: [
             {
-              src: "/work_details/hyphae_nest/5topright.png",
-              alt: "Close-up view of mycelium panel textures",
-              size: 18,
+              src: "/work_details/hyphae_nest/8left.png",
+              caption: "8left",
+              alt: "Interior view 1",
+              size: 40,
             },
             {
-              src: "/work_details/hyphae_nest/5bottomright.png",
-              alt: "Interior modular system detail",
+              src: "/work_details/hyphae_nest/8middle.png",
+              caption: "8middle",
+              alt: "Interior view 2",
               size: 40,
             },
           ],
-          gap: "medium",
-        },
-        {
-          type: "text",
-          content:
-            "**Spatially, the structure integrates:**\n• Interconnected communal areas for collective gathering.\n• Fluid circulation that fosters spontaneous interaction.\n• Semi-private alcoves for reflection and rest.\n• Biophilic atmosphere through filtered light and organic materiality.",
-          size: "normal",
-        },
-        {
-          type: "image-pair",
-          images: [
-            {
-              src: "/work_details/hyphae_nest/6bottomleft.png",
-              alt: "Hyphae Nest visual selection left",
-              size: 48,
-            },
-            {
-              src: "/work_details/hyphae_nest/6bottomright.png",
-              alt: "Hyphae Nest visual selection right",
-              size: 51,
-            },
-          ],
           layout: "equal",
           gap: "medium",
         },
@@ -279,25 +240,24 @@ export const hyphaeNestWork: WorkDetail = {
           type: "image-pair",
           images: [
             {
-              src: "/work_details/hyphae_nest/7left.png",
-              alt: "Hyphae Nest visual selection left",
-              size: 43,
+              src: "/work_details/hyphae_nest/8right.png",
+              caption: "8right",
+              alt: "Interior view 3",
+              size: 40,
             },
             {
-              src: "/work_details/hyphae_nest/right.png",
-              alt: "Hyphae Nest visual selection right",
-              size: 43,
+              src: "/work_details/hyphae_nest/9left.png",
+              caption: "9left",
+              alt: "Interior view 4",
+              size: 40,
             },
           ],
           layout: "equal",
           gap: "medium",
         },
-
         {
-          type: "text",
-          content:
-            "The architecture operates as both a social catalyst and a living material system, synchronizing human rhythm with environmental cycles.",
-          size: "normal",
+          type: "title",
+          content: "Interior Strategy",
         },
         {
           type: "image-trio",
@@ -336,6 +296,63 @@ export const hyphaeNestWork: WorkDetail = {
             },
           ],
           gap: "medium",
+          spacing: "tight",
+        },
+      ],
+    },
+    designSolution: {
+      title: "Design Solution",
+      blocks: [
+        {
+          type: "image-pair",
+          images: [
+            {
+              src: "/work_details/hyphae_nest/ds1.png",
+              caption: "ds1",
+              alt: "Design solution 1",
+            },
+            {
+              src: "/work_details/hyphae_nest/ds2.png",
+              caption: "ds2",
+              alt: "Design solution 2",
+            },
+          ],
+          layout: "equal",
+          gap: "medium",
+        },
+        {
+          type: "image-pair",
+          images: [
+            {
+              src: "/work_details/hyphae_nest/ds3.png",
+              caption: "ds3",
+              alt: "Design solution 3",
+            },
+            {
+              src: "/work_details/hyphae_nest/ds4.png",
+              caption: "ds4",
+              alt: "Design solution 4",
+            },
+          ],
+          layout: "equal",
+          gap: "medium",
+        },
+        {
+          type: "image-pair",
+          images: [
+            {
+              src: "/work_details/hyphae_nest/ds5.png",
+              caption: "ds5",
+              alt: "Design solution 5",
+            },
+            {
+              src: "/work_details/hyphae_nest/ds6.png",
+              caption: "ds6",
+              alt: "Design solution 6",
+            },
+          ],
+          layout: "equal",
+          gap: "medium",
         },
       ],
     },
@@ -343,16 +360,27 @@ export const hyphaeNestWork: WorkDetail = {
       title: "Impact",
       blocks: [
         {
-          type: "image",
-          src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (7).svg",
-          alt: "Project impact overview",
-          size: "medium",
-        },
-        {
-          type: "text",
-          content:
-            "Hyphae Nest challenges conventional notions of permanence by proposing **living architecture**—structures that evolve, decay, and regenerate with their surroundings.\n**Key Outcomes:**\n• Demonstrated the **architectural viability** of mycelium as a structural and ecological material.\n• Developed a **modular system** inspired by fungal networks to support growth and adaptability.\n• Applied **biophilic and social design principles** to promote well-being and interconnection.\n• Reframed sustainability through **biodegradability and circular material lifecycles**.\nThrough speculative design and research, Hyphae Nest advances the concept of **regenerative living**, envisioning an architecture that **coexists with ecosystems** instead of consuming them.",
-          size: "normal",
+          type: "image-textlist",
+          layout: "image-left",
+          imageWidth: 45,
+          textWidth: 55,
+          gap: "medium",
+          image: {
+            src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (7).svg",
+            caption: "Hyphae Nest - visual selection (7)",
+            alt: "Project impact overview",
+          },
+          list: {
+            title: "\nKey Outcomes",
+            listType: "unordered",
+            items: [
+              "Demonstrated the **architectural viability** of mycelium as a structural and ecological material.",
+              "Developed a **modular system** inspired by fungal networks to support growth and adaptability.",
+              "Applied **biophilic and social design principles** to promote well-being and interconnection.",
+              "Reframed sustainability through **biodegradability and circular material lifecycles**.",
+            ],
+            size: "normal",
+          },
         },
       ],
     },
@@ -360,16 +388,21 @@ export const hyphaeNestWork: WorkDetail = {
       title: "Reflection",
       blocks: [
         {
-          type: "image",
-          src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (8).svg",
-          alt: "Project impact overview",
-          size: "medium",
-        },
-        {
-          type: "text",
-          content:
-            "Designing Hyphae Nest revealed how deeply **material ecology shapes social connection**. Translating the logic of fungal growth into architecture became both a **study in sustainability** and a **meditation on coexistence**.\n\n**Key Challenge:**\nBalancing speculative form-making with realistic material performance—ensuring biological aesthetics remained technically feasible.\n\n**Future Directions:**\nThe next phase involves **biotechnological prototyping**—collaborating with environmental scientists to fabricate with **living materials**. These prototypes would explore **biodegradation, regrowth, and restoration** in real-world contexts, positioning architecture as an **active participant in ecological healing.**",
-          size: "normal",
+          type: "text-image",
+          layout: "text-right",
+          textWidth: 55,
+          imageWidth: 45,
+          text: {
+            title: "\nFuture Directions",
+            content:
+              "The next phase involves **biotechnological prototyping**—collaborating with environmental scientists to fabricate with **living materials**. These prototypes would explore **biodegradation, regrowth, and restoration** in real-world contexts, positioning architecture as an **active participant in ecological healing.**",
+            size: "normal",
+          },
+          image: {
+            src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (8).svg",
+            caption: "Hyphae Nest - visual selection (8)",
+            alt: "Project impact overview",
+          },
         },
       ],
     },

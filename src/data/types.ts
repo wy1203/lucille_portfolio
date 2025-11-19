@@ -1,6 +1,7 @@
 export type ContentBlockType =
   | "text"
   | "title"
+  | "banner-title"
   | "list"
   | "image"
   | "image-pair"
@@ -20,11 +21,15 @@ export interface BaseContentBlock {
 
 export interface TextBlock extends BaseContentBlock {
   type: "text";
-  content: string;
+  content?: string;
   size?: "normal" | "large" | "small";
   emphasis?: boolean;
   title?: string;
   titleSize?: "normal" | "large" | "small";
+  list?: {
+    items: string[];
+    listType?: "ordered" | "unordered";
+  };
 }
 
 export interface TitleBlock extends BaseContentBlock {
@@ -37,6 +42,14 @@ export interface TitleBlock extends BaseContentBlock {
   lineHeight?: string; // CSS line-height value
   letterSpacing?: string; // CSS letter-spacing value
   textTransform?: "none" | "uppercase" | "lowercase" | "capitalize";
+}
+
+export interface BannerTitleBlock extends BaseContentBlock {
+  type: "banner-title";
+  content: string;
+  align?: "left" | "center" | "right";
+  size?: "small" | "medium" | "large";
+  background?: string;
 }
 
 export interface ListBlock extends BaseContentBlock {
@@ -67,7 +80,7 @@ export interface ImagePairBlock extends BaseContentBlock {
     marginBottom?: string;
   }>;
   layout?: "equal" | "left-heavy" | "right-heavy" | "top-bottom" | "custom";
-  gap?: "small" | "medium" | "large";
+  gap?: "small" | "medium" | "large" | "xlarge";
 }
 
 export interface ImageTrioBlock extends BaseContentBlock {
@@ -201,6 +214,7 @@ export interface ImageTextListBlock extends BaseContentBlock {
 export type ContentBlock =
   | TextBlock
   | TitleBlock
+  | BannerTitleBlock
   | ListBlock
   | ImageBlock
   | ImagePairBlock

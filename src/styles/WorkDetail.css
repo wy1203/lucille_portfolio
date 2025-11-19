@@ -215,6 +215,35 @@
   display: inline-block;
 }
 
+.banner-title-wrapper {
+  width: 100%;
+}
+
+.banner-title {
+  font-weight: 900;
+  text-align: left;
+  font-size: 1.3rem;
+  font-family: "Montserrat";
+  margin-bottom: 2%;
+  background: linear-gradient(135deg, #0054f3 0%, #ff743a 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.banner-title.size-small {
+  font-size: 1rem;
+}
+
+.banner-title.size-medium {
+  font-size: 1.15rem;
+}
+
+.banner-title.size-large {
+  font-size: 1.3rem;
+}
+
 .work-section p {
   line-height: 1.8;
   color: #333;
@@ -396,13 +425,51 @@
   color: #000000;
 }
 
-/* Title Blocks */
-.title-block {
-  margin: 0;
+/* Text Block Lists */
+.text-block-list {
+  margin: 1rem 0 0 0;
+  padding-left: 2.5rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.text-block-list.small {
+  font-size: 0.9rem;
+}
+
+.text-block-list.normal {
   font-size: 1rem;
+}
+
+.text-block-list.large {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.text-block-list li {
+  margin-bottom: 0.5rem;
+}
+
+.text-block-list li:last-child {
+  margin-bottom: 0;
+}
+
+.text-block-list strong {
   font-weight: 600;
   color: #000000;
-  line-height: 1.3;
+}
+
+.text-block-list em {
+  font-style: italic;
+  color: #000000;
+}
+
+/* Title Blocks */
+.title-block {
+  margin-left: 50px;
+  margin-right: 50px;
+  font-weight: 600;
+  color: #000000;
 }
 
 /* Inline Formatting */
@@ -631,10 +698,10 @@
 }
 
 .image-textlist-block .list-section h4 {
-  margin: 0 0 0.75rem 0;
-  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
   font-weight: 600;
-  color: #0a0a0a;
+  color: #000000;
 }
 
 .image-textlist-block .list-section .list-block {
@@ -815,6 +882,10 @@
   gap: 5rem;
 }
 
+.image-pair.gap-xlarge {
+  gap: 10rem;
+}
+
 .image-pair .image-item {
   display: flex;
   flex-direction: column;
@@ -944,7 +1015,7 @@
   width: 100%;
   height: 100%;
   border-radius: 8px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .image-trio .right-images {
@@ -970,14 +1041,14 @@
   flex-direction: column;
   align-items: center;
   flex-basis: var(--image-height, 1fr);
+  min-height: 0;
 }
 
 .image-trio .right-images .image-item img {
   width: 100%;
   height: 100%;
   border-radius: 8px;
-  object-fit: cover;
-  min-height: 150px;
+  object-fit: contain;
 }
 
 .image-trio {

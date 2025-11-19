@@ -39,6 +39,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/BikeWalk Tompkins overview 2.svg",
+          caption: "BikeWalk Tompkins overview 2",
           alt: "BikeWalk design vision",
           size: "medium",
         },
@@ -51,6 +52,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/BikeWalk Tompkins - overview 1.svg",
+          caption: "BikeWalk Tompkins - overview 1",
           alt: "Multifunctional community hub concept",
           size: "medium",
         },
@@ -74,6 +76,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/BikeWalk Tompkins - strategy analysis.svg",
+          caption: "BikeWalk Tompkins - strategy analysis",
           alt: "Research and analysis overview",
           size: "medium",
         },
@@ -92,6 +95,7 @@ export const bikewalkWork: WorkDetail = {
           },
           image: {
             src: "/work_details/bikewalk/BikeWalk Tompkins - visual selection.svg",
+            caption: "BikeWalk Tompkins - visual selection",
             alt: "Key findings from field research",
           },
         },
@@ -116,6 +120,7 @@ export const bikewalkWork: WorkDetail = {
           },
           image: {
             src: "/work_details/bikewalk/BikeWalk Tompkins - visual selection (1).svg",
+            caption: "BikeWalk Tompkins - visual selection (1)",
             alt: "Design insights and strategies",
           },
         },
@@ -146,6 +151,7 @@ export const bikewalkWork: WorkDetail = {
           },
           image: {
             src: "/work_details/bikewalk/BikeWalk Tompkins - visual selection (2).svg",
+            caption: "BikeWalk Tompkins - visual selection (2)",
             alt: "Spatial design concept",
           },
         },
@@ -154,11 +160,13 @@ export const bikewalkWork: WorkDetail = {
           images: [
             {
               src: "/work_details/bikewalk/5left.png",
+              caption: "5left",
               alt: "Material palette and samples",
               size: 75,
             },
             {
               src: "/work_details/bikewalk/5right.png",
+              caption: "5right",
               alt: "Material application study",
               size: 31,
             },
@@ -175,6 +183,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/6.png",
+          caption: "6",
           alt: "Floor plan reorganization",
           size: "large",
         },
@@ -187,6 +196,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/7.png",
+          caption: "7",
           alt: "User circulation path",
           size: "large",
         },
@@ -199,6 +209,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/8.png",
+          caption: "8",
           alt: "Interior design features",
           size: "large",
         },
@@ -211,6 +222,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/9.png",
+          caption: "9",
           alt: "Exterior facade design",
           size: "large",
         },
@@ -227,16 +239,19 @@ export const bikewalkWork: WorkDetail = {
           horizontalImages: [
             {
               src: "/work_details/bikewalk/4middle.png",
+              caption: "4middle",
               alt: "Branding materials overview",
               size: 33,
             },
             {
               src: "/work_details/bikewalk/4left.png",
+              caption: "4left",
               alt: "Logo and visual identity",
               size: 34,
             },
             {
               src: "/work_details/bikewalk/4right.png",
+              caption: "4right",
               alt: "Brochure and print materials",
               size: 32,
             },
@@ -255,16 +270,19 @@ export const bikewalkWork: WorkDetail = {
           horizontalImages: [
             {
               src: "/work_details/bikewalk/3left.png",
+              caption: "3left",
               alt: "Website homepage design",
               size: 43,
             },
             {
               src: "/work_details/bikewalk/3middle.png",
+              caption: "3middle",
               alt: "Website services page",
               size: 29,
             },
             {
               src: "/work_details/bikewalk/3right.png",
+              caption: "3right",
               alt: "Website contact page",
               size: 29,
             },
@@ -281,6 +299,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/Screenshot 2025-10-20 233957.png",
+          caption: "Screenshot 2025-10-20 233957",
           alt: "Vertical bike rack system design",
           size: "large",
         },
@@ -293,6 +312,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/Screenshot 2025-10-20 234015.png",
+          caption: "Screenshot 2025-10-20 234015",
           alt: "Bike rack usage process visualization",
           size: "large",
         },
@@ -310,6 +330,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/BikeWalk Tompkins - impact.svg",
+          caption: "BikeWalk Tompkins - impact",
           alt: "Project impact overview",
           size: "medium",
         },
@@ -333,6 +354,7 @@ export const bikewalkWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/bikewalk/BikeWalk Tompkins - reflection.svg",
+          caption: "BikeWalk Tompkins - reflection",
           alt: "Future vision and reflection",
           size: "medium",
         },
