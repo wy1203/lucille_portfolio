@@ -67,6 +67,7 @@ export interface ImageBlock extends BaseContentBlock {
   caption?: string;
   size?: "small" | "medium" | "large" | "xlarge" | "full";
   aspectRatio?: "square" | "landscape" | "portrait" | "auto";
+  align?: "left" | "center" | "right"; // Default: center
 }
 
 export interface ImagePairBlock extends BaseContentBlock {

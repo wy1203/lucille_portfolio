@@ -296,7 +296,7 @@ const ContentRenderer = ({
         return "calc(var(--block-spacing, 2.5rem) * 1.6)";
       case "normal":
       default:
-        return "var(--block-spacing, 2.5rem)";
+        return "var(--block-spacing, 1.5rem)";
     }
   };
 
@@ -511,10 +511,11 @@ const ContentRenderer = ({
             );
 
           case "image":
+            const imageAlign = block.align || "center";
             return (
               <div
                 key={index}
-                className={`image-block ${block.size || "medium"}`}
+                className={`image-block ${block.size || "medium"} align-${imageAlign}`}
                 style={marginStyle}
               >
                 <img
