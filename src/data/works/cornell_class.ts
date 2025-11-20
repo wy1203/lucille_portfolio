@@ -35,13 +35,11 @@ export const cornellClassWork: WorkDetail = {
           images: [
             {
               src: "/work_details/cornell_class/hero.png",
-              caption: "hero",
               alt: "Riley Robb Hall overview",
               size: 40,
             },
             {
               src: "/work_details/cornell_class/12.png",
-              caption: "12",
               alt: "Rockefeller Hall overview",
               size: 47,
             },
@@ -63,7 +61,6 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/cornell_class/1left.png",
-          caption: "1left",
           alt: "Riley Robb Hall existing conditions",
           size: "xlarge",
         },
@@ -89,13 +86,11 @@ export const cornellClassWork: WorkDetail = {
           images: [
             {
               src: "/work_details/cornell_class/3.png",
-              caption: "3",
               alt: "Riley Robb Hall spatial analysis",
               size: 58,
             },
             {
               src: "/work_details/cornell_class/13.png",
-              caption: "13",
               alt: "Riley Robb Hall design response",
               size: 32,
             },
@@ -111,7 +106,6 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/cornell_class/6.png",
-          caption: "6",
           size: "large",
         },
         {
@@ -124,14 +118,12 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/cornell_class/10.png",
-          caption: "10",
           alt: "Material palette and design details",
           size: "xlarge",
         },
         {
           type: "image",
           src: "/work_details/cornell_class/7.png",
-          caption: "7",
           alt: "Riley Robb Hall ceiling and lighting design",
           size: "xlarge",
         },
@@ -144,7 +136,6 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/cornell_class/1right.png",
-          caption: "1right",
           alt: "Riley Robb Hall existing conditions",
           size: "xlarge",
         },
@@ -153,13 +144,11 @@ export const cornellClassWork: WorkDetail = {
           images: [
             {
               src: "/work_details/cornell_class/4.png",
-              caption: "4",
               alt: "Rockefeller Hall spatial analysis",
               size: 57,
             },
             {
               src: "/work_details/cornell_class/14.png",
-              caption: "14",
               alt: "Rockefeller Hall design response",
               size: 33,
             },
@@ -177,13 +166,11 @@ export const cornellClassWork: WorkDetail = {
           images: [
             {
               src: "/work_details/cornell_class/8left.png",
-              caption: "8left",
               alt: "Rockefeller Hall layout option 1",
               size: 30,
             },
             {
               src: "/work_details/cornell_class/8right.png",
-              caption: "8right",
               alt: "Rockefeller Hall layout option 2",
               size: 35,
               marginTop: "2rem",
@@ -201,14 +188,12 @@ export const cornellClassWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/cornell_class/11.png",
-          caption: "11",
           alt: "Rockefeller Hall acoustics and lighting systems",
           size: "xlarge",
         },
         {
           type: "image",
           src: "/work_details/cornell_class/9.png",
-          caption: "9",
           alt: "Rockefeller Hall complete interior view",
           size: "xlarge",
         },
@@ -228,13 +213,11 @@ export const cornellClassWork: WorkDetail = {
           images: [
             {
               src: "/work_details/cornell_class/15.png",
-              caption: "15",
               alt: "Riley Robb Hall interior perspective",
               size: 60,
             },
             {
               src: "/work_details/cornell_class/herocopy.png",
-              caption: "hero",
               alt: "Riley Robb Hall complete view",
               size: 41,
             },
@@ -254,19 +237,16 @@ export const cornellClassWork: WorkDetail = {
           horizontalImages: [
             {
               src: "/work_details/cornell_class/12copy.png",
-              caption: "12",
               alt: "Classroom 2 perspective",
               size: 31.33,
             },
             {
               src: "/work_details/cornell_class/16.png",
-              caption: "16",
               alt: "Classroom 2 seating layout",
               size: 36.33,
             },
             {
               src: "/work_details/cornell_class/17.png",
-              caption: "17",
               alt: "Classroom 2 lighting concept",
               size: 35.33,
             },
@@ -289,7 +269,6 @@ export const cornellClassWork: WorkDetail = {
           },
           image: {
             src: "/work_details/cornell_class/Cornell Classroom - visual selection (1).svg",
-            caption: "Cornell Classroom - visual selection (1)",
             alt: "Project impact summary",
           },
           list: {
@@ -322,7 +301,6 @@ export const cornellClassWork: WorkDetail = {
           },
           image: {
             src: "/work_details/cornell_class/Cornell Classroom - visual selection.svg",
-            caption: "Cornell Classroom - visual selection",
             alt: "Reflection and future directions",
           },
           list: {

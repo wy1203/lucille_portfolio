@@ -37,7 +37,6 @@ export const hyphaeNestWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/hyphae_nest/overview.png",
-          caption: "hero",
           alt: "Hyphae Nest overview visualization",
           size: "xlarge",
         },
@@ -57,13 +56,11 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/Hyphae Nest - visual selection.svg",
-              caption: "Hyphae Nest - visual selection",
               alt: "Hyphae Nest visual selection",
               size: 45,
             },
             {
               src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (5).svg",
-              caption: "Hyphae Nest - visual selection (5)",
               alt: "Hyphae Nest visual selection 5",
               size: 45,
               marginTop: "1.5rem",
@@ -75,7 +72,6 @@ export const hyphaeNestWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/hyphae_nest/Hyphae - Mycelium Strategy.png",
-          caption: "Hyphae - Mycelium Strategy",
           alt: "Mycelium strategy diagram",
           size: "xlarge",
         },
@@ -104,14 +100,12 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/4left.png",
-              caption: "4left",
               alt: "Hyphae Nest visual selection right",
               size: 20,
               marginTop: "2rem",
             },
             {
               src: "/work_details/hyphae_nest/4right.png",
-              caption: "4right",
               alt: "Hyphae Nest visual selection left",
               size: 45,
             },
@@ -131,26 +125,22 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/2left.png",
-              caption: "2left",
               alt: "Hyphae Nest visual selection 1",
               height: "20rem",
               objectFit: "contain",
             },
             {
               src: "/work_details/hyphae_nest/2right.png",
-              caption: "2right",
               alt: "Hyphae Nest visual selection 2",
               height: "20rem",
             },
             {
               src: "/work_details/hyphae_nest/3right.png",
-              caption: "3right",
               alt: "Hyphae Nest visual selection 4",
               height: "20rem",
             },
             {
               src: "/work_details/hyphae_nest/3left.png",
-              caption: "3left",
               alt: "Hyphae Nest visual selection 3",
               height: "20rem",
             },
@@ -175,13 +165,11 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/6.png",
-              caption: "6",
               alt: "Hyphae Nest visual selection left",
               size: 54,
             },
             {
               src: "/work_details/hyphae_nest/7right.png",
-              caption: "7right",
               alt: "Hyphae Nest visual selection right",
               size: 38,
               marginTop: "2rem",
@@ -222,13 +210,11 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/8left.png",
-              caption: "8left",
               alt: "Interior view 1",
               size: 40,
             },
             {
               src: "/work_details/hyphae_nest/8middle.png",
-              caption: "8middle",
               alt: "Interior view 2",
               size: 40,
             },
@@ -241,13 +227,11 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/8right.png",
-              caption: "8right",
               alt: "Interior view 3",
               size: 40,
             },
             {
               src: "/work_details/hyphae_nest/9left.png",
-              caption: "9left",
               alt: "Interior view 4",
               size: 40,
             },
@@ -308,12 +292,10 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/ds1.png",
-              caption: "ds1",
               alt: "Design solution 1",
             },
             {
               src: "/work_details/hyphae_nest/ds2.png",
-              caption: "ds2",
               alt: "Design solution 2",
             },
           ],
@@ -325,12 +307,10 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/ds3.png",
-              caption: "ds3",
               alt: "Design solution 3",
             },
             {
               src: "/work_details/hyphae_nest/ds4.png",
-              caption: "ds4",
               alt: "Design solution 4",
             },
           ],
@@ -342,12 +322,10 @@ export const hyphaeNestWork: WorkDetail = {
           images: [
             {
               src: "/work_details/hyphae_nest/ds5.png",
-              caption: "ds5",
               alt: "Design solution 5",
             },
             {
               src: "/work_details/hyphae_nest/ds6.png",
-              caption: "ds6",
               alt: "Design solution 6",
             },
           ],
@@ -367,7 +345,6 @@ export const hyphaeNestWork: WorkDetail = {
           gap: "medium",
           image: {
             src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (7).svg",
-            caption: "Hyphae Nest - visual selection (7)",
             alt: "Project impact overview",
           },
           list: {
@@ -400,7 +377,6 @@ export const hyphaeNestWork: WorkDetail = {
           },
           image: {
             src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (8).svg",
-            caption: "Hyphae Nest - visual selection (8)",
             alt: "Project impact overview",
           },
         },
