@@ -6,10 +6,10 @@ export const iceyWork: WorkDetail = {
   category: "Interactive Installation, Design Strategy",
   description:
     "Interactive device simulating melting Arctic ice through 3D printing, LEDs, and Arduino technology to foster reflection on climate change",
-  thumbnail: "/work_details/icey/thumbnail.png",
+  thumbnail: "/work_details/icey/thumbnail.jpg",
   thumbnailImagePos: "50% 10%",
   thumbnailImageFit: "cover",
-  heroImage: "/work_details/icey/2left.png",
+  heroImage: "/work_details/icey/thumbnail.jpg",
   heroImagePosition: "50% 20%",
   heroImageFit: "cover",
   role: "Lead Designer & Prototyper",
@@ -41,7 +41,7 @@ export const iceyWork: WorkDetail = {
         },
         {
           type: "image",
-          src: "/work_details/icey/thumbnail.png",
+          src: "/work_details/icey/thumbnail.jpg",
           alt: "ICEY! Overview",
           size: "xlarge",
         },
@@ -183,11 +183,6 @@ export const iceyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/icey/9.png",
-          size: "large",
-        },
-        {
-          type: "image",
-          src: "/work_details/icey/10.png",
           size: "large",
         },
       ],
