@@ -586,7 +586,7 @@
 /* Image + Text List Split */
 .image-textlist-block {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
   --image-width: 45%;
   --text-width: 55%;

@@ -128,12 +128,6 @@ export const scobyWork: WorkDetail = {
           gap: "medium",
         },
         {
-          type: "image",
-          src: "/work_details/scoby/The SCOBY Spot - design solution.svg",
-          alt: "Design solution overview",
-          size: "medium",
-        },
-        {
           type: "text",
           title: "Architectural Strategy",
           content:
@@ -184,11 +178,28 @@ export const scobyWork: WorkDetail = {
           size: "large",
         },
         {
-          type: "text",
-          title: "Biophilic Design Elements",
-          content:
-            "• **Organic Branching Patterns:** evoke canopy structures for calmness.\n• **Soft Natural Lighting:** connects visitors to daylight cycles.\n• **Warm Wooden Textures:** evoke comfort and authenticity.\n• **Elevated Pod Seating:** promotes a sense of retreat and privacy.\n• **Large Glass Windows:** frame views and enhance openness.",
-          size: "normal",
+          type: "image-textlist",
+          layout: "image-right",
+          gap: "medium",
+          image: {
+            src: "/work_details/scoby/The SCOBY Spot - design solution.svg",
+            alt: "Design solution overview",
+          },
+          text: {
+            title: "\n\n\nBiophilic Design Elements",
+            content: "",
+          },
+          list: {
+            listType: "unordered",
+            items: [
+              "**Organic Branching Patterns:** evoke canopy structures for calmness.",
+              "**Soft Natural Lighting:** connects visitors to daylight cycles.",
+              "**Warm Wooden Textures:** evoke comfort and authenticity.",
+              "**Elevated Pod Seating:** promotes a sense of retreat and privacy.",
+              "**Large Glass Windows:** frame views and enhance openness.",
+            ],
+            size: "normal",
+          },
         },
         {
           type: "image",
