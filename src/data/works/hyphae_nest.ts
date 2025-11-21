@@ -204,41 +204,6 @@ export const hyphaeNestWork: WorkDetail = {
           src: "/work_details/hyphae_nest/floor_plan.png",
           size: "full",
         },
-        { type: "title", content: "Interior Strategy", size: "large" },
-        {
-          type: "image-pair",
-          images: [
-            {
-              src: "/work_details/hyphae_nest/8left.png",
-              alt: "Interior view 1",
-              size: 40,
-            },
-            {
-              src: "/work_details/hyphae_nest/8middle.png",
-              alt: "Interior view 2",
-              size: 40,
-            },
-          ],
-          layout: "equal",
-          gap: "medium",
-        },
-        {
-          type: "image-pair",
-          images: [
-            {
-              src: "/work_details/hyphae_nest/8right.png",
-              alt: "Interior view 3",
-              size: 40,
-            },
-            {
-              src: "/work_details/hyphae_nest/9left.png",
-              alt: "Interior view 4",
-              size: 40,
-            },
-          ],
-          layout: "equal",
-          gap: "medium",
-        },
         {
           type: "title",
           content: "Interior Strategy",
