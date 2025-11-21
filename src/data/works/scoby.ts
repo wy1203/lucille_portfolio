@@ -29,8 +29,10 @@ export const scobyWork: WorkDetail = {
         {
           type: "text-image",
           layout: "text-right",
+          imageWidth: 40,
+          textWidth: 60,
           text: {
-            title: "Goal and Offering",
+            title: "\n\nGoal and Offering",
             content:
               "The SCOBY Spot is a kombucha tea + pastry store that doubles as a relax & study space in Ithaca Commons. The goal is to create a relaxation and well-being hub for Ithacans. A calm, nature like atmosphere positions the shop as both a neighborhood retreat and a cultural anchor for fermented tea.",
             size: "small",
@@ -175,7 +177,7 @@ export const scobyWork: WorkDetail = {
           type: "image",
           src: "/work_details/scoby/4.png",
           alt: "Interior spatial flow",
-          size: "large",
+          size: "xlarge",
         },
         {
           type: "image-textlist",
@@ -205,7 +207,7 @@ export const scobyWork: WorkDetail = {
           type: "image",
           src: "/work_details/scoby/5.png",
           alt: "Natural lighting and materials",
-          size: "large",
+          size: "xlarge",
         },
         {
           type: "image",

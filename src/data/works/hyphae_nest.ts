@@ -62,8 +62,7 @@ export const hyphaeNestWork: WorkDetail = {
             {
               src: "/work_details/hyphae_nest/Hyphae Nest - visual selection (5).svg",
               alt: "Hyphae Nest visual selection 5",
-              size: 45,
-              marginTop: "1.5rem",
+              size: 50,
             },
           ],
           layout: "equal",

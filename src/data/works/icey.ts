@@ -74,7 +74,7 @@ export const iceyWork: WorkDetail = {
             {
               src: "/work_details/icey/3left.png",
               alt: "Interactive installation in exhibition space",
-              size: 33,
+              size: 39,
             },
           ],
           gap: "large",
@@ -183,7 +183,7 @@ export const iceyWork: WorkDetail = {
         {
           type: "image",
           src: "/work_details/icey/9.png",
-          size: "large",
+          size: "xlarge",
         },
       ],
     },
