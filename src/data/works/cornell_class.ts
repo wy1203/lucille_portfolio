@@ -82,6 +82,11 @@ export const cornellClassWork: WorkDetail = {
           },
         },
         {
+          type: "title",
+          content: "Space Quality Diagnosis",
+          size: "large",
+        },
+        {
           type: "image-pair",
           images: [
             {
@@ -138,6 +143,11 @@ export const cornellClassWork: WorkDetail = {
           src: "/work_details/cornell_class/1right.png",
           alt: "Riley Robb Hall existing conditions",
           size: "xlarge",
+        },
+        {
+          type: "title",
+          content: "Space Quality Diagnosis",
+          size: "large",
         },
         {
           type: "image-pair",
