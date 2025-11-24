@@ -320,7 +320,17 @@ const MainContent = () => {
       </div>
 
       <section id="work" className="home-work-section" ref={workSectionRef}>
-        <h2 className="work-section-title">MY WORKS :)</h2>
+        <div className="work-section-header">
+          <h2 className="work-section-title">MY WORKS :)</h2>
+          <a
+            href="/data/Design Strategy Portfolio.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="portfolio-pdf-button"
+          >
+            View PDF Portfolio
+          </a>
+        </div>
 
         <div className="filters-container">
           {categories.map((category) => (

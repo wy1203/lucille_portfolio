@@ -293,11 +293,19 @@ img {
   text-align: center;
 }
 
+.work-section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 4rem auto 2rem auto;
+}
+
 .work-section-title {
   font-size: 2.5em;
   font-weight: 900;
   text-align: center;
-  margin: 4rem auto 2rem auto;
+  margin: 0;
   letter-spacing: -0.02em;
   font-family: "Montserrat";
   background: linear-gradient(135deg, #0054f3 0%, #ff743a 100%);
@@ -305,6 +313,29 @@ img {
   padding: 1.5rem 3rem;
   border-radius: 50px;
   display: inline-block;
+}
+
+.portfolio-pdf-button {
+  font-family: "Montserrat";
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0054f3;
+  background: white;
+  border: 2px solid #0054f3;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.portfolio-pdf-button:hover {
+  background: linear-gradient(135deg, #0054f3 0%, #ff743a 100%);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 84, 243, 0.3);
 }
 
 .filters-container {
@@ -544,10 +575,19 @@ img {
     padding: 4rem 1rem;
   }
 
+  .work-section-header {
+    margin: 3rem auto 2rem auto;
+  }
+
   .work-section-title {
-    margin-bottom: 3rem;
+    margin-bottom: 0;
     font-size: 2rem;
     padding: 1rem 2rem;
+  }
+
+  .portfolio-pdf-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
   }
 
   .work-card-content {
