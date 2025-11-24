@@ -779,11 +779,11 @@ const About = () => {
               <h2>My Core Values :)</h2>
               <ul className="values-list">
                 <li className="value-item">
-                  <span>Be curious and always learn</span>
+                  <span>Be curious and keep learning</span>
                   <span className="value-emoji">🤯</span>
                 </li>
                 <li className="value-item">
-                  <span>Listen with empathy and care</span>
+                  <span>Generate impact with empathy and care</span>
                   <span className="value-emoji">😎</span>
                 </li>
                 <li className="value-item">
