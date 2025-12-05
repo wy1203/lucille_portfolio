@@ -3,7 +3,7 @@ import { WorkDetail } from "../types";
 export const cornellClassWork: WorkDetail = {
   id: 4,
   title: "Cornell Class",
-  category: "Education Design, Design Strategy",
+  category: "Education Design",
   description:
     "Innovative classrooms fostering collaborative and engaging learning environments",
   thumbnail: "/work_details/cornell_class/hero.png",

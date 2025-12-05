@@ -3,7 +3,7 @@ import { WorkDetail } from "../types";
 export const bikewalkWork: WorkDetail = {
   id: 5,
   title: "BikeWalk",
-  category: "Commercial Space, Design Strategy",
+  category: "Commercial Space",
   description:
     "Community centered redesign for Bike Walk Tompkins to enhance community engagement, spatial efficiency, and brand identity",
   thumbnail: "/work_details/bikewalk/hero.png",
@@ -94,14 +94,14 @@ export const bikewalkWork: WorkDetail = {
           content:
             "A cohesive visual identity introduces BikeWalk Tompkins (BWT) across merchandise, stationery, and takeaway materials. The handwritten logo embodies motion and craftsmanship, while green and wood tones balance modernity with local warmth.",
         },
-        { type: "image", src: "/work_details/bikewalk/s1.png", size: "full"},
+        { type: "image", src: "/work_details/bikewalk/s1.png", size: "full" },
         {
           type: "banner-title",
           content: "Social Media",
           size: "large",
           background: "#dd7c40",
         },
-        { type: "image", src: "/work_details/bikewalk/s2.png", size: "xlarge"},
+        { type: "image", src: "/work_details/bikewalk/s2.png", size: "xlarge" },
         {
           type: "banner-title",
           content: "Brochures",
@@ -174,8 +174,8 @@ export const bikewalkWork: WorkDetail = {
           size: "large",
           background: "#597f55",
         },
-        { type: "image", src: "/work_details/bikewalk/s3.png", size: "xlarge"},
-        { type: "image", src: "/work_details/bikewalk/s7.png", size: "medium"},
+        { type: "image", src: "/work_details/bikewalk/s3.png", size: "xlarge" },
+        { type: "image", src: "/work_details/bikewalk/s7.png", size: "medium" },
         {
           type: "banner-title",
           content: "Facade",

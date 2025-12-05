@@ -6,6 +6,8 @@ import { hyphaeNestWork } from "./works/hyphae_nest";
 import { nimbusWork } from "./works/nimbus";
 import { bikewalkWork } from "./works/bikewalk";
 import { cornellClassWork } from "./works/cornell_class";
+import { miamiWork } from "./works/miami";
+import { haworthWork } from "./works/haworth";
 // import { boatExhibitWork } from "./works/boat_exhibit";
 // import { programmingCornellMakerspaceWork } from "./works/programming_cornell_makerspace";
 
@@ -20,4 +22,6 @@ export const worksData: WorkDetail[] = [
   cornellClassWork,
   bikewalkWork,
   nimbusWork,
+  miamiWork,
+  haworthWork,
 ];
