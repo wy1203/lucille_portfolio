@@ -3,7 +3,7 @@ import { WorkDetail } from "../types";
 export const bikewalkWork: WorkDetail = {
   id: 5,
   title: "BikeWalk",
-  category: "Commercial Space",
+  category: "Retail Store",
   description:
     "Community centered redesign for Bike Walk Tompkins to enhance community engagement, spatial efficiency, and brand identity",
   thumbnail: "/work_details/bikewalk/hero.png",

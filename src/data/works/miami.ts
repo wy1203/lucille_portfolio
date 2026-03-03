@@ -2,8 +2,8 @@ import { WorkDetail } from "../types";
 
 export const miamiWork: WorkDetail = {
   id: 9,
-  title: "Miami-Dade Workplace Design",
-  category: "Commercial Space, Internship",
+  title: "Miami-Dade Workplace Design @ HDR",
+  category: "Internship, Workplace",
   description:
     "Workplace design for Miami-Dade Water to enhance brand identity, spatial efficiency, and function",
   thumbnail: "/work_details/miami_dade/1.png",

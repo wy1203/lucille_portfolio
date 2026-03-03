@@ -3,7 +3,7 @@ import { WorkDetail } from "../types";
 export const iceyWork: WorkDetail = {
   id: 2,
   title: "ICEY!",
-  category: "Interactive Device",
+  category: "Device",
   description:
     "Interactive device simulating melting Arctic ice through 3D printing, LEDs, and Arduino technology to foster reflection on climate change",
   thumbnail: "/work_details/icey/thumbnail.jpg",

@@ -19,9 +19,9 @@ export const worksData: WorkDetail[] = [
   scobyWork,
   iceyWork,
   hyphaeNestWork,
-  cornellClassWork,
-  bikewalkWork,
   nimbusWork,
+  bikewalkWork,
+  cornellClassWork,
   miamiWork,
   haworthWork,
 ];

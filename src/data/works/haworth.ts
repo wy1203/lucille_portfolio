@@ -2,8 +2,8 @@ import { WorkDetail } from "../types";
 
 export const haworthWork: WorkDetail = {
   id: 10,
-  title: "Workplace for Groupwork",
-  category: "Commercial Space, Internship",
+  title: "Workplace for Groupwork @ Haworth",
+  category: "Internship, Workplace",
   description:
     "Workplace design for group collaboration in an enclosed space to enhance focus, privacy, acoustic control and high movement",
   thumbnail: "/work_details/haworth/hero.png",
