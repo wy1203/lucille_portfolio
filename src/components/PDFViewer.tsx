@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
@@ -43,20 +43,20 @@ const PDFViewer = ({ pdfPath }: PDFViewerProps) => {
     }
   };
 
-  const goToNextPage = () => {
+  const goToNextPage = useCallback(() => {
     if (!numPages) return;
     const increment = twoPageMode ? 2 : 1;
     const nextPage = Math.min(currentPage + increment, numPages);
     setCurrentPage(nextPage);
     scrollToPage(nextPage);
-  };
+  }, [numPages, twoPageMode, currentPage]);
 
-  const goToPrevPage = () => {
+  const goToPrevPage = useCallback(() => {
     const decrement = twoPageMode ? 2 : 1;
     const prevPage = Math.max(currentPage - decrement, 1);
     setCurrentPage(prevPage);
     scrollToPage(prevPage);
-  };
+  }, [twoPageMode, currentPage]);
 
   const handlePageInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPageInput(e.target.value);

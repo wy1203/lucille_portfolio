@@ -478,7 +478,7 @@ export default function DomeGallery({
     { target: mainRef, eventOptions: { passive: true } }
   );
 
-  const openItemFromElement = (el: HTMLElement) => {
+  const openItemFromElement = useCallback((el: HTMLElement) => {
     if (openingRef.current) return;
     openingRef.current = true;
     openStartedAtRef.current = performance.now();
@@ -620,7 +620,7 @@ export default function DomeGallery({
       };
       overlay.addEventListener("transitionend", onFirstEnd);
     }
-  };
+  }, [lockScroll, segments, openedImageWidth, openedImageHeight, enlargeTransitionMs]);
 
   const onTileClick = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
